@@ -1,0 +1,25 @@
+sort=-time
+layer=overlay
+width=400
+height=110
+border-size=2
+border-radius=15
+icons=0
+max-icon-size=64
+default-timeout=5000
+ignore-timeout=1
+font=JetBrainsMono Nerd Font monospace 14
+
+# Colors
+
+background-color=#1e1e2e
+text-color=#cdd6f4
+border-color=#94e2d5
+progress-color=over #313244
+
+[urgency=high]
+border-color=#fab387
+
+[mode=dnd]
+invisible=1
+default-timeout=0

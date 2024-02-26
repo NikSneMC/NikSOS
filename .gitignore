@@ -1,0 +1,38 @@
+.idea/
+Arduino IDE/
+arduino-ide/
+astro/
+Authy Desktop/
+Blockbench/
+cef_user_data/
+dconf/
+github/
+GitHub Desktop/
+go/
+Insomnia/
+JetBrains/
+jgit/
+libreoffice/
+nvim/
+obs-studio/
+pulse/
+qBittorrent/
+spicetify/
+spotify/
+vesktop/Crashpad
+vesktop/ExtensionCache
+vesktop/sessionData
+vesktop/settings/settings.json
+vesktop/state.json
+vesktop/SingletonCookie
+vesktop/SingletonLock
+vesktop/SingletonSocket
+VSCodium/
+pavucontrol.ini
+Raspberry Pi/Imager.conf
+gtk-3.0/bookmarks
+QtProject.conf
+mimeapps.list
+vesktop/themes/wolfclan.theme.css
+waybar/scripts/github.sh
+xfce4/xfconf/xfce-perchannel-xml/thunar.xml

@@ -1,0 +1,27 @@
+[pyprland]
+plugins = [
+  "scratchpads"
+]
+
+[scratchpads.term]
+command = "wezterm start --class wezterm_dropdown"
+animation = "fromTop"
+unfocus = "hide"
+excludes = "*"
+lazy = true
+
+[scratchpads.volume]
+command = "pavucontrol --class volume_sidemenu"
+animation = "fromRight"
+class = "volume_sidemenu"
+size = "40% 70%"
+unfocus = "hide"
+excludes = "*"
+lazy = true
+
+[scratchpads.player]
+command = "spotify"
+animation = "fromBottom"
+unfocus = "hide"
+excludes = "*"
+lazy = true

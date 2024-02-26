@@ -1,0 +1,32 @@
+configuration {
+  modes: "run,drun,filebrowser,2fa:~/.config/rofi/scripts/2fa.sh";
+  icon-theme: "Numix-Circle";
+  show-icons: true;
+  terminal: "foot";
+  drun-display-format: "{icon} {name}";
+  location: 4;
+  disable-history: false;
+  hide-scrollbar: true;
+  display-run: "  ";
+  display-drun: " 󰵆 ";
+  display-filebrowser: " 󰥨 ";
+  display-2fa: " 󰦯 ";
+  sidebar-mode: true;
+
+  filebrowser {
+    directory: "~";
+    sorting-method: "name";
+    directories-first: true;
+  }
+}
+
+@theme "catppuccin-mocha"
+
+listview {
+	columns: 1;
+}
+
+window {
+  height: 97%;
+  width: 20%;
+}

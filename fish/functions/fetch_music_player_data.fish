@@ -1,0 +1,3 @@
+function fetch_music_player_data
+    playerctl -a metadata --format "{\"text\": \"<span color='#f5a97f'>{{artist}}</span> - <span color='#c6a0f6'>{{markup_escape(title)}}</span>\", \"tooltip\": \"<i><span color='#a6da95'>{{playerName}}</span></i>\n<b><span color='#c6a0f6'>{{markup_escape(title)}}</span></b>\nby <span color='#f5a97f'>{{artist}}</span>\non <span color='#8bd5ca'>{{album}}</span>\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}" -F
+end

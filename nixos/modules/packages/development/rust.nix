@@ -24,7 +24,7 @@
     cargo-spellcheck
     cargo-modules
     cargo-bloat
-    cargo-unused-features
+#    cargo-unused-features
     bacon
     evcxr #rust repl
   ];

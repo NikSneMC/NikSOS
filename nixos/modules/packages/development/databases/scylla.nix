@@ -12,6 +12,14 @@
             hash = "sha256-EZXIHUFjo/GvqkGrAgQRI53Aovp+V/9ytH2jJ7dJxoY=";
           };
       });
+      thrift = prev.thrift.overrideAttrs(old: rec {
+        pname = "thrift";
+        version = "0.18.1";
+        src = prev.fetchurl {
+            url = "https://archive.apache.org/dist/thrift/${version}/${pname}-${version}.tar.gz";
+            hash = "sha256-BMbxDl14jKeOE+4u8NIVLHsHDAr1VIPWuULinP8pZyY=";
+        };
+      });
     })
   ];
 

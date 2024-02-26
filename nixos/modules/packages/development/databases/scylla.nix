@@ -17,6 +17,6 @@
 
   environment.systemPackages = with pkgs; [
     thrift
-    scylladb
+#    scylladb
    ];
 }

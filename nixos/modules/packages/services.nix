@@ -26,6 +26,9 @@
   services.fwupd.enable = true;
   services.auto-cpufreq.enable = true;
   services.printing.enable = true;
+  environment.pathsToLink = [
+    "/libexec"
+  ];
 
   environment.systemPackages = with pkgs; [
     ffmpeg_5-full

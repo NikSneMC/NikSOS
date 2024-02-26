@@ -3,5 +3,5 @@
         ./hardware-configuration.nix
         ../../modules
     ];
-    networking.hostName = "laptop-niksne"; # Define your hostname.
+    networking.hostName = "host"; # Define your hostname.
 }

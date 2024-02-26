@@ -3,7 +3,7 @@
 {
   nixpkgs.overlays = [
     (final: prev: {
-      postman = prev.scylladb.overrideAttrs(old: rec {
+      scylladb = prev.scylladb.overrideAttrs(old: rec {
         version = "5.2.15";
         src = fetchFromGitHub {
             owner = "scylladb";

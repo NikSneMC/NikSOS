@@ -66,10 +66,26 @@
         "type": "github"
       }
     },
+    "nnr": {
+      "locked": {
+        "lastModified": 1709043334,
+        "narHash": "sha256-fuqjmrkfRJJGaNn8dY89R9P6vO2f3oMwVtP+xDOGJKE=",
+        "owner": "niksnemc",
+        "repo": "nixpkgs",
+        "rev": "7ac209b6665c723f31a371e5f27da0cefa1af6b8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "niksnemc",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
         "nixpkgs-stable": "nixpkgs-stable",
+        "nnr": "nnr",
         "rust-overlay": "rust-overlay"
       }
     },

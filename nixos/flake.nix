@@ -26,6 +26,7 @@
           nnr = import nnr {
             system = system;
             config.allowUnfree = true;
+            config.allowBroken = true;
           };
         };
 

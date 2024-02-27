@@ -31,10 +31,11 @@
                 nnr.jetbrains.pycharm-professional
                 nnr.jetbrains.webstorm
                 nnr.jetbrains.datagrip
-                nnr.jetbrains.rust-rover
+                pkgs.jetbrains.rust-rover
                 nnr.jetbrains.clion
                 nnr.jetbrains.goland
                 nnr.jetbrains.gateway
+                # nnr.jetbrains.writerside
 
                 pkgs.vesktop
                 pkgs.tdesktop

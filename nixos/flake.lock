@@ -68,11 +68,11 @@
     },
     "nnr": {
       "locked": {
-        "lastModified": 1709054172,
-        "narHash": "sha256-IwZNGq38cBLmswhz+iWzSN+SZ0lavoPOBv/sOp21gG4=",
+        "lastModified": 1709055085,
+        "narHash": "sha256-7V67hPNZ240NBd6CQjKGqD4ThxSoESo5aeYa54iZ6xg=",
         "owner": "niksnemc",
         "repo": "nixpkgs",
-        "rev": "00358fd7f9e670a96f27937bea4dfffc480d5d9f",
+        "rev": "3b6f964e24a57683a8dd15404873769decacaeab",
         "type": "github"
       },
       "original": {

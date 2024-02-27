@@ -2,6 +2,6 @@
   imports = [
     ./cassandra.nix
     ./mysql.nix
-    ./scylla.nix
+#    ./scylla.nix
   ];
 }

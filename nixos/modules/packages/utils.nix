@@ -9,5 +9,6 @@
         rofimoji
         dos2unix
         speedtest-cli
+        nix-prefetch-github
   ];
 }

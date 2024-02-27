@@ -30,7 +30,7 @@
         };
 
         modules = [
-          ./hosts/hp
+          ./hosts/dell
         ];
       };
     };

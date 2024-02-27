@@ -27,14 +27,14 @@
                 pkgs.hoppscotch
                 pkgs.rpi-imager
 
-                pkgs.jetbrains.idea-ultimate
-                pkgs.jetbrains.pycharm-professional
-                pkgs.jetbrains.webstorm
-                pkgs.jetbrains.datagrip
-                pkgs.jetbrains.rust-rover
-                pkgs.jetbrains.clion
-                pkgs.jetbrains.goland
-                pkgs.jetbrains.gateway
+                nnr.jetbrains.idea-ultimate
+                nnr.jetbrains.pycharm-professional
+                nnr.jetbrains.webstorm
+                nnr.jetbrains.datagrip
+                nnr.jetbrains.rust-rover
+                nnr.jetbrains.clion
+                nnr.jetbrains.goland
+                nnr.jetbrains.gateway
 
                 pkgs.vesktop
                 pkgs.tdesktop

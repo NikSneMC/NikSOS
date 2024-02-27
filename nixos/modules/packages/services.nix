@@ -48,5 +48,6 @@
     wtype
     swayidle
     openssl
+    nix-prefetch-github
   ];
 }

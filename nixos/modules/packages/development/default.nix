@@ -2,6 +2,7 @@
   imports = [
     ./databases
     ./arduino.nix
+    ./docker.nix
     ./go.nix
     ./java.nix
     ./pascal.nix

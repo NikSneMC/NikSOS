@@ -31,7 +31,7 @@
         };
 
         modules = [
-          ./hosts/dell
+          ./hosts/hp
         ];
       };
     };

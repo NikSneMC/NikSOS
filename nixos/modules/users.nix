@@ -6,7 +6,7 @@
         niksne = {
             isNormalUser = true;
             description = "NikSne";
-            extraGroups = [ "networkmanager" "wheel" "audio" "video"];
+            extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker"];
 	        shell = pkgs.fish;
             packages = [
                 pkgs.authy

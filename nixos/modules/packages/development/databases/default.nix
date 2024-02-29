@@ -1,6 +1,6 @@
 {
   imports = [
-    ./cassandra.nix
+    # ./cassandra.nix
     ./mysql.nix
   ];
 }

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+git clone https://github.com/NikSneMC/NikSOS.git ~/.config/
+
 read -p "Enter device name: " HOST
 mkdir ~/.config/nixos/hosts/$HOST
 sudo nixos-generate-config

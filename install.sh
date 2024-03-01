@@ -16,25 +16,34 @@ echo "{
 }" >> ~/.config/nixos/hosts/$HOST/default.nix
 
 echo "{
-  description = \"NiKSne's NixOS Configuration\";
+  description = "NiKSne's NixOS Configuration";
 
   inputs = {
-      nixpkgs.url = \"github:NixOS/nixpkgs/nixos-unstable\";
+      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
-      nixpkgs-stable.url = \"github:NixOS/nixpkgs/nixos-23.11\";
+      nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
+
+      rust-overlay.url = "github:oxalica/rust-overlay";
+
+      nnr.url = "github:niksnemc/nixpkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-stable, ... } @ inputs:
+  outputs = { nixpkgs, nixpkgs-stable, rust-overlay, nnr, ... } @ inputs:
   {
     nixosConfigurations = {
       $HOSTNAME = nixpkgs.lib.nixosSystem rec {
-        system = \"x86_64-linux\";
+        system = "x86_64-linux";
 
-        specialArgs = {
-          inherit inputs;
+        specialArgs = { 
+          inherit inputs; 
           pkgs-stable = import nixpkgs-stable {
             system = system;
             config.allowUnfree = true;
+          };
+          nnr = import nnr {
+            system = system;
+            config.allowUnfree = true;
+            config.allowBroken = true;
           };
         };
 

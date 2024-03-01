@@ -15,6 +15,7 @@ echo "{
     networking.hostName = \"$HOSTNAME\"; # Define your hostname.
 }" >> ~/.config/nixos/hosts/$HOST/default.nix
 
+rm -rf ~/.config/nixos/flake.nix
 echo "{
   description = "NiKSne's NixOS Configuration";
 

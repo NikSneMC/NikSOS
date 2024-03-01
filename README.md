@@ -58,7 +58,7 @@
  - Websites in your browser (Vivaldi, Firefox):
    - Install the Stylus Extension from its [official website](https://add0n.com/stylus.html).
    - Open the extension's settings page and navigate to the Backup section.
-   - Click "Import" and select the file `home/.config/stylus-catppuccin.json`.
+   - Click "Import" and select the file `stylus-catppuccin.json`.
  - DuckDuckGo in any browser:
    - Follow the [official guide](https://github.com/catppuccin/duckduckgo) provided by Catppuccin.
   

@@ -58,3 +58,53 @@ echo "{
   };
 }" >> ~/.config/nixos/flake.nix
 
+rm -rf ~/.config/nixos/modules/users.nix
+echo "{ pkgs, nnr, ...}:
+
+read -p "Enter username: " USERNAME
+{
+    # Define a user account. Don't forget to set a password with ‘passwd’.
+    users.users = {
+        $USERNAME = {
+            isNormalUser = true;
+            description = "$USERNAME";
+            extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker"];
+	        shell = pkgs.fish;
+            packages = [
+                pkgs.authy
+                pkgs.vivaldi
+                pkgs.vivaldi-ffmpeg-codecs
+                pkgs.firefox
+                
+                pkgs.obs-studio
+                pkgs.obs-studio-plugins.wlrobs
+                pkgs.prismlauncher
+                pkgs.spotify
+                pkgs.spicetify-cli
+                pkgs.blockbench-electron
+
+                pkgs.vscodium
+                pkgs.github-desktop
+                pkgs.neovim
+                pkgs.hoppscotch
+                pkgs.rpi-imager
+
+                nnr.jetbrains.idea-ultimate
+                nnr.jetbrains.pycharm-professional
+                nnr.jetbrains.webstorm
+                nnr.jetbrains.datagrip
+                pkgs.jetbrains.rust-rover
+                nnr.jetbrains.clion
+                nnr.jetbrains.goland
+                nnr.jetbrains.gateway
+                # nnr.jetbrains.writerside
+
+                pkgs.vesktop
+                pkgs.tdesktop
+                pkgs.whatsapp-for-linux
+            ];
+        };
+    };
+}" >> ~/.config/nixos/modules/users.nix
+
+sudo nixos-rebuild switch --flake ~/.config/nixos#$HOSTNAME && systemctl reboot

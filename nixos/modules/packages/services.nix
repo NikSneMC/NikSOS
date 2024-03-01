@@ -46,7 +46,6 @@
     xdg-utils
     cliphist
     wtype
-    swayidle
     openssl
   ];
 }

@@ -51,7 +51,7 @@
 ## 🚀 Installation
 
 1. Download and Install NixOS from the [official site](https://nixos.org/download) (I reccomend installation without graphics).
-2. Temporarily install git and curl using the command: `nix-shell --experimental-features 'nix-command flakes' -p git curl`.
+2. Temporarily enable flakes and install git and curl using the command: `nix-shell --experimental-features 'nix-command flakes' -p git curl`.
 3. Run installation script: `curl -fsSL <https://github.com/NikSneMC/NikSOS/raw/main/install.sh> | sh`.
 4. For an even more consistent experience across your apps, you can import Catppuccin theme config files into certain programs through their graphical user interfaces. This includes:
 

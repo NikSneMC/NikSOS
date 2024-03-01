@@ -16,7 +16,7 @@
 | Shell            | Fish                                 |
 | Display Server   | Wayland                              |
 | WM (Compositor)  | Hyprland                             |
-| Theme            | Catppuccin Macchiato                 |
+| Theme            | Catppuccin Mocha                 |
 | Boot Loader      | Grub (themed)                        |
 | Graphical Boot   | Plymouth (themed)                    |
 | Font             | JetBrains Mono + Nerd Font Patch     |

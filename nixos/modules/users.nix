@@ -18,7 +18,7 @@
                 pkgs.obs-studio-plugins.wlrobs
                 pkgs.prismlauncher
                 pkgs.spotify
-                pkgs.spicetify-cli
+                nnr.spicetify-cli
                 pkgs.blockbench-electron
 
                 pkgs.vscodium

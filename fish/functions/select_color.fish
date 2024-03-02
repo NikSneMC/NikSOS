@@ -1,4 +1,6 @@
 function select_color
-    hyprpicker -a -r 
-    notify-send hyprpicker "copied color to clipboard!"
+    set COLOR (hyprpicker -a -r)
+    if [ $COLOR != "" ]
+        notify-send hyprpicker "copied selected color to the clipboard!"
+    end
 end

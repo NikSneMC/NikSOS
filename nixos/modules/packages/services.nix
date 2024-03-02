@@ -35,6 +35,7 @@
     xfce.exo
     libsForQt5.qtstyleplugin-kvantum
     gnome.nautilus
+    gnome.file-roller
     grim
     grimblast
     slurp

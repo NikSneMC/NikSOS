@@ -5,14 +5,13 @@ function autostart
     systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP & \
     waybar & \
     pypr & \
-    # hyprpaper & \
-    swww init && swww img ~/Pictures/Wallpapers/catppuccin-mocha-teal.jpg & \
+    swww init & \
+    swww img ~/.config/swww/background.png & \
     wl-paste --type text --watch cliphist store & \
     wl-paste --type image --watch cliphist store & \
-    hyprctl setcursor Catppuccin-Mocha-Teal 24 &\
-    ~/.config/hypr/scripts/apps_fix.sh & \
-    swayidle -w & \
+    fix_apps.fish & \
+    hypridle & \
     vesktop & \
     telegram-desktop & \
-    whatsapp-for-linux
+    whatsapp-for-linux & \
 end

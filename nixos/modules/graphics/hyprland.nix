@@ -12,7 +12,7 @@
 
   environment.systemPackages = with pkgs; [
     waybar
-    eww-wayland
+    eww
     rofi-wayland
     hyprpaper
     swww

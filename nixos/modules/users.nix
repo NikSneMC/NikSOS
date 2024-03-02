@@ -35,7 +35,7 @@
                 nnr.jetbrains.clion
                 nnr.jetbrains.goland
                 nnr.jetbrains.gateway
-                # nnr.jetbrains.writerside
+                nnr.jetbrains.writerside
 
                 pkgs.vesktop
                 pkgs.tdesktop

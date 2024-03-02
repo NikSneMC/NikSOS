@@ -114,6 +114,7 @@
 | SUPER + SHIFT + E | Exit from `hyprland`                        |
 | SUPER + SHIFT + A | Open 2fa code menu (`rofi -dmenu`)          |
 | SUPER + SHIFT + F | Open rofi filebrowser (`rofi -filebrowser`) |
+| SUPER + SHIFT + C | Launch color picker (using `hyperpicer`)    |
 | SUPER + SHIFT + S | Take screenshot                             |
 | SUPER + SHIFT + R | Record screen area (MP4)                    |
 | SUPER + SHIFT + G | Record screen area (GIF)                    |

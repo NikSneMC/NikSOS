@@ -11,6 +11,5 @@
         mc
         pipes-rs
         cava
-
     ];
 }

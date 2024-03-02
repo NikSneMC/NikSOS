@@ -35,10 +35,6 @@
       size = "standard";
       variant = "mocha";
     };
-    discord = pkgs.discord.override {
-      withOpenASAR = true;
-      withTTS = true;
-    };
   };
 
   environment.systemPackages = with pkgs; [

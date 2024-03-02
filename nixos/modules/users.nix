@@ -18,7 +18,7 @@
                 pkgs.obs-studio-plugins.wlrobs
                 pkgs.prismlauncher
                 pkgs.spotify
-                pkgs.spicetify-cli
+                nnr.spicetify-cli
                 pkgs.blockbench-electron
 
                 pkgs.vscodium
@@ -35,7 +35,7 @@
                 nnr.jetbrains.clion
                 nnr.jetbrains.goland
                 nnr.jetbrains.gateway
-                # nnr.jetbrains.writerside
+                nnr.jetbrains.writerside
 
                 pkgs.vesktop
                 pkgs.tdesktop

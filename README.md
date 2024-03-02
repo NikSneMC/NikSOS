@@ -99,7 +99,7 @@
 | SUPER + ;       | Open emoji picker (`rofi -dmenu`)                 |
 | SUPER + X       | Open clipboard deletion item menu (`rofi -dmenu`) |
 | SUPER + N       | Open notification list (`swaync-client -t`)       |
-| SUPER + L       | Launch `swaylock`                                 |
+| SUPER + L       | Launch `hyprlock`                                 |
 | SUPER + ESCAPE  | Launch `wlogout`                                  |
 | SUPER + T       | Launch `wezterm`                                  |
 | SUPER + E       | Launch `nautilus`                                 |

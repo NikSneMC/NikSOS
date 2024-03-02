@@ -10,5 +10,6 @@
         dos2unix
         speedtest-cli
         nix-prefetch-github
+        playerctl
   ];
 }

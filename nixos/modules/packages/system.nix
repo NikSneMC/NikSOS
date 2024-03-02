@@ -9,6 +9,8 @@
         libreoffice
         qbittorrent
         mc
-        playerctl
+        pipes-rs
+        cava
+
     ];
 }

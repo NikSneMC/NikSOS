@@ -8,8 +8,6 @@
   };
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
-  security.pam.services.swaylock = {};
-
   environment.systemPackages = with pkgs; [
     waybar
     eww
@@ -20,7 +18,8 @@
     xdg-desktop-portal-gtk
     jq
     swaylock-effects
-    swayidle
+    hypridle
+    hyprlock
     wineWowPackages.waylandFull
     hyprpicker
     wezterm

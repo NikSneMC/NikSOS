@@ -165,7 +165,7 @@
 
         "hyprland/window": {
             "format": "{title} ({class})",
-            "max-length": 100,
+            "max-length": 75,
             "separate-outputs": true
         },
 
@@ -179,7 +179,7 @@
                 "Paused": ""
             },
             "max-length": 33,
-            "exec": "fish -c fetch_music_player_data",
+            "exec": "fish -c fetch_music_player_data_colored",
             "on-click": "playerctl play-pause",
             "on-click-right": "playerctl next",
             "on-click-middle": "playerctl prev",

@@ -33,8 +33,8 @@
 | Recorder         | Wf-recorder                          |
 | Color Picker     | Hyprpicker                           |
 | Clipboard        | Wl-clipboard + Cliphist              |
-| Idle             | Swayidle                             |
-| Lock             | Swaylock (themed)                    |
+| Idle             | Hypridle                             |
+| Lock             | Hyprlock (themed)                    |
 | Logout menu      | Wlogout (themed)                     |
 | Wallpaper        | swww                                 |
 | Player           | Spotify (themed)                     |
@@ -42,11 +42,9 @@
 
 ## 📈 Roadmap
 
-1. Switch from Swayidle to Hypridle
-2. Switch from Swaylock to Hyprlock
-3. Switch to Home Manager
-4. More configurable installation
-5. Finally fix Scylladb
+1. Switch to Home Manager
+2. More configurable installation
+3. Finally fix Scylladb
 
 ## 🚀 Installation
 

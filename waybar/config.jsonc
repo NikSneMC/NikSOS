@@ -7,7 +7,7 @@
         "spacing": 4,
         "modules-left": ["custom/launcher", "hyprland/workspaces"],
         "modules-center": ["clock#time", "custom/separator", "clock#week", "custom/separator", "clock#calendar"],
-        "modules-right": ["bluetooth", "network", "keyboard-state", "hyprland/language"],
+        "modules-right": ["bluetooth", "network", "hyprland/language"],
     
 
 
@@ -120,18 +120,7 @@
             "tooltip-format-ethernet":"Interface: {ifname}\nIP: {ipaddr}\nGW: {gwaddr}\nNetmask: {netmask}\nCIDR: {cidr}\n\n<span color='#a6da95'>{bandwidthUpBits}</span>\t<span color='#ee99a0'>{bandwidthDownBits}</span>\t<span color='#c6a0f6'>󰹹{bandwidthTotalBits}</span>",
             "max-length": 35,
             "on-click": "fish -c wifi_toggle",
-            "on-click-right": "NetworkManager"
-        },
-
-        "keyboard-state": {
-            "capslock": true,
-            "numlock": false,
-            "device-path": "",
-            "format": "{icon}",
-            "format-icons": {
-                "locked": "CAPS",
-                "unlocked": ""
-            }
+            "on-click-right": "nm-connection-editor"
         },
         
         "hyprland/language": {

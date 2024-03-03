@@ -178,7 +178,7 @@
                 "Playing": "",
                 "Paused": ""
             },
-            "max-length": 33,
+            "max-length": 40,
             "exec": "fish -c fetch_music_player_data_colored",
             "on-click": "playerctl play-pause",
             "on-click-right": "playerctl next",

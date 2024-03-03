@@ -280,8 +280,8 @@
                 "low": 10
             },
             "format": "{icon} {capacity}%",
-            "format-charging": "󱐋{icon} {capacity}%",
-            "format-plugged": "󰚥{icon} {capacity}%",
+            "format-charging": "󰂄 {capacity}%",
+            "format-plugged": "󰚥 {capacity}%",
             "format-time": "{H} h {M} min",
             "format-icons": [ "󱃍", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹" ],
             "tooltip-format": "{timeTo}"

@@ -16,7 +16,7 @@
 | Shell            | Fish                                 |
 | Display Server   | Wayland                              |
 | WM (Compositor)  | Hyprland                             |
-| Theme            | Catppuccin Mocha                 |
+| Theme            | Catppuccin Mocha                     |
 | Boot Loader      | Grub (themed)                        |
 | Graphical Boot   | Plymouth (themed)                    |
 | Font             | JetBrains Mono + Nerd Font Patch     |
@@ -67,17 +67,17 @@
 
 ### Windows
 
-| Key Combination            | Action                                                     |
-|----------------------------|------------------------------------------------------------|
-| SUPER + SHIFT + Q          | Kill active window                                         |
-| SUPER + F                  | Toggle floating window                                     |
-| F11                        | Toggle full-screen                                         |
-| SUPER + P                  | Toggle pseudo                                              |
-| SUPER + J                  | Toggle split                                               |
-| SUPER + H, J, K, L         | Change window focus                                        |
-| SUPER + SHIFT + H, J, K, L | Move window                                                |
-| SUPER + LMB                | Drag window                                                |
-| SUPER + RMB                | Resize window                                              |
+| Key Combination            | Action                 |
+|----------------------------|------------------------|
+| SUPER + SHIFT + Q          | Kill active window     |
+| SUPER + F                  | Toggle floating window |
+| F11                        | Toggle full-screen     |
+| SUPER + P                  | Toggle pseudo          |
+| SUPER + J                  | Toggle split           |
+| SUPER + H, J, K, L         | Change window focus    |
+| SUPER + SHIFT + H, J, K, L | Move window            |
+| SUPER + LMB                | Drag window            |
+| SUPER + RMB                | Resize window          |
 
 ### Workspaces
 | Key Combination            | Action                                        |
@@ -102,7 +102,7 @@
 | SUPER + L       | Launch `hyprlock`                                 |
 | SUPER + ESCAPE  | Launch `wlogout`                                  |
 | SUPER + T       | Launch `wezterm`                                  |
-| SUPER + E       | Launch `nautilus`                                 |
+| SUPER + E       | Launch `thunar`                                   |
 | SUPER + D       | Launch `vesktop`                                  |
 | SUPER + B       | Launch `vivaldi`                                  |
 | SUPER + G       | Launch `github-desktop`                           |
@@ -120,7 +120,6 @@
 | SUPER + SHIFT + G | Record screen area (GIF)                    |
 | SUPER + SHIFT + X | Clear clipboard                             |
 | SUPER + SHIFT + N | Toggle notifications (`swaync-client -d`)   |
-| SUPER + SHIFT + E | Launch `thunar`                             |
 | SUPER + SHIFT + V | Launch `codium`                             |
 | SUPER + SHIFT + E | Launch `telegram-desktop`                   |
 | SUPER + SHIFT + E | Launch `whatsapp-for-linux`                 |

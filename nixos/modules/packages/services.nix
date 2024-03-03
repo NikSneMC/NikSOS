@@ -15,11 +15,14 @@
   services.dbus.enable = true;
   services.mpd.enable = true;
   services.ivpn.enable = true;
-  programs.thunar.enable = true;
-  programs.thunar.plugins = with pkgs.xfce; [
-    thunar-archive-plugin
-    thunar-volman
-  ];
+  programs.thunar = {
+    enable = true;
+    plugins = with pkgs.xfce; [
+      thunar-archive-plugin
+      thunar-volman
+      thunar-media-tags-plugin
+    ];
+  };
   services.gvfs.enable = true; # Mount, trash, and other functionalities
   programs.xfconf.enable = true;
   services.tumbler.enable = true; 
@@ -34,7 +37,6 @@
     ffmpeg_5-full
     xfce.exo
     libsForQt5.qtstyleplugin-kvantum
-    gnome.nautilus
     gnome.file-roller
     grim
     grimblast

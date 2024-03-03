@@ -6,7 +6,7 @@ function autostart
     waybar & \
     pypr & \
     swww init & \
-    swww img ~/.config/swww/background.png & \
+    swww img ~/.config/background & \
     wl-paste --type text --watch cliphist store & \
     wl-paste --type image --watch cliphist store & \
     fix_apps.fish & \

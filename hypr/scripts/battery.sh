@@ -8,7 +8,7 @@ battery_charging=false
 for battery in /sys/class/power_supply/*BAT*; do
   if [[ -f "$battery/uevent" ]]; then
     enable_battery=true
-    if [[ $(cat /sys/class/power_supply/*/status | head -1) == "Charging" ]]; then
+    if [[ $(cat $battery/status) == "Charging" ]]; then
       battery_charging=true
     fi
     break
@@ -16,45 +16,32 @@ for battery in /sys/class/power_supply/*BAT*; do
 done
 
 ############# Output #############
-percentage="$(cat /sys/class/power_supply/*/capacity | head -1)"
-if [[ $enable_battery ]]; then
-  if [[ $battery_charging && $percentage == 100 ]]; then
-    echo -n "󰚥"
+if [[ $enable_battery == true ]]; then
+  percentage=$(($(cat $battery/capacity)))
+  if [[ $percentage -gt 100 ]]; then
+    percentage=100
   fi
-  if [[ $battery_charging && $percentage != 100 ]]; then
-    echo -n "󰂄"
-  fi
-  if [[ ! $battery_charging && 100 > $percentage && $percentage > 89 ]]; then
-    echo -n "󰂂"
-  fi
-  if [[ ! $battery_charging && 90 > $percentage && $percentage > 79 ]]; then
-    echo -n "󰂁"
-  fi
-  if [[ ! $battery_charging && 80 > $percentage && $percentage > 69 ]]; then
-    echo -n "󰂀"
-  fi
-  if [[ ! $battery_charging && 70 > $percentage && $percentage > 59 ]]; then
-    echo -n "󰁿"
-  fi
-  if [[ ! $battery_charging && 60 > $percentage && $percentage > 49 ]]; then
-    echo -n "󰁾"
-  fi
-  if [[ ! $battery_charging && 50 > $percentage && $percentage > 39 ]]; then
-    echo -n "󰁽"
-  fi
-  if [[ ! $battery_charging && 40 > $percentage && $percentage > 29 ]]; then
-    echo -n "󰁼"
-  fi
-  if [[ ! $battery_charging && 30 > $percentage && $percentage > 19 ]]; then
-    echo -n "󰁻"
-  fi
-  if [[ ! $battery_charging && 20 > $percentage && $percentage > 9 ]]; then
-    echo -n "󰁺"
-  fi
-  if [[ ! $battery_charging && 10 > $percentage && $percentage > 5 ]]; then
-    echo -n "󰂃"
+  if [[ $battery_charging == true ]]; then
+    if [[ $percentage -eq 100 ]]; then
+      echo -n "󰚥"
+    else
+      echo -n "󰂄"
+    fi
+  else
+    case $percentage in
+      100) echo -n "󰁹" ;;
+      9[0-9]) echo -n "󰂂" ;;
+      8[0-9]) echo -n "󰂁" ;;
+      7[0-9]) echo -n "󰂀" ;;
+      6[0-9]]) echo -n "󰁿" ;;
+      5[0-9]) echo -n "󰁾" ;;
+      4[0-9]) echo -n "󰁽" ;;
+      3[0-9]) echo -n "󰁼" ;;
+      2[0-9]) echo -n "󰁻" ;;
+      1[0-9]) echo -n "󰁺" ;;
+      [0-9]) echo -n "󰂃" ;;
+    esac
   fi
   echo -n " $percentage%"
 fi
-
 echo ''

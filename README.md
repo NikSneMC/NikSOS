@@ -27,8 +27,8 @@
 | Editor           | NVChad, VSCodium (themed)            |
 | Night Gamma      | Gammastep                            |
 | Fetch Utility    | Neofetch, Cpufetch                   |
-| File Browser     | Thunar, Nautilus (themed)            |
-| Internet Browser | Vivaldi, Firefox (themed)            |
+| File Browser     | Thunar (themed)            |
+| Internet Browser | Vivaldi (themed)            |
 | Screenshot       | GrimBlast + Slurp                    |
 | Recorder         | Wf-recorder                          |
 | Color Picker     | Hyprpicker                           |
@@ -121,9 +121,8 @@
 | SUPER + SHIFT + X | Clear clipboard                             |
 | SUPER + SHIFT + N | Toggle notifications (`swaync-client -d`)   |
 | SUPER + SHIFT + V | Launch `codium`                             |
-| SUPER + SHIFT + E | Launch `telegram-desktop`                   |
-| SUPER + SHIFT + E | Launch `whatsapp-for-linux`                 |
-| SUPER + SHIFT + E | Launch `firefox`                            |
+| SUPER + SHIFT + T | Launch `telegram-desktop`                   |
+| SUPER + SHIFT + W | Launch `whatsapp-for-linux`                 |
 
 ### Scratchpads
 

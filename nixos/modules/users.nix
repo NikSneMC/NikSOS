@@ -12,7 +12,6 @@
                 pkgs.authy
                 pkgs.vivaldi
                 pkgs.vivaldi-ffmpeg-codecs
-                pkgs.firefox
                 
                 pkgs.obs-studio
                 pkgs.obs-studio-plugins.wlrobs

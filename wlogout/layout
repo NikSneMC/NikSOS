@@ -24,7 +24,7 @@
 }
 {
     "label" : "suspend",
-    "action" : "systemctl suspend",
+    "action" : "fish -c suspend",
     "text" : "Suspend",
     "keybind" : "u"
 }

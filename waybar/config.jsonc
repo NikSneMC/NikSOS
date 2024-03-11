@@ -331,7 +331,7 @@
                 ]
             },
             "on-click": "pamixer -t",
-            "on-click-right":"pavucontrol",
+            "on-click-right":"pypr toggle volume",
             "on-scroll-up": "pamixer -i 1",
             "on-scroll-down": "pamixer -d 1",
             "reverse-scrolling": true,
@@ -351,7 +351,7 @@
             "format-source": "󰍬 {volume}%",
             "format-source-muted": "󰍭 {volume}%",
             "on-click": "pamixer --default-source -t",
-            "on-click-right": "pavucontrol",
+            "on-click-right": "pypr toggle volume",
             "on-scroll-up": "pamixer --default-source -i 1",
             "on-scroll-down": "pamixer --default-source -d 1",
             "reverse-scrolling": true,

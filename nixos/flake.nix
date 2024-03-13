@@ -8,7 +8,7 @@
 
       rust-overlay.url = "github:oxalica/rust-overlay";
 
-      nnr.url = "github:niksnemc/nixpkgs";
+      nnr.url = "github:niksnemc/nikspkgs";
   };
 
   outputs = { nixpkgs, nixpkgs-stable, rust-overlay, nnr, ... } @ inputs:

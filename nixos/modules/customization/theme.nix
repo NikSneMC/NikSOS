@@ -2,9 +2,13 @@
 
 {
   # Enable Theme
-  environment.variables.GTK_THEME = "Catppuccin-Mocha-Standard-Teal-Dark";
-  environment.variables.XCURSOR_THEME = "Catppuccin-Mocha-Teal";
-  environment.variables.XCURSOR_SIZE = "24";
+  environment.variables = {
+    GTK_THEME = "Catppuccin-Mocha-Standard-Teal-Dark";
+    XCURSOR_THEME = "Catppuccin-Mocha-Teal";
+    XCURSOR_SIZE = "24";
+    HYPRCURSOR_THEME = "Extracted Theme";
+    HYPRCURSOR_SIZE = 24;
+  };
   console = {
     earlySetup = true;
     colors = [

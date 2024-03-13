@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nnr, ... }:
 
 {
   # Enable Hyprland
@@ -8,7 +8,7 @@
   };
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = (with pkgs; [
     waybar
     eww
     rofi-wayland
@@ -26,5 +26,7 @@
     starship
     wlogout
     pyprland
-  ];
+  ]) ++ (with nnr; [
+    hyprcursor
+  ]);
 }

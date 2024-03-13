@@ -8,38 +8,40 @@
             description = "NikSne";
             extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker"];
 	        shell = pkgs.fish;
-            packages = [
-                pkgs.authy
-                pkgs.vivaldi
-                pkgs.vivaldi-ffmpeg-codecs
+            packages = (with pkgs; [
+                authy
+                vivaldi
+                vivaldi-ffmpeg-codecs
                 
-                pkgs.obs-studio
-                pkgs.obs-studio-plugins.wlrobs
-                pkgs.prismlauncher
-                pkgs.spotify
-                nnr.spicetify-cli
-                pkgs.blockbench-electron
+                obs-studio
+                obs-studio-plugins.wlrobs
+                prismlauncher
+                spotify
+                blockbench-electron
 
-                pkgs.vscodium
-                pkgs.github-desktop
-                pkgs.neovim
-                pkgs.hoppscotch
-                pkgs.rpi-imager
+                vscodium
+                github-desktop
+                neovim
+                hoppscotch
+                rpi-imager
 
-                nnr.jetbrains.idea-ultimate
-                nnr.jetbrains.pycharm-professional
-                nnr.jetbrains.webstorm
-                nnr.jetbrains.datagrip
-                pkgs.jetbrains.rust-rover
-                nnr.jetbrains.clion
-                nnr.jetbrains.goland
-                nnr.jetbrains.gateway
-                nnr.jetbrains.writerside
+                jetbrains.rust-rover
 
-                pkgs.vesktop
-                pkgs.tdesktop
-                pkgs.whatsapp-for-linux
-            ];
+                vesktop
+                tdesktop
+                whatsapp-for-linux
+            ]) ++ (with nnr; [
+                spicetify-cli
+
+                jetbrains.idea-ultimate
+                jetbrains.pycharm-professional
+                jetbrains.webstorm
+                jetbrains.datagrip
+                jetbrains.clion
+                jetbrains.goland
+                jetbrains.gateway
+                jetbrains.writerside
+            ]);
         };
     };
 }

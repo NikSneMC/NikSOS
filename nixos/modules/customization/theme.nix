@@ -7,7 +7,7 @@
     XCURSOR_THEME = "Catppuccin-Mocha-Teal";
     XCURSOR_SIZE = "24";
     HYPRCURSOR_THEME = "Extracted Theme";
-    HYPRCURSOR_SIZE = 24;
+    HYPRCURSOR_SIZE = "24";
   };
   console = {
     earlySetup = true;

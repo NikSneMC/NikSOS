@@ -8,10 +8,10 @@
 
       rust-overlay.url = "github:oxalica/rust-overlay";
 
-      nnr.url = "github:niksnemc/nikspkgs";
+      nikspkgs.url = "github:niksnemc/nikspkgs";
   };
 
-  outputs = { nixpkgs, nixpkgs-stable, rust-overlay, nnr, ... } @ inputs:
+  outputs = { nixpkgs, nixpkgs-stable, rust-overlay, nikspkgs, ... } @ inputs:
   {
     nixosConfigurations = {
       laptop-niksne = nixpkgs.lib.nixosSystem rec {
@@ -23,7 +23,7 @@
             system = system;
             config.allowUnfree = true;
           };
-          nnr = import nnr {
+          npkgs = import nikspkgs {
             system = system;
             config.allowUnfree = true;
             config.allowBroken = true;

@@ -1,4 +1,4 @@
-{ pkgs, nnr, ... }:
+{ pkgs, npkgs, ... }:
 
 {
   # Enable Hyprland
@@ -19,14 +19,14 @@
     jq
     swaylock-effects
     hypridle
-    hyprlock
     wineWowPackages.waylandFull
     hyprpicker
     wezterm
     starship
     wlogout
     pyprland
-  ]) ++ (with nnr; [
+  ]) ++ (with npkgs; [
     hyprcursor
+    hyprlock
   ]);
 }

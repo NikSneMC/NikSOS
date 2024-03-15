@@ -1,4 +1,4 @@
-{ pkgs, nnr, ...}:
+{ pkgs, npkgs, ...}:
 
 {
     # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -30,7 +30,7 @@
                 vesktop
                 tdesktop
                 whatsapp-for-linux
-            ]) ++ (with nnr; [
+            ]) ++ (with npkgs; [
                 spicetify-cli
 
                 jetbrains.idea-ultimate

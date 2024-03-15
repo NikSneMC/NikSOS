@@ -1,3 +1,14 @@
+<div align="center"><img src="neofetch/logo_nixos.png"></div>
+<h1 align="center">NixOS & Hyprland with Catppuccin Mocha Theme Configuration</h1>
+
+<div align="center">
+
+![nixos](https://img.shields.io/badge/NixOS-24273A.svg?style=flat&logo=nixos&logoColor=CAD3F5)
+![nixpkgs](https://img.shields.io/badge/nixpkgs-unstable-informational.svg?style=flat&logo=nixos&logoColor=CAD3F5&colorA=24273A&colorB=8aadf4)
+![hyprland](https://img.shields.io/badge/hyprland-stable-informational.svg?style=flat&logo=wayland&logoColor=eed49f&colorA=24273A&colorB=91d7e3)
+
+</div>
+
 ## Table of Contents
 - [About](#-about)
 - [Showcase](#-showcase)
@@ -6,6 +17,17 @@
 - [Installation](#-installation)
 - [Keybindings](#️-keybindings)
 - [License](#-license)
+
+## 🌟 Showcase
+
+> [!NOTE] 
+> Showcase images may be outdated
+
+![desktop](assets/desktop.png)
+![lot of apps](assets/lot_of_apps.png)
+![some apps](assets/some_apps.png)
+![neofetch](assets/neofetch.png)
+![lockscreen](assets/lockscreen.png)
 
 
 ## 🔧 Components
@@ -27,8 +49,8 @@
 | Editor           | NVChad, VSCodium (themed)            |
 | Night Gamma      | Gammastep                            |
 | Fetch Utility    | Neofetch, Cpufetch                   |
-| File Browser     | Thunar (themed)            |
-| Internet Browser | Vivaldi (themed)            |
+| File Browser     | Thunar (themed)                      |
+| Internet Browser | Vivaldi (themed)                     |
 | Screenshot       | GrimBlast + Slurp                    |
 | Recorder         | Wf-recorder                          |
 | Color Picker     | Hyprpicker                           |
@@ -53,7 +75,7 @@
 3. Run installation script: `curl -fsSL <https://github.com/NikSneMC/NikSOS/raw/main/install.sh> | sh`.
 4. For an even more consistent experience across your apps, you can import Catppuccin theme config files into certain programs through their graphical user interfaces. This includes:
 
- - Websites in your browser (Vivaldi, Firefox):
+ - Websites in your browser (Vivaldi):
    - Install the Stylus Extension from its [official website](https://add0n.com/stylus.html).
    - Open the extension's settings page and navigate to the Backup section.
    - Click "Import" and select the file `stylus-catppuccin.json`.
@@ -67,70 +89,70 @@
 
 ### Windows
 
-| Key Combination            | Action                 |
-|----------------------------|------------------------|
-| SUPER + SHIFT + Q          | Kill active window     |
-| SUPER + F                  | Toggle floating window |
-| F11                        | Toggle full-screen     |
-| SUPER + P                  | Toggle pseudo          |
-| SUPER + J                  | Toggle split           |
-| SUPER + H, J, K, L         | Change window focus    |
-| SUPER + SHIFT + H, J, K, L | Move window            |
-| SUPER + LMB                | Drag window            |
-| SUPER + RMB                | Resize window          |
+| Key Combination                       | Action                 |
+|---------------------------------------|------------------------|
+| F11                                   | Toggle full-screen     |
+| SUPER + F                             | Toggle floating window |
+| SUPER + J                             | Toggle split           |
+| SUPER + P                             | Toggle pseudo          |
+| SUPER + up, down, left, right         | Change window focus    |
+| SUPER + SHIFT + Q                     | Kill active window     |
+| SUPER + SHIFT + up, down, left, right | Move window            |
+
 
 ### Workspaces
 | Key Combination            | Action                                        |
 |----------------------------|-----------------------------------------------|
 | SUPER + 1..0               | Change workspace (numbered)                   |
 | SUPER + F1..F12            | Change workspace (iconed)                     |
+| SUPER + MOUSE_UP           | Go to the previous workspace                  |
+| SUPER + MOUSE_DOWN         | Go to the next workspace                      |
 | SUPER + SHIFT + 1..0       | Move window to workspace and change workspace |
 | SUPER + SHIFT + ALT + 1..0 | Move window to workspace                      |
-| SUPER + MOUSE_DOWN         | Go to the next workspace                      |
-| SUPER + MOUSE_UP           | Go to the previous workspace                  |
 
 ### Utils
 
 | Key Combination | Action                                            |
 |-----------------|---------------------------------------------------|
-| SUPER + R       | Run command (`rofi -run`)                         |
 | SUPER + A       | Open application (`rofi -drun`)                   |
-| SUPER + V       | Open clipboard (`rofi -dmenu`)                    |
-| SUPER + ;       | Open emoji picker (`rofi -dmenu`)                 |
-| SUPER + X       | Open clipboard deletion item menu (`rofi -dmenu`) |
-| SUPER + N       | Open notification list (`swaync-client -t`)       |
-| SUPER + L       | Launch `hyprlock`                                 |
-| SUPER + ESCAPE  | Launch `wlogout`                                  |
-| SUPER + T       | Launch `wezterm`                                  |
-| SUPER + E       | Launch `thunar`                                   |
-| SUPER + D       | Launch `vesktop`                                  |
 | SUPER + B       | Launch `vivaldi`                                  |
+| SUPER + D       | Launch `vesktop`                                  |
+| SUPER + E       | Launch `thunar`                                   |
 | SUPER + G       | Launch `github-desktop`                           |
+| SUPER + L       | Launch `hyprlock`                                 |
+| SUPER + N       | Open notification list (`swaync-client -t`)       |
+| SUPER + R       | Run command (`rofi -run`)                         |
+| SUPER + T       | Launch `wezterm`                                  |
+| SUPER + V       | Open clipboard (`rofi -dmenu`)                    |
+| SUPER + W       | Open window movement item menu using `pyprland`   |
+| SUPER + X       | Open clipboard deletion item menu (`rofi -dmenu`) |
+| SUPER + ;       | Open emoji picker (`rofi -dmenu`)                 |
+| SUPER + ESC     | Launch `wlogout`                                  |
 
 ### Utils with SHIFT modifier
 
 | Key Combination   | Action                                      |
 |-------------------|---------------------------------------------|
-| SUPER + SHIFT + E | Exit from `hyprland`                        |
 | SUPER + SHIFT + A | Open 2fa code menu (`rofi -dmenu`)          |
-| SUPER + SHIFT + F | Open rofi filebrowser (`rofi -filebrowser`) |
 | SUPER + SHIFT + C | Launch color picker (using `hyperpicer`)    |
-| SUPER + SHIFT + S | Take screenshot                             |
-| SUPER + SHIFT + R | Record screen area (MP4)                    |
+| SUPER + SHIFT + E | Exit from `hyprland`                        |
+| SUPER + SHIFT + F | Open rofi filebrowser (`rofi -filebrowser`) |
 | SUPER + SHIFT + G | Record screen area (GIF)                    |
-| SUPER + SHIFT + X | Clear clipboard                             |
 | SUPER + SHIFT + N | Toggle notifications (`swaync-client -d`)   |
-| SUPER + SHIFT + V | Launch `codium`                             |
+| SUPER + SHIFT + R | Record screen area (MP4)                    |
+| SUPER + SHIFT + S | Take screenshot                             |
 | SUPER + SHIFT + T | Launch `telegram-desktop`                   |
+| SUPER + SHIFT + V | Launch `codium`                             |
 | SUPER + SHIFT + W | Launch `whatsapp-for-linux`                 |
+| SUPER + SHIFT + X | Clear clipboard                             |
 
 ### Scratchpads
 
-| Key Combination   | Action                                                     |
-|-------------------|------------------------------------------------------------|
-| SUPER + CTRL + T       | Launch scratchpad with `wezterm` using `pyprland`     |
-| SUPER + CTRL + V       | Launch scratchpad with `pavucontrol` using `pyprland` |
-| SUPER + CTRL + M       | Launch scratchpad with `spotify` using `pyprland`     |
+| Key Combination   | Action                                                |
+|-------------------|-------------------------------------------------------|
+| SUPER + CTRL + M  | Launch scratchpad with `spotify` using `pyprland`     |
+| SUPER + CTRL + T  | Launch scratchpad with `wezterm` using `pyprland`     |
+| SUPER + CTRL + V  | Launch scratchpad with `pavucontrol` using `pyprland` |
 
 
 ### Reload scripts
@@ -138,12 +160,12 @@
 | Key Combination        | Action            |
 |------------------------|-------------------|
 | SUPER + CTRL + ALT + B | Reload `waybar`   |
-| SUPER + CTRL + ALT + W | Reload `swww`     |
 | SUPER + CTRL + ALT + N | Reload `swaync`   |
 | SUPER + CTRL + ALT + P | Reload `pyprland` |
+| SUPER + CTRL + ALT + W | Reload `swww`     |
 
-You can find all other keybindings in `/home/.config/hypr/hyprland.conf` in the bind section. All system fish scripts are located at `/home/.config/fish/functions` directory.
+You can find all other keybindings in `hypr/hyprland.conf` in the bind section. All system fish scripts are located at `fish/functions` directory.
 
 ## 📜 License
 
-This project is licensed under the GNU AGPL License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE) file for details.

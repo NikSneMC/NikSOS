@@ -9,9 +9,9 @@ function autostart
     swww img ~/.config/background & \
     wl-paste --type text --watch cliphist store & \
     wl-paste --type image --watch cliphist store & \
-    fix_apps.fish & \
     hypridle & \
     vesktop & \
     telegram-desktop & \
     whatsapp-for-linux & \
+    fix_apps.fish
 end

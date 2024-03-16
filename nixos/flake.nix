@@ -6,8 +6,6 @@
       nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
       nikspkgs.url = "github:niksnemc/nikspkgs";
 
-      hyprland.url = "github:hyprwm/Hyprland";
-
       rust-overlay.url = "github:oxalica/rust-overlay";
   };
 

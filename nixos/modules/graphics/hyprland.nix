@@ -1,10 +1,11 @@
-{ pkgs, npkgs, ... }:
+{ pkgs, npkgs, inputs, ... }:
 
 {
   # Enable Hyprland
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
+    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
   };
   environment.sessionVariables.WLR_NO_HARDWARE_CURSORS = "1";
 

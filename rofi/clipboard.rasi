@@ -2,7 +2,7 @@ configuration {
   modes: "log:~/.config/rofi/scripts/clipboard.sh,emoji:rofimoji";
   icon-theme: "Numix-Circle";
   show-icons: true;
-  terminal: "foot";
+  terminal: "wezterm";
   drun-display-format: "{icon} {name}";
   location: 4;
   disable-history: false;

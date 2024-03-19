@@ -42,7 +42,8 @@
       },
       "mpris": {
         "image-size": 96,
-        "image-radius": 6
+        "image-radius": 6,
+        "blur": false
       },
       "backlight": {
         "label": "󰃞",

@@ -260,17 +260,17 @@ trough {
 }
 
 .widget-dnd > switch:checked {
-  background: #313244;
+  background: #94E2D5;
+  color: #11111B;
 }
 
 .widget-dnd > switch slider {
   background: #45475a;
   border-radius: 8px;
   border: 1px solid #6c7086;
-}
+} 
 
 .widget-mpris {
-  background: none;
 }
 
 .widget-mpris-player {
@@ -291,16 +291,16 @@ trough {
 
 .widget-volume {
   background-color: #45475a;
-  padding: 4px 8px 8px 8px;
-  margin: 0px 8px 8px 8px;
-  border-bottom-left-radius: 12px;
-  border-bottom-right-radius: 12px;
+  padding: 8px 8px 4px 8px;
+  margin: 8px 8px 0px 8px;
+  border-top-left-radius: 12.6px;
+  border-top-right-radius: 12.6px;
 }
 
 .widget-backlight {
-  background-color: @#45475a;
-  padding: 8px 8px 4px 8px;
-  margin: 8px 8px 0px 8px;
-  border-top-left-radius: 12px;
-  border-top-right-radius: 12px;
+  background-color: #45475a;
+  padding: 4px 8px 8px 8px;
+  margin: 0px 8px 8px 8px;
+  border-bottom-left-radius: 12.6px;
+  border-bottom-right-radius: 12.6px;
 }

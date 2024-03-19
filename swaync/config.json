@@ -27,8 +27,6 @@
         "title",
         "dnd",
         "notifications",
-        "volume",
-        "backlight",
         "mpris"
     ],
     "widget-config": {
@@ -44,14 +42,6 @@
         "image-size": 96,
         "image-radius": 6,
         "blur": false
-      },
-      "backlight": {
-        "label": "󰃞",
-        "device": "acpi_video0",
-        "min": 10
-      },
-      "volume": {
-        "label": ""
       }
     }
   }

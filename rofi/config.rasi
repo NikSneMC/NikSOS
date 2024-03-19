@@ -2,7 +2,7 @@ configuration {
   modes: "run,drun,filebrowser,2fa:~/.config/rofi/scripts/2fa.sh";
   icon-theme: "Numix-Circle";
   show-icons: true;
-  terminal: "foot";
+  terminal: "wezterm";
   drun-display-format: "{icon} {name}";
   location: 4;
   disable-history: false;

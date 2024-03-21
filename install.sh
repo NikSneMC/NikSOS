@@ -107,4 +107,6 @@ echo "{ pkgs, npkgs, ...}:
     };
 }" >> ~/.config/nixos/modules/users.nix
 
+git add *
+
 sudo nixos-rebuild switch --flake ~/.config/nixos#$HOSTNAME && systemctl reboot

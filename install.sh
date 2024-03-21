@@ -19,23 +19,23 @@ echo "{
 
 rm -rf ~/.config/nixos/flake.nix
 echo "{
-  description = "NiKSne's NixOS Configuration";
+  description = \"NiKSne's NixOS Configuration\";
 
   inputs = {
-      nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+      nixpkgs.url = \"github:NixOS/nixpkgs/nixos-unstable\";
 
-      nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
+      nixpkgs-stable.url = \"github:NixOS/nixpkgs/nixos-23.11\";
 
-      rust-overlay.url = "github:oxalica/rust-overlay";
+      rust-overlay.url = \"github:oxalica/rust-overlay\";
 
-      nnr.url = "github:niksnemc/nixpkgs";
+      nikspkgs.url = \"github:niksnemc/nikspkgs\";
   };
 
-  outputs = { nixpkgs, nixpkgs-stable, rust-overlay, nnr, ... } @ inputs:
+  outputs = { nixpkgs, nixpkgs-stable, rust-overlay, nikspkgs, ... } @ inputs:
   {
     nixosConfigurations = {
       $HOSTNAME = nixpkgs.lib.nixosSystem rec {
-        system = "x86_64-linux";
+        system = \"x86_64-linux\";
 
         specialArgs = { 
           inherit inputs; 
@@ -43,7 +43,7 @@ echo "{
             system = system;
             config.allowUnfree = true;
           };
-          nnr = import nnr {
+          npkgs = import nikspkgs {
             system = system;
             config.allowUnfree = true;
             config.allowBroken = true;
@@ -59,16 +59,16 @@ echo "{
 }" >> ~/.config/nixos/flake.nix
 
 rm -rf ~/.config/nixos/modules/users.nix
-echo "{ pkgs, nnr, ...}:
+read -p "Enter username: " USERNAME 
+echo "{ pkgs, npkgs, ...}:
 
-read -p "Enter username: " USERNAME
 {
     # Define a user account. Don't forget to set a password with ‘passwd’.
     users.users = {
         $USERNAME = {
             isNormalUser = true;
-            description = "$USERNAME";
-            extraGroups = [ "networkmanager" "wheel" "audio" "video" "docker"];
+            description = \"$USERNAME\";
+            extraGroups = [ \"networkmanager\" \"wheel\" \"audio\" \"video\" \"docker\"];
 	        shell = pkgs.fish;
             packages = [
                 pkgs.authy

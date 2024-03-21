@@ -2,7 +2,7 @@
   description = "NiKSne's NixOS Configuration";
 
   inputs = {
-      nixpkgs.url = "github:NixOS/nixpkgs/master";
+      nixpkgs.url = "github:NixOS/nixpkgs";
       nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-23.11";
       nikspkgs.url = "github:niksnemc/nikspkgs";
 

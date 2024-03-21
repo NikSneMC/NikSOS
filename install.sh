@@ -72,10 +72,8 @@ echo "{ pkgs, npkgs, ...}:
             extraGroups = [ \"networkmanager\" \"wheel\" \"audio\" \"video\" \"docker\"];
 	        shell = pkgs.fish;
             packages = [
-                pkgs.authy
                 pkgs.vivaldi
                 pkgs.vivaldi-ffmpeg-codecs
-                pkgs.firefox
                 
                 pkgs.obs-studio
                 pkgs.obs-studio-plugins.wlrobs

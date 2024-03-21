@@ -90,15 +90,15 @@ echo "{ pkgs, npkgs, ...}:
                 pkgs.hoppscotch
                 pkgs.rpi-imager
 
-                nnr.jetbrains.idea-ultimate
-                nnr.jetbrains.pycharm-professional
-                nnr.jetbrains.webstorm
-                nnr.jetbrains.datagrip
+                npkgs.jetbrains.idea-ultimate
+                npkgs.jetbrains.pycharm-professional
+                npkgs.jetbrains.webstorm
+                npkgs.jetbrains.datagrip
                 pkgs.jetbrains.rust-rover
-                nnr.jetbrains.clion
-                nnr.jetbrains.goland
-                nnr.jetbrains.gateway
-                # nnr.jetbrains.writerside
+                npkgs.jetbrains.clion
+                npkgs.jetbrains.goland
+                npkgs.jetbrains.gateway
+                npkgs.jetbrains.writerside
 
                 pkgs.vesktop
                 pkgs.tdesktop

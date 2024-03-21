@@ -3,6 +3,7 @@
 git clone https://github.com/NikSneMC/NikSOS.git ~/.config/
 
 read -p "Enter device name: " HOST
+rm -rf ~/.config/nixos/hosts/$HOST
 mkdir ~/.config/nixos/hosts/$HOST
 sudo nixos-generate-config
 sudo cat /etc/nixos/hardware-configuration.nix >> ~/.config/nixos/hosts/$HOST/hardware-configuration.nix

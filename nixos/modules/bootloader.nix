@@ -26,6 +26,4 @@
             font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
             extraConfig = "Theme=catppuccin-mocha";
         };
-        resumeDevice = "/dev/disk/by-uuid/1123779f-69fb-4a4a-b9ce-3fdcec8cf632";
-    };
 }

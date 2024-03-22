@@ -9,6 +9,9 @@
 
 </div>
 
+> [!WARNING] 
+> There may be lot of bugs because It's tested only on my laptop
+
 ## Table of Contents
 - [About](#-about)
 - [Showcase](#-showcase)

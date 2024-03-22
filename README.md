@@ -10,7 +10,7 @@
 </div>
 
 > [!WARNING] 
-> There may be lot of bugs because It's tested only on my laptop
+> There may be lot of bugs because it's tested only on my laptop
 
 ## Table of Contents
 - [About](#-about)

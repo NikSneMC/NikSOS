@@ -26,4 +26,5 @@
             font = "${pkgs.jetbrains-mono}/share/fonts/truetype/JetBrainsMono-Regular.ttf";
             extraConfig = "Theme=catppuccin-mocha";
         };
+    };
 }

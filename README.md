@@ -93,9 +93,10 @@
 ```
 7. edit your hostname in `~/.config/nixos/flake.nix` (change it from `laptop-niksne` to your and change module from `./hosts/hp` to `./hosts/<machine name>`)
 8. edit user in `~/.config/nixos/modules/user.nix` (change username, remove some my packages, add your ones etc.)
-9. add changes to git (`git add *`)
-10. finally rebuild your system (`sudo nixos-rebuild switch --flake ~/.config/nixos#<hostname>`)
-11. reboot your system (`systemctl reboot`)
+9. edit your timezone in `~/.config/nixos/modules/time.nix`
+10. add changes to git (`git add *`)
+11. finally rebuild your system (`sudo nixos-rebuild switch --flake ~/.config/nixos#<hostname>`)
+12. reboot your system (`systemctl reboot`)
 
 For an even more consistent experience across your apps, you can import Catppuccin theme config files into certain programs through their graphical user interfaces. This includes:
 

@@ -74,9 +74,30 @@
 ## 🚀 Installation
 
 1. Download and Install NixOS from the [official site](https://nixos.org/download) (I reccomend installation without graphics).
-2. Temporarily enable flakes and install git and curl using the command: `nix-shell --experimental-features 'nix-command flakes' -p git wget`.
+2. Temporarily enable flakes and install git and wget using the command: `nix-shell --experimental-features 'nix-command flakes' -p git wget`.
+### Auto installation (may not work)
 3. Run installation script: `wget -O - https://raw.githubusercontent.com/niksnemc/niksos/main/install.sh | bash`.
-4. For an even more consistent experience across your apps, you can import Catppuccin theme config files into certain programs through their graphical user interfaces. This includes:
+### Manual installation
+3. clone this repo to `~/.config` (`git clone https://github.xom/niksnemc/niksos ~/.config`)
+4. create your machine's dir in `~/.config/nixos/hosts` (`mkdir ~/.config/nixos/hosts/<machine name>`)
+5. generate hardware for your machine (`nixos-generate-config --show-hardware-config >> ~/.config/nixos/hosts/<machine name>/hardware-configuration.nix`)
+6. write this to `~/.config/nixos/hosts/<machie name>/default.nix`:
+```nix
+{
+    imports = [
+        ./hardware-configuration.nix
+        ../../modules
+    ];
+    networking.hostName = "<hostname>"; # Define your hostname.
+}
+```
+7. edit your hostname in `~/.config/nixos/flake.nix` (change it from `laptop-niksne` to your and change module from `./hosts/hp` to `./hosts/<machine name>`)
+8. edit user in `~/.config/nixos/modules/user.nix` (change username, remove some my packages, add your ones etc.)
+9. add changes to git (`git add *`)
+10. finally rebuild your system (`sudo nixos-rebuild switch --flake ~/.config/nixos#<hostname>`)
+11. reboot your system (`systemctl reboot`)
+
+For an even more consistent experience across your apps, you can import Catppuccin theme config files into certain programs through their graphical user interfaces. This includes:
 
  - Websites in your browser (Vivaldi):
    - Install the Stylus Extension from its [official website](https://add0n.com/stylus.html).

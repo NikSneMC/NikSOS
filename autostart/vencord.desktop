@@ -1,8 +1,0 @@
-[Desktop Entry]
-Type=Application
-Version=1.0
-Name=Vencord
-Comment=Vencord autostart script
-Exec=/nix/store/9sg42xy7dqhd1b67cj9sykadkwpylv9v-electron-unwrapped-28.2.2/libexec/electron/electron
-Terminal=false
-StartupNotify=false

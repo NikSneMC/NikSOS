@@ -62,6 +62,12 @@ in {
 
     userEmail = "commits@niksne.ru";
     userName = "NikSne";
+
+    extraConfig = {
+      safe.directory = [
+        "/etc/nixos"
+      ];
+    };
   };
   xdg.configFile."git/allowed_signers".text = ''
     ${cfg.userEmail} namespaces="git" ${key}

@@ -17,10 +17,10 @@
       projects = "cd ~/Projects";
       nfu = "nixos && nix flake update";
       nfuc = "nixos && nix flake lock --update-input"; 
-      nrs = "nh os switch -a";
+      nrs = "nh os switch -a path:/etc/nixos";
       nrsr = "nrs && systemctl reboot";
       nrss = "nrs && systemctl poweroff";
-      nrsu = "nh os boot -a -u";
+      nrsu = "nh os boot -a -u path:/etc/nixos";
       nrsur = "nrsu && systemctl reboot";
       nrsus = "nrsu && systemctl poweroff";
       nsgc = "sudo nix-store --gc";

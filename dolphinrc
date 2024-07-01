@@ -1,9 +1,0 @@
-[General]
-Version=202
-ViewPropsTimestamp=2024,1,6,23,51,46.085
-
-[KPropertiesDialog]
-2 screens: Window-Maximized=true
-
-[MainWindow]
-ToolBarsMovable=Disabled

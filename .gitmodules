@@ -1,0 +1,3 @@
+[submodule "hosts/table-niksne/servers"]
+	path = hosts/table-niksne/servers
+	url = https://github.com/NikSneMC/NikSOS-servers.git

@@ -11,13 +11,12 @@
 
   programs.spicetify = let
     spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
-    variant = "mocha";
   in {
     enable = true;
 
     theme = spicePkgs.themes.catppuccin;
 
-    colorScheme = variant;
+    colorScheme = config.theme.flavor;
 
     enabledExtensions = with spicePkgs.extensions; [
 

@@ -21,8 +21,6 @@
 
   networking.hostName = "table-niksne";
 
-  services.squid.enable = true;
-
   console.catppuccin.enable = true;
 
   nix.settings = {

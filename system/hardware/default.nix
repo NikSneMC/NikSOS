@@ -1,7 +1,0 @@
-{
-  ...
-}: {
- imports = [
-  # ./opengl.nix
- ];
-}

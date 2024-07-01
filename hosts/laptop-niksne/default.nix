@@ -7,6 +7,7 @@
   imports = [
     ./disks.nix
     ./hardware-configuration.nix
+    ../../system/hardware/nvidia.nix
   ];
 
   boot.loader = {

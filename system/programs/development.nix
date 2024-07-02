@@ -24,6 +24,7 @@
       python312Full
 
       bun
+      nodejs_22
       nodePackages.pnpm
       sass
       
@@ -41,6 +42,7 @@
       PYTHON312_PATH = "${pkgs.python312}/";
 
       BUN_PATH = "${pkgs.bun}/";
+      NODE_PATH = "${pkgs.nodejs_22}/";
 
       GCC_PATH = "${pkgs.libgcc}/";
     };

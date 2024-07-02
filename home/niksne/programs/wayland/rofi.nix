@@ -229,6 +229,11 @@
     };
   };
 in {
+  home.packages = with pkgs; [
+    rofimoji
+    oath-toolkit
+  ];
+  
   programs.rofi = {
     enable = true;
     catppuccin.enable = false;

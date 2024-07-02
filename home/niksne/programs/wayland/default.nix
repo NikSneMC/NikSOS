@@ -25,10 +25,6 @@
     wtype
     wl-screenrec
     wlr-randr
-
-    # rofi
-    rofimoji
-    oath-toolkit
   ];
 
   # make stuff work on wayland

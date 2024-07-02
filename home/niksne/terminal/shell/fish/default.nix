@@ -29,6 +29,8 @@
       unlock = "pkill -USR1 hyprlock";
       nixbtw = "fastfetch";
       nixvim = "nvim";
+      npm = "pnpm";
+      npx = "pnpx";
     };
     shellInit = ''
       set -gx EDITOR codium

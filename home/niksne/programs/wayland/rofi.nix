@@ -260,7 +260,7 @@ in {
 
   xdg.configFile."rofimoji.rc".text = ''
     action = copy
-    files = [emoji, arrows, block_elements, box_drawing, currency_symbols, gitmoji, hiragana, katakana, math, mathematical_operators,]
+    files = [emoji, arrows, block_elements, box_drawing, currency_symbols, gitmoji, hiragana, katakana, math, mathematical_operators]
     skin-tone = neutral
     max-recent = 0
     use-icons = true

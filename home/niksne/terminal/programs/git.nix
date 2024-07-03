@@ -20,6 +20,8 @@ in {
       catppuccin.enable = true;
     };
 
+    credential.helper = "store";
+
     extraConfig = {
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";

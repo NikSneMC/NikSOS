@@ -12,7 +12,6 @@
         "networkmanager"
         "video"
         "wheel" 
-        "minecraft"
       ];
     };
   };

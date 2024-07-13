@@ -15,9 +15,5 @@
         "minecraft"
       ];
     };
-    udalex = {
-      isNormalUser = true;
-      description = "Alex Udaltsov";
-    };
   };
 }

@@ -1,9 +1,9 @@
 {
   disko.devices = {
     disk = {
-      nvme0n1 = {
+      sda1 = {
         type = "disk";
-        device = "/dev/nvme0n1";
+        device = "/dev/sda1";
         content = {
           type = "gpt";
           partitions = {
@@ -39,7 +39,7 @@
                   "/swap" = {
                     mountpoint = "/.swapvol";
                     swap = {
-                      swapfile.size = "34G";
+                      swapfile.size = "32G";
                     };
                   };
                 };
@@ -47,7 +47,7 @@
                 mountpoint = "/";
                 swap = {
                   swapfile = {
-                    size = "34G";
+                    size = "32G";
                   };
                 };
               };

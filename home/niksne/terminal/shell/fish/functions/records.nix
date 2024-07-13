@@ -14,7 +14,7 @@
 
       if pgrep $target_process > /dev/null
           pkill -9 $target_process
-          cb cp ~/Pictures/Records/(cd ~/Pictures/Records && ls -tA | head -n1 | awk '{print $NF}')
+          wl-copy < ~/Pictures/Records/(cd ~/Pictures/Records && ls -tA | head -n1 | awk '{print $NF}')
 
           notify-send -i ~/.config/swaync/icons/camera_gif_icon.png -r $(cd ~/Pictures/Records/ && ls -1 | wc -l) "Recording Stopped 󰙧 (GIF)" -t 2000
       else
@@ -31,7 +31,7 @@
 
       if pgrep $target_process > /dev/null
           pkill -9 $target_process
-          cb cp ~/Videos/Records/(cd ~/Videos/Records && ls -tA | head -n1 | awk '{print $NF}')
+          wl-copy < ~/Videos/Records/(cd ~/Videos/Records && ls -tA | head -n1 | awk '{print $NF}')
           notify-send -i ~/.config/swaync/icons/camera_mp4_icon.png -r $(cd ~/Videos/Records/ && ls -1 | wc -l) "Recording Stopped 󰙧 (MP4)" -t 2000
       else
           set geometry (slurp)

@@ -19,6 +19,7 @@
     jaq
     ripgrep
     nix-prefetch-github
+    wf-recorder
 
     packwiz
   ];

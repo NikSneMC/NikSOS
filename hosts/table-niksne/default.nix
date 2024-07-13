@@ -1,7 +1,4 @@
 {
-  pkgs,
-  self,
-  lib,
   ...
 }: {
   imports = [

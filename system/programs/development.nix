@@ -37,9 +37,11 @@
       JAVA_11_HOME = "${pkgs.zulu11}/";
       JAVA_17_HOME = "${pkgs.zulu17}/";
       JAVA_21_HOME = "${pkgs.zulu21}/";
+      JAVA_HOME = "${pkgs.zulu17}/";
 
       PYTHON311_PATH = "${pkgs.python311}/";
       PYTHON312_PATH = "${pkgs.python312}/";
+      PYTHON_PATH = "${pkgs.python311}/";
 
       BUN_PATH = "${pkgs.bun}/";
       NODE_PATH = "${pkgs.nodejs_22}/";

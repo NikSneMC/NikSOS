@@ -20,7 +20,7 @@ in {
       catppuccin.enable = true;
     };
 
-    credential.helper = "store";
+    extraConfig.credential.helper = "store";
 
     extraConfig = {
       diff.colorMoved = "default";

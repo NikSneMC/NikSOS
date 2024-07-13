@@ -8,7 +8,7 @@
     ./disks.nix
     ./hardware-configuration.nix
     ./servers
-    ../../system/hardware/nvidia.nix
+    # ../../system/hardware/nvidia.nix
   ];
 
   boot.loader = {

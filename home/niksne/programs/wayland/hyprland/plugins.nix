@@ -7,7 +7,7 @@
   wayland.windowManager.hyprland = {
     plugins = (with inputs.hyprland-plugins.packages.${pkgs.system}; [
       hyprexpo
-      hyprtrails
+      # hyprtrails
     ]);
 
     settings.plugin = {

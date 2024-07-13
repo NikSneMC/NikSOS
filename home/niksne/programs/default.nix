@@ -18,7 +18,7 @@
   programs.java = {
     enable = true;
     package = pkgs.zulu17;
-  };
+  }; 
 
   home.packages = with inputs; [
     catppuccin-whiskers.packages.${pkgs.system}.whiskers
@@ -27,7 +27,6 @@
     gnome.file-roller
     swww
     
-
     qbittorrent
     tmux
     gparted

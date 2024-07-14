@@ -1,6 +1,6 @@
 {
   inputs,
-  pkgs,
+  npkgs,
   ...
 }: let
   vmopts = ''
@@ -8,14 +8,14 @@
   --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
   --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
   '';
-  ides = with pkgs.jetbrains; [
+  ides = with npkgs.jetbrains; [
     (idea-ultimate.override { inherit vmopts; })
     (pycharm-professional.override { inherit vmopts; })
     (webstorm.override { inherit vmopts; })
     (rust-rover.override { inherit vmopts; })
     (goland.override { inherit vmopts; })
     (phpstorm.override { inherit vmopts; })
-    # clion
+    (clion.override { inherit vmopts; })
   ];
 in {
   programs.jetbrains-remote = {

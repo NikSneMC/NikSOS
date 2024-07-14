@@ -5,7 +5,10 @@
 }: {
   home.packages = with pkgs; [
     vesktop
-    discord
+    (pkgs.discord.override {
+      withOpenASAR = true;
+      withVencord = true;
+    })
   ];
 
   xdg.configFile."vesktop/settings/quickCss.css".text = ''

@@ -57,6 +57,7 @@ in {
       "${mod}, SEMICOLON, Open emoji menu, exec, fish -c clipboard_emoji"
 
       "${mod} SHIFT, A, Open 2fa menu, exec, rofi -show 2fa"
+      "${mod} SHIFT, B, Launch Blockbench, exec, blockbench"
       "${mod} SHIFT, C, Launch color picker, exec, fish -c select_color"
       "${mod} SHIFT, F, Open file browser menu, exec, rofi -show filebrowser"
       "${mod} SHIFT, G, Start screen recording (GIF), exec, fish -c record_screen_gif"

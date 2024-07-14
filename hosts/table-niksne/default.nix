@@ -6,6 +6,7 @@
     ./hardware-configuration.nix
     ./servers
     # ../../system/hardware/nvidia.nix
+    ../../system/hardware/amd.nix
   ];
 
   boot.loader = {

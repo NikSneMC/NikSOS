@@ -24,7 +24,7 @@
     catppuccin-whiskers.packages.${pkgs.system}.whiskers
     catppuccin-catwalk.packages.${pkgs.system}.catwalk
   ] ++ (with pkgs; [
-    gnome.file-roller
+    file-roller
     swww
     
     qbittorrent

@@ -7,7 +7,7 @@
     ./gnome-services.nix
     ./location.nix
     ./pipewire.nix
-    ./printing.nix
+    # ./printing.nix
     ./sddm.nix
   ];
 

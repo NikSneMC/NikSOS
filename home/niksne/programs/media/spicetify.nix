@@ -12,7 +12,11 @@
   programs.spicetify = let
     spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
   in {
-    enable = true;
+    enable = false;
+
+    extraCommands = ''
+      touch $out/snap.yml
+    '';
 
     theme = spicePkgs.themes.catppuccin;
 
@@ -21,5 +25,6 @@
     enabledExtensions = with spicePkgs.extensions; [
 
     ];
+    
   };
 }

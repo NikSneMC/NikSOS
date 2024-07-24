@@ -3,7 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs";
-    nikspkgs.url = "github:NikSneMC/NikSpkgs/fix-webstorm-vmoptions";
+    nikspkgs.url = "github:NikSneMC/NikSpkgs";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     flake-parts = {
@@ -41,7 +41,7 @@
 
     catppuccin.url = "github:NikSneMC/catppuccin-nix";
 
-    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
+    nix-minecraft.url = "github:NiKSneMC/nix-minecraft";
 
     ags = {
       url = "github:Aylur/ags";

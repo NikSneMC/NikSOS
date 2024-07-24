@@ -6,7 +6,7 @@
     env = [
       "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
       "XDG_SESSION_TYPE, wayland"
-      "WLR_RENDERER_ALLOW_SOFTWARE, 1"
+      # "WLR_RENDERER_ALLOW_SOFTWARE, 1"
     ];
 
     exec-once = [

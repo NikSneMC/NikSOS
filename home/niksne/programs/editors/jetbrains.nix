@@ -4,9 +4,10 @@
   ...
 }: let
   vmopts = ''
-  -javaagent:${inputs.self.packages.${pkgs.system}.ja-netfilter}/ja-netfilter.jar=jetbrains
   --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
   --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+
+  -javaagent:${inputs.self.packages.${npkgs.system}.ja-netfilter}/ja-netfilter.jar=jetbrains
   '';
   ides = with npkgs.jetbrains; [
     (idea-ultimate.override { inherit vmopts; })
@@ -22,8 +23,8 @@ in {
     enable = true;
     inherit ides;
   };
-  home.packages = ((with pkgs.jetbrains; [
+  home.packages = ((with npkgs.jetbrains; [
     # gateway
     (writerside.override { inherit vmopts; })
-  ]) ++ ides ++ [ inputs.self.packages.${pkgs.system}.ja-netfilter ]);
+  ]) ++ ides ++ [ inputs.self.packages.${npkgs.system}.ja-netfilter ]);
 }

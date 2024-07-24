@@ -54,7 +54,7 @@ in {
 
       # Minecraft
       "workspace 21, class:^(com.mojang.minecraft)$"
-      "tile, class:^(Minecraft*)$"
+      "tile, class:^(Minecraft.*)$"
       "workspace 21, class:^(Minecraft.*)$"
 
 

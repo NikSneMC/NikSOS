@@ -2,14 +2,13 @@
   lib,
   stdenvNoCC,
   fetchzip,
-  unzip
 }: stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "ja-netfilter";
-  version = "240218";
+  version = "240701";
 
   src = fetchzip {
-    url = "https://hardbin.com/ipfs/bafybeiawsvnhqx5o2aqa37pvq7brlk7vqj2cpty3b5xac655bxbpqbpkq4/files/jetbra-ded4f9dc4fcb60294b21669dafa90330f2713ce4.zip";
-    hash = "sha256-phc/zFduUOHEA3s3BqfcBeBfKGY2Tc6G/JndeEXz8ms=";
+    url = "https://ipfs.io/ipfs/bafybeih65no5dklpqfe346wyeiak6wzemv5d7z2ya7nssdgwdz4xrmdu6i/files/jetbra-8f6785eac5e6e7e8b20e6174dd28bb19d8da7550.zip";
+    hash = "sha256-FvjwrmRE9xXkDIIkOyxVEFdycYa/t2Z0EgBueV+26BQ=";
   };
 
   dontBuild = true;
@@ -21,6 +20,8 @@
     mkdir -p $out
 
     cp ja-netfilter.jar $out
+    cp -r config-jetbrains $out
+    cp -r plugins-jetbrains $out
 
     runHook postInstall
   '';

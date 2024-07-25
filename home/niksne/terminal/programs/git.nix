@@ -67,7 +67,7 @@ in {
 
     extraConfig = {
       safe.directory = [
-        "/etc/nixos"
+        "*"
       ];
     };
   };

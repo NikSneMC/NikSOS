@@ -20,7 +20,6 @@
       zulu17
       zulu21
       
-      python311Full
       python312Full
 
       bun
@@ -38,9 +37,7 @@
       JAVA_21_HOME = "${pkgs.zulu21}/";
       JAVA_HOME = "${pkgs.zulu21}/";
 
-      PYTHON311_PATH = "${pkgs.python311}/";
-      PYTHON312_PATH = "${pkgs.python312}/";
-      PYTHON_PATH = "${pkgs.python311}/";
+      PYTHON_PATH = "${pkgs.python312Full}/";
 
       BUN_PATH = "${pkgs.bun}/";
       NODE_PATH = "${pkgs.nodejs_22}/";

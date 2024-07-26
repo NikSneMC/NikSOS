@@ -17,7 +17,6 @@
   environment = {
     systemPackages = with pkgs; [
       zulu8
-      zulu11
       zulu21
       
       python311Full
@@ -34,7 +33,6 @@
     ];
     variables = {
       JAVA_8_HOME = "${pkgs.zulu8}/";
-      JAVA_11_HOME = "${pkgs.zulu11}/";
       JAVA_17_HOME = "${pkgs.zulu17}/";
       JAVA_21_HOME = "${pkgs.zulu21}/";
       JAVA_HOME = "${pkgs.zulu17}/";

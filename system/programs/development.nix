@@ -5,7 +5,7 @@
   programs = {
     java = {
       enable = true;
-      package = pkgs.zulu17;
+      package = pkgs.zulu21;
     };
     direnv = {
       nix-direnv.enable = true;
@@ -17,6 +17,7 @@
   environment = {
     systemPackages = with pkgs; [
       zulu8
+      zulu17
       zulu21
       
       python311Full

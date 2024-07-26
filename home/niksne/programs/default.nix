@@ -17,7 +17,7 @@
 
   programs.java = {
     enable = true;
-    package = pkgs.zulu17;
+    package = pkgs.zulu21;
   }; 
 
   home.packages = with inputs; [

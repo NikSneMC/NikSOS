@@ -17,6 +17,7 @@
 
     # images
     loupe
+    imagemagick
 
     # videos
     celluloid

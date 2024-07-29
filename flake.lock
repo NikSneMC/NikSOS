@@ -1106,11 +1106,11 @@
         "nixpkgs": "nixpkgs_10"
       },
       "locked": {
-        "lastModified": 1721932018,
-        "narHash": "sha256-CjqXhZ7kiw2Q2aS05ROmCwBiO7FNuqKfP81VSbUU65E=",
+        "lastModified": 1722262273,
+        "narHash": "sha256-yjD/h6Wk3eitdUTv3z8lzE+ky8xdZIiKl2mw4C8t4hw=",
         "owner": "NiKSneMC",
         "repo": "nix-python",
-        "rev": "919e360d0fe954da3f16e95c1cef9f49d8e21496",
+        "rev": "261a80296e5161936d017ae97a5bda5eb96c1b60",
         "type": "github"
       },
       "original": {

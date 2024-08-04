@@ -1,5 +1,4 @@
 {
-  lib,
   stdenvNoCC,
   fetchzip,
 }: stdenvNoCC.mkDerivation (finalAttrs: {
@@ -30,6 +29,5 @@
   meta = {
     description = "Jetbrains IDEs crack";
     homepage = "https://3.jetbra.in";
-    platforms = lib.platforms.linux;
   };
 })

@@ -1,5 +1,7 @@
 {
   lib,
+  inputs,
+  pkgs,
   ...
 }:{
   networking.networkmanager = {
@@ -15,4 +17,8 @@
 
     resolved.enable = true;
   };
+
+  environment.systemPackages = [ 
+    inputs.self.packages.${pkgs.system}.spoofDPI
+  ];
 }

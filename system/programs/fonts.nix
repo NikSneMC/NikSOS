@@ -1,12 +1,23 @@
-{pkgs, ...}: {
+{
+  pkgs, 
+  ...
+}: {
   fonts = {
-    packages = with pkgs; [
+    fonts = with pkgs; [
       corefonts
-      (nerdfonts.override {fonts = ["JetBrainsMono"];})
+      noto-fonts
+      noto-fonts-cjk
+      noto-fonts-emoji
+      (nerdfonts.override {fonts = [ "JetBrainsMono" "Noto" ];})
     ];
 
+    enableDefaultPackages = false;
+
     fontconfig.defaultFonts = {
-      monospace = ["JetBrainsMono Nerd Font"];
+      serif = [ "Noto Serif" ];
+      sansSerif = [ "Noto Sans" ];
+      monospace = [ "JetBrainsMono Nerd Font" ];
+      emoji = [ "" ];
     };
   };
 }

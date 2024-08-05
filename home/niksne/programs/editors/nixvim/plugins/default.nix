@@ -31,7 +31,7 @@
       toggleterm = {
         enable = true;
         settings = {
-          open_mapping = "[[<leader>t]]";
+          open_mapping = "[[<C-t>]]";
           hide_numbers = true;
         };
       };

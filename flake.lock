@@ -1044,11 +1044,11 @@
     },
     "nikspkgs": {
       "locked": {
-        "lastModified": 1722885693,
-        "narHash": "sha256-ANMQnKZANKvhVuJTUWAubEbF3fIYYn9s/U1DVqCjaLc=",
+        "lastModified": 1722887624,
+        "narHash": "sha256-wfMlQ4OEheHDA2lb+pPC43EvTC5sEJA2Nv7OwEDXDzo=",
         "owner": "NikSneMC",
         "repo": "NikSpkgs",
-        "rev": "3183c2b7d5b40e42220df95cf2e56b30798f19cd",
+        "rev": "25893c61dad54534f854a2cccc046e13c310c444",
         "type": "github"
       },
       "original": {

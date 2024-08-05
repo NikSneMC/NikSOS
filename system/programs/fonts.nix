@@ -3,7 +3,7 @@
   ...
 }: {
   fonts = {
-    fonts = with pkgs; [
+    packages = with pkgs; [
       corefonts
       noto-fonts
       noto-fonts-cjk

@@ -16,7 +16,10 @@
       nvim-autopairs.enable = true;
       lualine.enable = true;
       gitsigns.enable = true;
-      neo-tree.enable = true;
+      neo-tree = {
+        enable = true;
+        filesystem.filteredItems.visible = true;
+      };
       indent-blankline.enable = true;
       treesitter.enable = true;
       telescope.enable = true;

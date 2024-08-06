@@ -25,7 +25,7 @@
         width = 35;
       };
       display = {
-        separator = " ⏐ ";
+        separator = " │ ";
       };
       modules = [
         "title"

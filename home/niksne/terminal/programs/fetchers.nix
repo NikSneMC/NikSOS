@@ -24,206 +24,210 @@
           };
         width = 35;
       };
+      display = {
+        separator = " ⏐ ";
+      };
       modules = [
         "title"
-        "separator"
         {
-          type = "os";
-          key = " OS";
-          keyColor = "red";
+          type = "separator";
+          string = "─";
+        }
+        {
           format = "{3} {12}";
+          key = "╭─ OS           ";
+          keyColor = "red";
+          type = "os";
         }
         {
+          key = "├─󰌢 Host         ";
+          keyColor = "red";
           type = "host";
-          key = "󰌢 Host";
-          keyColor = "green";
         }
         {
+          key = "├─ Kernel       ";
+          keyColor = "yellow";
           type = "kernel";
-          key = " Kernel";
-          keyColor = "yellow";
         }
         {
+          key = "├─↑ Uptime       ";
+          keyColor = "blue";
           type = "uptime";
-          key = "↑ Uptime";
-          keyColor = "blue";
         }
         {
-          type = "shell";
-          key = " Shell";
-          keyColor = "magenta";
           format = "{6} {4}";
-        }
-        {
-          type = "packages";
-          key = " Packages";
-          keyColor = "cyan";
-        }
-        {
-          type = "locale";
-          key = " Locale";
-          keyColor = "white";
-        }
-        {
-          type = "de";
-          key = "󰨇 DE";
-          keyColor = "red";
-        }
-        {
-          type = "wm";
-          key = " WM";
-          keyColor = "green";
-        }
-        {
-          type = "terminal";
-          key = " Terminal";
-          keyColor = "yellow";
-        }
-        "break"
-        {
-          type = "cpu";
-          key = " CPU";
-          keyColor = "blue";
-          temp = true;
-        }
-        {
-          type = "board";
-          key = "󰚗 Board";
+          key = "├─ Shell        ";
           keyColor = "magenta";
-          format = "{2} {1} ({3})";
+          type = "shell";
         }
         {
-          type = "bios";
-          key = " BIOS";
+          key = "├─ Packages     ";
           keyColor = "cyan";
-          format = "{3} {5} {2} ({1})";
+          type = "packages";
         }
         {
-          type = "memory";
-          key = " Memory";
+          key = "├─ Locale       ";
           keyColor = "white";
-          percent = {
-            green = 50;
-            yellow = 80;
-          };
+          type = "locale";
         }
         {
-          type = "swap";
-          key = " Swap";
+          key = "├─󰨇 DE           ";
           keyColor = "red";
+          type = "de";
+        }
+        {
+          key = "├─ WM           ";
+          keyColor = "green";
+          type = "wm";
+        }
+        {
+          key = "╰─ Terminal     ";
+          keyColor = "yellow";
+          type = "terminal";
+        }
+        {
+          key = "╭─ CPU          ";
+          keyColor = "red";
+          temp = true;
+          type = "cpu";
+        }
+        {
+          format = "{2} {1} ({3})";
+          key = "├─󰚗 Board        ";
+          keyColor = "green";
+          type = "board";
+        }
+        {
+          format = "{3} {5} {2} ({1})";
+          key = "├─ BIOS         ";
+          keyColor = "blue";
+          type = "bios";
+        }
+        {
+          key = "├─ Memory       ";
+          keyColor = "magenta";
           percent = {
             green = 50;
             yellow = 80;
           };
+          type = "memory";
         }
         {
-          type = "physicaldisk";
-          key = "󰋊 Disk";
-          keyColor = "green";
+          format = "{2} - {1} [{3}, {4}, {7}] ({5}) {10}";
+          key = "├─󰋊 Disk         ";
+          keyColor = "cyan";
           temp = {
             green = 45;
             yellow = 60;
           };
-          format = "{2} - {1} [{3}, {4}, {7}] ({5}) {10}";
+          type = "physicaldisk";
         }
         {
-          type = "disk";
-          key = "󰋊 Disk";
-          keyColor = "yellow";
+          format = "{10} - {1} / {2} ({3})";
+          key = "├─󰋊 Disk         ";
+          keyColor = "white";
           percent = {
             green = 60;
             yellow = 85;
           };
-          format = "{10} - {1} / {2} ({3})";
+          type = "disk";
         }
         {
-          type = "battery";
-          key = "󰂀 Battery";
-          keyColor = "blue";
-          temp = {
-            green = 40;
-            yellow = 60;
-          };
+          key = "├─󰂀 Battery     ";
+          keyColor = "red";
           percent = {
             green = 60;
             yellow = 20;
           };
-        }
-        {
-          type = "wifi";
-          key = " WiFi";
-          keyColor = "magenta";
-          format = "{4} - {10} ({7})";
-        }
-        {
-          type = "gpu";
-          key = " GPU";
-          keyColor = "cyan";
           temp = {
             green = 40;
             yellow = 60;
           };
+          type = "battery";
+        }
+        {
+          format = "{4} - {10} ({7})";
+          key = "├─ WiFi         ";
+          keyColor = "green";
+          type = "wifi";
+        }
+        {
           format = "{1} {2} [{6}] ({3})";
+          key = "├─ GPU          ";
+          keyColor = "yellow";
+          temp = {
+            green = 40;
+            yellow = 60;
+          };
+          type = "gpu";
         }
         {
-          type = "display";
-          key = " Display";
-          keyColor = "white";
-          preciseRefreshRate = false;
-          order = "desc";
           format = "{6} - {1}x{2}@{3}Hz (as {4}x{5})";
+          key = "├─ Display      ";
+          keyColor = "blue";
+          order = "desc";
+          preciseRefreshRate = false;
+          type = "display";
         }
         {
-          type = "bluetooth";
-          key = " Bluetooth";
-          keyColor = "red";
+          format = "{1} - {3} ({4})";
+          key = "├─ Bluetooth    ";
+          keyColor = "magenta";
           percent = {
             green = 50;
             yellow = 80;
           };
-          format = "{1} - {3} ({4})";
-        }
-        "break"
-        {
-          type = "terminalfont";
-          key = " Terminal Font";
-          keyColor = "green";
+          type = "bluetooth";
         }
         {
-          type = "wmtheme";
-          key = "󰭠 WM Theme";
-          keyColor = "yellow";
-        }
-        {
-          type = "theme";
-          key = "󱕕 Theme";
-          keyColor = "blue";
-        }
-        {
-          type = "icons";
-          key = "󱁹 Icons";
-          keyColor = "magenta";
-        }
-        {
-          type = "font";
-          key = " Font";
+          key = "╰─ Swap         ";
           keyColor = "cyan";
+          percent = {
+            green = 50;
+            yellow = 80;
+          };
+          type = "swap";
         }
         {
-          type = "cursor";
-          key = "󰇀 Cursor";
-          keyColor = "white";
-        }
-        {
-          type = "player";
-          key = " Media Player";
+          key = "╭─ Terminal Font";
           keyColor = "red";
+          type = "terminalfont";
         }
         {
-          type = "media";
-          key = " Media";
+          key = "├─󰭠 WM Theme     ";
           keyColor = "green";
+          type = "wmtheme";
+        }
+        {
+          key = "├─󱕕 Theme        ";
+          keyColor = "yellow";
+          type = "theme";
+        }
+        {
+          key = "├─󱁹 Icons        ";
+          keyColor = "blue";
+          type = "icons";
+        }
+        {
+          key = "├─ Font         ";
+          keyColor = "magenta";
+          type = "font";
+        }
+        {
+          key = "├─ Media Player ";
+          keyColor = "cyan";
+          type = "player";
+        }
+        {
           format = "{3} - {1} {4}";
+          key = "├─ Media        ";
+          keyColor = "white";
+          type = "media";
+        }
+        {
+          key = "╰─󰇀 Cursor       ";
+          keyColor = "red";
+          type = "cursor";
         }
         "break"
         "colors"

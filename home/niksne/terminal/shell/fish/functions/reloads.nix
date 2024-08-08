@@ -1,5 +1,4 @@
 {
-  config,
   ...
 }: {
   programs.fish.functions = {
@@ -8,8 +7,8 @@
       notify-send waybar "Configuration reloaded!"
     '';
     reload_notifications.body = ''
-      swaync -rs
       swaync -R
+      swaync -rs
       notify-send swaync "Configuration reloaded!"
     '';
     reload_pyprland.body = ''

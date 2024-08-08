@@ -13,6 +13,7 @@
       "--ozone-platform=wayland"
     ];
     extensions = [
+      "cjpalhdlnbpafiamejdnhcphjbkeiagm"
       "kjhdffcfinhkdfbbhjlfoadcdfgihmlp"
       "eimadpbcbfnmbkopoojfekhnkhdbieeh"
       "apmmpaebfobifelkijhaljbmpcgbjbdo"

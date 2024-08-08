@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let 
-  pluginsList = plugins: builtins.listToAttrs (builtins.map (
+  mkPluginsList = plugins: builtins.listToAttrs (builtins.map (
     plugin: {
       name = plugin; 
       value = { enable = true; };
@@ -11,7 +11,7 @@
     plugins
   );
   
-  extraPluginsList = extraPlugins: lib.mapAttrsToList (
+  mkExtraPluginsList = extraPlugins: lib.mapAttrsToList (
     name: { owner, repo ? name, rev, hash }: (pkgs.vimUtils.buildVimPlugin {
       name = name;
       src = pkgs.fetchFromGitHub { inherit owner repo rev hash; };
@@ -31,10 +31,10 @@ in {
   ];
 
   programs.nixvim = {
-    plugins = pluginsList [
+    plugins = mkPluginsList [
       "friendly-snippets"
       "gitsigns"
-      "indent-blankline"
+      # "indent-blankline"
       "lualine"
       "luasnip"
       "markdown-preview"
@@ -48,7 +48,7 @@ in {
       "wakatime"
       "which-key"
     ];
-    extraPlugins = extraPluginsList {
+    extraPlugins = mkExtraPluginsList {
       neotree-file-nesting-config = {
         owner = "saifulapm";
         rev = "d9168eed2522397d271624e5f523d8384a552a64";

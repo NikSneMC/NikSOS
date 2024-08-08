@@ -1,5 +1,4 @@
 {
-  lib,
   inputs,
   pkgs,
   ...
@@ -19,6 +18,6 @@
   };
 
   environment.systemPackages = [ 
-    inputs.self.packages.${pkgs.system}.spoofDPI
+    inputs.self.packages.${pkgs.system}.spoof-dpi
   ];
 }

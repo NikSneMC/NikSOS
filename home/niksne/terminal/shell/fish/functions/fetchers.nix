@@ -1,7 +1,10 @@
 {
+  config,
   theme,
   ...
-}: {
+}: let
+  palette = theme."${config.theme.flavor}";
+in {
   programs.fish.functions = {
     fetch_battery.body = ''
       set enable_battery false
@@ -67,7 +70,7 @@
     fetch_music_player_data_colored.body = ''
       set STATUS (playerctl status 2>&1)
       if [ $STATUS != "Paused" -a $STATUS != "Stopped" -a $STATUS != "No players found" ]
-        playerctl -a metadata --format "{\"text\": \"<span color='${theme.palette.peach}'>{{artist}}</span> - <span color='${theme.palette.mauve}'>{{markup_escape(title)}}</span>\", \"tooltip\": \"<i><span color='${theme.palette.green}'>{{playerName}}</span></i>\n<b><span color='${theme.palette.mauve}'>{{markup_escape(title)}}</span></b>\nby <span color='${theme.palette.peach}'>{{artist}}</span>\non <span color='${theme.palette.teal}'>{{album}}</span>\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}" -F
+        playerctl -a metadata --format "{\"text\": \"<span color='${palette.palette.peach}'>{{artist}}</span> - <span color='${palette.palette.mauve}'>{{markup_escape(title)}}</span>\", \"tooltip\": \"<i><span color='${palette.palette.green}'>{{playerName}}</span></i>\n<b><span color='${palette.palette.mauve}'>{{markup_escape(title)}}</span></b>\nby <span color='${palette.palette.peach}'>{{artist}}</span>\non <span color='${palette.palette.teal}'>{{album}}</span>\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}" -F
       end
     '';
   };

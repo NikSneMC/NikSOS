@@ -1,7 +1,10 @@
 {
+  config,
   theme,
   ...
-}: {
+}: let
+  palette = theme."${config.theme.flavor}";
+in {
   services.swaync = {
     enable = true;
     settings = {
@@ -59,25 +62,25 @@
       }
 
       trough highlight {
-        background: ${theme.palette.text};
+        background: ${palette.palette.text};
       }
 
       scale trough {
         margin: 0rem 1rem;
-        background-color: ${theme.palette.surface0};
+        background-color: ${palette.palette.surface0};
         min-height: 8px;
         min-width: 70px;
       }
 
       slider {
-        background-color: ${theme.palette.blue};
+        background-color: ${palette.palette.blue};
       }
 
       .floating-notifications.background .notification-row .notification-background {
-        border: 1px solid ${theme.palette.surface0};
+        border: 1px solid ${palette.palette.surface0};
         margin: 18px;
-        background-color: ${theme.palette.base};
-        color: ${theme.palette.text};
+        background-color: ${palette.palette.base};
+        color: ${palette.palette.text};
         padding: 0px;
       }
 
@@ -86,7 +89,7 @@
       }
 
       .floating-notifications.background .notification-row .notification-background .notification.critical {
-        border: 1px solid ${theme.palette.red};
+        border: 1px solid ${palette.palette.red};
       }
 
       .floating-notifications.background .notification-row .notification-background .notification .notification-content {
@@ -94,15 +97,15 @@
       }
 
       .floating-notifications.background .notification-row .notification-background .notification .notification-content .summary {
-        color: ${theme.palette.text};
+        color: ${palette.palette.text};
       }
 
       .floating-notifications.background .notification-row .notification-background .notification .notification-content .time {
-        color: ${theme.palette.subtext0};
+        color: ${palette.palette.subtext0};
       }
 
       .floating-notifications.background .notification-row .notification-background .notification .notification-content .body {
-        color: ${theme.palette.text};
+        color: ${palette.palette.text};
       }
 
       .floating-notifications.background .notification-row .notification-background .notification>*:last-child>* {
@@ -110,76 +113,76 @@
       }
 
       .floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action {
-        color: ${theme.palette.text};
-        background-color: ${theme.palette.surface0};
-        border: 1px solid ${theme.palette.surface1};
+        color: ${palette.palette.text};
+        background-color: ${palette.palette.surface0};
+        border: 1px solid ${palette.palette.surface1};
         margin: 7px;
       }
 
       .floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
-        border: 1px solid ${theme.palette.surface1};
-        background-color: ${theme.palette.surface0};
-        color: ${theme.palette.text};
+        border: 1px solid ${palette.palette.surface1};
+        background-color: ${palette.palette.surface0};
+        color: ${palette.palette.text};
       }
 
       .floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
-        border-color: ${theme.palette.surface1};
-        background-color: ${theme.palette.sapphire};
-        color: ${theme.palette.text};
+        border-color: ${palette.palette.surface1};
+        background-color: ${palette.palette.sapphire};
+        color: ${palette.palette.text};
       }
 
       .floating-notifications.background .notification-row .notification-background .close-button {
         margin: 7px;
         border-radius: 1rem;
-        color: ${theme.palette.base};
-        background-color: ${theme.palette.red};
+        color: ${palette.palette.base};
+        background-color: ${palette.palette.red};
       }
 
       .floating-notifications.background .notification-row .notification-background .close-button:hover {
-        background-color: ${theme.palette.maroon};
-        color: ${theme.palette.base};
+        background-color: ${palette.palette.maroon};
+        color: ${palette.palette.base};
       }
 
       .floating-notifications.background .notification-row .notification-background .close-button:active {
-        background-color: ${theme.palette.red};
-        color: ${theme.palette.base};
+        background-color: ${palette.palette.red};
+        color: ${palette.palette.base};
       }
 
       .control-center {
-        border: 1px solid ${theme.palette.surface0};
-        background-color: ${theme.palette.base};
-        color: ${theme.palette.text};
+        border: 1px solid ${palette.palette.surface0};
+        background-color: ${palette.palette.base};
+        color: ${palette.palette.text};
         padding: 14px;
       }
 
       .control-center .widget-title>label {
-        color: ${theme.palette.text};
+        color: ${palette.palette.text};
         font-size: 2rem;
       }
 
       .control-center .widget-title button {
-        color: ${theme.palette.text};
-        background-color: ${theme.palette.surface0};
-        border: 1px solid ${theme.palette.surface1};
+        color: ${palette.palette.text};
+        background-color: ${palette.palette.surface0};
+        border: 1px solid ${palette.palette.surface1};
         padding: 8px;
       }
 
       .control-center .widget-title button:hover {
-        border: 1px solid ${theme.palette.surface1};
-        background-color: ${theme.palette.surface2};
-        color: ${theme.palette.text};
+        border: 1px solid ${palette.palette.surface1};
+        background-color: ${palette.palette.surface2};
+        color: ${palette.palette.text};
       }
 
       .control-center .widget-title button:active {
-        border: 1px solid ${theme.palette.surface1};
-        background-color: ${theme.palette.sapphire};
-        color: ${theme.palette.base};
+        border: 1px solid ${palette.palette.surface1};
+        background-color: ${palette.palette.sapphire};
+        color: ${palette.palette.base};
       }
 
       .control-center .notification-row .notification-background {
-        color: ${theme.palette.text};
-        background-color: ${theme.palette.surface0};
-        border: 1px solid ${theme.palette.surface1};
+        color: ${palette.palette.text};
+        background-color: ${palette.palette.surface0};
+        border: 1px solid ${palette.palette.surface1};
         margin-top: 14px;
       }
 
@@ -188,7 +191,7 @@
       }
 
       .control-center .notification-row .notification-background .notification.critical {
-        border: 1px solid ${theme.palette.red};
+        border: 1px solid ${palette.palette.red};
       }
 
       .control-center .notification-row .notification-background .notification .notification-content {
@@ -196,15 +199,15 @@
       }
 
       .control-center .notification-row .notification-background .notification .notification-content .summary {
-        color: ${theme.palette.text};
+        color: ${palette.palette.text};
       }
 
       .control-center .notification-row .notification-background .notification .notification-content .time {
-        color: ${theme.palette.subtext0};
+        color: ${palette.palette.subtext0};
       }
 
       .control-center .notification-row .notification-background .notification .notification-content .body {
-        color: ${theme.palette.text};
+        color: ${palette.palette.text};
       }
 
       .control-center .notification-row .notification-background .notification>*:last-child>* {
@@ -212,29 +215,29 @@
       }
 
       .control-center .notification-row .notification-background .notification>*:last-child>* .notification-action {
-        color: ${theme.palette.text};
-        background-color: ${theme.palette.crust};
-        border: 1px solid ${theme.palette.surface1};
+        color: ${palette.palette.text};
+        background-color: ${palette.palette.crust};
+        border: 1px solid ${palette.palette.surface1};
         margin: 7px;
       }
 
       .control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
-        border: 1px solid ${theme.palette.surface1};
-        background-color: ${theme.palette.surface0};
-        color: ${theme.palette.text};
+        border: 1px solid ${palette.palette.surface1};
+        background-color: ${palette.palette.surface0};
+        color: ${palette.palette.text};
       }
 
       .control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
-        border: 1px solid ${theme.palette.surface1};
-        background-color: ${theme.palette.sapphire};
-        color: ${theme.palette.text};
+        border: 1px solid ${palette.palette.surface1};
+        background-color: ${palette.palette.sapphire};
+        color: ${palette.palette.text};
       }
 
       .control-center .notification-row .notification-background .close-button {
         margin: 7px;
         padding: 2px;
-        color: ${theme.palette.base};
-        background-color: ${theme.palette.maroon};
+        color: ${palette.palette.base};
+        background-color: ${palette.palette.maroon};
       }
 
       .close-button {
@@ -242,48 +245,48 @@
       }
 
       .control-center .notification-row .notification-background .close-button:hover {
-        background-color: ${theme.palette.red};
-        color: ${theme.palette.base};
+        background-color: ${palette.palette.red};
+        color: ${palette.palette.base};
       }
 
       .control-center .notification-row .notification-background .close-button:active {
-        background-color: ${theme.palette.red};
-        color: ${theme.palette.base};
+        background-color: ${palette.palette.red};
+        color: ${palette.palette.base};
       }
 
       .control-center .notification-row .notification-background:hover {
-        border: 1px solid ${theme.palette.surface1};
-        background-color: ${theme.palette.overlay1};
-        color: ${theme.palette.text};
+        border: 1px solid ${palette.palette.surface1};
+        background-color: ${palette.palette.overlay1};
+        color: ${palette.palette.text};
       }
 
       .control-center .notification-row .notification-background:active {
-        border: 1px solid ${theme.palette.surface1};
-        background-color: ${theme.palette.sapphire};
-        color: ${theme.palette.text};
+        border: 1px solid ${palette.palette.surface1};
+        background-color: ${palette.palette.sapphire};
+        color: ${palette.palette.text};
       }
 
       .notification.critical progress {
-        background-color: ${theme.palette.red};
+        background-color: ${palette.palette.red};
       }
 
       .notification.low progress,
       .notification.normal progress {
-        background-color: ${theme.palette.blue};
+        background-color: ${palette.palette.blue};
       }
 
       .control-center-dnd {
         margin-top: 5px;
-        background: ${theme.palette.surface0};
-        border: 1px solid ${theme.palette.surface1};
+        background: ${palette.palette.surface0};
+        border: 1px solid ${palette.palette.surface1};
       }
 
       .control-center-dnd:checked {
-        background: ${theme.palette.surface0};
+        background: ${palette.palette.surface0};
       }
 
       .control-center-dnd slider {
-        background: ${theme.palette.surface1};
+        background: ${palette.palette.surface1};
       }
 
       .widget-dnd {
@@ -293,21 +296,21 @@
 
       .widget-dnd>switch {
         font-size: initial;
-        background: ${theme.palette.surface0};
-        border: 1px solid ${theme.palette.surface1};
+        background: ${palette.palette.surface0};
+        border: 1px solid ${palette.palette.surface1};
       }
 
       .widget-dnd>switch:checked {
-        background: ${theme.palette.surface0};
+        background: ${palette.palette.surface0};
       }
 
       .widget-dnd>switch slider {
-        background: ${theme.palette.surface1};
-        border: 1px solid ${theme.palette.overlay0};
+        background: ${palette.palette.surface1};
+        border: 1px solid ${palette.palette.overlay0};
       }
 
       .widget-mpris .widget-mpris-player {
-        background: ${theme.palette.surface0};
+        background: ${palette.palette.surface0};
         padding: 7px;
       }
 
@@ -325,7 +328,7 @@
       }
 
       .widget-menubar>box>.menu-button-bar>:last-child {
-        color: ${theme.palette.red};
+        color: ${palette.palette.red};
       }
 
       .power-buttons,
@@ -336,11 +339,11 @@
       .power-buttons button:hover,
       .powermode-buttons button:hover,
       .screenshot-buttons button:hover {
-        background: ${theme.palette.surface0};
+        background: ${palette.palette.surface0};
       }
 
       .control-center .widget-label>label {
-        color: ${theme.palette.text};
+        color: ${palette.palette.text};
         font-size: 2rem;
       }
 
@@ -358,15 +361,15 @@
 
       .widget-volume label {
         font-size: 1.5rem;
-        color: ${theme.palette.sapphire};
+        color: ${palette.palette.sapphire};
       }
 
       .widget-volume trough highlight {
-        background: ${theme.palette.sapphire};
+        background: ${palette.palette.sapphire};
       }
 
       .widget-backlight trough highlight {
-        background: ${theme.palette.yellow};
+        background: ${palette.palette.yellow};
       }
       .widget-backlight scale {
         margin-right: 1rem;
@@ -374,7 +377,7 @@
 
       .widget-backlight label {
         font-size: 1.5rem;
-        color: ${theme.palette.yellow};
+        color: ${palette.palette.yellow};
       }
     '';
   };

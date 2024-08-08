@@ -1,5 +1,4 @@
 {
-  theme,
   ...
 }: {
   programs.fish.functions = {

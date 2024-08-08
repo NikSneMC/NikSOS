@@ -5,6 +5,7 @@
   theme,
   ...
 }: let
+  palette = theme."${config.theme.flavor}";
   mkValueString = value:
     if lib.isBool value then
       if value then "true" else "false"
@@ -114,14 +115,14 @@
   };
   rofi-theme = {
     "*" = {
-      bg-col = mkLiteral theme.palette.base;
-      bg-col-light = mkLiteral theme.palette.base;
-      border-col = mkLiteral theme.palette.${config.theme.accent};
-      selected-col = mkLiteral theme.palette.base;
-      accent = mkLiteral theme.palette.${config.theme.accent};
-      fg-col = mkLiteral theme.palette.text;
-      fg-col2 = mkLiteral theme.palette.red;
-      grey = mkLiteral theme.palette.overlay0;
+      bg-col = mkLiteral palette.palette.base;
+      bg-col-light = mkLiteral palette.palette.base;
+      border-col = mkLiteral palette.palette.${config.theme.accent};
+      selected-col = mkLiteral palette.palette.base;
+      accent = mkLiteral palette.palette.${config.theme.accent};
+      fg-col = mkLiteral palette.palette.text;
+      fg-col2 = mkLiteral palette.palette.red;
+      grey = mkLiteral palette.palette.overlay0;
 
       width = 600;
       font = "JetBrainsMono Nerd Font 10";

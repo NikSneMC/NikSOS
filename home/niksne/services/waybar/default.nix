@@ -2,7 +2,9 @@
   config,
   theme,
   ...
-}: {
+}: let
+  palette = theme."${config.theme.flavor}";
+in {
   programs.waybar = {
     enable = true;
     catppuccin.enable = true;
@@ -91,11 +93,11 @@
             on-scroll = 1;
             on-click-right = "mode";
             format = {
-              months = "<span color='${theme.palette.rosewater}'><b>{}</b></span>";
-              days = "<span color='${theme.palette.text}'><b>{}</b></span>";
-              weeks = "<span color='${theme.palette.mauve}'><b>W{}</b></span>";
-              weekdays = "<span color='${theme.palette.green}'><b>{}</b></span>";
-              today = "<span color='${theme.palette.teal}'><b><u>{}</u></b></span>";
+              months = "<span color='${palette.palette.rosewater}'><b>{}</b></span>";
+              days = "<span color='${palette.palette.text}'><b>{}</b></span>";
+              weeks = "<span color='${palette.palette.mauve}'><b>W{}</b></span>";
+              weekdays = "<span color='${palette.palette.green}'><b>{}</b></span>";
+              today = "<span color='${palette.palette.teal}'><b><u>{}</u></b></span>";
             };
           };
         };
@@ -129,16 +131,16 @@
             "󰤨"
           ];
           format-disconnected = "󰤫  Disconnected";
-          tooltip-format = "wifi <span color='${theme.palette.maroon}'>off</span>";
+          tooltip-format = "wifi <span color='${palette.palette.maroon}'>off</span>";
           tooltip-format-wifi = ''
             SSID = {essid}({signalStrength}%), {frequency} MHz
             Interface = {ifname}
             IP = {ipaddr}
             GW = {gwaddr}
             
-            <span color='${theme.palette.green}'>{bandwidthUpBits}</span>\t<span color='${theme.palette.maroon}'>{bandwidthDownBits}</span>\t<span color='${theme.palette.mauve}'>󰹹{bandwidthTotalBits}</span>
+            <span color='${palette.palette.green}'>{bandwidthUpBits}</span>\t<span color='${palette.palette.maroon}'>{bandwidthDownBits}</span>\t<span color='${palette.palette.mauve}'>󰹹{bandwidthTotalBits}</span>
           '';
-          tooltip-format-disconnected = "<span color='${theme.palette.red}'>disconnected</span>";
+          tooltip-format-disconnected = "<span color='${palette.palette.red}'>disconnected</span>";
           format-ethernet = "󰈀 {ipaddr}/{cidr}";
           format-linked = "󰈀 {ifname} (No IP)";
           tooltip-format-ethernet = ''Interface = {ifname}
@@ -147,7 +149,7 @@ GW = {gwaddr}
 Netmask = {netmask}
 CIDR = {cidr}
 
-<span color='${theme.palette.green}'>{bandwidthUpBits}</span> <span color='${theme.palette.maroon}'>{bandwidthDownBits}</span> <span color='${theme.palette.mauve}'>󰹹{bandwidthTotalBits}</span>'';
+<span color='${palette.palette.green}'>{bandwidthUpBits}</span> <span color='${palette.palette.maroon}'>{bandwidthDownBits}</span> <span color='${palette.palette.mauve}'>󰹹{bandwidthTotalBits}</span>'';
           max-length = 35;
           on-click = "fish -c toggle_wifi";
           on-click-right = "nm-connection-editor";
@@ -175,7 +177,7 @@ CIDR = {cidr}
           "custom/media"
         ];
         user = {
-          format = "<span color='${theme.palette.${config.theme.accent}}'> {user}</span> (up <span color='${theme.palette.pink}'>{work_d} d</span> <span color='${theme.palette.blue}'>{work_H} h</span> <span color='${theme.palette.red}'>{work_M} min</span> <span color='${theme.palette.green}'>↑</span>)";
+          format = "<span color='${palette.palette.${config.theme.accent}}'> {user}</span> (up <span color='${palette.palette.pink}'>{work_d} d</span> <span color='${palette.palette.blue}'>{work_H} h</span> <span color='${palette.palette.red}'>{work_M} min</span> <span color='${palette.palette.green}'>↑</span>)";
           icon = true;
         };
         "hyprland/window" = {
@@ -452,8 +454,8 @@ Swap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail}
               activated = "󰛐";
               deactivated = "󰛑";
           };
-          tooltip-format-activated = "idle-inhibitor <span color='${theme.palette.green}'>on</span>";
-          tooltip-format-deactivated = "idle-inhibitor <span color='${theme.palette.maroon}'>off</span>";
+          tooltip-format-activated = "idle-inhibitor <span color='${palette.palette.green}'>on</span>";
+          tooltip-format-deactivated = "idle-inhibitor <span color='${palette.palette.maroon}'>off</span>";
           start-activated = true;
         };
         tray = {

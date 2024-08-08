@@ -1,6 +1,4 @@
-{
-  ...
-}: let
+let
   dropterm = "class:^(wezterm_dropdown)$";
   volume_sidemenu = "class:^(pavucontrol)$";
   player = "class:^(Spotify)$";

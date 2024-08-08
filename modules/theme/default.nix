@@ -1,18 +1,39 @@
-{lib, ...}: let
-  validAccents = [ "rosewater" "flamingo" "pink" "mauve" "red" "maroon" "peach" "yellow" "green" "teal" "sky" "sapphire" "blue" "lavender" ];
-  validFlavors = [ "latte" "frappe" "macchiato" "mocha" ];
+{
+  lib, 
+  ...
+}: let
+  validAccents = [
+    "rosewater"
+    "flamingo"
+    "pink"
+    "mauve"
+    "red"
+    "maroon"
+    "peach"
+    "yellow"
+    "green"
+    "teal"
+    "sky"
+    "sapphire"
+    "blue"
+    "lavender"
+  ];
+  validFlavors = [ 
+    "latte"
+    "frappe"
+    "macchiato"
+    "mocha"
+  ];
 in {
-  options.theme = rec {
+  options.theme = {
     flavor = lib.mkOption {
-      description = ''
-      '';
+      description = '''';
       type = lib.types.enum validFlavors;
       example = lib.literalExample "mocha";
       default = "mocha";
     };
     accent = lib.mkOption {
-      description = ''
-      '';
+      description = '''';
       type = lib.types.enum validAccents;
       example = lib.literalExample "sky";
       default = "sky";

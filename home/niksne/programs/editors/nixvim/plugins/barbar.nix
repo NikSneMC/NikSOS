@@ -1,6 +1,4 @@
-{
-  ...
-}: let
+let
   goTos = (builtins.listToAttrs (builtins.genList (
     num: { 
       name = "goTo${toString (num + 1)}"; 

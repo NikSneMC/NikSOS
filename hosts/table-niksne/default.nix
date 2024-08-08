@@ -1,6 +1,4 @@
 {
-  ...
-}: {
   imports = [
     ./disks.nix
     ./hardware-configuration.nix
@@ -19,7 +17,11 @@
 
   networking.hostName = "table-niksne";
 
-  console.catppuccin.enable = true;
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "sky";
+  };
 
   nix.settings = {
     cores = 36;

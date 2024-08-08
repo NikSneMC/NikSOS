@@ -2,7 +2,9 @@
   config,
   theme,
   ...
-}: {
+}: let
+  palette = theme."${config.theme.flavor}";
+in {
   imports = [
     ./functions
   ];
@@ -45,9 +47,9 @@
       set fish_cursor_visual underscore blink
 
       # set -Ux FZF_DEFAULT_OPTS "\
-      # --color=bg+:${theme.palette.surface0},bg:${theme.palette.base},spinner:${theme.palette.rosewater},hl:${theme.palette.red} \
-      # --color=fg:${theme.palette.text},header:${theme.palette.red},info:${theme.palette.mauve},pointer:${theme.palette.rosewater} \
-      # --color=marker:${theme.palette.rosewater},fg+:${theme.palette.text},prompt:${theme.palette.mauve},hl+:${theme.palette.red}"
+      # --color=bg+:${palette.palette.surface0},bg:${palette.palette.base},spinner:${palette.palette.rosewater},hl:${palette.palette.red} \
+      # --color=fg:${palette.palette.text},header:${palette.palette.red},info:${palette.palette.mauve},pointer:${palette.palette.rosewater} \
+      # --color=marker:${palette.palette.rosewater},fg+:${palette.palette.text},prompt:${palette.palette.mauve},hl+:${palette.palette.red}"
 
       starship init fish | source
     '';

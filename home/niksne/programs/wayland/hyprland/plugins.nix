@@ -1,7 +1,6 @@
 {
-  inputs,
+  # inputs,
   pkgs,
-  config,
   ...
 }: {
   wayland.windowManager.hyprland = {

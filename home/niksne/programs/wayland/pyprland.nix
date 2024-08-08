@@ -1,11 +1,9 @@
 {
-  npkgs,
-  inputs,
   lib,
-  config,
+  pkgs,
   ...
 }: {
-  home.packages = with npkgs; [
+  home.packages = with pkgs; [
     pyprland
   ];
 
@@ -50,7 +48,7 @@
       PartOf = ["graphical-session.target"];
     };
     Service = {
-      ExecStart = "${lib.getExe npkgs.pyprland}";
+      ExecStart = "${lib.getExe pkgs.pyprland}";
       Restart = "on-failure";
     };
     Install.WantedBy = ["graphical-session.target"];

@@ -1,6 +1,4 @@
 {
-  ...
-}: {
   imports = [
     ./disks.nix
     ./hardware-configuration.nix
@@ -16,6 +14,12 @@
   };
 
   networking.hostName = "laptop-niksne";
+
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "sky";
+  };
 
   nix.settings = {
     cores = 8;

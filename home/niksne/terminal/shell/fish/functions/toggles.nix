@@ -1,6 +1,4 @@
 {
-  ...
-}: {
   programs.fish.functions = {
     toggle_airplane_mode.body = ''
       set backup_file ~/.cache/airplane_backup

@@ -1,6 +1,4 @@
 {
-  ...
-}: {
   programs.fish.functions = {
     reload_bar.body = ''
       pkill -USR2 waybar

@@ -3,7 +3,6 @@
   ...
 }: {
   imports = [
-    ./binds.nix
     ./extensions.nix
     ./settings.nix
   ];

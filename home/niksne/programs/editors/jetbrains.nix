@@ -23,8 +23,5 @@ in {
     enable = true;
     inherit ides;
   };
-  home.packages = ((with npkgs.jetbrains; [
-    # gateway
-    # (writerside.override { inherit vmopts; })
-  ]) ++ ides ++ [ inputs.self.packages.${npkgs.system}.ja-netfilter ]);
+  home.packages = (ides ++ [ inputs.self.packages.${npkgs.system}.ja-netfilter ]);
 }

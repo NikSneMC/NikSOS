@@ -1,13 +1,9 @@
 {
-  pkgs,
-  ...
-}: {
   imports = [
     ./backlight.nix
     ./gnome-services.nix
     ./location.nix
     ./pipewire.nix
-    # ./printing.nix
     ./sddm.nix
   ];
 

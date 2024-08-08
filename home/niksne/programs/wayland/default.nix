@@ -1,10 +1,7 @@
 {
   pkgs,
-  self,
   ...
-}:
-# Wayland config
-{
+}: {
   imports = [
     ./hyprland
     ./hyprlock.nix

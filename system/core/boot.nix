@@ -1,15 +1,9 @@
 {
-  npkgs,
-  config,
-  ...
-}: {
   boot = {
     initrd = {
       systemd.enable = true;
       supportedFilesystems = [ "fat32" "ext4" "btrfs" "ntfs" ];
     };
-
-    #kernelPackages = npkgs.linuxPackages_latest;
 
     consoleLogLevel = 3;
     kernelParams = [

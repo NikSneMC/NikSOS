@@ -3,10 +3,10 @@
   pkgs,
   ...
 }: let
-  browser = ["vivaldi"];
-  imageViewer = ["org.gnome.Loupe"];
-  videoPlayer = ["io.github.celluloid_player.Celluloid"];
-  audioPlayer = ["io.bassi.Amberol"];
+  browser = [ "vivaldi-stable" ];
+  imageViewer = [ "org.gnome.Loupe" ];
+  videoPlayer = [ "io.github.celluloid_player.Celluloid" ];
+  audioPlayer = [ "io.bassi.Amberol" ];
 
   xdgAssociations = type: program: list:
     builtins.listToAttrs (map (e: {
@@ -15,9 +15,9 @@
       })
       list);
 
-  image = xdgAssociations "image" imageViewer ["png" "svg" "jpeg" "gif"];
-  video = xdgAssociations "video" videoPlayer ["mp4" "avi" "mkv"];
-  audio = xdgAssociations "audio" audioPlayer ["mp3" "flac" "wav" "aac"];
+  image = xdgAssociations "image" imageViewer [ "png" "svg" "jpeg" "gif" ];
+  video = xdgAssociations "video" videoPlayer [ "mp4" "avi" "mkv" ];
+  audio = xdgAssociations "audio" audioPlayer [ "mp3" "flac" "wav" "aac" ];
   browserTypes =
     (xdgAssociations "application" browser [
       "json"
@@ -37,11 +37,11 @@
 
   # XDG MIME types
   associations = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) ({
-      "application/pdf" = ["org.pwmt.zathura-pdf-mupdf"];
+      "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf" ];
       "text/html" = browser;
-      "text/plain" = ["nvim"];
+      "text/plain" = [ "nvim" ];
       "x-scheme-handler/chrome" = browser;
-      "inode/directory" = ["yazi"];
+      "inode/directory" = [ "thunar" ];
     }
     // image
     // video

@@ -1,6 +1,5 @@
 {
   pkgs,
-  npkgs,
   ...
 }: {
   imports = [
@@ -10,8 +9,6 @@
     ./home-manager.nix
     ./hyprland.nix
     ./qt.nix
-    ./virtualisation.nix
-    # ./windscribe.nix
     ./xdg.nix
   ];
 

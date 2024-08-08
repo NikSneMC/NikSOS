@@ -1,6 +1,4 @@
 {
-  ...
-}: {
   programs.nixvim.plugins.neocord = {
     enable = true;
     settings = {

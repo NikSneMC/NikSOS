@@ -1,4 +1,7 @@
-{pkgs, ...}: {
+{
+  pkgs, 
+  ...
+}: {
   imports = [
     ./mpv.nix
     ./obs-studio.nix

@@ -6,10 +6,15 @@
   mkUpper =
     str:
     (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
+  flavour = mkUpper config.theme.flavor;
 in {
   programs.vscode.userSettings = {
-    window.autoDetectColorScheme = true;
-    workbench.colorTheme = "Catppuccin ${mkUpper config.theme.flavor}";
+    window = {
+      autoDetectColorScheme = true;
+      preferredDarkColorTheme = "Catppuccin ${flavour}";
+      preferredLightColorTheme = "Catppuccin ${flavour}";
+    };
+    workbench.colorTheme = "Catppuccin ${flavour}";
     catppuccin.accentColor = config.theme.accent;
     vscord.app.name = "VSCodium";
     files.associations = {

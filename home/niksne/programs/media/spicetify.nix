@@ -22,9 +22,9 @@
 
     colorScheme = config.theme.flavor;
 
-    enabledExtensions = with spicePkgs.extensions; [
-
-    ];
+    # enabledExtensions = with spicePkgs.extensions; [
+    # 
+    # ];
     
   };
 }

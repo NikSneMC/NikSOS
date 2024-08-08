@@ -1,14 +1,9 @@
 {
   pkgs,
   config,
-  lib,
   ...
 }: {
   home = {
-    # pointerCursor = {
-    #   name = "Catppuccin-Mocha-Sky-Cursors";
-    #   size = 24;
-    # };
     packages = with pkgs; [
       numix-icon-theme-circle
     ];
@@ -19,12 +14,12 @@
 
     catppuccin = {
       enable = true;
-	    icon.enable = false;
+      icon.enable = false;
     };
 
     font = {
       name = "JetBrainsMono Nerd Font";
-      package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
+      package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
       size = 10;
     };
 

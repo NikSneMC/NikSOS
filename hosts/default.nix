@@ -6,7 +6,6 @@
 }: {
   flake.nixosConfigurations = let
     inherit (inputs.nixpkgs.lib) nixosSystem;
-    mod = "${self}/system";
 
     inherit (import "${self}/system") desktop laptop;
     inherit (import "${self}/system/catppuccin.nix") theme;
@@ -46,6 +45,7 @@
       modules =
         laptop
         ++ [
+          inputs.catppuccin.nixosModules.catppuccin
           ./laptop-niksne
           {
             home-manager = {

@@ -1,7 +1,4 @@
 {
-  lib,
-  ...
-}: {
   qt = {
     enable = true;
     platformTheme.name = "kvantum";

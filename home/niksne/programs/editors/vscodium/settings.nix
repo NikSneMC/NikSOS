@@ -9,12 +9,12 @@
   flavour = mkUpper config.theme.flavor;
 in {
   programs.vscode.userSettings = {
-    window = {
-      autoDetectColorScheme = true;
+    window.autoDetectColorScheme = true;
+    workbench = {
+      colorTheme = "Catppuccin ${flavour}";
       preferredDarkColorTheme = "Catppuccin ${flavour}";
       preferredLightColorTheme = "Catppuccin ${flavour}";
     };
-    workbench.colorTheme = "Catppuccin ${flavour}";
     catppuccin.accentColor = config.theme.accent;
     vscord.app.name = "VSCodium";
     files.associations = {

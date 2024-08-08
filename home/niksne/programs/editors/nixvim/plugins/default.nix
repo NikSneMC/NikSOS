@@ -22,6 +22,7 @@ in {
     ./barbar.nix
     ./cmp.nix
     ./dashboard.nix
+    ./indent-blankline.nix
     ./lsp.nix
     ./neo-tree.nix
     ./neocord.nix
@@ -34,7 +35,6 @@ in {
     plugins = mkPluginsList [
       "friendly-snippets"
       "gitsigns"
-      # "indent-blankline"
       "lualine"
       "luasnip"
       "markdown-preview"

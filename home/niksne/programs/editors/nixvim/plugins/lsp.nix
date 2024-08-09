@@ -7,7 +7,7 @@
         cssls.enable = true;
         golangci-lint-ls.enable = true;
         html.enable = true;
-        java-language-server.enable = true;
+        jdt-language-server.enable = true;
         jsonls.enable = true;
         kotlin-language-server.enable = true;
         lua-ls.enable = true;

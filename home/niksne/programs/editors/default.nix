@@ -1,6 +1,6 @@
 {
   imports = [
-    ./nixvim
+    ./niksvim
     ./vscodium
     ./jetbrains.nix
   ];

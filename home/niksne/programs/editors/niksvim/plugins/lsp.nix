@@ -1,30 +1,39 @@
-{
+let
+  mkServersList = servers: builtins.listToAttrs (builtins.map (
+    server: {
+      name = server; 
+      value = { enable = true; };
+    })
+    servers
+    );
+in {
   programs.nixvim.plugins = {
     lsp = {
       enable = true;
-      servers = {
-        astro.enable = true;
-        clangd.enable = true;
-        cmake.enable = true;
-        cssls.enable = true;
-        gopls.enable = true;
-        html.enable = true;
-        htmx.enable = true;
-        jdt-language-server.enable = true;
-        jsonls.enable = true;
-        kotlin-language-server.enable = true;
-        lua-ls.enable = true;
-        marksman.enable = true;
-        nil-ls.enable = true;
-        pylsp.enable = true;
+      servers = (mkServersList [
+        "astro"
+        "clangd"
+        "cmake"
+        "cssls"
+        "gopls"
+        "html"
+        "htmx"
+        "jdt-language-server"
+        "jsonls"
+        "kotlin-language-server"
+        "lua-ls"
+        "marksman"
+        "nil-ls"
+        "pylsp"
+        "svelte"
+        "tailwindcss"
+        "tsserver"
+      ]) // {
         rust-analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;
         };
-        svelte.enable = true;
-        tailwindcss.enable = true;
-        tsserver.enable = true;
       };
     };
     lsp-format.enable = true;

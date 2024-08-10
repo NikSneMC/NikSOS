@@ -7,7 +7,7 @@
         clangd.enable = true;
         cmake.enable = true;
         cssls.enable = true;
-        golangci-lint-ls.enable = true;
+        gopls.enable = true;
         html.enable = true;
         htmx.enable = true;
         jdt-language-server.enable = true;

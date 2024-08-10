@@ -25,11 +25,19 @@ in {
       local act = wezterm.action
 
       return {
+        enable_wayland = false,
+        
+        window_close_confirmation = "NeverPrompt",
+
+        enable_tab_bar = true,
+        hide_tab_bar_if_only_one_tab = true,
+
+        color_scheme = "Catppuccin ${mkUpper config.theme.flavor}",
+        font = wezterm.font_with_fallback { "${font}", "Noto Sans" },
         window_frame = {
           font = wezterm.font { family = "${font}", weight = 'Bold' },
           active_titlebar_bg = "${palette.crust}"
         },
-
         colors = {
           tab_bar = {
             active_tab = ${mkTabColorFg "${config.theme.accent}" "crust"},
@@ -38,13 +46,7 @@ in {
             new_tab = ${mkTabColor "surface0"},
             new_tab_hover = ${mkTabColor "surface1"}
           }
-        },
-
-        enable_tab_bar = true,
-        enable_wayland = false,
-        window_close_confirmation = "NeverPrompt",
-        color_scheme = "Catppuccin ${mkUpper config.theme.flavor}",
-        font = wezterm.font_with_fallback { "${font}", "Noto Sans" }
+        }
       }
     '';
   };

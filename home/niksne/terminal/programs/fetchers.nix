@@ -114,7 +114,7 @@
         }
         {
           format = "{2} - {1} [{3}, {4}, {7}] ({5}) {10}";
-          key = "├─󰋊 Disk         ";
+          key = "├─󰋊 Drive        ";
           keyColor = "cyan";
           temp = {
             green = 45;

@@ -4,9 +4,12 @@
       enable = true;
       servers = {
         astro.enable = true;
+        clangd.enable = true;
+        cmake.enable = true;
         cssls.enable = true;
         golangci-lint-ls.enable = true;
         html.enable = true;
+        htmx.enable = true;
         jdt-language-server.enable = true;
         jsonls.enable = true;
         kotlin-language-server.enable = true;

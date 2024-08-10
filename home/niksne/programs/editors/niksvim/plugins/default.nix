@@ -29,10 +29,12 @@ in {
     ./project-nvim.nix
     ./refactoring.nix
     ./toggleterm.nix
+    ./treesitter.nix
   ];
 
   programs.nixvim = {
     plugins = mkPluginsList [
+      "comment"
       "friendly-snippets"
       "gitsigns"
       "lualine"
@@ -44,7 +46,6 @@ in {
       "rainbow-delimiters"
       "telescope"
       "todo-comments"
-      "treesitter"
       "wakatime"
       "which-key"
     ];

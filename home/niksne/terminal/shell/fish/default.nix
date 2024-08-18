@@ -35,7 +35,7 @@ in {
       npx = "pnpx";
     };
     shellInit = ''
-      set -gx EDITOR codium
+      set -gx EDITOR vi
       set -gx VOLUME_STEP 5
       set -gx BRIGHTNESS_STEP 5
 

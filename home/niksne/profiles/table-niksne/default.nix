@@ -6,6 +6,7 @@
 
     ../../services
 
+    ../../terminal/emulators/kitty.nix
     ../../terminal/emulators/wezterm.nix
   ];
 

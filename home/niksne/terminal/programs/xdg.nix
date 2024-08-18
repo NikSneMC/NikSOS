@@ -39,7 +39,7 @@
   associations = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) ({
       "application/pdf" = [ "org.pwmt.zathura-pdf-mupdf" ];
       "text/html" = browser;
-      "text/plain" = [ "nvim" ];
+      "text/plain" = [ "vi" ];
       "x-scheme-handler/chrome" = browser;
       "inode/directory" = [ "thunar" ];
     }
@@ -69,7 +69,7 @@ in {
   home.packages = [
     # used by `gio open` and xdp-gtk
     (pkgs.writeShellScriptBin "xdg-terminal-exec" ''
-      wezterm start "$@"
+      kitty "$@"
     '')
     pkgs.xdg-utils
   ];

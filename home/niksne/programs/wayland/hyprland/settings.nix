@@ -84,15 +84,16 @@
 
     dwindle.preserve_split = true;
 
+    render.direct_scanout = true;
+
     misc = {
       disable_hyprland_logo = true;
       disable_splash_rendering = true;
       force_default_wallpaper = 0;
-      no_direct_scanout = false;
       animate_manual_resizes = true;
       animate_mouse_windowdragging = true;
       focus_on_activate = false;
-      allow_session_lock_restore = false;
+      allow_session_lock_restore = true;
       background_color = "$base";
     };
 

@@ -48,7 +48,7 @@ in {
       "${mod}, L, Lock session, exec, hyprlock"
       "${mod}, N, Open notification center, exec, swaync-client -t"
       "${mod}, R, Execute command, exec, rofi -show run"
-      "${mod}, T, Open terminal, exec, wezterm"
+      "${mod}, T, Open terminal, exec, kitty"
       "${mod}, V, Open clipboard history, exec, fish -c clipboard_log"
       "${mod}, W, Open \"Bring window to the workspace\" menu, exec, pypr fetch_client_menu"
       "${mod}, X, Delete item from clipboard, exec, fish -c clipboard_delete_item"

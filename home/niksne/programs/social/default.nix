@@ -7,7 +7,7 @@
   ];
 
   home.packages = with pkgs; [
-    element-desktop
+    # element-desktop
     tdesktop
     whatsapp-for-linux
 

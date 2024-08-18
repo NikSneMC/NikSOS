@@ -41,7 +41,7 @@
 
     catppuccin.url = "github:NikSneMC/catppuccin-nix";
 
-    nix-minecraft.url = "github:NiKSneMC/nix-minecraft";
+    nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-python.url = "github:NiKSneMC/nix-python";
 
     ags = {

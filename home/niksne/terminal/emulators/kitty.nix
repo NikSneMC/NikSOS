@@ -5,12 +5,19 @@
 }: let
   palette = theme."${config.theme.flavor}".palette;
   accent = palette."${config.theme.accent}";
+  gotoTabs = builtins.listToAttrs (
+    builtins.genList (
+      num: { 
+        name = "ctrl+alt+${toString (num + 1)}"; 
+        value = "goto_tab ${toString (num + 1)}";
+      }
+    ) 
+  9);
 in {
   programs.kitty = {
     enable = true;
 
     catppuccin.enable = true;
-    shellIntegration.enableFishIntegration = true;
 
     font = {
       size = 10;
@@ -18,6 +25,7 @@ in {
     };
 
     settings = {
+      selection_background = accent;
       cursor = accent;
       url_color = accent;
       url_style = "straight";
@@ -29,7 +37,10 @@ in {
       tab_powerline_style = "slanted";
       tab_title_template = "{index}: {title}";
       active_tab_background = accent;
-      
+      background_opacity = "0.9";
+      enable_audio_bell = "no";
     };
+
+    keybindings = gotoTabs;
   };
 }

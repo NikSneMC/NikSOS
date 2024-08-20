@@ -6,17 +6,13 @@
 }: {
   # themable spotify
   imports = [
-    inputs.spicetify-nix.homeManagerModule
+    inputs.spicetify-nix.homeManagerModules.default
   ];
 
   programs.spicetify = let
-    spicePkgs = inputs.spicetify-nix.packages.${pkgs.system}.default;
+    spicePkgs = inputs.spicetify-nix.legacyPackages.${pkgs.system};
   in {
-    enable = false;
-
-    extraCommands = ''
-      touch $out/snap.yml
-    '';
+    enable = true;
 
     theme = spicePkgs.themes.catppuccin;
 

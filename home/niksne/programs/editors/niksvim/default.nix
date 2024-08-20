@@ -3,7 +3,6 @@
   ...
 }: {
   imports = [
-    # ./keymaps
     ./plugins
   ];
 
@@ -27,6 +26,7 @@
       incsearch = true;
 
       number = true;
+      relativenumber = true;
 
       expandtab = true;
       shiftwidth = 2;
@@ -43,13 +43,21 @@
       enable = true;
       settings = {
         flavour = config.theme.flavor;
+        transparent_background = true;
         integrations = {
           barbar = true;
-          neotree = true;
           cmp = true;
-          treesitter = true;
+          dashboard = true;
+          gitsigns = true;
+          indent_blankline = {
+            enabled = true;
+            colored_indent_levels = true;
+          };
+          native_lsp = true;
+          neotree = true;
           rainbow_delimiters = true;
           telescope.enabled = true;
+          treesitter = true;
           which_key = true;
         };
       };

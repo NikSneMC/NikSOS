@@ -9,6 +9,7 @@
     };
     filetype.pattern = {
       ".*/hypr/hypr.*%.conf" = "hyprlang";
+      ".*.http" = "http";
     };
   };
 }

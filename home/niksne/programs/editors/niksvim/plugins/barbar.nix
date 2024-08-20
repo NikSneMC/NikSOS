@@ -1,13 +1,15 @@
 let
-  goTos = (builtins.listToAttrs (builtins.genList (
-    num: { 
-      name = "goTo${toString (num + 1)}"; 
-      value = {
-        key = "<A-${toString (num + 1)}>";
-      }; 
-    }
-  ) 
-  9)) // { 
+  goTos = (builtins.listToAttrs (
+    builtins.genList (
+      num: { 
+        name = "goTo${toString (num + 1)}"; 
+        value = {
+          key = "<A-${toString (num + 1)}>";
+        }; 
+      }
+    ) 
+    9
+  )) // { 
     first.key = "<A-f>";
     last.key = "<A-0>"; 
   };
@@ -25,8 +27,8 @@ in {
 
       previous.key = "<A-,>";
       next.key = "<A-.>";
-      movePrevious.key = "<A-<>";
-      moveNext.key = "<A->>";
+      movePrevious.key = "<A-s-,>";
+      moveNext.key = "<A-s-.>";
       moveStart.key = "<A-s>";
 
       pin.key = "<A-p>";

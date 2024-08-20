@@ -1,30 +1,30 @@
 let
   mod = "SUPER";
-  workspaces = builtins.concatLists (builtins.genList (
-    x: let
-      ws = let
-        c = (x + 1) / 10;
-      in 
-        builtins.toString (x + 1 - (c * 10));
-    in [
-      "${mod}, ${ws}, Open workspace ${toString (x + 1)}, workspace, ${toString (x + 1)}"
-      "${mod} SHIFT, ${ws}, Move window to workspace ${toString (x + 1)}, movetoworkspace, ${toString (x + 1)}"
-      "${mod} SHIFT ALT, ${ws}, Move window to workspace ${toString (x + 1)} (silent), movetoworkspacesilent, ${toString (x + 1)}"
-    ]
-  )
-  10);
-
-  workspaces_special = builtins.concatLists (builtins.genList (
-    x: let
-      ws = let
-        c = (x + 1) / 13;
-      in 
-        builtins.toString (x + 1 - (c * 13));
-    in [
-      "${mod}, F${ws}, Open workspace ${toString (x + 11)}, workspace, ${toString (x + 11)}"
-    ]
-  )
-  12);
+  workspaces = (builtins.concatLists (
+    builtins.genList (
+      x: let
+        ws = let
+          c = (x + 1) / 10;
+        in 
+          builtins.toString (x + 1 - (c * 10));
+      in [
+        "${mod}, ${ws}, Open workspace ${toString (x + 1)}, workspace, ${toString (x + 1)}"
+        "${mod} SHIFT, ${ws}, Move window to workspace ${toString (x + 1)}, movetoworkspace, ${toString (x + 1)}"
+        "${mod} SHIFT ALT, ${ws}, Move window to workspace ${toString (x + 1)} (silent), movetoworkspacesilent, ${toString (x + 1)}"
+      ]
+    )
+    10
+  )) ++ (
+    builtins.genList (
+      x: let
+        ws = let
+          c = (x + 1) / 13;
+        in 
+          builtins.toString (x + 1 - (c * 13));
+      in "${mod}, F${ws}, Open workspace ${toString (x + 11)}, workspace, ${toString (x + 11)}"
+    )
+    12
+  );
 
 in {
   wayland.windowManager.hyprland.settings = {
@@ -89,8 +89,19 @@ in {
       # Scroll through existing workspaces with mod + scroll
       "${mod}, mouse_up, Switch to the previous opened workspace, workspace, e-1"
       "${mod}, mouse_down, Switch to the next opened workspace, workspace, e+1"
-    ]
-    ++ workspaces ++ workspaces_special;
+
+      # cycle workspaces on current monitor with mod + [/]
+      "${mod}, bracketleft, Switch to the previous workspace on the current monitor, workspace, m-1"
+      "${mod}, bracketright, Switch to the next workspace on the current monitor, workspace, m+1"
+      
+      # cycle monitors with mod + SHIFT + [/]
+      "${mod} SHIFT, bracketleft, Switch to the left monitor, focusmonitor, l"
+      "${mod} SHIFT, bracketright, Switch to the right monitor, focusmonitor, r"
+
+      # send focused workspace to left/right monitors with mod + SHIFT + ALT + [/]
+      "${mod} SHIFT ALT, bracketleft, Send focused workspace to the left monitor, movecurrentworkspacetomonitor, l"
+      "${mod} SHIFT ALT, bracketright, Send focused workspace to the right monitor, movecurrentworkspacetomonitor, r"
+    ] ++ workspaces;
 
     bindde = [
       # Resize window with mod + CTRL + arrow keys

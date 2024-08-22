@@ -18,39 +18,46 @@
     separator = ""
 
     [scratchpads.term]
-    command = "wezterm start --class wezterm_dropdown"
+    command = "kitty --class kitty_dropdown"
     animation = "fromTop"
-    unfocus = "hide"
+    size = "70% 70%"
+    class = "kitty_dropdown"
     excludes = "*"
+    unfocus = "hide"
+    margin = 75
     lazy = true
 
     [scratchpads.volume]
-    command = "pavucontrol --class volume_sidemenu"
+    command = "pavucontrol"
     animation = "fromLeft"
-    class = "volume_sidemenu"
     size = "40% 70%"
-    margin = 75
-    unfocus = "hide"
+    class = "org.pulseaudio.pavucontrol"
     excludes = "*"
+    unfocus = "hide"
+    margin = 75
     lazy = true
 
     [scratchpads.player]
     command = "spotify"
     animation = "fromBottom"
-    # unfocus = "hide"
+    size = "70% 70%"
+    match_by = "initialTitle"
+    initialTitle = "Spotify"
     excludes = "*"
+    unfocus = "hide"
+    margin = 75
     lazy = true
   '';
 
-  systemd.user.services.pyprland = {
-    Unit = {
-      Description = "Hyprland IPC written in python";
-      PartOf = ["graphical-session.target"];
-    };
-    Service = {
-      ExecStart = "${lib.getExe pkgs.pyprland}";
-      Restart = "on-failure";
-    };
-    Install.WantedBy = ["graphical-session.target"];
-  };
+  # systemd.user.services.pyprland = {
+  #   Unit = {
+  #     Description = "Hyprland IPC written in python";
+  #     PartOf = ["graphical-session.target"];
+  #   };
+  #   Service = {
+  #     ExecStart = "${lib.getExe pkgs.pyprland}";
+  #     Restart = "on-failure";
+  #   };
+  #   Install.WantedBy = ["graphical-session.target"];
+  # };
 }

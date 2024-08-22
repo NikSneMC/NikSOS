@@ -10,10 +10,10 @@
     owner = "xvzc";
     repo = "spoofDPI";
     rev = "v${version}";
-    sha256 = "sha256-I93XhIrdCXmoiG6u617toFaB1YALMK8jabCGTp3u4os=";
+    sha256 = "sha256-n9GoZP2AxkWWYW4cKpmiKx3v3sLxqVVLu22D3IRcakw=";
   };
 
-  vendorHash = "sha256-kmp+8MMV1AHaSvLnvYL17USuv7xa3NnsCyCbqq9TvYE=";
+  vendorHash = "sha256-sIqkpoaXx+Un1GdOKgPkZnn3/DWCNAcDHqGaw8i6qDk=";
 
   subPackages = [
     "cmd/spoof-dpi"

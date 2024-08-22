@@ -1,13 +1,10 @@
 let
-  dropterm = "class:^(wezterm_dropdown)$";
-  volume_sidemenu = "class:^(pavucontrol)$";
-  player = "class:^(Spotify)$";
+  dropterm = "class:^(kitty_dropdown)$";
+  volume_sidemenu = "class:^(org.pulseaudio.pavucontrol)$";
+  player = "initialTitle:^(Spotify)$";
 in {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
-      # Rofi
-      "stayfocused, class:^(Rofi)$"
-
       # VSCodium
       "workspace 11, class:^(codium-url-handler)$"
 
@@ -34,15 +31,15 @@ in {
 
 
       # Vivaldi
-      "suppressevent, fullscreen, class:(Vivaldi-stable)$"
-      "tile, class:(Vivaldi-stable)$"
+      "suppressevent, fullscreen, class:(vivaldi-stable)$"
+      "tile, class:(vivaldi-stable)$"
       "float, title:^(Picture-in-Picture)$"
       "pin, title:^(Picture-in-Picture)$"
       "workspace special silent, title:^(Vivaldi — Sharing Indicator)$"
       "workspace special silent, title:^(.*is sharing (your screen|a window)\.)$"
       "idleinhibit focus, class:^(mpv|.+exe|celluloid)$"
-      "idleinhibit focus, class:^(Vivaldi-stable)$, title:^(.*YouTube.*)$"
-      "idleinhibit fullscreen, class:^(Vivaldi-stable)$"
+      "idleinhibit focus, class:^(vivaldi-stable)$, title:^(.*YouTube.*)$"
+      "idleinhibit fullscreen, class:^(vivaldi-stable)$"
 
       # OBS Studio
       "workspace 19, class:^(com.obsproject.Studio)$"

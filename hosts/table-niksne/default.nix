@@ -1,6 +1,6 @@
 {
   imports = [
-    ./disks.nix
+    ./disks
     ./hardware-configuration.nix
     ./servers
     # ../../system/hardware/nvidia.nix

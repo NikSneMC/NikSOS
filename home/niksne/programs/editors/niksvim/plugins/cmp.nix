@@ -44,7 +44,7 @@ in {
           "nerdfont"
           "greek"
           "latex_symbols"
-          "codeium.nvim"
+          "codeium"
         ];
       };
     };

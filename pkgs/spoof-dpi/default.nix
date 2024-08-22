@@ -4,7 +4,7 @@
   fetchFromGitHub,
 }: buildGoModule rec {
   pname = "spoofDPI";
-  version = "0.10.4";
+  version = "0.10.10";
 
   src = fetchFromGitHub {
     owner = "xvzc";

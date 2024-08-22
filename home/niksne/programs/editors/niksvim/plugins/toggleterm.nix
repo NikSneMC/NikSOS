@@ -2,9 +2,8 @@
   programs.nixvim.plugins.toggleterm = {
     enable = true;
     settings = {
-      open_mapping = "[[<leader>t]]";
+      open_mapping = "[[<C-t>]]";
       hide_numbers = true;
-      insert_mappings = false;
     };
   };
 }

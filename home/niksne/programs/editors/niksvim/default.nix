@@ -3,6 +3,7 @@
   ...
 }: {
   imports = [
+    ./binds.nix
     ./plugins
   ];
 

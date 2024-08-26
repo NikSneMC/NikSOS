@@ -1,13 +1,9 @@
-let
+{
+  lib,
+  ...
+}: let
   goTos = (builtins.listToAttrs (
-    builtins.genList (
-      num: { 
-        name = "goTo${toString (num + 1)}"; 
-        value = {
-          key = "<A-${toString (num + 1)}>";
-        }; 
-      }
-    ) 
+    builtins.genList (num: lib.nameValuePair "goTo${toString (num + 1)}" { key = "<A-${toString (num + 1)}>"; }) 
     9
   )) // { 
     first.key = "<A-f>";

@@ -1,9 +1,9 @@
-let
-  mkServersList = servers: builtins.listToAttrs (builtins.map (
-    server: {
-      name = server; 
-      value = { enable = true; };
-    })
+{
+  lib,
+  ...
+}: let
+  mkServersList = servers: builtins.listToAttrs (builtins.map 
+    (server: lib.nameValuePair server { enable = true; })
     servers
     );
 in {

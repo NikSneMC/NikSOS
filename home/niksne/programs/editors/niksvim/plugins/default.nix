@@ -4,11 +4,8 @@
   config,
   ...
 }: let 
-  mkPluginsList = plugins: builtins.listToAttrs (builtins.map (
-    plugin: {
-      name = plugin; 
-      value = { enable = true; };
-    })
+  mkPluginsList = plugins: builtins.listToAttrs (builtins.map 
+    (plugin: lib.nameValuePair plugin { enable = true; })
     plugins
   );
   

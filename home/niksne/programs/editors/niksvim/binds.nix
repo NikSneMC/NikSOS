@@ -9,16 +9,20 @@
         action = value; 
         options.silent = true; 
       }; 
-    in (if builtins.isString value then keymap else keymap // value)
+    in (if builtins.isString value then keymap else (
+      keymap // value // (
+        if value ? "mode" && builtins.isString value.mode then { mode = lib.stringToCharacters value.mode; } else {}
+      )
+    ))
   ) keymaps;
-  mkDisabledKeymaps = keymaps: mkKeymaps (builtins.listToAttrs (builtins.map (key: lib.nameValuePair key "") keymaps));
+  mkDisabledKeymaps = mode: keymaps: mkKeymaps (builtins.listToAttrs (builtins.map (key: lib.nameValuePair key { action = ""; inherit mode; }) keymaps));
 in {
   programs.nixvim.keymaps = (mkKeymaps {
     "jk" = {
       action = "<Esc>";
-      mode = [ "i" "v" ];
+      mode = "iv";
     };
-  }) ++ (mkDisabledKeymaps [
+  }) ++ (mkDisabledKeymaps "inv" [
     "<Up>"
     "<Down>"
     "<Left>"

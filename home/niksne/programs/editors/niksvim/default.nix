@@ -1,8 +1,10 @@
 {
   config,
+  inputs,
   ...
 }: {
   imports = [
+    inputs.nixvim.homeManagerModules.nixvim
     ./binds.nix
     ./plugins
   ];

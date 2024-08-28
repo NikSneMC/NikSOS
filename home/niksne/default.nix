@@ -9,7 +9,6 @@
     ./specialisations.nix
     ./terminal
     inputs.catppuccin.homeManagerModules.catppuccin
-    inputs.nixvim.homeManagerModules.nixvim
     self.nixosModules.theme
   ];
 

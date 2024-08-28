@@ -989,6 +989,22 @@
         "type": "github"
       }
     },
+    "nixcord": {
+      "locked": {
+        "lastModified": 1724826585,
+        "narHash": "sha256-smYddeVMcAIS3RcNV3R1Eiw5BTAfVL/g/DRQ0efeogU=",
+        "owner": "NikSneMC",
+        "repo": "nixcord",
+        "rev": "08f147780c5ecc571303bd4127144773598941da",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NikSneMC",
+        "ref": "feat/link-quickcss-only-when-declarative",
+        "repo": "nixcord",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1717196966,
@@ -1219,6 +1235,7 @@
         "nikspkgs": "nikspkgs",
         "nix-minecraft": "nix-minecraft",
         "nix-python": "nix-python",
+        "nixcord": "nixcord",
         "nixpkgs": "nixpkgs_9",
         "nixpkgs-stable": "nixpkgs-stable",
         "nixvim": "nixvim",

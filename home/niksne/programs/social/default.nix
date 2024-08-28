@@ -3,7 +3,7 @@
   ...
 }:{
   imports = [
-    ./discord.nix
+    ./nixcord.nix
   ];
 
   home.packages = with pkgs; [

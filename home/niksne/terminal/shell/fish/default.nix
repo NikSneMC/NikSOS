@@ -33,6 +33,7 @@ in {
       nixvim = "nvim";
       npm = "pnpm";
       npx = "pnpx";
+      weather = "fastfetch --structure \"weather\" --logo none --separator \": \"";
     };
     shellInit = ''
       set -gx EDITOR vi

@@ -2,11 +2,8 @@
   config,
   pkgs,
   ...
-}: let
-  cfg = config.programs.git;
-  key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIC80U0KdtQQ8zYepNqnCznBtk9CdQ+R+97UaUjD/m6cX niksne@table-niksne";
-in {
-  home.packages = [pkgs.gh];
+}: {
+  home.packages = [ pkgs.gh ];
 
   # enable scrolling in git diff
   home.sessionVariables.DELTA_PAGER = "less -R";
@@ -19,9 +16,6 @@ in {
       enable = true;
       catppuccin.enable = true;
     };
-
-    extraConfig.credential.helper = "store";
-
     extraConfig = {
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";
@@ -48,30 +42,26 @@ in {
       oops = "checkout --";
     };
 
-    ignores = ["*~" "*.swp" "*result*" ".direnv" "node_modules"];
+    extraConfig.safe.directory = [ "*" ];
 
-    signing = {
-      key = "${config.home.homeDirectory}/.ssh/id_ed25519";
-      signByDefault = true;
-    };
+    ignores = [
+      "*~"
+      "*.swp"
+      "*result*"
+      ".direnv"
+      "node_modules"
+      "venv"
+      ".idea"
+    ];
 
-    extraConfig = {
-      gpg = {
-        format = "ssh";
-        ssh.allowedSignersFile = config.home.homeDirectory + "/" + config.xdg.configFile."git/allowed_signers".target;
-      };
-    };
-
+    extraConfig.credential.helper = "store";
     userEmail = "commits@niksne.ru";
     userName = "NikSne";
 
-    extraConfig = {
-      safe.directory = [
-        "*"
-      ];
+    signing = {
+      key = "${config.home.homeDirectory}/.ssh/git_sign";
+      signByDefault = true;
     };
+    extraConfig.gpg.format = "ssh";
   };
-  xdg.configFile."git/allowed_signers".text = ''
-    ${cfg.userEmail} namespaces="git" ${key}
-  '';
 }

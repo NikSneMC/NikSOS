@@ -18,10 +18,10 @@
   mkDisabledKeymaps = mode: keymaps: mkKeymaps (builtins.listToAttrs (builtins.map (key: lib.nameValuePair key { action = ""; inherit mode; }) keymaps));
 in {
   programs.nixvim.keymaps = (mkKeymaps {
-    "jk" = {
-      action = "<Esc>";
-      mode = "iv";
-    };
+    # "jk" = {
+    #   action = "<Esc>";
+    #   mode = "iv";
+    # };
   }) ++ (mkDisabledKeymaps "inv" [
     "<Up>"
     "<Down>"

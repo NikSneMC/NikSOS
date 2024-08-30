@@ -13,7 +13,6 @@
       "wl-paste --type image --watch cliphist store"
       "vesktop"
       "telegram-desktop"
-      "whatsapp-for-linux"
       "spoof-dpi --port 8888 --enable-doh --window-size 0 --timeout 10000"
     ];
 

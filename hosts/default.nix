@@ -1,19 +1,18 @@
 {
-  self,
-  inputs,
   homeImports,
+  inputs,
+  self,
   ...
 }: {
   flake.nixosConfigurations = let
     inherit (inputs.nixpkgs.lib) nixosSystem;
 
     inherit (import "${self}/system") desktop laptop;
-    inherit (import "${self}/system/catppuccin.nix") theme;
 
     system = "x86_64-linux";
 
     specialArgs = {
-      inherit inputs self theme; 
+      inherit inputs self; 
       pkgs-stable = import inputs.nixpkgs-stable {
         inherit system;
         config.allowUnfree = true;

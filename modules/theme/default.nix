@@ -1,42 +1,35 @@
 {
+  config,
   lib, 
   ...
-}: let
-  validAccents = [
-    "rosewater"
-    "flamingo"
-    "pink"
-    "mauve"
-    "red"
-    "maroon"
-    "peach"
-    "yellow"
-    "green"
-    "teal"
-    "sky"
-    "sapphire"
-    "blue"
-    "lavender"
-  ];
-  validFlavors = [ 
-    "latte"
-    "frappe"
-    "macchiato"
-    "mocha"
-  ];
-in {
+}: {
   options.theme = {
     flavor = lib.mkOption {
       description = '''';
-      type = lib.types.enum validFlavors;
+      type = lib.types.str;
       example = lib.literalExample "mocha";
       default = "mocha";
     };
     accent = lib.mkOption {
       description = '''';
-      type = lib.types.enum validAccents;
+      type = lib.types.str;
       example = lib.literalExample "sky";
       default = "sky";
+    };
+
+    colors = lib.mkOption {
+      description = '''';
+      type = lib.types.attrs;
+      readOnly = true;
+      default = let
+        catppuccin = builtins.mapAttrs (_: flavor: 
+          (builtins.mapAttrs (_: color: color.hex) flavor.colors) // { 
+            accent = flavor.colors.${config.theme.accent}.hex;
+          }
+        ) config.catppuccin.flavors;
+      in catppuccin // catppuccin.${config.theme.flavor} // {
+        notable = if config.theme.flavor == "latte" then catppuccin.mocha else catppuccin.latte;
+      };
     };
 
     wallpaper = lib.mkOption {

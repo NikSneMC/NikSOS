@@ -1,7 +1,6 @@
 {
   config,
   lib,
-  theme,
   ...
 }:
 let
@@ -9,11 +8,9 @@ let
     with builtins;
     (lib.toUpper (substring 0 1 str)) + (substring 1 (stringLength str) str);
 
-  palette = theme."${config.theme.flavor}".palette;
-
   font = "JetBrainsMono Nerd Font";
 
-  mkTabColorFg = bg: fg: ''{ bg_color = "${palette."${bg}"}", fg_color = "${palette."${fg}"}" }'';
+  mkTabColorFg = bg: fg: ''{ bg_color = "#${config.theme.colors.${bg}}", fg_color = "#${config.theme.colors.${fg}}" }'';
 
   mkTabColor = bg: mkTabColorFg bg "text";
 in {  
@@ -36,7 +33,7 @@ in {
         font = wezterm.font_with_fallback { "${font}", "Noto Sans" },
         window_frame = {
           font = wezterm.font { family = "${font}", weight = 'Bold' },
-          active_titlebar_bg = "${palette.crust}"
+          active_titlebar_bg = "#${config.theme.colors.crust}"
         },
         colors = {
           tab_bar = {

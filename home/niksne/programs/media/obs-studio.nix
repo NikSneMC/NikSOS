@@ -14,7 +14,7 @@
     frappe = "sha256-3yRaV/wo1wE8K18kMf2ED4/anBUkHqntAFNGwTJ6860=";
     macchiato = "sha256-xwS0gaPp/1u5aYmDk95bvFkJqJ/2kqG/zWg/oJ1olPw=";
     mocha = "sha256-z1CJ8DyVq/iKReoEAgLriiIsUBW8D3ku//My2gxC/QM=";
-  }."${config.theme.flavor}";
+  }.${config.theme.flavor};
 in {
   programs.obs-studio = {
     enable = true;

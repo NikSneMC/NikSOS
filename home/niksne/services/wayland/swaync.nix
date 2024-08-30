@@ -1,10 +1,7 @@
 {
   config,
-  theme,
   ...
-}: let
-  palette = theme."${config.theme.flavor}";
-in {
+}: {
   services.swaync = {
     enable = true;
     settings = {
@@ -62,25 +59,25 @@ in {
       }
 
       trough highlight {
-        background: ${palette.palette.text};
+        background: #${config.theme.colors.text};
       }
 
       scale trough {
         margin: 0rem 1rem;
-        background-color: ${palette.palette.surface0};
+        background-color: #${config.theme.colors.surface0};
         min-height: 8px;
         min-width: 70px;
       }
 
       slider {
-        background-color: ${palette.palette.blue};
+        background-color: #${config.theme.colors.blue};
       }
 
       .floating-notifications.background .notification-row .notification-background {
-        border: 1px solid ${palette.palette.surface0};
+        border: 1px solid #${config.theme.colors.surface0};
         margin: 18px;
-        background-color: ${palette.palette.base};
-        color: ${palette.palette.text};
+        background-color: #${config.theme.colors.base};
+        color: #${config.theme.colors.text};
         padding: 0px;
       }
 
@@ -89,7 +86,7 @@ in {
       }
 
       .floating-notifications.background .notification-row .notification-background .notification.critical {
-        border: 1px solid ${palette.palette.red};
+        border: 1px solid #${config.theme.colors.red};
       }
 
       .floating-notifications.background .notification-row .notification-background .notification .notification-content {
@@ -97,15 +94,15 @@ in {
       }
 
       .floating-notifications.background .notification-row .notification-background .notification .notification-content .summary {
-        color: ${palette.palette.text};
+        color: #${config.theme.colors.text};
       }
 
       .floating-notifications.background .notification-row .notification-background .notification .notification-content .time {
-        color: ${palette.palette.subtext0};
+        color: #${config.theme.colors.subtext0};
       }
 
       .floating-notifications.background .notification-row .notification-background .notification .notification-content .body {
-        color: ${palette.palette.text};
+        color: #${config.theme.colors.text};
       }
 
       .floating-notifications.background .notification-row .notification-background .notification>*:last-child>* {
@@ -113,76 +110,76 @@ in {
       }
 
       .floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action {
-        color: ${palette.palette.text};
-        background-color: ${palette.palette.surface0};
-        border: 1px solid ${palette.palette.surface1};
+        color: #${config.theme.colors.text};
+        background-color: #${config.theme.colors.surface0};
+        border: 1px solid #${config.theme.colors.surface1};
         margin: 7px;
       }
 
       .floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
-        border: 1px solid ${palette.palette.surface1};
-        background-color: ${palette.palette.surface0};
-        color: ${palette.palette.text};
+        border: 1px solid #${config.theme.colors.surface1};
+        background-color: #${config.theme.colors.surface0};
+        color: #${config.theme.colors.text};
       }
 
       .floating-notifications.background .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
-        border-color: ${palette.palette.surface1};
-        background-color: ${palette.palette.sapphire};
-        color: ${palette.palette.text};
+        border-color: #${config.theme.colors.surface1};
+        background-color: #${config.theme.colors.sapphire};
+        color: #${config.theme.colors.text};
       }
 
       .floating-notifications.background .notification-row .notification-background .close-button {
         margin: 7px;
         border-radius: 1rem;
-        color: ${palette.palette.base};
-        background-color: ${palette.palette.red};
+        color: #${config.theme.colors.base};
+        background-color: #${config.theme.colors.red};
       }
 
       .floating-notifications.background .notification-row .notification-background .close-button:hover {
-        background-color: ${palette.palette.maroon};
-        color: ${palette.palette.base};
+        background-color: #${config.theme.colors.maroon};
+        color: #${config.theme.colors.base};
       }
 
       .floating-notifications.background .notification-row .notification-background .close-button:active {
-        background-color: ${palette.palette.red};
-        color: ${palette.palette.base};
+        background-color: #${config.theme.colors.red};
+        color: #${config.theme.colors.base};
       }
 
       .control-center {
-        border: 1px solid ${palette.palette.surface0};
-        background-color: ${palette.palette.base};
-        color: ${palette.palette.text};
+        border: 1px solid #${config.theme.colors.surface0};
+        background-color: #${config.theme.colors.base};
+        color: #${config.theme.colors.text};
         padding: 14px;
       }
 
       .control-center .widget-title>label {
-        color: ${palette.palette.text};
+        color: #${config.theme.colors.text};
         font-size: 2rem;
       }
 
       .control-center .widget-title button {
-        color: ${palette.palette.text};
-        background-color: ${palette.palette.surface0};
-        border: 1px solid ${palette.palette.surface1};
+        color: #${config.theme.colors.text};
+        background-color: #${config.theme.colors.surface0};
+        border: 1px solid #${config.theme.colors.surface1};
         padding: 8px;
       }
 
       .control-center .widget-title button:hover {
-        border: 1px solid ${palette.palette.surface1};
-        background-color: ${palette.palette.surface2};
-        color: ${palette.palette.text};
+        border: 1px solid #${config.theme.colors.surface1};
+        background-color: #${config.theme.colors.surface2};
+        color: #${config.theme.colors.text};
       }
 
       .control-center .widget-title button:active {
-        border: 1px solid ${palette.palette.surface1};
-        background-color: ${palette.palette.sapphire};
-        color: ${palette.palette.base};
+        border: 1px solid #${config.theme.colors.surface1};
+        background-color: #${config.theme.colors.sapphire};
+        color: #${config.theme.colors.base};
       }
 
       .control-center .notification-row .notification-background {
-        color: ${palette.palette.text};
-        background-color: ${palette.palette.surface0};
-        border: 1px solid ${palette.palette.surface1};
+        color: #${config.theme.colors.text};
+        background-color: #${config.theme.colors.surface0};
+        border: 1px solid #${config.theme.colors.surface1};
         margin-top: 14px;
       }
 
@@ -191,7 +188,7 @@ in {
       }
 
       .control-center .notification-row .notification-background .notification.critical {
-        border: 1px solid ${palette.palette.red};
+        border: 1px solid #${config.theme.colors.red};
       }
 
       .control-center .notification-row .notification-background .notification .notification-content {
@@ -199,15 +196,15 @@ in {
       }
 
       .control-center .notification-row .notification-background .notification .notification-content .summary {
-        color: ${palette.palette.text};
+        color: #${config.theme.colors.text};
       }
 
       .control-center .notification-row .notification-background .notification .notification-content .time {
-        color: ${palette.palette.subtext0};
+        color: #${config.theme.colors.subtext0};
       }
 
       .control-center .notification-row .notification-background .notification .notification-content .body {
-        color: ${palette.palette.text};
+        color: #${config.theme.colors.text};
       }
 
       .control-center .notification-row .notification-background .notification>*:last-child>* {
@@ -215,29 +212,29 @@ in {
       }
 
       .control-center .notification-row .notification-background .notification>*:last-child>* .notification-action {
-        color: ${palette.palette.text};
-        background-color: ${palette.palette.crust};
-        border: 1px solid ${palette.palette.surface1};
+        color: #${config.theme.colors.text};
+        background-color: #${config.theme.colors.crust};
+        border: 1px solid #${config.theme.colors.surface1};
         margin: 7px;
       }
 
       .control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:hover {
-        border: 1px solid ${palette.palette.surface1};
-        background-color: ${palette.palette.surface0};
-        color: ${palette.palette.text};
+        border: 1px solid #${config.theme.colors.surface1};
+        background-color: #${config.theme.colors.surface0};
+        color: #${config.theme.colors.text};
       }
 
       .control-center .notification-row .notification-background .notification>*:last-child>* .notification-action:active {
-        border: 1px solid ${palette.palette.surface1};
-        background-color: ${palette.palette.sapphire};
-        color: ${palette.palette.text};
+        border: 1px solid #${config.theme.colors.surface1};
+        background-color: #${config.theme.colors.sapphire};
+        color: #${config.theme.colors.text};
       }
 
       .control-center .notification-row .notification-background .close-button {
         margin: 7px;
         padding: 2px;
-        color: ${palette.palette.base};
-        background-color: ${palette.palette.maroon};
+        color: #${config.theme.colors.base};
+        background-color: #${config.theme.colors.maroon};
       }
 
       .close-button {
@@ -245,48 +242,48 @@ in {
       }
 
       .control-center .notification-row .notification-background .close-button:hover {
-        background-color: ${palette.palette.red};
-        color: ${palette.palette.base};
+        background-color: #${config.theme.colors.red};
+        color: #${config.theme.colors.base};
       }
 
       .control-center .notification-row .notification-background .close-button:active {
-        background-color: ${palette.palette.red};
-        color: ${palette.palette.base};
+        background-color: #${config.theme.colors.red};
+        color: #${config.theme.colors.base};
       }
 
       .control-center .notification-row .notification-background:hover {
-        border: 1px solid ${palette.palette.surface1};
-        background-color: ${palette.palette.overlay1};
-        color: ${palette.palette.text};
+        border: 1px solid #${config.theme.colors.surface1};
+        background-color: #${config.theme.colors.overlay1};
+        color: #${config.theme.colors.text};
       }
 
       .control-center .notification-row .notification-background:active {
-        border: 1px solid ${palette.palette.surface1};
-        background-color: ${palette.palette.sapphire};
-        color: ${palette.palette.text};
+        border: 1px solid #${config.theme.colors.surface1};
+        background-color: #${config.theme.colors.sapphire};
+        color: #${config.theme.colors.text};
       }
 
       .notification.critical progress {
-        background-color: ${palette.palette.red};
+        background-color: #${config.theme.colors.red};
       }
 
       .notification.low progress,
       .notification.normal progress {
-        background-color: ${palette.palette.blue};
+        background-color: #${config.theme.colors.blue};
       }
 
       .control-center-dnd {
         margin-top: 5px;
-        background: ${palette.palette.surface0};
-        border: 1px solid ${palette.palette.surface1};
+        background: #${config.theme.colors.surface0};
+        border: 1px solid #${config.theme.colors.surface1};
       }
 
       .control-center-dnd:checked {
-        background: ${palette.palette.surface0};
+        background: #${config.theme.colors.surface0};
       }
 
       .control-center-dnd slider {
-        background: ${palette.palette.surface1};
+        background: #${config.theme.colors.surface1};
       }
 
       .widget-dnd {
@@ -296,21 +293,21 @@ in {
 
       .widget-dnd>switch {
         font-size: initial;
-        background: ${palette.palette.surface0};
-        border: 1px solid ${palette.palette.surface1};
+        background: #${config.theme.colors.surface0};
+        border: 1px solid #${config.theme.colors.surface1};
       }
 
       .widget-dnd>switch:checked {
-        background: ${palette.palette.surface0};
+        background: #${config.theme.colors.surface0};
       }
 
       .widget-dnd>switch slider {
-        background: ${palette.palette.surface1};
-        border: 1px solid ${palette.palette.overlay0};
+        background: #${config.theme.colors.surface1};
+        border: 1px solid #${config.theme.colors.overlay0};
       }
 
       .widget-mpris .widget-mpris-player {
-        background: ${palette.palette.surface0};
+        background: #${config.theme.colors.surface0};
         padding: 7px;
       }
 
@@ -328,7 +325,7 @@ in {
       }
 
       .widget-menubar>box>.menu-button-bar>:last-child {
-        color: ${palette.palette.red};
+        color: #${config.theme.colors.red};
       }
 
       .power-buttons,
@@ -339,11 +336,11 @@ in {
       .power-buttons button:hover,
       .powermode-buttons button:hover,
       .screenshot-buttons button:hover {
-        background: ${palette.palette.surface0};
+        background: #${config.theme.colors.surface0};
       }
 
       .control-center .widget-label>label {
-        color: ${palette.palette.text};
+        color: #${config.theme.colors.text};
         font-size: 2rem;
       }
 
@@ -361,15 +358,15 @@ in {
 
       .widget-volume label {
         font-size: 1.5rem;
-        color: ${palette.palette.sapphire};
+        color: #${config.theme.colors.sapphire};
       }
 
       .widget-volume trough highlight {
-        background: ${palette.palette.sapphire};
+        background: #${config.theme.colors.sapphire};
       }
 
       .widget-backlight trough highlight {
-        background: ${palette.palette.yellow};
+        background: #${config.theme.colors.yellow};
       }
       .widget-backlight scale {
         margin-right: 1rem;
@@ -377,7 +374,7 @@ in {
 
       .widget-backlight label {
         font-size: 1.5rem;
-        color: ${palette.palette.yellow};
+        color: #${config.theme.colors.yellow};
       }
     '';
   };

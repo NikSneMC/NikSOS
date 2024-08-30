@@ -2,10 +2,8 @@
   config,
   lib,
   pkgs,
-  theme,
   ...
 }: let
-  palette = theme."${config.theme.flavor}";
   mkValueString = value:
     if lib.isBool value then
       if value then "true" else "false"
@@ -67,7 +65,7 @@
       fi
 
       # capture stdout (code), stderr (any oathtool error), and exit code
-      eval "$({ reserr=$({ res=$(cat "$HOME/.2fa/$1" | oathtool --totp -b - ); resret=$?; } 2>&1; declare -p res resret >&2); declare -p reserr; } 2>&1)"
+      eval "$({ reserr=$({ res=$(cat "$HOME/.2fa/$1" | ${lib.getExe pkgs.oath-toolkit} --totp -b - ); resret=$?; } 2>&1; declare -p res resret >&2); declare -p reserr; } 2>&1)"
 
 
       if [ $resret -ne 0 ]
@@ -115,20 +113,20 @@
   };
   rofi-theme = {
     "*" = {
-      bg-col = mkLiteral palette.palette.base;
-      bg-col-light = mkLiteral palette.palette.base;
-      border-col = mkLiteral palette.palette.${config.theme.accent};
-      selected-col = mkLiteral palette.palette.base;
-      accent = mkLiteral palette.palette.${config.theme.accent};
-      fg-col = mkLiteral palette.palette.text;
-      fg-col2 = mkLiteral palette.palette.red;
-      grey = mkLiteral palette.palette.overlay0;
+      bg-col = mkLiteral "#${config.theme.colors.base}";
+      bg-col-light = mkLiteral "#${config.theme.colors.base}";
+      border-col = mkLiteral "#${config.theme.colors.accent}";
+      selected-col = mkLiteral "#${config.theme.colors.base}";
+      accent = mkLiteral "#${config.theme.colors.accent}";
+      fg-col = mkLiteral "#${config.theme.colors.text}";
+      fg-col2 = mkLiteral "#${config.theme.colors.red}";
+      grey = mkLiteral "#${config.theme.colors.overlay0}";
 
       width = 600;
       font = "JetBrainsMono Nerd Font 10";
     };
 
-    "element-text, element-icon , mode-switcher" = {
+    "element-text, element-icon, mode-switcher" = {
       background-color = mkLiteral "inherit";
       text-color = mkLiteral "inherit";
     };
@@ -148,7 +146,7 @@
     };
 
     inputbar = {
-      children = mkLiteral "[prompt,entry]";
+      children = mkLiteral "[prompt, entry]";
       background-color = mkLiteral "@bg-col";
       border-radius = mkLiteral "5px";
       padding = mkLiteral "2px";
@@ -159,7 +157,7 @@
       padding = mkLiteral "6px";
       text-color = mkLiteral "@bg-col";
       border-radius = mkLiteral "3px";
-      margin = mkLiteral "20px 0px 0px 20px";
+      margin = mkLiteral "20px 0 0 20px";
     };
 
     textbox-prompt-colon = {
@@ -169,15 +167,15 @@
 
     entry = {
       padding = mkLiteral "6px";
-      margin = mkLiteral "20px 0px 0px 10px";
+      margin = mkLiteral "20px 0 0 10px";
       text-color = mkLiteral "@fg-col";
       background-color = mkLiteral "@bg-col";
     };
 
     listview = {
-      border = mkLiteral "0px 0px 0px";
-      padding = mkLiteral "6px 0px 0px";
-      margin = mkLiteral "10px 0px 0px 20px";
+      border = mkLiteral "0";
+      padding = mkLiteral "6px 0 0";
+      margin = mkLiteral "10px 0 0 20px";
       columns = 1;
       lines = 5;
       background-color = mkLiteral "@bg-col";
@@ -224,37 +222,32 @@
 
     textbox = {
       padding = mkLiteral "6px";
-      margin = mkLiteral "20px 0px 0px 20px";
+      margin = mkLiteral "20px 0 0 20px";
       text-color = mkLiteral "@accent";
       background-color = mkLiteral "@bg-col-light";
     };
   };
 in {
-  home.packages = with pkgs; [
-    rofimoji
-    oath-toolkit
-  ];
-  
   programs.rofi = {
     enable = true;
     catppuccin.enable = false;
     package = pkgs.rofi-wayland;
     location = "right";
-    terminal = "wezterm";
+    terminal = "kitty";
     extraConfig = (common-config // {
       modes = "run,drun,filebrowser,2fa:${script-2fa}";
       display-run = "  ";
       display-drun = " 󰵆 ";
       display-filebrowser = " 󰥨 ";
       display-2fa = " 󰦯 ";
-      # "// bad way to do this" = config.lib.formats.rasi.mkLiteral ''
+      "// bad way to do this" = config.lib.formats.rasi.mkLiteral ''
 
-        # filebrowser = {
-        #   directory = "~";
-        #   sorting-method = "name";
-        #   directories-first = true;
-        # };
-      # // I\'ll fix it'';
+        filebrowser {
+          directory: "~";
+          sorting-method: "name";
+          directories-first: true;
+        }
+      // I'll fix it later'';
     });
     theme = rofi-theme;
   };
@@ -270,8 +263,8 @@ in {
   xdg.configFile."rofi/clipboard.rasi".text = toRasi {
     configuration = (common-config // {
       location = 4;
-      terminal = "wezterm";
-      modes = "log:${script-clipboard},emoji:rofimoji";
+      terminal = "kitty";
+      modes = "log:${script-clipboard},emoji:${lib.getExe pkgs.rofimoji}";
       display-emoji = " 󰞅 ";
       display-log = " 󱃔 ";
     });

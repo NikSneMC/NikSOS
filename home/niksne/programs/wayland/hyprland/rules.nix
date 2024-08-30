@@ -1,4 +1,7 @@
-let
+{
+  config,
+  ...
+}: let
   dropterm = "class:^(kitty_dropdown)$";
   volume_sidemenu = "class:^(org.pulseaudio.pavucontrol)$";
   player = "initialTitle:^(Spotify)$";
@@ -62,8 +65,11 @@ in {
       "center, class:^(.*jetbrains.*)$, title:^(Confirm Exit|Open Project|win424|win201|splash)$"
       "size 640 400, class:^(.*jetbrains.*)$, title:^(splash)$"
 
-      "suppressevent, maximize, class:.*" # You'll probably like this.
+      # mark xwayland apps
+      "bordercolor rgb(${config.theme.colors.notable.accent}), xwayland:1"
 
+      # You'll probably like this
+      "suppressevent, maximize, class:.*"
       # scratchpads
       "float, ${dropterm}"
       "workspace special:scratch_term silent, ${dropterm}"

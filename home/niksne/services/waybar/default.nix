@@ -1,10 +1,9 @@
 {
   config,
-  theme,
+  lib,
+  pkgs,
   ...
-}: let
-  palette = theme."${config.theme.flavor}";
-in {
+}: {
   programs.waybar = {
     enable = true;
     catppuccin.enable = true;
@@ -93,11 +92,11 @@ in {
             on-scroll = 1;
             on-click-right = "mode";
             format = {
-              months = "<span color='${palette.palette.rosewater}'><b>{}</b></span>";
-              days = "<span color='${palette.palette.text}'><b>{}</b></span>";
-              weeks = "<span color='${palette.palette.mauve}'><b>W{}</b></span>";
-              weekdays = "<span color='${palette.palette.green}'><b>{}</b></span>";
-              today = "<span color='${palette.palette.teal}'><b><u>{}</u></b></span>";
+              months = "<span color='#${config.theme.colors.rosewater}'><b>{}</b></span>";
+              days = "<span color='#${config.theme.colors.text}'><b>{}</b></span>";
+              weeks = "<span color='#${config.theme.colors.mauve}'><b>W{}</b></span>";
+              weekdays = "<span color='#${config.theme.colors.green}'><b>{}</b></span>";
+              today = "<span color='#${config.theme.colors.teal}'><b><u>{}</u></b></span>";
             };
           };
         };
@@ -131,16 +130,16 @@ in {
             "󰤨"
           ];
           format-disconnected = "󰤫  Disconnected";
-          tooltip-format = "wifi <span color='${palette.palette.maroon}'>off</span>";
+          tooltip-format = "wifi <span color='#${config.theme.colors.maroon}'>off</span>";
           tooltip-format-wifi = ''
             SSID = {essid}({signalStrength}%), {frequency} MHz
             Interface = {ifname}
             IP = {ipaddr}
             GW = {gwaddr}
             
-            <span color='${palette.palette.green}'>{bandwidthUpBits}</span>\t<span color='${palette.palette.maroon}'>{bandwidthDownBits}</span>\t<span color='${palette.palette.mauve}'>󰹹{bandwidthTotalBits}</span>
+            <span color='#${config.theme.colors.green}'>{bandwidthUpBits}</span>\t<span color='#${config.theme.colors.maroon}'>{bandwidthDownBits}</span>\t<span color='#${config.theme.colors.mauve}'>󰹹{bandwidthTotalBits}</span>
           '';
-          tooltip-format-disconnected = "<span color='${palette.palette.red}'>disconnected</span>";
+          tooltip-format-disconnected = "<span color='#${config.theme.colors.red}'>disconnected</span>";
           format-ethernet = "󰈀 {ipaddr}/{cidr}";
           format-linked = "󰈀 {ifname} (No IP)";
           tooltip-format-ethernet = ''Interface = {ifname}
@@ -149,7 +148,7 @@ GW = {gwaddr}
 Netmask = {netmask}
 CIDR = {cidr}
 
-<span color='${palette.palette.green}'>{bandwidthUpBits}</span> <span color='${palette.palette.maroon}'>{bandwidthDownBits}</span> <span color='${palette.palette.mauve}'>󰹹{bandwidthTotalBits}</span>'';
+<span color='#${config.theme.colors.green}'>{bandwidthUpBits}</span> <span color='#${config.theme.colors.maroon}'>{bandwidthDownBits}</span> <span color='#${config.theme.colors.mauve}'>󰹹{bandwidthTotalBits}</span>'';
           max-length = 35;
           on-click = "fish -c toggle_wifi";
           on-click-right = "nm-connection-editor";
@@ -174,16 +173,23 @@ CIDR = {cidr}
           "hyprland/window"
         ];
         modules-right = [
+          "custom/weather"
           "custom/media"
         ];
         user = {
-          format = "<span color='${palette.palette.${config.theme.accent}}'> {user}</span> (up <span color='${palette.palette.pink}'>{work_d} d</span> <span color='${palette.palette.blue}'>{work_H} h</span> <span color='${palette.palette.red}'>{work_M} min</span> <span color='${palette.palette.green}'>↑</span>)";
+          format = "<span color='#${config.theme.colors.${config.theme.accent}}'> {user}</span> (up <span color='#${config.theme.colors.pink}'>{work_d} d</span> <span color='#${config.theme.colors.blue}'>{work_H} h</span> <span color='#${config.theme.colors.red}'>{work_M} min</span> <span color='#${config.theme.colors.green}'>↑</span>)";
           icon = true;
         };
         "hyprland/window" = {
           format = "{title} ({class})";
           max-length = 75;
           separate-outputs = true;
+        };
+        "custom/weather" = {
+          format = "{}°";
+          interval = 600;
+          exec = "${lib.getExe pkgs.wttrbar} --date-format \"%d-%m-%Y\"";
+          return-type = "json";
         };
         "custom/media" = {
           format = "{icon}  {}";
@@ -454,8 +460,8 @@ Swap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail}
               activated = "󰛐";
               deactivated = "󰛑";
           };
-          tooltip-format-activated = "idle-inhibitor <span color='${palette.palette.green}'>on</span>";
-          tooltip-format-deactivated = "idle-inhibitor <span color='${palette.palette.maroon}'>off</span>";
+          tooltip-format-activated = "idle-inhibitor <span color='#${config.theme.colors.green}'>on</span>";
+          tooltip-format-deactivated = "idle-inhibitor <span color='#${config.theme.colors.maroon}'>off</span>";
           start-activated = true;
         };
         tray = {
@@ -615,6 +621,10 @@ Swap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail}
         padding-right: 20px;
         margin-top: 5px;
         margin-bottom: 5px;
+      }
+
+      #custom-media {
+        padding-left: 10px;
       }
 
       #custom-media.Paused {

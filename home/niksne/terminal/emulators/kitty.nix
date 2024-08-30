@@ -1,10 +1,7 @@
 {
   config,
-  theme,
   ...
 }: let
-  palette = theme."${config.theme.flavor}".palette;
-  accent = palette."${config.theme.accent}";
   gotoTabs = builtins.listToAttrs (
     builtins.genList (
       num: { 
@@ -25,9 +22,9 @@ in {
     };
 
     settings = {
-      selection_background = accent;
-      cursor = accent;
-      url_color = accent;
+      selection_background = "#${config.theme.colors.accent}";
+      cursor = "#${config.theme.colors.accent}";
+      url_color = "#${config.theme.colors.accent}";
       url_style = "straight";
       underline_hyperlinks = "always";
       window_padding_width = 3;
@@ -36,7 +33,7 @@ in {
       tab_bar_style = "powerline";
       tab_powerline_style = "slanted";
       tab_title_template = "{index}: {title}";
-      active_tab_background = accent;
+      active_tab_background = "#${config.theme.colors.accent}";
       background_opacity = "0.9";
       enable_audio_bell = "no";
     };

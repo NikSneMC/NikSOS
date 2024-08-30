@@ -1,14 +1,14 @@
 {
+  pkgs,
+  ...
+}: {
   programs.zathura = {
     enable = true;
-
+    
     catppuccin.enable = true;
 
     options = {
-      # recolor-lightcolor = "rgba(0,0,0,0)";
-      # default-bg = "rgba(0,0,0,0.7)";
-
-      font = "Inter 12";
+      font = "JetBrainsMono Nerd Font 12";
       selection-notification = true;
 
       selection-clipboard = "clipboard";

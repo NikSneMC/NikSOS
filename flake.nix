@@ -17,7 +17,7 @@
     };
 
     hm = {
-      url = "github:NikSneMC/home-manager/NikSneMC-patch-1";
+      url = "github:NikSneMC/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -60,7 +60,7 @@
       };
     };
 
-    catppuccin.url = "github:NikSneMC/catppuccin-nix";
+    catppuccin.url = "github:NikSneMC/catppuccin-nix/feat/use-whiskers";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-python.url = "github:NiKSneMC/nix-python";
@@ -76,6 +76,8 @@
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    helix.url = "github:helix-editor/helix";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -105,8 +107,8 @@
         ...
       }: {
         devShells.default = pkgs.mkShell {
-          packages = [
-            pkgs.git
+          packages = with pkgs; [
+            git
           ];
           name = "dots";
           DIRENV_LOG_FORMAT = "";

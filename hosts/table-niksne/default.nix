@@ -5,6 +5,7 @@
     ./servers
     # ../../system/hardware/nvidia.nix
     ../../system/hardware/amd.nix
+    ../../system/hardware/razer.nix
   ];
 
   boot.loader = {
@@ -31,4 +32,6 @@
   services = {
     fstrim.enable = true;
   };
+
+  hardware.openrazer.users = [ "niksne" ];
 }

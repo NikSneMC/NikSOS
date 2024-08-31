@@ -22,11 +22,12 @@
       type = lib.types.attrs;
       readOnly = true;
       default = let
+        removeHash = builtins.substring 1 6;
         catppuccin = builtins.mapAttrs (_: flavor: 
-          (builtins.mapAttrs (_: color: color.hex) flavor.colors) // { 
-            accent = flavor.colors.${config.theme.accent}.hex;
+          (builtins.mapAttrs (_: color: removeHash color.hex) flavor.colors) // { 
+            accent = removeHash flavor.colors.${config.theme.accent}.hex;
           }
-        ) config.catppuccin.flavors;
+        ) (builtins.fromJSON (builtins.readFile "${config.catppuccin.sources.palette}/palette.json"));
       in catppuccin // catppuccin.${config.theme.flavor} // {
         notable = if config.theme.flavor == "latte" then catppuccin.mocha else catppuccin.latte;
       };

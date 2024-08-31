@@ -76,16 +76,15 @@
     },
     "catppuccin": {
       "locked": {
-        "lastModified": 1725049151,
-        "narHash": "sha256-kE2wEMNPuAZk3eGOJWvC60AZ1P/SKHyjSPCH8sISsow=",
+        "lastModified": 1725104363,
+        "narHash": "sha256-XNCpqb0xB+rdJVV/HhJG/YhVTZGX3DIAgYuT7ZYJEEU=",
         "owner": "NikSneMC",
         "repo": "catppuccin-nix",
-        "rev": "dc2f89c173bd51fcb3844d4e378c265f951fea78",
+        "rev": "0b8a19518baa9e0093c8a6ee20a30fdb706bf163",
         "type": "github"
       },
       "original": {
         "owner": "NikSneMC",
-        "ref": "feat/use-whiskers",
         "repo": "catppuccin-nix",
         "type": "github"
       }

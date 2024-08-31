@@ -60,7 +60,7 @@
       };
     };
 
-    catppuccin.url = "github:NikSneMC/catppuccin-nix";
+    catppuccin.url = "github:NikSneMC/catppuccin-nix/pr/324";
 
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-python.url = "github:NiKSneMC/nix-python";

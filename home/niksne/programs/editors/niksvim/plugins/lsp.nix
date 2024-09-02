@@ -24,7 +24,7 @@ in {
         "lua-ls"
         "marksman"
         "nil-ls"
-        "pylsp"
+        "pyright"
         "svelte"
         "tailwindcss"
         "tsserver"

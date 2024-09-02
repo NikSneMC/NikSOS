@@ -2,9 +2,8 @@
   config,
   ...
 }: {
-  imports = [
-    ./functions
-  ];
+  imports = [ ./functions ];
+
   programs.fish = {
     enable = true;
     catppuccin.enable = true;

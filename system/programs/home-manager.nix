@@ -2,9 +2,7 @@
   inputs,
   ...
 }: {
-  imports = [
-    inputs.hm.nixosModules.default
-  ];
+  imports = [ inputs.hm.nixosModules.default ];
 
   home-manager = {
     useGlobalPkgs = true;

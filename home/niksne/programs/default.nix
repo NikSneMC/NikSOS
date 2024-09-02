@@ -25,17 +25,12 @@
     catppuccin-catwalk.packages.${pkgs.system}.catwalk
   ] ++ (with pkgs; [
     file-roller
-    swww
     
     qbittorrent
     tmux
-    gparted
-    authenticator
     blockbench
 
     mission-center
-    wineWowPackages.waylandFull
-    mono
   ]) ++ (with npkgs; [
     catppuccin
   ]);

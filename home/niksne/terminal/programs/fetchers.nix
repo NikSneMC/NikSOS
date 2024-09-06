@@ -1,5 +1,5 @@
 {
-  lib,
+ lib,
   pkgs,
   ...
 }: {
@@ -133,7 +133,7 @@
           type = "disk";
         }
         {
-          key = "├─󰂀 Battery     ";
+          key = "├─󰂀 Battery      ";
           keyColor = "red";
           percent = {
             green = 60;

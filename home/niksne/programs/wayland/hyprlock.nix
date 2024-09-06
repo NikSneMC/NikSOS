@@ -32,9 +32,9 @@ in  {
           color = "rgb(${config.theme.colors.accent})";
           font_size = 25;
           inherit font_family;
-          position = "30, -30";
+          position = "30, 30";
           halign = "left";
-          valign = "top";
+          valign = "bottom";
         }
         {
           monitor = "";

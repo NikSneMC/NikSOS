@@ -1,6 +1,6 @@
 {
   security = {
-    pam.services.hyprlock.text = "auth requires login";
+    pam.services.hyprlock.text = "auth include login";
 
     rtkit.enable = true;
   };

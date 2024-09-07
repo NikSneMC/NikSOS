@@ -1,8 +1,7 @@
 {
-  inputs,
-  pkgs,
+  lpkgs,
   ...
-}:{
+}: {
   networking.networkmanager = {
     enable = true;
     dns = "systemd-resolved";
@@ -18,6 +17,6 @@
   };
 
   environment.systemPackages = [ 
-    inputs.self.packages.${pkgs.system}.spoof-dpi
+    lpkgs.spoof-dpi
   ];
 }

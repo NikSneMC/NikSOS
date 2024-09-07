@@ -1,5 +1,5 @@
 {
-  inputs,
+  lpkgs,
   npkgs,
   ...
 }: let
@@ -7,7 +7,7 @@
   --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
   --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
 
-  -javaagent:${inputs.self.packages.${npkgs.system}.ja-netfilter}/ja-netfilter.jar=jetbrains
+  -javaagent:${lpkgs.ja-netfilter}/ja-netfilter.jar=jetbrains
   ''; });
   
   ides = patchIDEs (with npkgs.jetbrains; [
@@ -24,5 +24,5 @@ in {
     enable = true;
     inherit ides;
   };
-  home.packages = (ides ++ [ inputs.self.packages.${npkgs.system}.ja-netfilter ]);
+  home.packages = (ides ++ [ lpkgs.ja-netfilter ]);
 }

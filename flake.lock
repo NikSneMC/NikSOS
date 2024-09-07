@@ -1051,16 +1051,16 @@
     },
     "nixcord": {
       "locked": {
-        "lastModified": 1724826585,
-        "narHash": "sha256-smYddeVMcAIS3RcNV3R1Eiw5BTAfVL/g/DRQ0efeogU=",
+        "lastModified": 1725725373,
+        "narHash": "sha256-YRcLPhDgi/KryBqr+egz6HO4mZ5oZKnIGse/TKQAzAM=",
         "owner": "NikSneMC",
         "repo": "nixcord",
-        "rev": "08f147780c5ecc571303bd4127144773598941da",
+        "rev": "52610e7b59495aa9962ef80e88add8a4627f0e5c",
         "type": "github"
       },
       "original": {
         "owner": "NikSneMC",
-        "ref": "feat/link-quickcss-only-when-declarative",
+        "ref": "fix/moyai",
         "repo": "nixcord",
         "type": "github"
       }

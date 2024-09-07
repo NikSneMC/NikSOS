@@ -86,6 +86,7 @@ in {
         "keepCurrentChannel"
         "loadingQuotes"
         "memberCount"
+        "mentionAvatars"
         "messageClickActions"
         "messageLinkEmbeds"
         "messageTags"

@@ -84,7 +84,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcord.url = "github:NikSneMC/nixcord/feat/link-quickcss-only-when-declarative";
+    nixcord.url = "github:NikSneMC/nixcord/fix/moyai";
 
     catppuccin-catwalk.url = "github:catppuccin/catwalk";
     catppuccin-whiskers.url = "github:catppuccin/whiskers";

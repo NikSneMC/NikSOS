@@ -10,9 +10,9 @@
   );
   
   mkExtraPluginsList = extraPlugins: lib.mapAttrsToList (
-    name: { owner, repo ? name, rev, hash, config ? "", optional ? false, ... }: {
+    name: { package ? null, owner ? null, repo ? name, rev ? null, hash ? null, config ? "", optional ? false, ... }: {
       inherit config optional;
-      plugin = pkgs.vimUtils.buildVimPlugin {
+      plugin = if package != null then package else pkgs.vimUtils.buildVimPlugin {
         name = name;
         src = pkgs.fetchFromGitHub { inherit owner repo rev hash; };
       };
@@ -25,6 +25,7 @@
 in {
   imports = [
     ./barbar.nix
+    ./better-escape.nix
     ./cmp.nix
     ./dashboard.nix
     ./indent-blankline.nix

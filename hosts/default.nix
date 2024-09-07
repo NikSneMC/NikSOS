@@ -6,55 +6,33 @@
 }: {
   flake.nixosConfigurations = let
     inherit (inputs.nixpkgs.lib) nixosSystem;
-
     inherit (import "${self}/system") desktop laptop;
+    
+    pkgsArgs = {
+      system = "x86_64-linux";
+      config = { allowUnfree = true; };
+    };
 
-    system = "x86_64-linux";
-
-    specialArgs = {
-      inherit inputs self; 
-      pkgs-stable = import inputs.nixpkgs-stable {
-        inherit system;
-        config.allowUnfree = true;
+    mkHosts = hosts: builtins.mapAttrs (name: type: nixosSystem rec {
+      specialArgs = {
+        inherit inputs self; 
+        spkgs = import inputs.nixpkgs-stable pkgsArgs;
+        npkgs = import inputs.nikspkgs pkgsArgs;
+        lpkgs = inputs.self.packages.${pkgsArgs.system};
       };
-      npkgs = import inputs.nikspkgs {
-        inherit system;
-        config.allowUnfree = true;
-        config.allowBroken = true;
-      };
-    };
-  in {
-    table-niksne = nixosSystem {
-      inherit specialArgs;
-      modules =
-        desktop
-        ++ [
-          inputs.catppuccin.nixosModules.catppuccin
-          ./table-niksne
-          {
-            home-manager = {
-              users.niksne.imports = homeImports."niksne@table-niksne";
-              extraSpecialArgs = specialArgs;
-            };
-          }
-        ];
-    };
-    laptop-niksne = nixosSystem {
-      inherit specialArgs;
-      modules =
-        laptop
-        ++ [
-          inputs.catppuccin.nixosModules.catppuccin
-          ./laptop-niksne
-          {
-            home-manager = {
-              users = {
-                niksne.imports = homeImports."niksne@laptop-niksne";
-              };
-              extraSpecialArgs = specialArgs;
-            };
-          }
-        ];
-    };
+      modules = type ++ [
+        inputs.catppuccin.nixosModules.catppuccin
+        "./table-niksne"
+        {
+          home-manager = {
+            users.niksne.imports = homeImports."niksne@${name}";
+            extraSpecialArgs = specialArgs;
+          };
+        }
+      ];
+    }) hosts;
+  in mkHosts {
+    table-niksne = desktop;
+    laptop-niksne = laptop;
   };
 }

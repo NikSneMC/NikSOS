@@ -22,7 +22,7 @@
       };
       modules = type ++ [
         inputs.catppuccin.nixosModules.catppuccin
-        "./${name}"
+        ./${name}
         {
           home-manager = {
             users.niksne.imports = homeImports."niksne@${name}";

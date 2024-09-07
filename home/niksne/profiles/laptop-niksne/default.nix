@@ -1,6 +1,7 @@
 {
   imports = [
     ../../programs
+    ../../programs/editors/jetbrains.nix
     ../../programs/games
 
     ../../services

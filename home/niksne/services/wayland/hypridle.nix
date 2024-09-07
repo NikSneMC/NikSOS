@@ -12,14 +12,19 @@
     
     settings = {
       general = {
-        beforeSleepCmd = "${pkgs.systemd}/bin/loginctl lock-session";
-        lockCmd = lib.getExe config.programs.hyprlock.package;
+        before_sleep_cmd = "${pkgs.systemd}/bin/loginctl lock-session";
+        lock-cmd = lib.getExe config.programs.hyprlock.package;
       };
 
       listener = [
         {
-          timeout = 330;
-          onTimeout = lib.getExe config.programs.hyprlock.package;
+          timeout = 150;
+          on-timeout = config.services.hypridle.settings.general.lock_cmd;
+        }
+        {
+          timeout = 300;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
         }
       ];
     };

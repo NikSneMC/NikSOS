@@ -1,37 +1,38 @@
 {
+  lib,
+  pkgs,
   self,
   inputs,
   ...
 }: let
-  extraSpecialArgs = { inherit inputs self; };
-
-  homeImports = {
-    "niksne@table-niksne" = [
-      ./niksne
-      ./niksne/profiles/table-niksne
-    ];
-    "niksne@laptop-niksne" = [
-      ./niksne
-      ./niksne/profiles/laptop-niksne
-    ];
+  users = {
+    table-niksne = [ "niksne" ];
+    laptop-niksne = [ "niksne" ];
   };
 
-  inherit (inputs.hm.lib) homeManagerConfiguration;
 
-  pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+  rawMk = nameValueFunction: hosts: builtins.listToAttrs (
+    builtins.concatLists (lib.mapAttrsToList (
+      host: users: builtins.map (user: nameValueFunction host user) users
+    ) hosts)
+  );
+
+  homeImports = rawMk (
+    host: user: lib.nameValuePair "${user}@${host}" [ 
+      ./${user} 
+      ./${user}/profiles/${host} 
+    ]
+  ) users;
+
+  inherit (inputs.hm.lib) homeManagerConfiguration;
 in {
   _module.args = { inherit homeImports; };
 
-  flake = {
-    homeConfigurations = {
-      "niksne_table-niksne" = homeManagerConfiguration {
-        modules = homeImports."niksne@table-niksne";
-        inherit pkgs extraSpecialArgs;
-      };
-      "niksne_laptop-niksne" = homeManagerConfiguration {
-        modules = homeImports."niksne@laptop-niksne";
-        inherit pkgs extraSpecialArgs;
-      }; 
-    };
-  };
+  flake.homeConfigurations = rawMk (host: user: lib.nameValuePair "${user}_${host}" (
+    homeManagerConfiguration {
+      modules = homeImports."${user}@${host}";
+      extraSpecialArgs = { inherit inputs self; };
+      inherit pkgs;
+    }
+  )) users;
 }

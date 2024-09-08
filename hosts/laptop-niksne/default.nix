@@ -1,7 +1,5 @@
 {
   imports = [
-    ./disks.nix
-    ./hardware-configuration.nix
     ../../system/hardware/nvidia.nix
   ];
 
@@ -12,8 +10,6 @@
     };
     efi.canTouchEfiVariables = true;
   };
-
-  networking.hostName = "laptop-niksne";
 
   catppuccin = {
     enable = true;

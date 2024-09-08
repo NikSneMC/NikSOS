@@ -4,17 +4,23 @@
   lib,
   self,
   ...
-}: {
+}: let
+  inherit (import "${self}/system") desktop laptop;
+
+  hosts = {
+    table-niksne = desktop;
+    laptop-niksne = laptop;
+  };
+
+in {
   flake.nixosConfigurations = let
     inherit (inputs.nixpkgs.lib) nixosSystem;
-    inherit (import "${self}/system") desktop laptop;
     
     pkgsArgs = {
       system = "x86_64-linux";
       config = { allowUnfree = true; };
     };
-
-    mkHosts = builtins.mapAttrs (host: type: nixosSystem rec {
+  in builtins.mapAttrs (host: type: nixosSystem rec {
       specialArgs = {
         inherit inputs self; 
         spkgs = import inputs.nixpkgs-stable pkgsArgs;
@@ -24,7 +30,10 @@
       modules = type ++ [
         inputs.catppuccin.nixosModules.catppuccin
         ./${host}
+        ./${host}/disks
+        ./${host}/hardware-configuration.nix
         {
+          networking.hostName = host;
           home-manager = {
             users = builtins.listToAttrs (builtins.map (
               user: lib.nameValuePair user { imports = homeImports."${user}@${host}"; }
@@ -33,9 +42,5 @@
           };
         }
       ];
-    });
-  in mkHosts {
-    table-niksne = desktop;
-    laptop-niksne = laptop;
-  };
+    }) hosts;
 }

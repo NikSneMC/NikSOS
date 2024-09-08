@@ -1,7 +1,5 @@
 {
   imports = [
-    ./disks
-    ./hardware-configuration.nix
     ./servers
     # ../../system/hardware/nvidia.nix
     ../../system/hardware/amd.nix
@@ -15,8 +13,6 @@
     };
     efi.canTouchEfiVariables = true;
   };
-
-  networking.hostName = "table-niksne";
 
   catppuccin = {
     enable = true;

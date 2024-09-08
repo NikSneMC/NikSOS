@@ -41,4 +41,10 @@
       example = lib.literalExample "./wallpaper.png";
     };
   };
+
+  config.catppuccin = { 
+    enable = true;
+    pointerCursor.enable = true;
+    inherit (config.theme) flavor accent; 
+  };
 }

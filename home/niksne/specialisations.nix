@@ -18,10 +18,9 @@
       };
   };
 
-  catppuccin = {
-    enable = true;
-    flavor = config.theme.flavor;
-    accent = config.theme.accent;
-    pointerCursor.enable = true;
-  };
+  # catppuccin = {
+  #   enable = true;
+  #   pointerCursor.enable = true;
+  #   inherit (config.theme) flavor accent;
+  # };
 }

@@ -17,12 +17,12 @@
     ) hosts)
   );
 
-  homeImports = rawMk (
+  homeImports = (rawMk (
     host: user: lib.nameValuePair "${user}@${host}" [ 
       ./${user} 
       ./${user}/profiles/${host} 
     ]
-  ) users;
+  ) users) // { raw = users; };
 
   inherit (inputs.hm.lib) homeManagerConfiguration;
 in {

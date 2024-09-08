@@ -1,6 +1,7 @@
 {
   homeImports,
   inputs,
+  lib,
   self,
   ...
 }: {
@@ -13,7 +14,7 @@
       config = { allowUnfree = true; };
     };
 
-    mkHosts = hosts: builtins.mapAttrs (name: type: nixosSystem rec {
+    mkHosts = builtins.mapAttrs (host: type: nixosSystem rec {
       specialArgs = {
         inherit inputs self; 
         spkgs = import inputs.nixpkgs-stable pkgsArgs;
@@ -22,15 +23,17 @@
       };
       modules = type ++ [
         inputs.catppuccin.nixosModules.catppuccin
-        ./${name}
+        ./${host}
         {
           home-manager = {
-            users.niksne.imports = homeImports."niksne@${name}";
+            users = builtins.listToAttrs (builtins.map (
+              user: lib.nameValuePair user { imports = homeImports."${user}@${host}"; }
+            ) homeImports.raw.${host});
             extraSpecialArgs = specialArgs;
           };
         }
       ];
-    }) hosts;
+    });
   in mkHosts {
     table-niksne = desktop;
     laptop-niksne = laptop;

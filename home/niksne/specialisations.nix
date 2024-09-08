@@ -1,6 +1,5 @@
 {
   lib,
-  config,
   ...
 }: {
   theme = {
@@ -17,10 +16,4 @@
         inherit url sha256;
       };
   };
-
-  # catppuccin = {
-  #   enable = true;
-  #   pointerCursor.enable = true;
-  #   inherit (config.theme) flavor accent;
-  # };
 }

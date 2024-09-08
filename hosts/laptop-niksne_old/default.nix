@@ -1,11 +1,11 @@
 {
-  imports = [
-    ./hardware-configuration.nix
-  ];
-
   boot.loader.grub.device = "/dev/sda";
 
-  networking.hostName = "laptop-niksne";
+  catppuccin = {
+    enable = true;
+    flavor = "mocha";
+    accent = "sky";
+  };
 
   nix.settings = {
     cores = 2;

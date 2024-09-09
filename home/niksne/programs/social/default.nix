@@ -7,6 +7,7 @@
   ];
 
   home.packages = with pkgs; [
+    thunderbird
     tdesktop
 
     chatterino2

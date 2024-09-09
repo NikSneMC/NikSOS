@@ -46,37 +46,33 @@
     ]);
 
   inherit (config.lib.formats.rasi) mkLiteral;
-  script-2fa = pkgs.writeScript "rofi-script-2fa.sh" 
-    ''
-      #!/usr/bin/env bash
-
-      if [ -z "$1" ]
-      then
-        accts=$( ls -1 $HOME/.2fa )
-        echo -en "\0no-custom\x1ftrue\n"
-        echo -en "$accts\n"
-        exit 0
-      fi
-
-      if ! [ -f "$HOME/.2fa/$1" ]
-      then
-        notify-send "No 2FA secret found for $1"
-        exit 1
-      fi
-
-      # capture stdout (code), stderr (any oathtool error), and exit code
-      eval "$({ reserr=$({ res=$(cat "$HOME/.2fa/$1" | ${lib.getExe pkgs.oath-toolkit} --totp -b - ); resret=$?; } 2>&1; declare -p res resret >&2); declare -p reserr; } 2>&1)"
+  script-2fa = pkgs.writeScript "rofi-script-2fa"
+  ''
+    #!/usr/bin/env python
+    from sys import argv
+    from json import load
+    from subprocess import check_output
 
 
-      if [ $resret -ne 0 ]
-      then
-        notify-send "oath error = $reserr"
-        exit 1
-      fi
+    if len(argv) not in {1, 2}:
+        raise Exception
 
-      notify-send "Copied token for $1!"
-      wl-copy $res
-      exit 0
+    def parse_account(entry: dict) -> tuple[str, str]:
+        return f"{entry['name']}@{entry['issuer']}".lower(), entry["info"]["secret"]
+
+    with open(file="/home/niksne/.2fa.json", mode="r", encoding="utf-8") as f:
+        accounts: dict[str, str] = dict(map(parse_account, load(f)["db"]["entries"]))
+
+    if len(argv) == 1:
+        for account in accounts.keys():
+            print(account)
+    else:
+        if argv[1] in accounts.keys():
+            check_output(["notify-send", f"Copied token for {argv[1]}!"])
+            check_output(["wl-copy", check_output(["${lib.getExe pkgs.oath-toolkit}", "--totp", "-b", accounts[argv[1]]])])
+        else:
+            check_output(["notify-send", f"No 2FA secret found for {argv[1]}"])
+
     '';
   script-clipboard = pkgs.writeScript "rofi-script-clipboard.sh"
     ''

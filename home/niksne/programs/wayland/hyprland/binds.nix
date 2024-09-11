@@ -46,6 +46,7 @@ in {
       "${mod}, E, Launch file manager, exec, thunar"
       "${mod}, K, Enter kill mode, exec, hyprctl kill"
       "${mod}, L, Lock session, exec, hyprlock"
+      "${mod}, M, Open mail client, exec, thunderbird"
       "${mod}, N, Open notification center, exec, swaync-client -t"
       "${mod}, R, Execute command, exec, rofi -show run"
       "${mod}, T, Open terminal, exec, kitty"
@@ -66,7 +67,6 @@ in {
       "${mod} SHIFT, S, Take screenshot, exec, fish -c record_screen_png"
       "${mod} SHIFT, T, Launch Telegram, exec, telegram-desktop"
       "${mod} SHIFT, V, Launch VSCodium, exec, codium"
-      "${mod} SHIFT, W, Launch WhatsApp, exec, whatsapp-for-linux"
       "${mod} SHIFT, X, Clear clipboard, exec, fish -c clipboard_clear"
 
       # Scratchpads

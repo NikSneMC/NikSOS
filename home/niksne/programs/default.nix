@@ -29,7 +29,6 @@
     qbittorrent
     tmux
     blockbench
-    anki-bin
 
     mission-center
   ]) ++ (with npkgs; [

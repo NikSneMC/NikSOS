@@ -8,7 +8,8 @@
 
     ../../terminal/emulators/kitty.nix
 
-    ./hyprland.nix
     ./fish.nix
+    ./hyprland.nix
+    ./programs.nix
   ];
 }

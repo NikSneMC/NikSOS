@@ -11,9 +11,8 @@ in {
       # VSCodium
       "workspace 11, class:^(codium-url-handler)$"
 
-      # JetBrains IDEs
+      # IntelliJ IDEA
       "workspace 12, class:^(jetbrains-idea)$"
-      # "tile, class:^(jetbrains-.*)$"
 
       # Arduino IDE
       "workspace 13, class:^(Arduino IDE)$"
@@ -29,8 +28,8 @@ in {
       "float, title:^(Media viewer)$"
       "workspace 16 silent, class:^(org.telegram.desktop)$"
 
-      # WhatsApp
-      "workspace 17 silent, class:^(whatsapp-for-linux)$"
+      # Thunderbird
+      "workspace 17 silent, class:^(thunderbird)$"
 
 
       # Vivaldi

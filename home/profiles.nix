@@ -18,9 +18,13 @@
   );
 
   homeImports = (rawMk (
-    host: user: lib.nameValuePair "${user}@${host}" [ 
+    host: user: lib.nameValuePair "${user}@${host}" [
+      self.homeManagerModules.hosts
+      inputs.catppuccin.homeManagerModules.catppuccin
+      self.nixosModules.theme
       ./${user} 
       ./${user}/profiles/${host} 
+      { home = { inherit host user; }; }
     ]
   ) users) // { raw = users; };
 

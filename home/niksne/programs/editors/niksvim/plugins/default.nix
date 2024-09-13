@@ -52,7 +52,6 @@ in {
   in {
     plugins = mkPluginsList [
       "comment"
-      "diffview"
       "friendly-snippets"
       "gitsigns"
       "luasnip"

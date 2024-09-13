@@ -60,7 +60,7 @@
     def parse_account(entry: dict) -> tuple[str, str]:
         return f"{entry['name']}@{entry['issuer']}".lower(), entry["info"]["secret"]
 
-    with open(file="/home/niksne/.2fa.json", mode="r", encoding="utf-8") as f:
+    with open(file="${config.home.homeDirectory}/.2fa.json", mode="r", encoding="utf-8") as f:
         accounts: dict[str, str] = dict(map(parse_account, load(f)["db"]["entries"]))
 
     if len(argv) == 1:

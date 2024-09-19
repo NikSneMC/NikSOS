@@ -84,7 +84,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nixcord.url = "github:NikSneMC/nixcord/fix/moyai";
+    nixcord.url = "github:KaylorBen/nixcord";
 
     catppuccin-catwalk.url = "github:catppuccin/catwalk";
     catppuccin-whiskers.url = "github:catppuccin/whiskers";

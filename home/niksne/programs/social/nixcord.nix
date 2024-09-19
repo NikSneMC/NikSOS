@@ -166,7 +166,10 @@ in {
     enable = true;
     vesktop.enable = true;
     config = {
-      themeLinks = [ "https://catppuccin-discord.niksne.ru/catppuccin-${config.theme.flavor}-${config.theme.accent}.theme.css" ];
+      themeLinks = [ 
+        "https://catppuccin.github.io/discord/dist/catppuccin-${config.theme.flavor}-${config.theme.accent}.theme.css"
+        "https://raw.githubusercontent.com/NikSneMC/vesktop-jetbrainsmono-nerd-font-theme/main/font.css"
+      ];
       enableReactDevtools = true;
       useQuickCss = true;
       plugins = (mkEnabledPluginsFromList plugins.vencord);

@@ -50,7 +50,7 @@ in {
     };
     codeium-nvim = {
       enable = true;
-      extraOptions.enable_chat = true;
+      settings.enable_chat = true;
     };
   };
 }

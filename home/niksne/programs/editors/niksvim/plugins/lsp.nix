@@ -27,7 +27,7 @@ in {
         "pyright"
         "svelte"
         "tailwindcss"
-        "tsserver"
+        "ts-ls"
       ]) // {
         rust-analyzer = {
           enable = true;

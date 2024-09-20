@@ -6,6 +6,7 @@
       theme = "catppuccin";
       sections = let
         mkLocationComponent = type: assert (builtins.elem type [ "col" "line" ]); {
+          __unkeyed-1 = type;
           fmt = ''
             function(text)
               local current_${type} = vim.fn.${type}('.')

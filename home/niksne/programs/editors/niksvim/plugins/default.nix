@@ -61,7 +61,7 @@ in {
       "nix-develop"
       "nvim-autopairs"
       "rainbow-delimiters"
-      "rest"
+      # "rest"
       "telescope"
       "todo-comments"
       "wakatime"

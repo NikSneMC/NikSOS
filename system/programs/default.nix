@@ -6,6 +6,7 @@
     ./development.nix
     ./fish.nix
     ./fonts.nix
+    ./gaming.nix
     ./home-manager.nix
     ./hyprland.nix
     ./qt.nix

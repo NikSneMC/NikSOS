@@ -21,8 +21,7 @@
       nrsu = "nh os boot -a -u path:/etc/nixos -- --impure";
       nrsur = "nrsu && systemctl reboot";
       nrsus = "nrsu && systemctl poweroff";
-      nsgc = "sudo nix-store --gc";
-      ngc = "sudo nix-collect-garbage -d";
+      ngc = "sudo nh clean all";
       lock = "hyprctl dispatch exec hyprlock";
       unlock = "pkill -USR1 hyprlock";
       nixbtw = "fastfetch";

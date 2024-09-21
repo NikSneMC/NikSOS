@@ -4,19 +4,19 @@
   fetchFromGitHub,
 }: buildGoModule rec {
   pname = "spoofDPI";
-  version = "0.10.10";
+  version = "0.12.0";
 
   src = fetchFromGitHub {
     owner = "xvzc";
     repo = "spoofDPI";
     rev = "v${version}";
-    sha256 = "sha256-n9GoZP2AxkWWYW4cKpmiKx3v3sLxqVVLu22D3IRcakw=";
+    sha256 = "sha256-m4fhFhZLuWT1diDlDTmTsNrckKTjhEZbhciv44FZcro=";
   };
 
-  vendorHash = "sha256-sIqkpoaXx+Un1GdOKgPkZnn3/DWCNAcDHqGaw8i6qDk=";
+  vendorHash = "sha256-47Gt5SI6VXq4+1T0LxFvQoYNk+JqTt3DonDXLfmFBzw=";
 
   subPackages = [
-    "cmd/spoof-dpi"
+    "cmd/spoofdpi"
   ];
 
   ldflags = [

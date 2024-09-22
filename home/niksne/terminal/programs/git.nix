@@ -52,6 +52,12 @@
       "node_modules"
       "venv"
       ".idea"
+      "kls_database.db"
+      "**/.project"
+      "**/.settings"
+      "**/.classpath"
+      "**/.factorypath"
+      "**/bin"
     ];
 
     extraConfig.credential.helper = "store";

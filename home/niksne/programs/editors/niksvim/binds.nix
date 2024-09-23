@@ -18,10 +18,11 @@
   mkDisabledKeymaps = mode: keymaps: mkKeymaps (builtins.listToAttrs (builtins.map (key: lib.nameValuePair key { action = ""; inherit mode; }) keymaps));
 in {
   programs.nixvim.keymaps = (mkKeymaps {
-    # "jk" = {
-    #   action = "<Esc>";
-    #   mode = "iv";
-    # };
+    # neo-tree
+    "<C-n>" = "<cmd>Neotree toggle<CR>";
+    "<leader>e" = "<cmd>Neotree focus<CR>";
+    # neogit
+    "<leader>go" = "<cmd>Neogit<CR>";
   }) ++ (mkDisabledKeymaps "inv" [
     "<Up>"
     "<Down>"

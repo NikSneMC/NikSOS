@@ -36,6 +36,7 @@ in {
     ./nvim-colorizer.nix
     ./project-nvim.nix
     ./refactoring.nix
+    ./telescope.nix
     ./toggleterm.nix
     ./treesitter.nix
   ];
@@ -62,7 +63,6 @@ in {
       "nvim-autopairs"
       "rainbow-delimiters"
       "rest"
-      "telescope"
       "todo-comments"
       "wakatime"
       "which-key"

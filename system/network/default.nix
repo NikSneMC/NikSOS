@@ -17,6 +17,6 @@
   };
 
   environment.systemPackages = [ 
-    lpkgs.spoof-dpi
+    lpkgs.spoofdpi
   ];
 }

@@ -3,7 +3,7 @@
   buildGoModule,
   fetchFromGitHub,
 }: buildGoModule rec {
-  pname = "spoofDPI";
+  pname = "spoofspi";
   version = "0.12.0";
 
   src = fetchFromGitHub {

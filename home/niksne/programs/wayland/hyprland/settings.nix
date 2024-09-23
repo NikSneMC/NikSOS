@@ -14,7 +14,7 @@
       "vesktop"
       "telegram-desktop"
       "thunderbird"
-      "spoof-dpi --port 8888 --enable-doh --window-size 0 --timeout 10000"
+      "spoofdpi --port 8888 --enable-doh --window-size 0 --timeout 10000"
     ];
 
     general = {

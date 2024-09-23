@@ -8,7 +8,7 @@
   }: {
     packages = {
       ja-netfilter = pkgs.callPackage ./ja-netfilter {};
-      spoof-dpi = pkgs.callPackage ./spoof-dpi {};
+      spoofdpi = pkgs.callPackage ./spoofdpi {};
     };
   };
 }

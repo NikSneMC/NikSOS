@@ -11,8 +11,8 @@
         settings = {
           apiKey = lib.trim (lib.last (builtins.split "=" (builtins.readFile "${config.home.homeDirectory}/.wakatime.cfg")));
           machineName = config.home.host;
-          lowerNamed = true;
         };
+        lowerNamed = true;
       };
     };
     discord = [];
@@ -37,6 +37,7 @@
       { name = "consoleJanitor"; disableNoisyLoggers = true; }
       "consoleShortcuts"
       "copyEmojiMarkdown"
+      "copyFileContents"
       "copyUserURLs"
       "dearrow"
       "decor"
@@ -107,6 +108,7 @@
       "sendTimestamps"
       "serverInfo"
       "serverListIndicators"
+      { name = "settings"; settingsLocation = "belowActivity"; }
       { name = "shikiCodeblocks"; theme = "https://esm.sh/@catppuccin/vscode/themes/${config.theme.flavor}.json"; }
       "showConnections"
       { name = "showHiddenChannels"; showMode = "muted"; }
@@ -120,6 +122,7 @@
       { name = "spotifyCrack"; keepSpotifyActivityOnIdle = true; }
       "spotifyShareCommands"
       "startupTimings"
+      "stickerPaste"
       "streamerModeOnStream"
       "superReactionTweaks"
       "themeAttributes"
@@ -141,6 +144,7 @@
       "voiceChatDoubleClick"
       "voiceDownload"
       "voiceMessages"
+      "volumeBooster"
       "whoReacted"
       "youtubeAdblock"
     ];
@@ -158,7 +162,7 @@
     })
     plugins
   );
-  mkUserPlugins = p: builtins.mapAttrs (name: { settings ? {}, ... }: settings) (lib.filterAttrs (_: { platform ? "vencord", ... }: platform == p) plugins.user);
+  mkUserPlugins = p: builtins.mapAttrs (name: { settings ? {}, ... }: settings // { enable = true; }) (lib.filterAttrs (_: { platform ? "vencord", ... }: platform == p) plugins.user);
 in {
   imports = [ inputs.nixcord.homeManagerModules.nixcord ];
 

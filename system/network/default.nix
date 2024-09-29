@@ -1,5 +1,5 @@
 {
-  lpkgs,
+  pkgs,
   ...
 }: {
   networking.networkmanager = {
@@ -17,6 +17,6 @@
   };
 
   environment.systemPackages = [ 
-    lpkgs.spoofdpi
+    pkgs.spoofdpi
   ];
 }

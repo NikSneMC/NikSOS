@@ -1,5 +1,7 @@
 {
-  wayland.windowManager.hyprland.settings = {
+  wayland.windowManager.hyprland.settings = let
+    mod = "SUPER";
+  in {
     env = [
       "LIBVA_DRIVER_NAME,nvidia"
       "XDG_SESSION_TYPE,wayland"
@@ -28,5 +30,31 @@
       "21, monitor:HDMI-A-1"
       "22, monitor:HDMI-A-1"
     ];
+
+    binddl = [
+      # suspend
+      "${mod} CTRL, S, Suspend computer, exec, fish -c suspend"
+    ];
+
+    binddle = [
+      # backlight
+      ", XF86MonBrightnessUp, Increase brightness by 5, exec, brillo -q -u 300000 -A 5"
+      ", XF86MonBrightnessDown, Decrease brightness by 5, exec, brillo -q -u 300000 -U 5"
+      "CTRL, XF86MonBrightnessUp, Increase brightness by 1, exec, brillo -q -u 300000 -A 1"
+      "CTRL, XF86MonBrightnessDown, Decrease brightness by 1, exec, brillo -q -u 300000 -U 1"
+    ];
+
+    plugin = {
+      hyprexpo = {
+        columns = 3;
+        gap_size = 7;
+        bg_col = "$base";
+        workspace_method = "center current"; # [center/first] [workspace] e.g. first 1 or center m+1
+
+        enable_gesture = true; # laptop touchpad, 4 fingers
+        gesture_distance = 300; # how far is the "max"
+        gesture_positive = false; # positive = swipe down. Negative = swipe up.
+      };
+    };
   };
 }

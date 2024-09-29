@@ -118,9 +118,7 @@ in {
       "${mod} ALT, mouse:272, Resize window with mouse (touchpad), resizewindow"
     ];
 
-     binddl = [
-      # suspend
-      "${mod} CTRL, S, Suspend computer, exec, fish -c suspend"
+    binddl = [
       # lock preview
       # "${mod} SHIFT, S, Take screenshot (lock screen), exec, grimblast --cursor copy output"
 
@@ -140,12 +138,6 @@ in {
       ", XF86AudioLowerVolume, Decrease volume by 5, exec, pamixer -d 5"
       "CTRL, XF86AudioRaiseVolume, Increase volume by 1, exec, pamixer -i 1"
       "CTRL, XF86AudioLowerVolume, Decrease volume by 1, exec, pamixer -d 1"
-
-      # backlight
-      ", XF86MonBrightnessUp, Increase brightness by 5, exec, brillo -q -u 300000 -A 5"
-      ", XF86MonBrightnessDown, Decrease brightness by 5, exec, brillo -q -u 300000 -U 5"
-      "CTRL, XF86MonBrightnessUp, Increase brightness by 1, exec, brillo -q -u 300000 -A 1"
-      "CTRL, XF86MonBrightnessDown, Decrease brightness by 1, exec, brillo -q -u 300000 -U 1"
     ];
   };
 }

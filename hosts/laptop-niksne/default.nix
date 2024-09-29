@@ -17,9 +17,9 @@
     accent = "sky";
   };
 
-  nix.settings = {
+  nix.settings = rec {
     cores = 8;
-    max-jobs = 32;
+    max-jobs = cores * 4;
   };
 
   services = {

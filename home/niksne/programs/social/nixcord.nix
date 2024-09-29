@@ -74,7 +74,6 @@
       { name = "moyai"; ignoreBots = false; quality = "HD"; triggerWhenUnfocused = false; }
       "mutualGroupDMs"
       "noBlockedMessages"
-      "noDefaultHangStatus"
       "noDevtoolsWarning"
       "noF1"
       "noOnboardingDelay"
@@ -126,7 +125,6 @@
       "streamerModeOnStream"
       "superReactionTweaks"
       "themeAttributes"
-      "timeBarAllActivities"
       "translate"
       { name = "typingIndicator"; includeMutedChannels = true; }
       "typingTweaks"
@@ -168,6 +166,7 @@ in {
 
   programs.nixcord = {
     enable = true;
+    discord.enable = true;
     vesktop.enable = true;
     config = {
       themeLinks = [ 

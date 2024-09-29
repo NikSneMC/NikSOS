@@ -16,7 +16,7 @@ let
 in {
   disko.devices.disk.nvme0n1 = {
     type = "disk";
-    device = "/dev/disk/by-id/nvme-Apacer_AS2280P4U_1TB_0E61071A075400022783";
+    device = "/dev/disk/by-id/nvme-Apacer_AS2280P4U_1TB_0E61071A075400022783_1";
     content = {
       type = "gpt";
       partitions = {

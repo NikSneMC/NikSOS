@@ -1,6 +1,8 @@
 {
   config,
+  inputs,
   lib,
+  pkgs,
   ...
 }:
 let
@@ -16,14 +18,13 @@ let
 in {  
   programs.wezterm = {
     enable = true;
+    package = inputs.wezterm.packages.${pkgs.system}.default;
 
     extraConfig = ''
       local wezterm = require 'wezterm'
       local act = wezterm.action
 
       return {
-        enable_wayland = false,
-        
         window_close_confirmation = "NeverPrompt",
 
         enable_tab_bar = true,
@@ -33,6 +34,7 @@ in {
         font = wezterm.font_with_fallback { "${font}", "Noto Sans" },
         window_frame = {
           font = wezterm.font { family = "${font}", weight = 'Bold' },
+          font_size = 10,
           active_titlebar_bg = "#${config.theme.colors.crust}"
         },
         colors = {
@@ -43,7 +45,8 @@ in {
             new_tab = ${mkTabColor "surface0"},
             new_tab_hover = ${mkTabColor "surface1"}
           }
-        }
+        },
+        window_background_opacity = 0.9
       }
     '';
   };

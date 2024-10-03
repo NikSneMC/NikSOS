@@ -65,19 +65,20 @@
     nix-minecraft.url = "github:Infinidoge/nix-minecraft";
     nix-python.url = "github:NiKSneMC/nix-python";
 
+    wezterm = {
+      url = "github:wez/wezterm?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     ags = {
       url = "github:Aylur/ags";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    anyrun.url = "github:anyrun-org/anyrun";
-
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    helix.url = "github:helix-editor/helix";
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
@@ -88,6 +89,9 @@
 
     catppuccin-catwalk.url = "github:catppuccin/catwalk";
     catppuccin-whiskers.url = "github:catppuccin/whiskers";
+
+    anyrun.url = "github:anyrun-org/anyrun";
+    helix.url = "github:helix-editor/helix";
   };
 
   outputs = inputs:

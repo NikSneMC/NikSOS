@@ -47,13 +47,13 @@ in {
                 mountOptions = [ "compress=zstd" "noatime" ];
                 mountpoint = "/nix";
               }
-              {
-                mountpoint = "/.swapvol";
-                swap.swapfile.size = "32G";
-              }
+              # {
+              #    mountpoint = "/.swapvol";
+              #    swap.swapfile.size = "32G";
+              #  }
             ];
             mountpoint = "/";
-            swap.swapfile.size = "32G";
+             # swap.swapfile.size = "32G";
           };
         };
       };

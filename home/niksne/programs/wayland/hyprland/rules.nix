@@ -2,7 +2,7 @@
   config,
   ...
 }: let
-  dropterm = "class:^(kitty_dropdown)$";
+  dropterm = "class:^(wezterm_dropdown)$";
   volume_sidemenu = "class:^(org.pulseaudio.pavucontrol)$";
   player = "initialTitle:^(Spotify)$";
 in {

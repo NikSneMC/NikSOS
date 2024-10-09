@@ -14,10 +14,10 @@ in {
     fetch_client_menu.separator = "";
     scratchpads = {
       term = {
-        command = "kitty --class kitty_dropdown";
+        command = "wezterm start --class wezterm_dropdown";
         animation = "fromTop";
         size = "70% 70%";
-        class = "kitty_dropdown";
+        class = "wezterm_dropdown";
         excludes = "*";
         unfocus = "hide";
         margin = 75;

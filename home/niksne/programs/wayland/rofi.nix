@@ -229,7 +229,7 @@ in {
     catppuccin.enable = false;
     package = pkgs.rofi-wayland;
     location = "right";
-    terminal = "kitty";
+    terminal = "wezterm";
     extraConfig = (common-config // {
       modes = "run,drun,filebrowser,2fa:${script-2fa}";
       display-run = "  ";
@@ -259,7 +259,7 @@ in {
   xdg.configFile."rofi/clipboard.rasi".text = toRasi {
     configuration = (common-config // {
       location = 4;
-      terminal = "kitty";
+      terminal = "wezterm";
       modes = "log:${script-clipboard},emoji:${lib.getExe pkgs.rofimoji}";
       display-emoji = " 󰞅 ";
       display-log = " 󱃔 ";

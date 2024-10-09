@@ -6,7 +6,7 @@
 
     ../../services
 
-    ../../terminal/emulators/kitty.nix
+    ../../terminal/emulators/wezterm.nix
 
     ./hyprland.nix
     ./hypridle.nix

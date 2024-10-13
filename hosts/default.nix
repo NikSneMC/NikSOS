@@ -5,11 +5,12 @@
   self,
   ...
 }: let
-  inherit (import "${self}/system") desktop laptop;
+  inherit (import "${self}/system") minimal desktop laptop;
 
   hosts = {
     table-niksne = desktop;
     laptop-niksne = laptop;
+    niksos-wsl = minimal;
   };
 
 in {
@@ -30,8 +31,8 @@ in {
       modules = type ++ [
         inputs.catppuccin.nixosModules.catppuccin
         ./${host}
-        ./${host}/disks
-        ./${host}/hardware-configuration.nix
+        (if type != minimal then ./${host}/disks else {})
+        (if type != minimal then ./${host}/hardware-configuration.nix else {})
         {
           networking.hostName = host;
           home-manager = {

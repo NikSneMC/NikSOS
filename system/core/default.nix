@@ -7,7 +7,6 @@
     inputs.disko.nixosModules.disko
     ./boot.nix
     ./security.nix
-    ./users.nix
   ];
 
   i18n = {

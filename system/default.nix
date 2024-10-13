@@ -1,9 +1,15 @@
 let
-  desktop = [
+  minimal = [
+    ./core/users.nix
+    ./nix
+    ./programs/fish.nix
+    ./programs/home-manager.nix
+  ];
+
+  desktop = minimal ++ [
     ./core
     ./hardware
     ./network
-    ./nix
     ./programs
     ./services
   ];
@@ -13,5 +19,5 @@ let
     ./services/power.nix
   ];
 in {
-  inherit desktop laptop;
+  inherit minimal desktop laptop;
 }

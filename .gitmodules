@@ -1,3 +1,11 @@
-[submodule "hosts/table-niksne/servers"]
-	path = hosts/table-niksne/servers
-	url = https://github.com/NikSneMC/NikSOS-servers.git
+[submodule "private: table-niksne"]
+	path = hosts/table-niksne/private
+    url = https://github.com/NikSneMC/NikSOS_table-niksne.git
+
+[submodule "private: laptop-niksne"]
+	path = hosts/laptop-niksne/private
+    url = https://github.com/NikSneMC/NikSOS_laptop-niksne.git
+
+[submodule "private: niksos-wsl"]
+	path = hosts/niksos-wsl/private
+	url = https://github.com/NikSneMC/NikSOS_niksos-wsl.git

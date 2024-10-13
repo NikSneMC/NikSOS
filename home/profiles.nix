@@ -8,6 +8,7 @@
   users = {
     table-niksne = [ "niksne" ];
     laptop-niksne = [ "niksne" ];
+    niksos-wsl = [ "niksne" ];
   };
 
 

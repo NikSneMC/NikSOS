@@ -18,18 +18,18 @@ in {
         "gopls"
         "html"
         "htmx"
-        "jdt-language-server"
+        "jdtls"
         "jsonls"
-        "kotlin-language-server"
-        "lua-ls"
+        "kotlin_language_server"
+        "lua_ls"
         "marksman"
-        "nil-ls"
+        "nil_ls"
         "pyright"
         "svelte"
         "tailwindcss"
-        "ts-ls"
+        "ts_ls"
       ]) // {
-        rust-analyzer = {
+        rust_analyzer = {
           enable = true;
           installCargo = true;
           installRustc = true;

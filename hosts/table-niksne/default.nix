@@ -1,6 +1,6 @@
 {
   imports = [
-    ./servers
+    ./private
     # ../../system/hardware/nvidia.nix
     ../../system/hardware/amd.nix
     ../../system/hardware/razer.nix

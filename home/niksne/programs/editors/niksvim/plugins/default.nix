@@ -32,7 +32,7 @@ in {
     ./lsp.nix
     ./lualine.nix
     ./neo-tree.nix
-    ./neocord.nix
+    # ./neocord.nix
     ./nvim-colorizer.nix
     ./project-nvim.nix
     ./refactoring.nix
@@ -65,6 +65,7 @@ in {
       "rest"
       "todo-comments"
       "wakatime"
+      "web-devicons"
       "which-key"
     ];
     extraPlugins = mkExtraPluginsList extraPlugins;

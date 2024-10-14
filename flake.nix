@@ -85,6 +85,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nixos-wsl = {
+      url = "github:nix-community/NixOS-WSL";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
+
     nixcord.url = "github:KaylorBen/nixcord";
 
     catppuccin-catwalk.url = "github:catppuccin/catwalk";

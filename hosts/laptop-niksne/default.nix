@@ -1,5 +1,6 @@
 {
   imports = [
+    ./private
     ../../system/hardware/nvidia.nix
   ];
 

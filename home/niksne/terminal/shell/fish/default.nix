@@ -30,14 +30,13 @@
       npm = "pnpm";
       npx = "pnpx";
     };
-    shellInit = ''
-      set -gx EDITOR vi
+    shellInit = with config.theme.colors; ''
       set -gx VOLUME_STEP 5
       set -gx BRIGHTNESS_STEP 5
 
-      # --color=bg+:#${config.theme.colors.surface0},bg:#${config.theme.colors.base},spinner:#${config.theme.colors.rosewater},hl:#${config.theme.colors.red} \
-      # --color=fg:#${config.theme.colors.text},header:#${config.theme.colors.red},info:#${config.theme.colors.mauve},pointer:#${config.theme.colors.rosewater} \
-      # --color=marker:#${config.theme.colors.rosewater},fg+:#${config.theme.colors.text},prompt:#${config.theme.colors.mauve},hl+:#${config.theme.colors.red}"
+      # --color=bg+:#${surface0},bg:#${base},spinner:#${rosewater},hl:#${red} \
+      # --color=fg:#${text},header:#${red},info:#${mauve},pointer:#${rosewater} \
+      # --color=marker:#${rosewater},fg+:#${text},prompt:#${mauve},hl+:#${red}"
 
       starship init fish | source
     '';

@@ -57,11 +57,11 @@ in {
       * {
         background-image: none;
       }
-  
+
       window {
         background-color: alpha(#${config.theme.colors.base}, 0.9);
       }
-  
+
       button {
         margin: 8px;
         color: #${config.theme.colors.text};
@@ -72,7 +72,7 @@ in {
         background-position: center;
         background-size: 15%;
       }
-  
+
       button:active,
       button:focus,
       button:hover {
@@ -80,7 +80,7 @@ in {
         background-color: #${config.theme.colors.base};
         outline-style: none;
       }
-  
+
       ${lib.concatMapStringsSep "\n" bgImageSection [
         "lock"
         "logout"

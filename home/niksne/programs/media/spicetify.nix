@@ -18,9 +18,33 @@
 
     colorScheme = config.theme.flavor;
 
-    # enabledExtensions = with spicePkgs.extensions; [
-    # 
-    # ];
-    
+    enabledExtensions = with spicePkgs.extensions; [
+      autoSkipVideo
+      bookmark
+      keyboardShortcut
+      loopyLoop
+      shuffle
+      trashbin
+      powerBar
+      seekSong
+      fullAlbumDate
+      goToSong
+      wikify
+      songStats
+      showQueueDuration
+      copyToClipboard
+      betterGenres
+      hidePodcasts
+      adblock
+      autoSkip
+      playNext
+      volumePercentage
+      copyLyrics
+      playingSource
+    ];
+
+    enabledCustomApps = with spicePkgs.apps; [
+      lyricsPlus
+    ];
   };
 }

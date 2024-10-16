@@ -10,7 +10,7 @@
         ./hosts
         ./modules
         ./pkgs
-        # ./git-hooks.nix
+        ./git-hooks.nix
       ];
 
       perSystem = {
@@ -29,9 +29,9 @@
               nodePackages.prettier
             ];
 
-            # shellHook = ''
-            #   ${config.pre-commit.installationScript}
-            # '';
+            shellHook = ''
+              ${config.pre-commit.installationScript}
+            '';
           };
 
           formatter = alejandra;

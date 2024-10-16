@@ -20,7 +20,7 @@
 
     font = {
       name = "JetBrainsMono Nerd Font";
-      package = pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; };
+      package = pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];};
       size = 10;
     };
 
@@ -28,9 +28,9 @@
 
     iconTheme = {
       name = "Colloid-Teal-Dracula-Dark";
-      package = pkgs.colloid-icon-theme.override { 
-        schemeVariants = [ "dracula" ];
-        colorVariants = [ "teal" ]; 
+      package = pkgs.colloid-icon-theme.override {
+        schemeVariants = ["dracula"];
+        colorVariants = ["teal"];
       };
     };
   };

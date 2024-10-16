@@ -5,76 +5,84 @@
   ...
 }: let
   mkValueString = value:
-    if lib.isBool value then
-      if value then "true" else "false"
-    else if lib.isInt value then
-      toString value
-    else if (value._type or "") == "literal" then
-      value.value
-    else if lib.isString value then
-      ''"${value}"''
-    else if lib.isList value then
-      "[ ${lib.strings.concatStringsSep "," (map mkValueString value)} ]"
-    else
-      abort "Unhandled value type ${builtins.typeOf value}";
+    if lib.isBool value
+    then
+      if value
+      then "true"
+      else "false"
+    else if lib.isInt value
+    then toString value
+    else if (value._type or "") == "literal"
+    then value.value
+    else if lib.isString value
+    then ''"${value}"''
+    else if lib.isList value
+    then "[ ${lib.strings.concatStringsSep "," (map mkValueString value)} ]"
+    else abort "Unhandled value type ${builtins.typeOf value}";
 
-  mkKeyValue = { sep ? ": ", end ? ";" }:
-    name: value:
-    "${name}${sep}${mkValueString value}${end}";
+  mkKeyValue = {
+    sep ? ": ",
+    end ? ";",
+  }: name: value: "${name}${sep}${mkValueString value}${end}";
 
   mkRasiSection = name: value:
-    if lib.isAttrs value then
-      let
-        toRasiKeyValue = lib.generators.toKeyValue { mkKeyValue = mkKeyValue { }; };
-        # Remove null values so the resulting config does not have empty lines
-        configStr = toRasiKeyValue (lib.filterAttrs (_: v: v != null) value);
-      in ''
-        ${name} {
-        ${configStr}}
-      ''
+    if lib.isAttrs value
+    then let
+      toRasiKeyValue = lib.generators.toKeyValue {mkKeyValue = mkKeyValue {};};
+      # Remove null values so the resulting config does not have empty lines
+      configStr = toRasiKeyValue (lib.filterAttrs (_: v: v != null) value);
+    in ''
+      ${name} {
+      ${configStr}}
+    ''
     else
       (mkKeyValue {
-        sep = " ";
-        end = "";
-      } name value) + "\n";
+          sep = " ";
+          end = "";
+        }
+        name
+        value)
+      + "\n";
 
   toRasi = attrs:
     lib.concatStringsSep "\n" (lib.concatMap (lib.mapAttrsToList mkRasiSection) [
       (lib.filterAttrs (n: _: n == "@theme") attrs)
       (lib.filterAttrs (n: _: n == "@import") attrs)
-      (removeAttrs attrs [ "@theme" "@import" ])
+      (removeAttrs attrs ["@theme" "@import"])
     ]);
 
   inherit (config.lib.formats.rasi) mkLiteral;
-  script-2fa = pkgs.writeScript "rofi-script-2fa"
-  ''
-    #!/usr/bin/env python
-    from sys import argv
-    from json import load
-    from subprocess import check_output
+  script-2fa =
+    pkgs.writeScript "rofi-script-2fa"
+    ''
+      #!/usr/bin/env python
+      from sys import argv
+      from json import load
+      from subprocess import check_output
 
 
-    if len(argv) not in {1, 2}:
-        raise Exception
+      if len(argv) not in {1, 2}:
+          raise Exception
 
-    def parse_account(entry: dict) -> tuple[str, str]:
-        return f"{entry['name']}@{entry['issuer']}".lower(), entry["info"]["secret"]
+      def parse_account(entry: dict) -> tuple[str, str]:
+          return f"{entry['name']}@{entry['issuer']}".lower(), entry["info"]["secret"]
 
-    with open(file="${config.home.homeDirectory}/.2fa.json", mode="r", encoding="utf-8") as f:
-        accounts: dict[str, str] = dict(map(parse_account, load(f)["db"]["entries"]))
+      with open(file="${config.home.homeDirectory}/.2fa.json", mode="r", encoding="utf-8") as f:
+          accounts: dict[str, str] = dict(map(parse_account, load(f)["db"]["entries"]))
 
-    if len(argv) == 1:
-        for account in accounts.keys():
-            print(account)
-    else:
-        if argv[1] in accounts.keys():
-            check_output(["notify-send", f"Copied token for {argv[1]}!"])
-            check_output(["wl-copy", check_output(["${lib.getExe pkgs.oath-toolkit}", "--totp", "-b", accounts[argv[1]]])])
-        else:
-            check_output(["notify-send", f"No 2FA secret found for {argv[1]}"])
+      if len(argv) == 1:
+          for account in accounts.keys():
+              print(account)
+      else:
+          if argv[1] in accounts.keys():
+              check_output(["notify-send", f"Copied token for {argv[1]}!"])
+              check_output(["wl-copy", check_output(["${lib.getExe pkgs.oath-toolkit}", "--totp", "-b", accounts[argv[1]]])])
+          else:
+              check_output(["notify-send", f"No 2FA secret found for {argv[1]}"])
 
     '';
-  script-clipboard = pkgs.writeScript "rofi-script-clipboard.sh"
+  script-clipboard =
+    pkgs.writeScript "rofi-script-clipboard.sh"
     ''
       #!/usr/bin/env bash
 
@@ -130,7 +138,7 @@
     window = {
       height = mkLiteral "100%";
       width = mkLiteral "20%";
-      margin = mkLiteral"10px";
+      margin = mkLiteral "10px";
       border = mkLiteral "3px";
       border-radius = mkLiteral "10px";
       border-color = mkLiteral "@border-col";
@@ -188,7 +196,7 @@
     };
 
     "element selected" = {
-      background-color =  mkLiteral "@selected-col";
+      background-color = mkLiteral "@selected-col";
       text-color = mkLiteral "@fg-col2";
     };
 
@@ -200,7 +208,7 @@
       padding = mkLiteral "10px";
       background-color = mkLiteral "@bg-col-light";
       text-color = mkLiteral "@grey";
-      vertical-align = mkLiteral "0.5"; 
+      vertical-align = mkLiteral "0.5";
       horizontal-align = mkLiteral "0.5";
     };
 
@@ -230,21 +238,23 @@ in {
     package = pkgs.rofi-wayland;
     location = "right";
     terminal = "wezterm";
-    extraConfig = (common-config // {
-      modes = "run,drun,filebrowser,2fa:${script-2fa}";
-      display-run = "  ";
-      display-drun = " 󰵆 ";
-      display-filebrowser = " 󰥨 ";
-      display-2fa = " 󰦯 ";
-      "// bad way to do this" = config.lib.formats.rasi.mkLiteral ''
+    extraConfig =
+      common-config
+      // {
+        modes = "run,drun,filebrowser,2fa:${script-2fa}";
+        display-run = "  ";
+        display-drun = " 󰵆 ";
+        display-filebrowser = " 󰥨 ";
+        display-2fa = " 󰦯 ";
+        "// bad way to do this" = config.lib.formats.rasi.mkLiteral ''
 
-        filebrowser {
-          directory: "~";
-          sorting-method: "name";
-          directories-first: true;
-        }
-      // I'll fix it later'';
-    });
+            filebrowser {
+              directory: "~";
+              sorting-method: "name";
+              directories-first: true;
+            }
+          // I'll fix it later'';
+      };
     theme = rofi-theme;
   };
 
@@ -257,13 +267,15 @@ in {
   '';
 
   xdg.configFile."rofi/clipboard.rasi".text = toRasi {
-    configuration = (common-config // {
-      location = 4;
-      terminal = "wezterm";
-      modes = "log:${script-clipboard},emoji:${lib.getExe pkgs.rofimoji}";
-      display-emoji = " 󰞅 ";
-      display-log = " 󱃔 ";
-    });
+    configuration =
+      common-config
+      // {
+        location = 4;
+        terminal = "wezterm";
+        modes = "log:${script-clipboard},emoji:${lib.getExe pkgs.rofimoji}";
+        display-emoji = " 󰞅 ";
+        display-log = " 󱃔 ";
+      };
     "@theme" = "custom";
   };
 }

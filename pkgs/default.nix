@@ -1,13 +1,14 @@
 {
-  systems = [ "x86_64-linux" ];
+  systems = ["x86_64-linux"];
 
   perSystem = {
     pkgs,
     inputs',
     ...
   }: {
-    packages = {
-      ja-netfilter = pkgs.callPackage ./ja-netfilter {};
+    packages = with pkgs; {
+      ja-netfilter = callPackage ./ja-netfilter {};
+      repl = callPackage ./repl {};
     };
   };
 }

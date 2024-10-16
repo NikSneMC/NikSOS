@@ -29,5 +29,5 @@
     fstrim.enable = true;
   };
 
-  hardware.openrazer.users = [ "niksne" ];
+  hardware.openrazer.users = ["niksne"];
 }

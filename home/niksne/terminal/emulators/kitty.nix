@@ -1,15 +1,13 @@
-{
-  config,
-  ...
-}: let
+{config, ...}: let
   gotoTabs = builtins.listToAttrs (
     builtins.genList (
-      num: { 
-        name = "ctrl+alt+${toString (num + 1)}"; 
+      num: {
+        name = "ctrl+alt+${toString (num + 1)}";
         value = "goto_tab ${toString (num + 1)}";
       }
-    ) 
-  9);
+    )
+    9
+  );
 in {
   programs.kitty = {
     enable = true;

@@ -1,6 +1,6 @@
 {
   config,
-  lib, 
+  lib,
   ...
 }: {
   options.theme = {
@@ -23,14 +23,22 @@
       readOnly = true;
       default = let
         removeHash = builtins.substring 1 6;
-        catppuccin = builtins.mapAttrs (_: flavor: 
-          (builtins.mapAttrs (_: color: removeHash color.hex) flavor.colors) // { 
-            accent = removeHash flavor.colors.${config.theme.accent}.hex;
-          }
+        catppuccin = builtins.mapAttrs (
+          _: flavor:
+            (builtins.mapAttrs (_: color: removeHash color.hex) flavor.colors)
+            // {
+              accent = removeHash flavor.colors.${config.theme.accent}.hex;
+            }
         ) (builtins.fromJSON (builtins.readFile "${config.catppuccin.sources.palette}/palette.json"));
-      in catppuccin // catppuccin.${config.theme.flavor} // {
-        notable = if config.theme.flavor == "latte" then catppuccin.mocha else catppuccin.latte;
-      };
+      in
+        catppuccin
+        // catppuccin.${config.theme.flavor}
+        // {
+          notable =
+            if config.theme.flavor == "latte"
+            then catppuccin.mocha
+            else catppuccin.latte;
+        };
     };
 
     wallpaper = lib.mkOption {
@@ -42,9 +50,9 @@
     };
   };
 
-  config.catppuccin = { 
+  config.catppuccin = {
     enable = true;
     pointerCursor.enable = true;
-    inherit (config.theme) flavor accent; 
+    inherit (config.theme) flavor accent;
   };
 }

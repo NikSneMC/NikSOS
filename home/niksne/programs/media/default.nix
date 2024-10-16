@@ -1,7 +1,4 @@
-{
-  pkgs, 
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./mpv.nix
     ./obs-studio.nix
@@ -21,6 +18,7 @@
     # images
     loupe
     imagemagick
+    gimp-with-plugins
 
     # videos
     celluloid

@@ -1,10 +1,7 @@
-{
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   tomlFormat = pkgs.formats.toml {};
 in {
-  home.packages = with pkgs; [ pyprland ];
+  home.packages = with pkgs; [pyprland];
 
   xdg.configFile."hypr/pyprland.toml".source = tomlFormat.generate "pyprland-config" {
     pyprland.plugins = [

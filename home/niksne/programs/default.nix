@@ -1,5 +1,5 @@
 {
-  pkgs, 
+  pkgs,
   npkgs,
   inputs,
   ...
@@ -18,20 +18,23 @@
   programs.java = {
     enable = true;
     package = pkgs.zulu21;
-  }; 
+  };
 
-  home.packages = with inputs; [
-    catppuccin-whiskers.packages.${pkgs.system}.whiskers
-    catppuccin-catwalk.packages.${pkgs.system}.catwalk
-  ] ++ (with pkgs; [
-    file-roller
-    
-    qbittorrent
-    tmux
-    blockbench
+  home.packages = with inputs;
+    [
+      catppuccin-whiskers.packages.${pkgs.system}.whiskers
+      catppuccin-catwalk.packages.${pkgs.system}.catwalk
+    ]
+    ++ (with pkgs; [
+      file-roller
 
-    mission-center
-  ]) ++ (with npkgs; [
-    catppuccin
-  ]);
+      qbittorrent
+      tmux
+      blockbench
+
+      mission-center
+    ])
+    ++ (with npkgs; [
+      catppuccin
+    ]);
 }

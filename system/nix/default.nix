@@ -11,7 +11,7 @@
     ./substituters.nix
   ];
 
-  environment.systemPackages = [ pkgs.git ];
+  environment.systemPackages = [pkgs.git];
 
   nix = {
     # pin the registry to avoid downloading and evaling a new nixpkgs version every time
@@ -24,7 +24,7 @@
     settings = {
       auto-optimise-store = true;
       builders-use-substitutes = true;
-      experimental-features = [ "nix-command" "flakes"];
+      experimental-features = ["nix-command" "flakes"];
       flake-registry = "/etc/nix/registry.json";
 
       keep-derivations = true;

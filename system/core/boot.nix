@@ -1,11 +1,8 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   boot = {
     initrd = {
       systemd.enable = true;
-      supportedFilesystems = [ "fat32" "ext4" "btrfs" "ntfs" ];
+      supportedFilesystems = ["fat32" "ext4" "btrfs" "ntfs"];
     };
 
     kernelPackages = pkgs.linuxPackages_latest;

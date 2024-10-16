@@ -1,3 +1,3 @@
 {
- imports = [ ./opengl.nix ];
+  imports = [./opengl.nix];
 }

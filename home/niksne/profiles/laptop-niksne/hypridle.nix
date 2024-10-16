@@ -12,7 +12,7 @@
     fi
   '';
 
-    brillo = lib.getExe pkgs.brillo;
+  brillo = lib.getExe pkgs.brillo;
 in {
   services.hypridle.settings.listener = [
     {

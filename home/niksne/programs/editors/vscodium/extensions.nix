@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.vscode.extensions = with pkgs.vscode-extensions; [
     asciidoctor.asciidoctor-vscode
     astro-build.astro-vscode

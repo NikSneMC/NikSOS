@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}: {
+{config, ...}: {
   services.swaync = {
     enable = true;
     settings = {
@@ -331,7 +328,7 @@
       .power-buttons,
       .powermode-buttons,
       .screenshot-buttons {
-            
+
       }
       .power-buttons button:hover,
       .powermode-buttons button:hover,

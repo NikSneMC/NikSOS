@@ -1,7 +1,8 @@
 {
-  pkgs,
-  ...
-}: {
+  imports = [
+    ./byedpi.nix
+  ];
+
   networking.networkmanager = {
     enable = true;
     dns = "systemd-resolved";
@@ -15,8 +16,4 @@
 
     resolved.enable = true;
   };
-
-  environment.systemPackages = [ 
-    pkgs.spoofdpi
-  ];
 }

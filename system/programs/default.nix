@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./development.nix
     ./fonts.nix
@@ -19,7 +16,7 @@
     seahorse.enable = true;
 
     nix-ld.enable = true;
-    
+
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [

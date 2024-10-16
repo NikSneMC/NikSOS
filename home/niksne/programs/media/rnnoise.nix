@@ -1,7 +1,4 @@
-{
-  pkgs, 
-  ...
-}: let
+{pkgs, ...}: let
   json = pkgs.formats.json {};
 
   pw_rnnoise_config = {

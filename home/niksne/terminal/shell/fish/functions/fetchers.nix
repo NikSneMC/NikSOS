@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}: {
+{config, ...}: {
   programs.fish.functions = {
     fetch_battery.body = ''
       set enable_battery false

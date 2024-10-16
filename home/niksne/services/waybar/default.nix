@@ -15,19 +15,19 @@
         height = 46;
         spacing = 4;
         modules-left = [
-          "custom/launcher" 
+          "custom/launcher"
           "hyprland/workspaces"
         ];
         modules-center = [
-          "clock#time" 
-          "custom/separator" 
-          "clock#week" 
-          "custom/separator" 
+          "clock#time"
+          "custom/separator"
+          "clock#week"
+          "custom/separator"
           "clock#calendar"
         ];
         modules-right = [
           "bluetooth"
-          "network" 
+          "network"
           "hyprland/language"
         ];
         "custom/launcher" = {
@@ -80,7 +80,7 @@
         "clock#calendar" = {
           format = "{:%d-%m-%Y}";
           tooltip-format = "<tt><small>{calendar}</small></tt>";
-          actions =  {
+          actions = {
             on-click-right = "mode";
             on-scroll-up = "shift_up";
             on-scroll-down = "shift_down";
@@ -105,13 +105,13 @@
           format-disabled = "󰂲";
           format-connected = "󰂱 {device_alias}";
           format-connected-battery = "󰂱 {device_alias} (󰥉 {device_battery_percentage}%)";
-          tooltip-format = ''{controller_alias}\t{controller_address} ({status})
+          tooltip-format = ''            {controller_alias}\t{controller_address} ({status})
 
-{num_connections} connected'';
+            {num_connections} connected'';
           tooltip-format-disabled = "bluetooth off";
-          tooltip-format-connected = ''{controller_alias}\t{controller_address} ({status})
+          tooltip-format-connected = ''            {controller_alias}\t{controller_address} ({status})
 
-{num_connections} connected\n\n{device_enumerate}'';
+            {num_connections} connected\n\n{device_enumerate}'';
           tooltip-format-enumerate-connected = "{device_alias}\t{device_address}";
           tooltip-format-enumerate-connected-battery = "{device_alias}\t{device_address}\t({device_battery_percentage}%)";
           max-length = 35;
@@ -122,7 +122,7 @@
           interval = 1;
           format = "󰤭";
           format-wifi = "{icon} ({signalStrength}%){essid}";
-          format-icons = [ 
+          format-icons = [
             "󰤯"
             "󰤟"
             "󰤢"
@@ -136,19 +136,19 @@
             Interface = {ifname}
             IP = {ipaddr}
             GW = {gwaddr}
-            
+
             <span color='#${config.theme.colors.green}'>{bandwidthUpBits}</span>\t<span color='#${config.theme.colors.maroon}'>{bandwidthDownBits}</span>\t<span color='#${config.theme.colors.mauve}'>󰹹{bandwidthTotalBits}</span>
           '';
           tooltip-format-disconnected = "<span color='#${config.theme.colors.red}'>disconnected</span>";
           format-ethernet = "󰈀 {ipaddr}/{cidr}";
           format-linked = "󰈀 {ifname} (No IP)";
-          tooltip-format-ethernet = ''Interface = {ifname}
-IP = {ipaddr}
-GW = {gwaddr}
-Netmask = {netmask}
-CIDR = {cidr}
+          tooltip-format-ethernet = ''            Interface = {ifname}
+            IP = {ipaddr}
+            GW = {gwaddr}
+            Netmask = {netmask}
+            CIDR = {cidr}
 
-<span color='#${config.theme.colors.green}'>{bandwidthUpBits}</span> <span color='#${config.theme.colors.maroon}'>{bandwidthDownBits}</span> <span color='#${config.theme.colors.mauve}'>󰹹{bandwidthTotalBits}</span>'';
+            <span color='#${config.theme.colors.green}'>{bandwidthUpBits}</span> <span color='#${config.theme.colors.maroon}'>{bandwidthDownBits}</span> <span color='#${config.theme.colors.mauve}'>󰹹{bandwidthTotalBits}</span>'';
           max-length = 35;
           on-click = "fish -c toggle_wifi";
           on-click-right = "nm-connection-editor";
@@ -259,8 +259,8 @@ CIDR = {cidr}
         memory = {
           interval = 1;
           format = " {percentage}%";
-          tooltip-format = ''Main: ({used} GiB/{total} GiB)({percentage}%,) available {avail} GiB
-Swap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail} GiB'';
+          tooltip-format = ''            Main: ({used} GiB/{total} GiB)({percentage}%,) available {avail} GiB
+            Swap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail} GiB'';
           states = {
             high = 90;
             upper-medium = 70;
@@ -271,7 +271,7 @@ Swap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail}
           on-click = "mission-center";
         };
         disk = {
-          format = "󰋊 {percentage_used}%";          
+          format = "󰋊 {percentage_used}%";
           tooltip-format = "({used}/{total})({percentage_used}%) in '{path}', available {free}({percentage_free}%)";
           states = {
             high = 90;
@@ -457,8 +457,8 @@ Swap: ({swapUsed} GiB/{swapTotal} GiB)({swapPercentage}%), available {swapAvail}
         "idle_inhibitor" = {
           format = "{icon}";
           format-icons = {
-              activated = "󰛐";
-              deactivated = "󰛑";
+            activated = "󰛐";
+            deactivated = "󰛑";
           };
           tooltip-format-activated = "idle-inhibitor <span color='#${config.theme.colors.green}'>on</span>";
           tooltip-format-deactivated = "idle-inhibitor <span color='#${config.theme.colors.maroon}'>off</span>";

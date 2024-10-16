@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.vivaldi = {
     enable = true;
     package = pkgs.vivaldi.override {

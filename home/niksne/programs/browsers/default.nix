@@ -1,6 +1,6 @@
 {
   imports = [
-    # ./floorp.nix
     ./vivaldi.nix
+    # ./zen.nix
   ];
 }

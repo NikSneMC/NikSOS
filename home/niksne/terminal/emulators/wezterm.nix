@@ -4,18 +4,17 @@
   lib,
   pkgs,
   ...
-}:
-let
+}: let
   mkUpper = str:
     with builtins;
-    (lib.toUpper (substring 0 1 str)) + (substring 1 (stringLength str) str);
+      (lib.toUpper (substring 0 1 str)) + (substring 1 (stringLength str) str);
 
   font = "JetBrainsMono Nerd Font";
 
   mkTabColorFg = bg: fg: ''{ bg_color = "#${config.theme.colors.${bg}}", fg_color = "#${config.theme.colors.${fg}}" }'';
 
   mkTabColor = bg: mkTabColorFg bg "text";
-in {  
+in {
   programs.wezterm = {
     enable = true;
     package = inputs.wezterm.packages.${pkgs.system}.default;

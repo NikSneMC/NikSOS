@@ -21,7 +21,7 @@
       # "12, monitor:DP-1"
       # "13, monitor:DP-1"
       # "14, monitor:DP-1"
-      
+
       # "15, monitor:DP-2"
       # "16, monitor:DP-2"
       # "17, monitor:DP-2"
@@ -36,7 +36,7 @@
       "12, monitor:HDMI-A-1"
       "13, monitor:HDMI-A-1"
       "14, monitor:HDMI-A-1"
-      
+
       "15, monitor:VGA-1"
       "16, monitor:VGA-1"
       "17, monitor:VGA-1"

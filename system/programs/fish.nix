@@ -1,8 +1,5 @@
-{
-  pkgs,
-  ...
-}: {
-  environment.pathsToLink = [ "/share/fish" ];
+{pkgs, ...}: {
+  environment.pathsToLink = ["/share/fish"];
 
   programs = {
     less.enable = true;

@@ -19,7 +19,7 @@
       "12, monitor:HDMI-A-1"
       "13, monitor:HDMI-A-1"
       "14, monitor:HDMI-A-1"
-      
+
       "15, monitor:eDP-1"
       "16, monitor:eDP-1"
       "17, monitor:eDP-1"

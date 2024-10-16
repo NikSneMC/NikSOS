@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./extensions.nix
     ./settings.nix
@@ -9,7 +6,7 @@
   programs.vscode = {
     enable = true;
     package = pkgs.vscodium;
-  }; 
+  };
 
   xdg.configFile."VSCodium/product.json".text = builtins.toJSON {
     extensionsGallery = {

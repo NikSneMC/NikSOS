@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   users.users = {
     niksne = {
       isNormalUser = true;
@@ -11,7 +8,7 @@
         "input"
         "networkmanager"
         "video"
-        "wheel" 
+        "wheel"
       ];
     };
   };

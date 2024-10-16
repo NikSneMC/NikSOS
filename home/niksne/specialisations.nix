@@ -1,7 +1,4 @@
-{
-  lib,
-  ...
-}: {
+{lib, ...}: {
   theme = {
     flavor = "mocha";
     accent = "sky";

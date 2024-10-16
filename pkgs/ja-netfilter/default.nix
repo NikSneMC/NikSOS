@@ -1,7 +1,8 @@
 {
   stdenvNoCC,
   fetchzip,
-}: stdenvNoCC.mkDerivation (finalAttrs: {
+}:
+stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "ja-netfilter";
   version = "240701";
 
@@ -24,7 +25,6 @@
 
     runHook postInstall
   '';
-
 
   meta = {
     description = "Jetbrains IDEs crack";

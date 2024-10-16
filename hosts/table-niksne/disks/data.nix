@@ -1,17 +1,18 @@
 let
-  mkSubvolumes = subvolumes: builtins.listToAttrs (
-    builtins.map (
-      mountpoint: {
-        name = mountpoint;
-        value = {
-          mountOptions = [ "compress=zstd" ];
-          inherit mountpoint;
-        };
-      }
-    )
-    subvolumes
-  );
-  
+  mkSubvolumes = subvolumes:
+    builtins.listToAttrs (
+      builtins.map (
+        mountpoint: {
+          name = mountpoint;
+          value = {
+            mountOptions = ["compress=zstd"];
+            inherit mountpoint;
+          };
+        }
+      )
+      subvolumes
+    );
+
   mkUserSubvolumes = user: folders: mkSubvolumes (builtins.map (folder: "/home/${user}/${folder}") folders);
 in {
   disko.devices.disk.sda = {
@@ -24,8 +25,8 @@ in {
           size = "100%";
           content = {
             type = "btrfs";
-            extraArgs = [ "-f" ];
-            subvolumes = (mkUserSubvolumes "niksne" [
+            extraArgs = ["-f"];
+            subvolumes = mkUserSubvolumes "niksne" [
               ".gradle"
               ".local/share"
               "Documents"
@@ -37,11 +38,10 @@ in {
               "Templates"
               "tmp"
               "Videos"
-            ]);
+            ];
           };
         };
       };
     };
   };
 }
-

@@ -1,18 +1,22 @@
-let 
-  mkSubvolumes = subvolumes: builtins.listToAttrs (
-    builtins.map (
-      subvolume: if builtins.isString subvolume then {
-        name = subvolume;
-        value = {
-          mountpoint = subvolume;
-        };
-      } else {
-        name = subvolume.mountpoint;
-        value = subvolume;
-      }
-    )
-    subvolumes
-  );
+let
+  mkSubvolumes = subvolumes:
+    builtins.listToAttrs (
+      builtins.map (
+        subvolume:
+          if builtins.isString subvolume
+          then {
+            name = subvolume;
+            value = {
+              mountpoint = subvolume;
+            };
+          }
+          else {
+            name = subvolume.mountpoint;
+            value = subvolume;
+          }
+      )
+      subvolumes
+    );
 in {
   disko.devices.disk.nvme0n1 = {
     type = "disk";
@@ -36,19 +40,19 @@ in {
           size = "100%";
           content = {
             type = "btrfs";
-            extraArgs = [ "-f" ]; 
+            extraArgs = ["-f"];
             subvolumes = mkSubvolumes [
               "/"
               {
-                mountOptions = [ "compress=zstd" ];
+                mountOptions = ["compress=zstd"];
                 mountpoint = "/home";
               }
               {
-                mountOptions = [ "compress=zstd" "noatime" ];
+                mountOptions = ["compress=zstd" "noatime"];
                 mountpoint = "/nix";
               }
               {
-                mountOptions = [ "compress=zstd" ];
+                mountOptions = ["compress=zstd"];
                 mountpoint = "/srv";
               }
             ];

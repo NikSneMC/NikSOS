@@ -11,7 +11,7 @@
       wayland.enable = true;
       catppuccin = {
         enable = true;
-        font  = "Jetbrains Mono Nerd Font";
+        font = "Jetbrains Mono Nerd Font";
         fontSize = "10";
         background = let
           url = "https://raw.githubusercontent.com/NikSneMC/NikSOS/assets/bg.png";

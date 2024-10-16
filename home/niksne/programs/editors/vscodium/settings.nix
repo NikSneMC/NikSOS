@@ -3,8 +3,7 @@
   lib,
   ...
 }: let
-  mkUpper =
-    str:
+  mkUpper = str:
     (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
   flavour = mkUpper config.theme.flavor;
 in {

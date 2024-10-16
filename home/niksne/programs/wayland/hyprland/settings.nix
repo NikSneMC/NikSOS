@@ -1,4 +1,8 @@
 {
+  lib,
+  pkgs,
+  ...
+}: {
   wayland.windowManager.hyprland.settings = {
     env = [
       "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
@@ -11,10 +15,10 @@
       "pypr"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
+      "${lib.getExe pkgs.hyprland-per-window-layout}"
       "vesktop"
       "telegram-desktop"
       "thunderbird"
-      "spoofdpi --port 8888 --enable-doh --window-size 0 --timeout 10000"
     ];
 
     general = {
@@ -78,8 +82,8 @@
 
     group = {
       groupbar = {
-          "col.active" = "rgb(bd93f9) rgb(44475a) 90deg";
-          "col.inactive" = "rgba(282a36dd)";
+        "col.active" = "rgb(bd93f9) rgb(44475a) 90deg";
+        "col.inactive" = "rgba(282a36dd)";
       };
     };
 

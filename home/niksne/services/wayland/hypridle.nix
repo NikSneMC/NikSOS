@@ -9,7 +9,7 @@
     enable = true;
 
     package = inputs.hypridle.packages.${pkgs.system}.hypridle;
-    
+
     settings = {
       general = let
         hyprlock = lib.getExe config.programs.hyprlock.package;

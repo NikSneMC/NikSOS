@@ -5,7 +5,7 @@
   ...
 }: let
   font_family = "JetBrainsMono Nerd Font";
-in  {
+in {
   programs.hyprlock = {
     enable = true;
     package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
@@ -105,7 +105,7 @@ in  {
           font_color = "rgb(${config.theme.colors.text})";
           fade_on_empty = false;
           placeholder_text = "<span foreground=\"##${config.theme.colors.text}\"><i>󰌾 Logged in as </i><span foreground=\"##${config.theme.colors.accent}\">$USER</span></span>";
-          check_color = "rgb(${config.theme.colors.accent})";  
+          check_color = "rgb(${config.theme.colors.accent})";
           fail_color = "rgb(${config.theme.colors.red})";
           fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
           capslock_color = "rgb(${config.theme.colors.yellow})";

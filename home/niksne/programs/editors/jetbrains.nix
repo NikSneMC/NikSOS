@@ -3,13 +3,16 @@
   npkgs,
   ...
 }: let
-  patchIDEs = builtins.map (ide: ide.override { vmopts = ''
-  --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
-  --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+  patchIDEs = builtins.map (ide:
+    ide.override {
+      vmopts = ''
+        --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
+        --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
 
-  -javaagent:${lpkgs.ja-netfilter}/ja-netfilter.jar=jetbrains
-  ''; });
-  
+        -javaagent:${lpkgs.ja-netfilter}/ja-netfilter.jar=jetbrains
+      '';
+    });
+
   ides = patchIDEs (with npkgs.jetbrains; [
     idea-ultimate
     # pycharm-professional
@@ -24,5 +27,5 @@ in {
     enable = true;
     inherit ides;
   };
-  home.packages = (ides ++ [ lpkgs.ja-netfilter ]);
+  home.packages = ides ++ [lpkgs.ja-netfilter];
 }

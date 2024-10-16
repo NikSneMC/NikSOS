@@ -1,8 +1,5 @@
-{
-  config,
-  ...
-}: {
-  imports = [ ./functions ];
+{config, ...}: {
+  imports = [./functions];
 
   programs.fish = {
     enable = true;
@@ -14,7 +11,7 @@
       store = "cd /nix/store";
       projects = "cd ~/Projects";
       nfu = "nixos && nix flake update";
-      nfuc = "nixos && nix flake lock --update-input"; 
+      nfuc = "nixos && nix flake lock --update-input";
       nrs = "nh os switch -a path:/etc/nixos -- --impure";
       nrb = "hn os boot -a path:/etc/nixos -- --impure";
       nrsr = "nrs && systemctl reboot";

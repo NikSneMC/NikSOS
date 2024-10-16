@@ -1,9 +1,6 @@
 # TODO: make service from ags
-{
-  inputs,
-  ...
-}: {
-  imports = [ inputs.ags.homeManagerModules.default ];
+{inputs, ...}: {
+  imports = [inputs.ags.homeManagerModules.default];
 
   programs.ags = {
     enable = true;

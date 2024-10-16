@@ -1,7 +1,4 @@
-{
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs = {
     java = {
       enable = true;
@@ -12,7 +9,6 @@
       enable = true;
     };
   };
-  
 
   environment = {
     systemPackages = with pkgs; [

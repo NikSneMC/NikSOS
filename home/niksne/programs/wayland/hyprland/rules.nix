@@ -1,7 +1,4 @@
-{
-  config,
-  ...
-}: let
+{config, ...}: let
   dropterm = "class:^(wezterm_dropdown)$";
   volume_sidemenu = "class:^(org.pulseaudio.pavucontrol)$";
   player = "initialTitle:^(Spotify)$";
@@ -31,7 +28,6 @@ in {
       # Thunderbird
       "workspace 17 silent, class:^(thunderbird)$"
 
-
       # Vivaldi
       "suppressevent, fullscreen, class:(vivaldi-stable)$"
       "tile, class:(vivaldi-stable)$"
@@ -53,7 +49,6 @@ in {
       "workspace 21, class:^(com.mojang.minecraft)$"
       "tile, class:^(Minecraft.*)$"
       "workspace 21, class:^(Minecraft.*)$"
-
 
       "dimaround, class:^(gcr-prompter)$"
       "dimaround, class:^(xdg-desktop-portal-gtk)$"

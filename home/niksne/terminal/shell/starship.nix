@@ -1,14 +1,11 @@
-{
-  config, 
-  ...
-}: {
+{config, ...}: {
   home.sessionVariables.STARSHIP_CACHE = "${config.xdg.cacheHome}/starship";
 
   programs.starship = {
     enable = true;
 
     catppuccin.enable = true;
-    
+
     settings = {
       character = {
         success_symbol = "[❯](teal)";

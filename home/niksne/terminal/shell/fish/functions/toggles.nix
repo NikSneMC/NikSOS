@@ -39,7 +39,7 @@
     '';
     toggle_night_mode = ''
       set target_process "gammastep"
-    
+
       if pgrep $target_process > /dev/null
         killall -s SIGINT .gammastep-wrap
       else

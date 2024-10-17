@@ -1,11 +1,15 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = [
     # ./nixcord.nix
   ];
 
   home.packages = with pkgs; [
     thunderbird
-    tdesktop
+    inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop
 
     chatterino2
   ];

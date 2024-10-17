@@ -23,7 +23,7 @@ in {
 
       # Telegram
       "float, title:^(Media viewer)$"
-      "workspace 16 silent, class:^(org.telegram.desktop)$"
+      "workspace 16 silent, class:^(com.ayugram)$"
 
       # Thunderbird
       "workspace 17 silent, class:^(thunderbird)$"

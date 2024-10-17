@@ -50,32 +50,6 @@
         "type": "github"
       }
     },
-    "anyrun": {
-      "inputs": {
-        "flake-parts": [
-          "flake-parts"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "systems": [
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1728852607,
-        "narHash": "sha256-PhJdr8b4nZVHts5KMEsf7vCDXVpFIFCa7VlCt+oYpL4=",
-        "owner": "anyrun-org",
-        "repo": "anyrun",
-        "rev": "6e0385f6945d701545edc5bccfc5f544e1e12663",
-        "type": "github"
-      },
-      "original": {
-        "owner": "anyrun-org",
-        "repo": "anyrun",
-        "type": "github"
-      }
-    },
     "aquamarine": {
       "inputs": {
         "hyprutils": [
@@ -106,6 +80,30 @@
       "original": {
         "owner": "hyprwm",
         "repo": "aquamarine",
+        "type": "github"
+      }
+    },
+    "ayugram-desktop": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1728842762,
+        "narHash": "sha256-HehDocr0OygHzVAmW3zu45FIKUpRrIwOyzdRg95we2E=",
+        "owner": "kaeeraa",
+        "repo": "ayugram-desktop",
+        "rev": "a9bafc9e7c8cff42dd4d135e730d511323e74925",
+        "type": "github"
+      },
+      "original": {
+        "owner": "kaeeraa",
+        "ref": "release",
+        "repo": "ayugram-desktop",
         "type": "github"
       }
     },
@@ -946,7 +944,7 @@
       "inputs": {
         "agenix": "agenix",
         "ags": "ags",
-        "anyrun": "anyrun",
+        "ayugram-desktop": "ayugram-desktop",
         "catppuccin": "catppuccin",
         "catppuccin-catwalk": "catppuccin-catwalk",
         "catppuccin-whiskers": "catppuccin-whiskers",

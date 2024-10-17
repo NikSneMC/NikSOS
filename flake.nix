@@ -27,6 +27,7 @@
               alejandra
               git
               nodePackages.prettier
+              config.packages.repl
             ];
 
             shellHook = ''
@@ -231,21 +232,20 @@
       };
     };
 
-    anyrun = {
-      url = "github:anyrun-org/anyrun";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-        flake-parts.follows = "flake-parts";
-      };
-    };
-
     helix = {
       url = "github:helix-editor/helix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
         rust-overlay.follows = "rust-overlay";
+      };
+    };
+
+    ayugram-desktop = {
+      url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
       };
     };
   };

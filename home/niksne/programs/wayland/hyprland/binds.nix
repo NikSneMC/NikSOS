@@ -71,7 +71,7 @@ in {
         "${mod} SHIFT, N, Mute notifications, exec, swaync-client -d"
         "${mod} SHIFT, R, Start screen recording (MP4), exec, fish -c record_screen_mp4"
         "${mod} SHIFT, S, Take screenshot, exec, fish -c record_screen_png"
-        "${mod} SHIFT, T, Launch Telegram, exec, telegram-desktop"
+        "${mod} SHIFT, T, Launch Telegram, exec, ayugram-desktop"
         "${mod} SHIFT, V, Launch VSCodium, exec, codium"
         "${mod} SHIFT, W, Launch ani-cli, exec, ${lib.getExe pkgs.ani-cli} --rofi"
         "${mod} SHIFT, X, Clear clipboard, exec, fish -c clipboard_clear"

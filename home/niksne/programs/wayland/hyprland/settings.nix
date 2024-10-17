@@ -17,7 +17,7 @@
       "wl-paste --type image --watch cliphist store"
       "${lib.getExe pkgs.hyprland-per-window-layout}"
       "vesktop"
-      "telegram-desktop"
+      "ayugram-desktop"
       "thunderbird"
     ];
 

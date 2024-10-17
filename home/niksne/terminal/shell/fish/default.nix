@@ -8,6 +8,7 @@
       cl = "clear";
       conf = "cd ~/.config";
       nixos = "cd /etc/nixos";
+      nixos-private = "cd /etc/nixos/hosts/${config.home.host}/private";
       store = "cd /nix/store";
       projects = "cd ~/Projects";
       nfu = "nixos && nix flake update";

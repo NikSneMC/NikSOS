@@ -8,7 +8,6 @@
 
     ../../terminal/emulators/wezterm.nix
 
-    ./fish.nix
     ./hyprland.nix
     ./programs.nix
   ];

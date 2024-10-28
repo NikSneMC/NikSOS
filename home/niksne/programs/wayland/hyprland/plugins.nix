@@ -5,14 +5,12 @@
 }: {
   wayland.windowManager.hyprland = {
     plugins = with inputs.hyprland-plugins.packages.${pkgs.system}; [
-      hyprexpo
+      # hyprexpo
       hyprtrails
     ];
 
     settings.plugin = {
       hyprtrails.color = "$accent";
-      hyprexpo = {
-      };
     };
   };
 }

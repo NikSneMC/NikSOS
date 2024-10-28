@@ -20,7 +20,7 @@
     # set the path for channels compat
     nixPath = lib.mapAttrsToList (key: _: "${key}=flake:${key}") config.nix.registry;
 
-    package = pkgs.nixFlakes;
+    package = pkgs.nixVersions.stable;
     settings = {
       auto-optimise-store = true;
       builders-use-substitutes = true;

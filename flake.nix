@@ -212,13 +212,13 @@
       };
     };
 
-    # nixcord = {
-    #   url = "github:KaylorBen/nixcord";
-    #   inputs = {
-    #     nixpkgs.follows = "nixpkgs";
-    #     flake-compat.follows = "flake-compat";
-    #   };
-    # };
+    nixcord = {
+      url = "github:KaylorBen/nixcord";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-compat.follows = "flake-compat";
+      };
+    };
 
     catppuccin-catwalk = {
       url = "github:catppuccin/catwalk";
@@ -244,7 +244,6 @@
     ayugram-desktop = {
       url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
       inputs = {
-        flake-utils.follows = "flake-utils";
         nixpkgs.follows = "nixpkgs";
       };
     };

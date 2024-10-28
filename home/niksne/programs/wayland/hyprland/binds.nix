@@ -59,7 +59,7 @@ in {
         "${mod}, V, Open clipboard history, exec, fish -c clipboard_log"
         "${mod}, W, Open \"Bring window to the workspace\" menu, exec, pypr fetch_client_menu"
         "${mod}, X, Delete item from clipboard, exec, fish -c clipboard_delete_item"
-        "${mod}, TAB, Launch hyprexpo, hyprexpo:expo, toggle"
+        # "${mod}, TAB, Launch hyprexpo, hyprexpo:expo, toggle"
         "${mod}, ESCAPE, Open logout menu, exec, wlogout"
         "${mod}, SEMICOLON, Open emoji menu, exec, fish -c clipboard_emoji"
 

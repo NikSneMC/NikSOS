@@ -23,13 +23,16 @@ in {
           "kotlin_language_server"
           "lua_ls"
           "marksman"
-          "nil_ls"
           "pyright"
           "svelte"
           "tailwindcss"
           "ts_ls"
         ])
         // {
+          nil_ls = {
+            enable = true;
+            settings.formatting.command = ["alejandra"];
+          };
           rust_analyzer = {
             enable = true;
             installCargo = true;

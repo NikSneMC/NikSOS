@@ -54,7 +54,7 @@ in {
     ./lsp.nix
     ./lualine.nix
     ./neo-tree.nix
-    # ./neocord.nix
+    ./neocord.nix
     ./nvim-colorizer.nix
     ./project-nvim.nix
     ./refactoring.nix

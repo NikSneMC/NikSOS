@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    # ./nixcord.nix
+    ./nixcord.nix
   ];
 
   home.packages = with pkgs; [

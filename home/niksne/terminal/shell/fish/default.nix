@@ -37,6 +37,7 @@
       # --color=marker:#${rosewater},fg+:#${text},prompt:#${mauve},hl+:#${red}"
 
       starship init fish | source
+      fish_vi_key_bindings
     '';
     functions.fish_greeting.body = '''';
   };

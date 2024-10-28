@@ -1,6 +1,6 @@
 {
   imports = [
-    ./byedpi.nix
+    ./zapret.nix
   ];
 
   networking.networkmanager = {

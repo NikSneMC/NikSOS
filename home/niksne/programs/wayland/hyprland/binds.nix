@@ -1,4 +1,5 @@
 {
+  inputs,
   lib,
   pkgs,
   ...
@@ -69,6 +70,7 @@ in {
         "${mod} SHIFT, F, Open file browser menu, exec, rofi -show filebrowser"
         "${mod} SHIFT, G, Start screen recording (GIF), exec, fish -c record_screen_gif"
         "${mod} SHIFT, N, Mute notifications, exec, swaync-client -d"
+        "${mod} SHIFT, P, Toggle easter egg, exec, pkill -9 activate-niksos || ${lib.getExe inputs.activate-niksos.packages.${pkgs.system}.default}"
         "${mod} SHIFT, R, Start screen recording (MP4), exec, fish -c record_screen_mp4"
         "${mod} SHIFT, S, Take screenshot, exec, fish -c record_screen_png"
         "${mod} SHIFT, T, Launch Telegram, exec, ayugram-desktop"

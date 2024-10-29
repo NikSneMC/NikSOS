@@ -247,5 +247,10 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
+
+    activate-niksos = {
+      url = "github:NikSneMC/activate-niksos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 }

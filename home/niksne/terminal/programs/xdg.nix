@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: let
-  browser = ["vivaldi-stable"];
+  browser = ["zen-alpha"];
   imageViewer = ["org.gnome.Loupe"];
   videoPlayer = ["io.github.celluloid_player.Celluloid"];
   audioPlayer = ["io.bassi.Amberol"];

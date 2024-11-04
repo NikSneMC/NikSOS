@@ -48,7 +48,7 @@ in {
         "${mod} CTRL ALT, P, Reload pyprland, exec, fish -c reload_pyprland"
 
         "${mod}, A, Launch app menu, exec, rofi -show drun"
-        "${mod}, B, Launch browser, exec, vivaldi"
+        "${mod}, B, Launch browser, exec, zen"
         "${mod}, D, Launch Discord, exec, vesktop"
         "${mod}, E, Launch file manager, exec, thunar"
         "${mod}, K, Enter kill mode, exec, hyprctl kill"
@@ -60,7 +60,7 @@ in {
         "${mod}, V, Open clipboard history, exec, fish -c clipboard_log"
         "${mod}, W, Open \"Bring window to the workspace\" menu, exec, pypr fetch_client_menu"
         "${mod}, X, Delete item from clipboard, exec, fish -c clipboard_delete_item"
-        # "${mod}, TAB, Launch hyprexpo, hyprexpo:expo, toggle"
+        "${mod}, TAB, Launch hyprexpo, hyprexpo:expo, toggle"
         "${mod}, ESCAPE, Open logout menu, exec, wlogout"
         "${mod}, SEMICOLON, Open emoji menu, exec, fish -c clipboard_emoji"
 

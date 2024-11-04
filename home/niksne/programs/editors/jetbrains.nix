@@ -27,5 +27,5 @@ in {
     enable = true;
     inherit ides;
   };
-  home.packages = ides ++ [lpkgs.ja-netfilter];
+  home.packages = ides;
 }

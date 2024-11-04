@@ -8,7 +8,7 @@
 
     ../../terminal/emulators/wezterm.nix
 
-    ./hyprland.nix
     ./hypridle.nix
+    ./hyprland.nix
   ];
 }

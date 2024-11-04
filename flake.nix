@@ -72,6 +72,21 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    poetry2nix = {
+      url = "github:nix-community/poetry2nix";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        treefmt-nix.follows = "treefmt-nix";
+      };
+    };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -145,6 +160,22 @@
         hyprlang.follows = "hyprland/hyprlang";
       };
     };
+    pyprland = {
+      url = "github:hyprland-community/pyprland";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        flake-compat.follows = "flake-compat";
+        poetry2nix.follows = "poetry2nix";
+      };
+    };
+    hypr-dynamic-cursors = {
+      url = "github:VirtCode/hypr-dynamic-cursors";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        hyprland.follows = "hyprland";
+      };
+    };
 
     catppuccin.url = "github:NikSneMC/catppuccin-nix";
 
@@ -192,6 +223,7 @@
         nix-darwin.follows = "";
         flake-compat.follows = "flake-compat";
         git-hooks.follows = "";
+        treefmt-nix.follows = "treefmt-nix";
       };
     };
 
@@ -250,6 +282,11 @@
 
     activate-niksos = {
       url = "github:NikSneMC/activate-niksos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    zen-browser = {
+      url = "github:fufexan/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

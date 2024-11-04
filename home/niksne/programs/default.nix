@@ -32,6 +32,9 @@
       tmux
       blockbench
 
+      surrealist
+      postman
+
       mission-center
     ])
     ++ (with npkgs; [

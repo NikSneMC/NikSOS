@@ -23,6 +23,7 @@
       bookmark
       keyboardShortcut
       loopyLoop
+      popupLyrics
       shuffle
       trashbin
       powerBar
@@ -41,6 +42,7 @@
       volumePercentage
       copyLyrics
       playingSource
+      beautifulLyrics
     ];
 
     enabledCustomApps = with spicePkgs.apps; [

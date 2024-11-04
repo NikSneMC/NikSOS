@@ -282,20 +282,28 @@
           };
           on-click = "mission-center";
         };
-        temperature = {
-          interval = 1;
-          tooltip = false;
-          critical-threshold = 90;
-          format = "{icon} {temperatureC}󰔄";
-          # "format-critical" = "🔥{icon} {temperatureC}󰔄";
-          format-icons = [
-            ""
-            ""
-            ""
-            ""
-            ""
-          ];
-        };
+        temperature =
+          {
+            interval = 1;
+            tooltip = false;
+            critical-threshold = 90;
+            format = "{icon} {temperatureC}󰔄";
+            # "format-critical" = "🔥{icon} {temperatureC}󰔄";
+            format-icons = [
+              ""
+              ""
+              ""
+              ""
+              ""
+            ];
+          }
+          // (
+            if config.home.host == "laptop-niksne"
+            then {
+              hwmon-path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input";
+            }
+            else {}
+          );
         battery = {
           interval = 1;
           states = {

@@ -21,6 +21,10 @@
       "webScreenShareFixes"
     ];
     vencord = [
+      {
+        name = "accountPanelServerProfile";
+        prioritizeServerProfile = true;
+      }
       "betterGifAltText"
       "betterGifPicker"
       {
@@ -74,6 +78,7 @@
       "forceOwnerCrown"
       "friendInvites"
       "friendsSince"
+      "fullSearchContext"
       "gameActivityToggle"
       "gifPaste"
       "greetStickerPicker"
@@ -140,7 +145,6 @@
       "reverseImageSearch"
       "reviewDB"
       "roleColorEverywhere"
-      "searchReply"
       "secretRingToneEnabler"
       "sendTimestamps"
       "serverInfo"

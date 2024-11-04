@@ -1,7 +1,11 @@
-{pkgs, ...}: let
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   tomlFormat = pkgs.formats.toml {};
 in {
-  home.packages = with pkgs; [pyprland];
+  home.packages = [inputs.pyprland.packages.${pkgs.system}.pyprland];
 
   xdg.configFile."hypr/pyprland.toml".source = tomlFormat.generate "pyprland-config" {
     pyprland.plugins = [
@@ -14,7 +18,9 @@ in {
         command = "wezterm start --class wezterm_dropdown";
         animation = "fromTop";
         size = "70% 70%";
+        match_by = "class";
         class = "wezterm_dropdown";
+        multi = false;
         excludes = "*";
         unfocus = "hide";
         margin = 75;
@@ -24,8 +30,10 @@ in {
         command = "pavucontrol";
         animation = "fromLeft";
         size = "40% 70%";
+        match_by = "class";
         class = "org.pulseaudio.pavucontrol";
         excludes = "*";
+        multi = false;
         unfocus = "hide";
         margin = 75;
         lazy = true;
@@ -34,12 +42,13 @@ in {
         command = "spotify";
         animation = "fromBottom";
         size = "70% 70%";
+        multi = false;
         match_by = "initialTitle";
-        initialTitle = "Spotify";
+        initialTitle = "Spotify Free";
         excludes = "*";
-        unfocus = "hide";
         margin = 75;
         lazy = true;
+        process_tracking = false;
       };
     };
   };

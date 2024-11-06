@@ -79,6 +79,7 @@ in {
 
         # diferrent toggles
         "${mod} CTRL, A, Toggle airplane mode, exec, fish -c toggle_airplane_mode"
+        "${mod} CTRL, N, toggle night light, exec, fish -c toggle_night_mode"
         "${mod} CTRL, O, Toggle funky stuff, exec, fish -c toggle_funky_stuff"
         "${mod} CTRL, P, Toggle easter egg, exec, pkill -9 activate-niksos || ${lib.getExe inputs.activate-niksos.packages.${pkgs.system}.default}"
         "${mod} CTRL, W, Toggle wi-fi, exec, fish -c toggle_wifi"

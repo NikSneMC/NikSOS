@@ -10,7 +10,9 @@
       notify-send swaync "Configuration reloaded!"
     '';
     reload_pyprland.body = ''
-      pypr reload
+      pkill -9 pypr
+      rm /run/user/1000/hypr/*/.pyprland.sock
+      hyprctl dispatch exec "pypr"
       notify-send pyprland "Configuration reloaded!"
     '';
   };

@@ -115,6 +115,14 @@
         pre-commit-hooks.follows = "git-hooks";
       };
     };
+    hyprpolkitagent = {
+      url = "github:hyprwm/hyprpolkitagent";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        hyprutils.follows = "hyprland/hyprutils";
+      };
+    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
@@ -158,6 +166,16 @@
         systems.follows = "hyprland/systems";
         hyprutils.follows = "hyprland/hyprutils";
         hyprlang.follows = "hyprland/hyprlang";
+      };
+    };
+    hyprsunset = {
+      url = "github:hyprwm/hyprsunset";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        hyprland-protocols.follows = "hyprland/hyprland-protocols";
+        hyprutils.follows = "hyprland/hyprutils";
+        hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
       };
     };
     pyprland = {

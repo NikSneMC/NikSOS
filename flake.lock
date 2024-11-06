@@ -550,11 +550,11 @@
         "xdph": "xdph"
       },
       "locked": {
-        "lastModified": 1730749523,
-        "narHash": "sha256-0vq+exXBajyz9oVXpJCpFy6Q2SXzSXAvMgYgwrKh+1w=",
+        "lastModified": 1730901764,
+        "narHash": "sha256-TXACxnHbrVw2Y6ifPxy8QF2oW7yXny+EmCraORUewzk=",
         "owner": "hyprwm",
         "repo": "Hyprland",
-        "rev": "88e9e0394541a853600bc2c910005c05fa156269",
+        "rev": "97a309b7844aea82b200139febc99998e7f06402",
         "type": "github"
       },
       "original": {
@@ -768,6 +768,68 @@
       "original": {
         "owner": "hyprwm",
         "repo": "hyprpicker",
+        "type": "github"
+      }
+    },
+    "hyprpolkitagent": {
+      "inputs": {
+        "hyprutils": [
+          "hyprland",
+          "hyprutils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": [
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1730499931,
+        "narHash": "sha256-ASg3asYfWwKsq9koKld4zicezRdx7PF035GwhzXHvxQ=",
+        "owner": "hyprwm",
+        "repo": "hyprpolkitagent",
+        "rev": "615efd49303cb164bbf4ad065792e02d8f652a36",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hyprwm",
+        "repo": "hyprpolkitagent",
+        "type": "github"
+      }
+    },
+    "hyprsunset": {
+      "inputs": {
+        "hyprland-protocols": [
+          "hyprland",
+          "hyprland-protocols"
+        ],
+        "hyprutils": [
+          "hyprland",
+          "hyprutils"
+        ],
+        "hyprwayland-scanner": [
+          "hyprland",
+          "hyprwayland-scanner"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": [
+          "systems"
+        ]
+      },
+      "locked": {
+        "lastModified": 1728415425,
+        "narHash": "sha256-SVkcePzX9PAlWsPSGBaxiNFCouiQmGOezhMo0+zhDIQ=",
+        "owner": "hyprwm",
+        "repo": "hyprsunset",
+        "rev": "f535c1894d71d7639d19b52f5b72e1ac840c2512",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hyprwm",
+        "repo": "hyprsunset",
         "type": "github"
       }
     },
@@ -1126,6 +1188,8 @@
         "hyprlock": "hyprlock",
         "hyprpaper": "hyprpaper",
         "hyprpicker": "hyprpicker",
+        "hyprpolkitagent": "hyprpolkitagent",
+        "hyprsunset": "hyprsunset",
         "nikspkgs": "nikspkgs",
         "nix-minecraft": "nix-minecraft",
         "nix-python": "nix-python",

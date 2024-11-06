@@ -70,13 +70,18 @@ in {
         "${mod} SHIFT, F, Open file browser menu, exec, rofi -show filebrowser"
         "${mod} SHIFT, G, Start screen recording (GIF), exec, fish -c record_screen_gif"
         "${mod} SHIFT, N, Mute notifications, exec, swaync-client -d"
-        "${mod} SHIFT, P, Toggle easter egg, exec, pkill -9 activate-niksos || ${lib.getExe inputs.activate-niksos.packages.${pkgs.system}.default}"
         "${mod} SHIFT, R, Start screen recording (MP4), exec, fish -c record_screen_mp4"
         "${mod} SHIFT, S, Take screenshot, exec, fish -c record_screen_png"
         "${mod} SHIFT, T, Launch Telegram, exec, ayugram-desktop"
         "${mod} SHIFT, V, Launch VSCodium, exec, codium"
         "${mod} SHIFT, W, Launch ani-cli, exec, ${lib.getExe pkgs.ani-cli} --rofi"
         "${mod} SHIFT, X, Clear clipboard, exec, fish -c clipboard_clear"
+
+        # diferrent toggles
+        "${mod} CTRL, A, Toggle airplane mode, exec, fish -c toggle_airplane_mode"
+        "${mod} CTRL, O, Toggle funky stuff, exec, fish -c toggle_funky_stuff"
+        "${mod} CTRL, P, Toggle easter egg, exec, pkill -9 activate-niksos || ${lib.getExe inputs.activate-niksos.packages.${pkgs.system}.default}"
+        "${mod} CTRL, W, Toggle wi-fi, exec, fish -c toggle_wifi"
 
         # Scratchpads
         "${mod} CTRL, M, Toggle music player, exec, pypr toggle player"

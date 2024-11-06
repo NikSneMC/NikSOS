@@ -1,6 +1,10 @@
-{pkgs, ...}: {
-  systemd.user.services.polkit-gnome-authentication-agent-1 = {
-    Unit.Description = "polkit-gnome-authentication-agent-1";
+{
+  inputs,
+  pkgs,
+  ...
+}: {
+  systemd.user.services.polkit-hyprland-authentication-agent = {
+    Unit.Description = "polkit-hyprland-authentication-agent";
 
     Install = {
       WantedBy = ["graphical-session.target"];
@@ -10,7 +14,7 @@
 
     Service = {
       Type = "simple";
-      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      ExecStart = "${inputs.hyprpolkitagent.packages.${pkgs.system}.hyprpolkitagent}/libexec/hyprpolkitagent";
       Restart = "on-failure";
       RestartSec = 1;
       TimeoutStopSec = 10;

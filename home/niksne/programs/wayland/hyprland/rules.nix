@@ -1,7 +1,7 @@
 {config, ...}: let
   dropterm = "class:^(wezterm_dropdown)$";
   volume_sidemenu = "class:^(org.pulseaudio.pavucontrol)$";
-  player = "initialTitle:^(Spotify)$";
+  player = "initialTitle:^(Spotify Free)$";
 in {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [

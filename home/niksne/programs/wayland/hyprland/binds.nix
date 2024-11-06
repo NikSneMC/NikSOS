@@ -116,6 +116,21 @@ in {
         "${mod} SHIFT ALT, bracketleft, Send focused workspace to the left monitor, movecurrentworkspacetomonitor, l"
         "${mod} SHIFT ALT, bracketright, Send focused workspace to the right monitor, movecurrentworkspacetomonitor, r"
       ]
+      ++ (let
+        movewindoworgroupDescription = direction: "If focused window is in group then move it ${direction} out of the group. If there's group ${direction}-side window then move it into that group. Else move window ${direction}";
+      in [
+        # groups stuff
+        "${mod} ALT, T, Toggle the current active window into a group, togglegroup,"
+        "${mod} ALT, H, Switch to the previous workspace in the group, changegroupactive, b"
+        "${mod} ALT, L, Switch to the next workspace in the group, changegroupactive, f"
+        "${mod} ALT, J, Swap active window with the next in group, movegroupwindow, b"
+        "${mod} ALT, K, Swap active window with the previous in group, movegroupwindow, f"
+        "${mod} ALT, F, Lock focused group, lockactivegroup, toggle"
+        "${mod} ALT, up, ${movewindoworgroupDescription "up"}, movewindoworgroup, u"
+        "${mod} ALT, down, ${movewindoworgroupDescription "down"}, movewindoworgroup, d"
+        "${mod} ALT, left, ${movewindoworgroupDescription "left"}, movewindoworgroup, l"
+        "${mod} ALT, right, ${movewindoworgroupDescription "right"}, movewindoworgroup, r"
+      ])
       ++ workspaces;
 
     bindde = [

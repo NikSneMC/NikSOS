@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   pkgs,
   ...
@@ -79,9 +80,16 @@
     };
 
     group = {
+      "col.border_active" = "$accent";
+      "col.border_inactive" = "$base";
+      "col.border_locked_active" = "rgba(${config.theme.colors.notable.accent}ff)";
+      "col.border_locked_inactive" = "rgba(${config.theme.colors.notable.text}ff)";
       groupbar = {
-        "col.active" = "rgb(bd93f9) rgb(44475a) 90deg";
-        "col.inactive" = "rgba(282a36dd)";
+        text_color = "$text";
+        "col.active" = "rgba(${config.theme.colors.base}aa)";
+        "col.inactive" = "rgba(${config.theme.colors.surface0}aa)";
+        "col.locked_active" = "rgba(${config.theme.colors.notable.text}aa)";
+        "col.locked_inactive" = "rgba(${config.theme.colors.notable.subtext1}aa)";
       };
     };
 

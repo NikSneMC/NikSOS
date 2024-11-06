@@ -12,42 +12,41 @@
 
     exec-once = [
       "waybar"
-      "pypr"
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
       "${lib.getExe pkgs.hyprland-per-window-layout}"
       "vesktop"
       "ayugram-desktop"
       "thunderbird"
+      "pypr"
     ];
 
     general = {
+      border_size = 2;
       gaps_in = 5;
       gaps_out = 10;
-      border_size = 2;
-      "col.active_border" = "$accent";
       "col.inactive_border" = "$surface1";
+      "col.active_border" = "$accent";
       layout = "dwindle";
       allow_tearing = false;
-      no_border_on_floating = false;
     };
 
     decoration = {
       rounding = 10;
-      blur = {
-        enabled = true;
-        size = 3;
-        passes = 1;
-      };
-      drop_shadow = true;
-      shadow_range = 7;
-      shadow_offset = "0 0";
-      shadow_render_power = 3;
-      "col.shadow" = "$accent";
-      "col.shadow_inactive" = "$base";
       active_opacity = 0.99;
       inactive_opacity = 0.95;
-      fullscreen_opacity = 1;
+      blur = {
+        enabled = true;
+        size = 7;
+        passes = 2;
+        popups = true;
+      };
+      shadow = {
+        enabled = true;
+        range = 7;
+        color = "$accent";
+        color_inactive = "$base";
+      };
     };
 
     animations = {
@@ -67,9 +66,8 @@
       kb_layout = "us, ru";
       kb_options = "grp:win_space_toggle";
       numlock_by_default = true;
-      follow_mouse = 1;
       touchpad = {
-        natural_scroll = true;
+        disable_while_typing = false;
         scroll_factor = 0.5;
         middle_button_emulation = true;
       };
@@ -87,14 +85,13 @@
       };
     };
 
-    dwindle.preserve_split = true;
-
-    render.direct_scanout = true;
-
     misc = {
       disable_hyprland_logo = true;
-      disable_splash_rendering = true;
+      disable_splash_rendering = false;
+      font_family = "JetBrainsMono Nerd Font";
       force_default_wallpaper = 0;
+      mouse_move_enables_dpms = true;
+      key_press_enables_dpms = true;
       animate_manual_resizes = true;
       animate_mouse_windowdragging = true;
       focus_on_activate = false;
@@ -104,6 +101,10 @@
 
     xwayland.force_zero_scaling = true;
 
+    render.direct_scanout = true;
+
     debug.disable_logs = false;
+
+    dwindle.smart_resizing = true;
   };
 }

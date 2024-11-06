@@ -42,6 +42,20 @@
         end
       end
     '';
+    toggle_funky_stuff.body = ''
+      set FUNKY_STUFF_ENABLED (hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
+      if [ "$FUNKY_STUFF_ENABLED" = 1 ]
+          hyprctl --batch "\
+              keyword animations:enabled 0;\
+              keyword decoration:shadow:enabled 0;\
+              keyword decoration:blur:enabled 0;\
+              keyword decoration:active_opacity 1;\
+              keyword decoration:inactive_opacity 1;\
+              keyword general:border_size 1"
+          exit
+      end
+      hyprctl reload
+    '';
     toggle_night_mode = ''
       set target_process "hyprsunset"
 

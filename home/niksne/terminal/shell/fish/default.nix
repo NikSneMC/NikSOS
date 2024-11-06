@@ -29,14 +29,7 @@
       npm = "pnpm";
       npx = "pnpx";
     };
-    shellInit = with config.theme.colors; ''
-      set -gx VOLUME_STEP 5
-      set -gx BRIGHTNESS_STEP 5
-
-      # --color=bg+:#${surface0},bg:#${base},spinner:#${rosewater},hl:#${red} \
-      # --color=fg:#${text},header:#${red},info:#${mauve},pointer:#${rosewater} \
-      # --color=marker:#${rosewater},fg+:#${text},prompt:#${mauve},hl+:#${red}"
-
+    shellInit = ''
       starship init fish | source
       fish_vi_key_bindings
     '';

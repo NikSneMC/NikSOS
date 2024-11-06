@@ -1,4 +1,9 @@
 {
+  inputs,
+  lib,
+  pkgs,
+  ...
+}: {
   programs.fish.functions = {
     toggle_airplane_mode.body = ''
       set backup_file ~/.cache/airplane_backup
@@ -38,12 +43,12 @@
       end
     '';
     toggle_night_mode = ''
-      set target_process "gammastep"
+      set target_process "hyprsunset"
 
       if pgrep $target_process > /dev/null
-        killall -s SIGINT .gammastep-wrap
+        killall -s SIGINT hyprsunset
       else
-        gammastep
+        ${lib.getExe inputs.hyprsunset.packages.${pkgs.system}.hyprsunset} -t 5000
       end
     '';
     toggle_wifi.body = ''

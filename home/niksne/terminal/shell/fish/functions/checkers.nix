@@ -10,7 +10,7 @@
       end
     '';
     check_night_mode.body = ''
-      set target_process "gammastep"
+      set target_process "hyprsunset"
 
       if pgrep $target_process > /dev/null
           echo "{ \"text\":\"󱩌\", \"tooltip\": \"night-mode <span color='#${config.theme.colors.green}'>on</span>\", \"class\": \"on\" }"

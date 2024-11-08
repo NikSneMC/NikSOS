@@ -70,6 +70,7 @@
       touchpad = {
         disable_while_typing = false;
         scroll_factor = 0.5;
+        natural_scroll = true;
         middle_button_emulation = true;
       };
     };
@@ -86,10 +87,10 @@
       "col.border_locked_inactive" = "rgba(${config.theme.colors.notable.text}ff)";
       groupbar = {
         text_color = "$text";
-        "col.active" = "rgba(${config.theme.colors.base}aa)";
-        "col.inactive" = "rgba(${config.theme.colors.surface0}aa)";
-        "col.locked_active" = "rgba(${config.theme.colors.notable.text}aa)";
-        "col.locked_inactive" = "rgba(${config.theme.colors.notable.subtext1}aa)";
+        "col.active" = "rgba(${config.theme.colors.base}bb)";
+        "col.inactive" = "rgba(${config.theme.colors.surface1}bb)";
+        "col.locked_active" = "rgba(${config.theme.colors.notable.text}bb)";
+        "col.locked_inactive" = "rgba(${config.theme.colors.notable.subtext0}bb)";
       };
     };
 

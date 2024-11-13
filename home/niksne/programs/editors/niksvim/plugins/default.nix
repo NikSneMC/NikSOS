@@ -49,18 +49,22 @@ in {
     ./barbar.nix
     ./better-escape.nix
     ./cmp.nix
+    ./dap.nix
     ./dashboard.nix
     ./indent-blankline.nix
     ./lsp.nix
     ./lualine.nix
+    ./multicursors.nix
     ./neo-tree.nix
     ./neocord.nix
+    ./neotest.nix
     ./nvim-colorizer.nix
     ./project-nvim.nix
     ./refactoring.nix
     ./telescope.nix
     ./toggleterm.nix
     ./treesitter.nix
+    ./which-key.nix
   ];
 
   programs.nixvim = let
@@ -74,7 +78,13 @@ in {
   in {
     plugins = mkPluginsList [
       "comment"
+      "direnv"
+      "emmet"
       "friendly-snippets"
+      "git-conflict"
+      "gitblame"
+      "gitlinker"
+      "gitmessenger"
       "gitsigns"
       "luasnip"
       "markdown-preview"
@@ -82,12 +92,13 @@ in {
       "nix"
       "nix-develop"
       "nvim-autopairs"
+      "nvim-surround"
       "rainbow-delimiters"
       "rest"
       "todo-comments"
+      "ts-autotag"
       "wakatime"
       "web-devicons"
-      "which-key"
     ];
     extraPlugins = mkExtraPluginsList extraPlugins;
 

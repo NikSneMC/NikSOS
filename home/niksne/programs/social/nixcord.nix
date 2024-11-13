@@ -62,7 +62,7 @@
       "copyFileContents"
       "copyUserURLs"
       "dearrow"
-      "decor"
+      # "decor" # TODO: re-enable when fixed
       "disableCallIdle"
       "dontRoundMyTimestamps"
       "emoteCloner"
@@ -130,7 +130,7 @@
       "pictureInPicture"
       "platformIndicators"
       "previewMessage"
-      "pronounDB"
+      "userMessagesPronouns"
       "quickMention"
       "quickReply"
       "reactErrorDecoder"

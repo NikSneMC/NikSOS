@@ -38,8 +38,8 @@
       inactive_opacity = 0.95;
       blur = {
         enabled = true;
-        size = 7;
-        passes = 2;
+        size = 3;
+        passes = 1;
         popups = true;
       };
       shadow = {

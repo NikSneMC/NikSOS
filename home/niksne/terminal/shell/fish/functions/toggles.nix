@@ -65,6 +65,15 @@
         ${lib.getExe inputs.hyprsunset.packages.${pkgs.system}.hyprsunset} -t 5000
       end
     '';
+    toggle_streamer_mode.body = ''
+      set backup_file ~/.cache/streamer_backup
+
+      if test -e $backup_file
+          rm $backup_file
+      else
+          touch $backup_file
+      end
+    '';
     toggle_wifi.body = ''
       set wifi_status (nmcli radio wifi)
       set backup_file ~/.cache/airplane_backup

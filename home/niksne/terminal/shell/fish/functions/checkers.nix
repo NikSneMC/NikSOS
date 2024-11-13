@@ -18,6 +18,18 @@
           echo "{ \"text\":\"󱩍\", \"tooltip\": \"night-mode <span color='#${config.theme.colors.maroon}'>off</span>\", \"class\": \"off\" }"
       end
     '';
+    check_streamer_mode.body = ''
+      set backup_file ~/.cache/streamer_backup
+
+      if test -e $backup_file
+          echo "{ \"text\":\"󰵝\", \"tooltip\": \"streamer-mode <span color='#${config.theme.colors.green}'>on</span>\", \"class\": \"on\" }"
+          if test "$(count $argv)" -eq 0
+              exit 1
+          end
+      else
+          echo "{ \"text\":\"󱦿\", \"tooltip\": \"streamer-mode <span color='#${config.theme.colors.maroon}'>off</span>\", \"class\": \"off\" }"
+      end
+    '';
     check_recording.body = ''
       set target_process "wf-recorder"
 

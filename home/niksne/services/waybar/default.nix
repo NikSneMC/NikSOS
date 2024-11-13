@@ -189,6 +189,7 @@
           format = "{}°";
           interval = 600;
           exec = "${lib.getExe pkgs.wttrbar} --date-format \"%d-%m-%Y\"";
+          exec-if = "fish -c check_streamer_mode";
           return-type = "json";
         };
         "custom/media" = {
@@ -417,6 +418,7 @@
             "pulseaudio#microphone_indicator"
             "custom/recording"
             # "custom/github";
+            "custom/streamer_mode"
             "custom/notifications"
             "custom/night_mode"
             "custom/airplane_mode"
@@ -441,6 +443,12 @@
           interval = 1;
           exec = "~/.config/waybar/scripts/github.sh";
           on-click = "xdg-open https://github.com/notifications";
+        };
+        "custom/streamer_mode" = {
+          interval = 1;
+          return-type = "json";
+          exec = "fish -c \"check_streamer_mode -w\"";
+          on-click = "fish -c toggle_streamer_mode && fish -c reload_bar";
         };
         "custom/notifications" = {
           return-type = "json";

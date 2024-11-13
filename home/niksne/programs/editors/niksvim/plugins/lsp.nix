@@ -11,11 +11,18 @@ in {
       enable = true;
       servers =
         (mkServersList [
+          "arduino_language_server"
+          "basedpyright"
           "astro"
           "clangd"
           "cmake"
           "cssls"
+          "docker_compose_language_service"
+          "dockerls"
+          "elixirls"
+          "eslint"
           "gopls"
+          "graphql"
           "html"
           "htmx"
           "jdtls"
@@ -23,23 +30,30 @@ in {
           "kotlin_language_server"
           "lua_ls"
           "marksman"
-          "pyright"
+          "nginx_language_server"
+          "nim_langserver"
+          "postgres_lsp"
+          "sqls"
           "svelte"
           "tailwindcss"
-          "ts_ls"
+          "yamlls"
+          "zls"
         ])
         // {
           nil_ls = {
             enable = true;
             settings.formatting.command = ["alejandra"];
           };
-          rust_analyzer = {
-            enable = true;
-            installCargo = true;
-            installRustc = true;
-          };
         };
     };
+    clangd-extensions.enable = true;
+    rustaceanvim = {
+      enable = true;
+      settings.server = {
+        load_vscode_settings = true;
+      };
+    };
+    typescript-tools.enable = true;
     lsp-format.enable = true;
     lsp-lines.enable = true;
     lspkind = {

@@ -31,11 +31,6 @@
       "22, monitor:HDMI-A-1"
     ];
 
-    binddl = [
-      # suspend
-      "${mod} CTRL, S, Suspend computer, exec, fish -c suspend"
-    ];
-
     binddle = [
       # backlight
       ", XF86MonBrightnessUp, Increase brightness by 5, exec, brillo -q -u 300000 -A 5"

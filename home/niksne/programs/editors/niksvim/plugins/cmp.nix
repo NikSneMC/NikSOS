@@ -44,6 +44,8 @@ in {
           "async_path"
           "buffer"
           "git"
+          "conventionalcommits"
+          "nixpkgs_maintainers"
           "emoji"
           "nerdfont"
           "greek"
@@ -52,6 +54,8 @@ in {
         ];
       };
     };
+    cmp-conventionalcommits.enable = true;
+    cmp-nixpkgs-maintainers.enable = true;
     codeium-nvim = {
       enable = true;
       settings.enable_chat = true;

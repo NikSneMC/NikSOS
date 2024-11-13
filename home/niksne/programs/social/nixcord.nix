@@ -62,7 +62,7 @@
       "copyFileContents"
       "copyUserURLs"
       "dearrow"
-      # "decor"
+      # "decor" # TODO: re-enable when fixed
       "disableCallIdle"
       "dontRoundMyTimestamps"
       "emoteCloner"

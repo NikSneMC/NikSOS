@@ -5,7 +5,7 @@
       supportedFilesystems = ["fat32" "ext4" "btrfs" "ntfs"];
     };
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = pkgs.linuxPackages_zen;
     consoleLogLevel = 3;
     kernelParams = [
       # "quiet"
@@ -19,7 +19,7 @@
         useOSProber = true;
         catppuccin.enable = true;
       };
-      timeout = 5;
+      timeout = 3;
     };
 
     plymouth = {

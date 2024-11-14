@@ -1,0 +1,26 @@
+* {
+  background-image: none;
+}
+
+window {
+  background-color: alpha(@base, 0.9);
+}
+
+button {
+  margin: 8px;
+  color: @text;
+  background-color: @surface0;
+  border-style: solid;
+  border-width: 2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 15%;
+}
+
+button:active,
+button:focus,
+button:hover {
+  color: @accent;
+  background-color: @base;
+  outline-style: none;
+}

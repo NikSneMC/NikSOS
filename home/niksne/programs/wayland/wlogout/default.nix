@@ -3,14 +3,7 @@
   pkgs,
   lib,
   ...
-}: let
-  bgImageSection = name: ''
-    #${name} {
-      background-image: url("${pkgs.wlogout}/share/wlogout/icons/${name}.png");
-
-    }
-  '';
-in {
+}: {
   programs.wlogout = {
     enable = true;
 
@@ -53,33 +46,31 @@ in {
       }
     ];
 
-    style = ''
-      * {
-        background-image: none;
-      }
+    style = let
+      iconFile = name:
+        builtins.toFile "wlogout-${name}-icon.svg" (let
+          lines = builtins.filter (l: builtins.isString l) (builtins.split "\n" (builtins.readFile "${pkgs.wlogout}/share/wlogout/assets/${name}.svg"));
+        in ''
+          ${builtins.elemAt lines 0}
+          ${builtins.elemAt lines 3}
+          <defs><style type="text/css"><![CDATA[
+              path {
+                 fill: #${config.theme.colors.accent};
+              }
+          ]]></style></defs>
+          ${builtins.elemAt lines 5}
+          ${builtins.elemAt lines 6}
+        '');
+      bgImageSection = name: ''
+        #${name} {
+          background-image: image(url("${iconFile name}"));
+        }
+      '';
+    in ''
+      @import "${config.catppuccin.sources.waybar}/themes/${config.theme.flavor}.css";
+      @define-color accent @${config.theme.accent};
 
-      window {
-        background-color: alpha(#${config.theme.colors.base}, 0.9);
-      }
-
-      button {
-        margin: 8px;
-        color: #${config.theme.colors.text};
-        background-color: #${config.theme.colors.surface0};
-        border-style: solid;
-        border-width: 2px;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: 15%;
-      }
-
-      button:active,
-      button:focus,
-      button:hover {
-      color: #${config.theme.colors.accent};
-        background-color: #${config.theme.colors.base};
-        outline-style: none;
-      }
+      ${builtins.readFile ./style.css}
 
       ${lib.concatMapStringsSep "\n" bgImageSection [
         "lock"

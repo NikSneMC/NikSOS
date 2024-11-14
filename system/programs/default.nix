@@ -17,6 +17,8 @@
 
     nix-ld.enable = true;
 
+    gdk-pixbuf.modulePackages = [pkgs.librsvg];
+
     thunar = {
       enable = true;
       plugins = with pkgs.xfce; [

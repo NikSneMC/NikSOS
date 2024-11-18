@@ -1,7 +1,5 @@
 {
-  wayland.windowManager.hyprland.settings = let
-    mod = "SUPER";
-  in {
+  wayland.windowManager.hyprland.settings = {
     env = [
       "LIBVA_DRIVER_NAME,nvidia"
       "XDG_SESSION_TYPE,wayland"
@@ -25,8 +23,8 @@
       "17, monitor:eDP-1"
       "18, monitor:eDP-1"
 
-      "19, monitor:VGA-1"
-      "20, monitor:VGA-1"
+      "19, monitor:eDP-1"
+      "20, monitor:eDP-1"
       "21, monitor:HDMI-A-1"
       "22, monitor:HDMI-A-1"
     ];

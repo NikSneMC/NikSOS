@@ -1,6 +1,5 @@
 {
   imports = [
-    ./ags
     ./waybar
 
     ./media/playerctl.nix

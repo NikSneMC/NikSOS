@@ -18,9 +18,9 @@ let
       subvolumes
     );
 in {
-  disko.devices.disk.sda = {
+  disko.devices.disk.nvme0n1 = {
     type = "disk";
-    device = "/dev/disk/by-id/ata-Samsung_SSD_860_EVO_250GB_S4BFNX0NA04092R";
+    device = "/dev/disk/by-id/nvme-KINGSTON_SFYRS1000G_50026B7382DA7E5E_1";
     content = {
       type = "gpt";
       partitions = {

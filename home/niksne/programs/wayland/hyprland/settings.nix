@@ -6,9 +6,8 @@
 }: {
   wayland.windowManager.hyprland.settings = {
     env = [
-      "QT_WAYLAND_DISABLE_WINDOWDECORATION, 1"
-      "XDG_SESSION_TYPE, wayland"
-      # "WLR_RENDERER_ALLOW_SOFTWARE, 1"
+      "XDG_CURRENT_DESKTOP,Hyprland"
+      "XDG_SESSION_DESKTOP,Hyprland"
     ];
 
     exec-once = [

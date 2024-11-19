@@ -40,8 +40,10 @@
     };
 
   inputs = {
+    # nixpkgs.url = "github:NixOS/nixpkgs";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nikspkgs.url = "github:NikSneMC/NikSpkgs";
+    # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
     nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
 
     systems.url = "github:nix-systems/default-linux";
@@ -223,14 +225,6 @@
       };
     };
 
-    ags = {
-      url = "github:Aylur/ags";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-      };
-    };
-
     nixvim = {
       url = "github:nix-community/nixvim";
       inputs = {
@@ -292,7 +286,7 @@
     };
 
     ayugram-desktop = {
-      url = "github:kaeeraa/ayugram-desktop/release?submodules=1";
+      url = "github:/ayugram-port/ayugram-desktop/release?submodules=1";
       inputs = {
         nixpkgs.follows = "nixpkgs";
       };

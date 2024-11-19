@@ -48,29 +48,6 @@
         "type": "github"
       }
     },
-    "ags": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "systems": [
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1728326430,
-        "narHash": "sha256-tV1ABHuA1HItMdCTuNdA8fMB+qw7LpjvI945VwMSABI=",
-        "owner": "Aylur",
-        "repo": "ags",
-        "rev": "60180a184cfb32b61a1d871c058b31a3b9b0743d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Aylur",
-        "repo": "ags",
-        "type": "github"
-      }
-    },
     "aquamarine": {
       "inputs": {
         "hyprutils": [
@@ -111,15 +88,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1730143163,
-        "narHash": "sha256-AQkTDx/NdygkXYXMCoobkmm7dCMa0brLGm7HsilDSMs=",
-        "owner": "kaeeraa",
+        "lastModified": 1731434367,
+        "narHash": "sha256-vF6jBnRhqSvxnlqCz3TG1ad9zOt3qTRneXpHdYq7LCU=",
+        "owner": "ayugram-port",
         "repo": "ayugram-desktop",
-        "rev": "fe9d7b06e2d03cc8e8ab13290794882d11aff1d7",
+        "rev": "2f1c40afaab5f7e49d1d7d2d44602dec7b27b869",
         "type": "github"
       },
       "original": {
-        "owner": "kaeeraa",
+        "owner": "ayugram-port",
         "ref": "release",
         "repo": "ayugram-desktop",
         "type": "github"
@@ -1168,7 +1145,6 @@
       "inputs": {
         "activate-niksos": "activate-niksos",
         "agenix": "agenix",
-        "ags": "ags",
         "ayugram-desktop": "ayugram-desktop",
         "catppuccin": "catppuccin",
         "catppuccin-catwalk": "catppuccin-catwalk",

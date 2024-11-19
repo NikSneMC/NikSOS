@@ -1,5 +1,9 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
-    prismlauncher
+    (prismlauncher.override {
+      jdk8 = zulu8;
+      jdk17 = zulu17;
+      jdk21 = zulu21;
+    })
   ];
 }

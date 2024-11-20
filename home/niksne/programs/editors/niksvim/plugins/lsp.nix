@@ -12,8 +12,8 @@ in {
       servers =
         (mkServersList [
           "arduino_language_server"
-          "basedpyright"
           "astro"
+          "basedpyright"
           "clangd"
           "cmake"
           "cssls"

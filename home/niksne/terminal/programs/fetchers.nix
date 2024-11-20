@@ -14,8 +14,8 @@
       logo = {
         type = "iterm";
         source = let
-          url = "https://raw.githubusercontent.com/NikSneMC/NikSOS/assets/logo_nixos.png";
-          sha256 = "07r8ms25l0xsr7hadx80z97ivrryrn17sf6flm5i92ark3xr61ay";
+          url = "https://raw.githubusercontent.com/NikSneMC/NikSOS/assets/niksos/niksos.png";
+          sha256 = "1bdm6g2804rdkpx0c567fp1q74910v1c2rm24k8mpy7hd8ji9sqb";
           filename = lib.last (lib.splitString "/" url);
         in
           builtins.fetchurl {

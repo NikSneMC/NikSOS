@@ -43,8 +43,7 @@
     # nixpkgs.url = "github:NixOS/nixpkgs";
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nikspkgs.url = "github:NikSneMC/NikSpkgs";
-    # nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.05";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
 
     systems.url = "github:nix-systems/default-linux";
 
@@ -199,6 +198,14 @@
 
     catppuccin.url = "github:NikSneMC/catppuccin-nix";
 
+    waybar = {
+      url = "github:Alexays/Waybar";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-compat.follows = "flake-compat";
+      };
+    };
+
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
       inputs = {
@@ -261,6 +268,8 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-compat.follows = "flake-compat";
+        systems.follows = "systems";
+        treefmt-nix.follows = "treefmt-nix";
       };
     };
 

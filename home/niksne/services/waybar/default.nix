@@ -1,11 +1,14 @@
 {
   config,
+  inputs,
   lib,
   pkgs,
   ...
 }: {
   programs.waybar = {
     enable = true;
+    package = inputs.waybar.packages.${pkgs.system}.waybar;
+
     catppuccin.enable = true;
     settings = [
       {

@@ -74,5 +74,16 @@ in {
       "float, ${player}"
       "workspace special:scratch_player silent, ${player}"
     ];
+
+    layerrule = [
+      "blur, waybar"
+      "blur, rofi"
+      "blur, swaync-control-center"
+      "blur, swaync-notification-window"
+      "ignorezero, waybar"
+      "ignorezero, rofi"
+      "ignorezero, swaync-control-center"
+      "ignorezero, swaync-notification-window"
+    ];
   };
 }

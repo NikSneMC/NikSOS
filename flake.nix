@@ -296,9 +296,7 @@
 
     ayugram-desktop = {
       url = "github:/ayugram-port/ayugram-desktop/release?submodules=1";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     activate-niksos = {

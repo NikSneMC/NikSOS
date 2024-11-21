@@ -1,7 +1,8 @@
-let
-  mkSubvolumes = subvolumes:
-    builtins.listToAttrs (
-      builtins.map (
+{lib, ...}: let
+  mkUserSubvolumes = user: folders:
+    lib.pipe folders [
+      (builtins.map (folder: "/home/${user}/${folder}"))
+      (builtins.map (
         mountpoint: {
           name = mountpoint;
           value = {
@@ -9,11 +10,9 @@ let
             inherit mountpoint;
           };
         }
-      )
-      subvolumes
-    );
-
-  mkUserSubvolumes = user: folders: mkSubvolumes (builtins.map (folder: "/home/${user}/${folder}") folders);
+      ))
+      builtins.listToAttrs
+    ];
 in {
   disko.devices.disk.sda = {
     type = "disk";

@@ -1,7 +1,7 @@
-let
+{lib, ...}: let
   mkSubvolumes = subvolumes:
-    builtins.listToAttrs (
-      builtins.map (
+    lib.pipe subvolumes [
+      (builtins.map (
         subvolume:
           if builtins.isString subvolume
           then {
@@ -14,9 +14,9 @@ let
             name = subvolume.mountpoint;
             value = subvolume;
           }
-      )
-      subvolumes
-    );
+      ))
+      builtins.listToAttrs
+    ];
 in {
   disko.devices.disk.nvme0n1 = {
     type = "disk";

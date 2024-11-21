@@ -1,8 +1,6 @@
 {
   disabledModules = ["services/networking/zapret.nix"]; # необходимо если версия nixpkgs новее 5a5c04d
 
-  imports = [./zapret_service.nix];
-
   services.zapret = {
     enable = true;
     mode = "nfqws";

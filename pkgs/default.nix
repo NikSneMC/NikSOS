@@ -8,7 +8,6 @@
   }: {
     packages = with pkgs; {
       ja-netfilter = callPackage ./ja-netfilter {};
-      repl = callPackage ./repl {};
     };
   };
 }

@@ -27,7 +27,6 @@
               alejandra
               git
               nodePackages.prettier
-              config.packages.repl
             ];
 
             shellHook = ''

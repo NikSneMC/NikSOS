@@ -2,7 +2,7 @@
   stdenvNoCC,
   fetchzip,
 }:
-stdenvNoCC.mkDerivation (finalAttrs: {
+stdenvNoCC.mkDerivation (_: {
   pname = "ja-netfilter";
   version = "240701";
 

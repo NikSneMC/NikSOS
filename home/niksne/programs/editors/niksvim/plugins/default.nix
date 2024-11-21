@@ -35,7 +35,7 @@
 
   mkExtraPluginsLua = extraPlugins:
     lib.pipe extraPlugins [
-      (lib.filterAttrs (k: {activate ? false, ...}: activate))
+      (lib.filterAttrs (_: {activate ? false, ...}: activate))
       (lib.mapAttrsToList (
         name: {
           setup ? name,

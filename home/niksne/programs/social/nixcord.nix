@@ -245,7 +245,7 @@
   mkUserPlugins = p:
     lib.pipe p [
       (p: lib.filterAttrs (_: {platform ? "vencord", ...}: platform == p) plugins.user)
-      (builtins.mapAttrs (name: {settings ? {}, ...}: settings // {enable = true;}))
+      (builtins.mapAttrs (_: {settings ? {}, ...}: settings // {enable = true;}))
     ];
 in {
   imports = [inputs.nixcord.homeManagerModules.nixcord];

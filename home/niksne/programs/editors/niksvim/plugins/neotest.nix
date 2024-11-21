@@ -1,10 +1,9 @@
 {lib, ...}: let
   mkServersList = servers:
-    builtins.listToAttrs (
-      builtins.map
-      (server: lib.nameValuePair server {enable = true;})
-      servers
-    );
+    lib.pipe servers [
+      (builtins.map (server: lib.nameValuePair server {enable = true;}))
+      builtins.listToAttrs
+    ];
 in {
   programs.nixvim.plugins.neotest = {
     enable = true;

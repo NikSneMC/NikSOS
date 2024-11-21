@@ -35,6 +35,7 @@ in {
             inputs.disko.nixosModules.disko
             inputs.agenix.nixosModules.age
             inputs.catppuccin.nixosModules.catppuccin
+            self.nixosModules.zapret
             ./${host}
             (
               if type != minimal
@@ -49,10 +50,12 @@ in {
             {
               networking.hostName = host;
               home-manager = {
-                users = builtins.listToAttrs (builtins.map (
+                users = lib.pipe homeImports.raw.${host} [
+                  (builtins.map (
                     user: lib.nameValuePair user {imports = homeImports."${user}@${host}";}
-                  )
-                  homeImports.raw.${host});
+                  ))
+                  builtins.listToAttrs
+                ];
                 extraSpecialArgs = specialArgs;
               };
             }

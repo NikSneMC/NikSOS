@@ -5,32 +5,29 @@
   ...
 }: let
   mod = "SUPER";
-  workspaces =
-    (builtins.concatLists (
-      builtins.genList (
-        x: let
-          ws = let
-            c = (x + 1) / 10;
+  workspaces = let
+    mkWorkspacesBinds = n: m: a: binds:
+      lib.pipe n [
+        (builtins.genList (
+          x: let
+            mod = a: b: a - a / b * b;
           in
-            builtins.toString (x + 1 - (c * 10));
-        in [
-          "${mod}, ${ws}, Open workspace ${toString (x + 1)}, workspace, ${toString (x + 1)}"
-          "${mod} SHIFT, ${ws}, Move window to workspace ${toString (x + 1)}, movetoworkspace, ${toString (x + 1)}"
-          "${mod} SHIFT ALT, ${ws}, Move window to workspace ${toString (x + 1)} (silent), movetoworkspacesilent, ${toString (x + 1)}"
-        ]
-      )
-      10
-    ))
+            binds (toString (mod (x + 1) m)) (toString (x + a))
+        ))
+        builtins.concatLists
+      ];
+  in
+    (
+      mkWorkspacesBinds 10 10 1 (ws: x: [
+        "${mod}, ${ws}, Open workspace ${x}, workspace, ${x}"
+        "${mod} SHIFT, ${ws}, Move window to workspace ${x}, movetoworkspace, ${x}"
+        "${mod} SHIFT ALT, ${ws}, Move window to workspace ${x} (silent), movetoworkspacesilent, ${x}"
+      ])
+    )
     ++ (
-      builtins.genList (
-        x: let
-          ws = let
-            c = (x + 1) / 13;
-          in
-            builtins.toString (x + 1 - (c * 13));
-        in "${mod}, F${ws}, Open workspace ${toString (x + 11)}, workspace, ${toString (x + 11)}"
-      )
-      12
+      mkWorkspacesBinds 12 13 11 (ws: x: [
+        "${mod}, F${ws}, Open workspace ${x}, workspace, ${x}"
+      ])
     );
 in {
   wayland.windowManager.hyprland.settings = {

@@ -12,26 +12,29 @@
   };
 
   rawMk = nameValueFunction: hosts:
-    builtins.listToAttrs (
-      builtins.concatLists (lib.mapAttrsToList (
-          host: users: builtins.map (user: nameValueFunction host user) users
-        )
-        hosts)
-    );
+    lib.pipe hosts [
+      (lib.mapAttrsToList (
+        host: builtins.map (user: nameValueFunction host user)
+      ))
+      builtins.concatLists
+      builtins.listToAttrs
+    ];
 
   homeImports =
-    (rawMk (
+    (
+      rawMk (
         host: user:
           lib.nameValuePair "${user}@${host}" [
             self.homeManagerModules.hosts
             inputs.catppuccin.homeManagerModules.catppuccin
-            self.nixosModules.theme
+            self.homeManagerModules.theme
             ./${user}
             ./${user}/profiles/${host}
             {home = {inherit host user;};}
           ]
       )
-      users)
+      users
+    )
     // {raw = users;};
 
   inherit (inputs.hm.lib) homeManagerConfiguration;

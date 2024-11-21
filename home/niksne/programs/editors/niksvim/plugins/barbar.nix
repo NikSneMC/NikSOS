@@ -1,9 +1,9 @@
 {lib, ...}: let
   goTos =
-    (builtins.listToAttrs (
-      builtins.genList (num: lib.nameValuePair "goTo${toString (num + 1)}" {key = "<A-${toString (num + 1)}>";})
-      9
-    ))
+    (lib.pipe 9 [
+      (builtins.genList (num: lib.nameValuePair "goTo${toString (num + 1)}" {key = "<A-${toString (num + 1)}>";}))
+      builtins.listToAttrs
+    ])
     // {
       first.key = "<A-f>";
       last.key = "<A-0>";

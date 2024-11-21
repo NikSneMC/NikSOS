@@ -9,7 +9,12 @@
       wakatime = {
         source = "github:wakatime/vencord-wakatime/f508defde2f33217c3fe28fa821d1aee525443f4";
         settings = {
-          apiKey = lib.trim (lib.last (builtins.split "=" (builtins.readFile "${config.home.homeDirectory}/.wakatime.cfg")));
+          apiKey = lib.pipe "${config.home.homeDirectory}/.wakatime.cfg" [
+            builtins.readFile
+            (builtins.split "=")
+            lib.last
+            lib.trim
+          ];
           machineName = config.home.host;
         };
         lowerNamed = true;
@@ -219,8 +224,8 @@
   };
 
   mkEnabledPluginsFromList = plugins:
-    builtins.listToAttrs (
-      builtins.map (
+    lib.pipe plugins [
+      (builtins.map (
         plugin: let
           value = {enable = true;};
         in
@@ -233,10 +238,15 @@
             inherit (plugin) name;
             value = (builtins.removeAttrs plugin ["name"]) // value;
           }
-      )
-      plugins
-    );
-  mkUserPlugins = p: builtins.mapAttrs (name: {settings ? {}, ...}: settings // {enable = true;}) (lib.filterAttrs (_: {platform ? "vencord", ...}: platform == p) plugins.user);
+      ))
+      builtins.listToAttrs
+    ];
+
+  mkUserPlugins = p:
+    lib.pipe p [
+      (p: lib.filterAttrs (_: {platform ? "vencord", ...}: platform == p) plugins.user)
+      (builtins.mapAttrs (name: {settings ? {}, ...}: settings // {enable = true;}))
+    ];
 in {
   imports = [inputs.nixcord.homeManagerModules.nixcord];
 
@@ -254,7 +264,10 @@ in {
       plugins = mkEnabledPluginsFromList plugins.vencord;
     };
     userPlugins = builtins.mapAttrs (_: {source, ...}: source) plugins.user;
-    parseRules.lowerPluginTitles = lib.mapAttrsToList (name: _: name) (lib.filterAttrs (_: {lowerNamed ? false, ...}: lowerNamed) plugins.user);
+    parseRules.lowerPluginTitles = lib.pipe plugins.user [
+      (lib.filterAttrs (_: {lowerNamed ? false, ...}: lowerNamed))
+      (lib.mapAttrsToList (name: _: name))
+    ];
     extraConfig.plugins = mkUserPlugins "vencord";
     vencordConfig.plugins = (mkEnabledPluginsFromList plugins.discord) // (mkUserPlugins "discord");
     vesktopConfig.plugins = (mkEnabledPluginsFromList plugins.vesktop) // (mkUserPlugins "vesktop");

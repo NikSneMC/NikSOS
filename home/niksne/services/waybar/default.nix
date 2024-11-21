@@ -180,7 +180,7 @@
           "custom/media"
         ];
         user = {
-          format = "<span color='#${config.theme.colors.${config.theme.accent}}'> {user}</span> (up <span color='#${config.theme.colors.pink}'>{work_d} d</span> <span color='#${config.theme.colors.blue}'>{work_H} h</span> <span color='#${config.theme.colors.red}'>{work_M} min</span> <span color='#${config.theme.colors.green}'>↑</span>)";
+          format = "<span color='#${config.theme.colors.accent}'> {user}</span> (up <span color='#${config.theme.colors.pink}'>{work_d} d</span> <span color='#${config.theme.colors.blue}'>{work_H} h</span> <span color='#${config.theme.colors.red}'>{work_M} min</span> <span color='#${config.theme.colors.green}'>↑</span>)";
           icon = true;
         };
         "hyprland/window" = {

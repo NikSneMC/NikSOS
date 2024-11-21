@@ -1,375 +1,372 @@
 * {
-  border: none;
+    border: none;
 }
 
 window.top_bar#waybar {
-  background-color: alpha(@base, 0.7);
-  border-bottom: solid alpha(@surface1, 0.7) 2px;
+    background-color: alpha(@base, 0.7);
+    border-bottom: solid alpha(@surface1, 0.7) 2px;
 }
 
-window.top_bar .modules-left {
-}
+window.top_bar .modules-left {}
 
 #custom-launcher {
-  color: @blue;
-  background-color: alpha(@surface1, 0.7);
-  border-radius: 0 15px 15px 0;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 5px;
-  margin-bottom: 5px;
-  font-size: 20px;
+    color: @blue;
+    background-color: alpha(@surface1, 0.7);
+    border-radius: 0 15px 15px 0;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 20px;
 }
 
 #workspaces {
-  margin-left: 10px;
+    margin-left: 10px;
 }
 
 #workspaces button.active {
-  color: @accent;
+    color: @accent;
 }
 
 #workspaces button.urgent {
-  color: @peach;
+    color: @peach;
 }
 
 #workspaces button {
-  color: @text;
-  font-size: 25px;
+    color: @text;
+    font-size: 25px;
 }
 
 window.top_bar .modules-center {
-  font-weight: bold;
-  background-color: alpha(@surface1, 0.7);
-  color: @peach;
-  border-radius: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+    font-weight: bold;
+    background-color: alpha(@surface1, 0.7);
+    color: @peach;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #clock.time {
-  color: @flamingo;
+    color: @flamingo;
 }
 
 #custom-separator {
-  color: @teal;
+    color: @teal;
 }
 
 #clock.week {
-  color: @sapphire;
+    color: @sapphire;
 }
 
 #clock.calendar {
-  color: @mauve;
+    color: @mauve;
 }
 
 window.top_bar .modules-right {
-  background-color: alpha(@surface1, 0.7);
-  border-radius: 15px 0 0 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+    background-color: alpha(@surface1, 0.7);
+    border-radius: 15px 0 0 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #network {
-  padding-left: 10px;
+    padding-left: 10px;
 }
 
 #network.disabled {
-  background-color: alpha(@surface1, 0.7);
-  color: @subtext0;
+    background-color: alpha(@surface1, 0.7);
+    color: @subtext0;
 }
 
 #network.disconnected {
-  background-color: alpha(@surface1, 0.7);
-  color: @red;
+    background-color: alpha(@surface1, 0.7);
+    color: @red;
 }
 
 #network.wifi,
 #network.ethernet {
-  color: @accent;
+    color: @accent;
 }
 
 #keyboard-state label.locked {
-  color: @yellow;
+    color: @yellow;
 }
 
 #keyboard-state label {
-  color: @subtext0;
+    color: @subtext0;
 }
 
 #keyboard-state,
 #language {
-  padding-left: 5px;
+    padding-left: 5px;
 }
 
 window.bottom_bar#waybar {
-  background-color: alpha(@base, 0.7);
-  border-top: solid alpha(@surface1, 0.7) 2px;
+    background-color: alpha(@base, 0.7);
+    border-top: solid alpha(@surface1, 0.7) 2px;
 }
 
 window.bottom_bar .modules-left {
-  background-color: alpha(@surface1, 0.7);
-  border-radius: 0 15px 15px 0;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+    background-color: alpha(@surface1, 0.7);
+    border-radius: 0 15px 15px 0;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #user {
-  padding-left: 10px;
+    padding-left: 10px;
 }
 
 window.bottom_bar .modules-center {
-  background-color: alpha(@surface1, 0.7);
-  color: @accent;
-  border-radius: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+    background-color: alpha(@surface1, 0.7);
+    color: @accent;
+    border-radius: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 window.bottom_bar .modules-right {
-  background-color: alpha(@surface1, 0.7);
-  border-radius: 15px 0 0 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-top: 5px;
-  margin-bottom: 5px;
+    background-color: alpha(@surface1, 0.7);
+    border-radius: 15px 0 0 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 #custom-media {
-  padding-left: 10px;
+    padding-left: 10px;
 }
 
 #custom-media.Paused {
-  color: @subtext0;
+    color: @subtext0;
 }
 
 window.left_bar#waybar {
-  background-color: alpha(@base, 0.7);
-  border-top: solid alpha(@surface1, 0.7) 2px;
-  border-right: solid alpha(@surface1, 0.7) 2px;
-  border-bottom: solid alpha(@surface1, 0.7) 2px;
-  border-radius: 0 15px 15px 0;
+    background-color: alpha(@base, 0.7);
+    border-top: solid alpha(@surface1, 0.7) 2px;
+    border-right: solid alpha(@surface1, 0.7) 2px;
+    border-bottom: solid alpha(@surface1, 0.7) 2px;
+    border-radius: 0 15px 15px 0;
 }
 
-window.top_bar .modules-left {
-}
+window.left_bar .modules-left {}
 
 #taskbar {
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
 #taskbar button.active {
-  background-color: alpha(@surface1, 0.7);
-  border-radius: 10px;
+    background-color: alpha(@surface1, 0.7);
+    border-radius: 10px;
 }
 
 window.left_bar .modules-center {
-  background-color: alpha(@surface1, 0.7);
-  border-radius: 0 15px 15px 0;
-  margin-right: 5px;
-  margin-top: 15px;
-  margin-bottom: 15px;
-  padding-top: 5px;
-  padding-bottom: 5px;
+    background-color: alpha(@surface1, 0.7);
+    border-radius: 0 15px 15px 0;
+    margin-right: 5px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 #cpu {
-  color: @sapphire;
+    color: @sapphire;
 }
 
 #cpu.low {
-  color: @rosewater;
+    color: @rosewater;
 }
 
 #cpu.lower-medium {
-  color: @yellow;
+    color: @yellow;
 }
 
 #cpu.medium {
-  color: @peach;
+    color: @peach;
 }
 
 #cpu.upper-medium {
-  color: @maroon;
+    color: @maroon;
 }
 
 #cpu.high {
-  color: @red;
+    color: @red;
 }
 
 #memory {
-  color: @sapphire;
+    color: @sapphire;
 }
 
 #memory.low {
-  color: @rosewater;
+    color: @rosewater;
 }
 
 #memory.lower-medium {
-  color: @yellow;
+    color: @yellow;
 }
 
 #memory.medium {
-  color: @peach;
+    color: @peach;
 }
 
 #memory.upper-medium {
-  color: @maroon;
+    color: @maroon;
 }
 
 #memory.high {
-  color: @red;
+    color: @red;
 }
 
 #disk {
-  color: @sapphire;
+    color: @sapphire;
 }
 
 #disk.low {
-  color: @rosewater;
+    color: @rosewater;
 }
 
 #disk.lower-medium {
-  color: @yellow;
+    color: @yellow;
 }
 
 #disk.medium {
-  color: @peach;
+    color: @peach;
 }
 
 #disk.upper-medium {
-  color: @maroon;
+    color: @maroon;
 }
 
 #disk.high {
-  color: @red;
+    color: @red;
 }
 
 #temperature {
-  color: @green;
+    color: @green;
 }
 
 #temperature.critical {
-  color: @red;
+    color: @red;
 }
 
 #battery {
-  color: @teal;
+    color: @teal;
 }
 
 #battery.low {
-  color: @red;
+    color: @red;
 }
 
 #battery.lower-medium {
-  color: @maroon;
+    color: @maroon;
 }
 
 #battery.medium {
-  color: @peach;
+    color: @peach;
 }
 
 #battery.upper-medium {
-  color: @flamingo;
+    color: @flamingo;
 }
 
 #battery.high {
-  color: @rosewater;
+    color: @rosewater;
 }
 
 #backlight {
-  color: @overlay0;
+    color: @overlay0;
 }
 
 #backlight.low {
-  color: @overlay1;
+    color: @overlay1;
 }
 
 #backlight.lower-medium {
-  color: @overlay2;
+    color: @overlay2;
 }
 
 #backlight.medium {
-  color: @subtext0;
+    color: @subtext0;
 }
 
 #backlight.upper-medium {
-  color: @subtext1;
+    color: @subtext1;
 }
 
 #backlight.high {
-  color: @text;
+    color: @text;
 }
 
 #pulseaudio.bluetooth {
-  color: @sapphire;
+    color: @sapphire;
 }
 
 #pulseaudio.muted {
-  color: @surface2;
+    color: @surface2;
 }
 
 #pulseaudio {
-  color: @text;
+    color: @text;
 }
 
 #pulseaudio.low {
-  color: @overlay0;
+    color: @overlay0;
 }
 
 #pulseaudio.lower-medium {
-  color: @overlay1;
+    color: @overlay1;
 }
 
 #pulseaudio.medium {
-  color: @overlay2;
+    color: @overlay2;
 }
 
 #pulseaudio.upper-medium {
-  color: @subtext0;
+    color: @subtext0;
 }
 
 #pulseaudio.high {
-  color: @subtext1;
+    color: @subtext1;
 }
 
-window.top_bar .modules-right {
-}
+window.top_bar .modules-right {}
 
 #custom-recording {
-  color: @red;
-  margin-right: 4px;
+    color: @red;
+    margin-right: 4px;
 }
 
 #custom-geo {
-  color: @yellow;
-  margin-right: 4px;
+    color: @yellow;
+    margin-right: 4px;
 }
 
 #custom-notifications.off {
-  color: @subtext0;
+    color: @subtext0;
 }
 
 #custom-night_mode.off {
-  color: @subtext0;
+    color: @subtext0;
 }
 
 #custom-airplane_mode.off {
-  color: @subtext0;
+    color: @subtext0;
 }
 
 #idle_inhibitor.deactivated {
-  color: @subtext0;
+    color: @subtext0;
 }
 
 #custom-recording,
@@ -379,19 +376,19 @@ window.top_bar .modules-right {
 #custom-night_mode,
 #custom-airplane_mode,
 #idle_inhibitor {
-  padding-left: 1px;
-  padding-right: 5px;
-  margin-top: 2.5px;
-  margin-bottom: 2.5px;
+    padding-left: 1px;
+    padding-right: 5px;
+    margin-top: 2.5px;
+    margin-bottom: 2.5px;
 }
 
 #tray {
-  margin-bottom: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 
-#tray > .needs-attention {
-  background-color: alpha(@maroon, 0.7);
-  border-radius: 10px;
+#tray>.needs-attention {
+    background-color: alpha(@maroon, 0.7);
+    border-radius: 10px;
 }

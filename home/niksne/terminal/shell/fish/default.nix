@@ -23,7 +23,7 @@
       nrsus = "nrsu && systemctl poweroff";
       ngc = "sudo nh clean all";
       lock = "hyprctl dispatch exec hyprlock";
-      unlock = "pkill -USR1 hyprlock";
+      unlock = "pkill -10 hyprlock";
       nixbtw = "fastfetch";
       nixvim = "nvim";
       npm = "pnpm";

@@ -1,7 +1,7 @@
 {
   programs.fish.functions = {
     reload_bar.body = ''
-      pkill -USR2 waybar
+      pkill -12 waybar
       notify-send waybar "Configuration reloaded!"
     '';
     reload_notifications.body = ''

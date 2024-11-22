@@ -12,8 +12,9 @@
       store = "cd /nix/store";
       projects = "cd ~/Projects";
       nfu = "nixos && nix flake update";
+      nrt = "nh os test   -a path:/etc/nixos -- --impure";
       nrs = "nh os switch -a path:/etc/nixos -- --impure";
-      nrb = "nh os boot -a path:/etc/nixos -- --impure";
+      nrb = "nh os boot   -a path:/etc/nixos -- --impure";
       nrsr = "nrs && systemctl reboot";
       nrbr = "nrb && systemctl reboot";
       nrss = "nrs && systemctl poweroff";

@@ -6,8 +6,8 @@
 }: {
   wayland.windowManager.hyprland.settings = {
     env = [
-      "XDG_CURRENT_DESKTOP,Hyprland"
-      "XDG_SESSION_DESKTOP,Hyprland"
+      "XDG_CURRENT_DESKTOP, Hyprland"
+      "XDG_SESSION_DESKTOP, Hyprland"
     ];
 
     exec-once = [
@@ -64,7 +64,7 @@
 
     input = {
       kb_layout = "us, ru";
-      kb_options = "grp:win_space_toggle";
+      kb_options = "grp:win_space_toggle, caps:swapescape";
       numlock_by_default = true;
       touchpad = {
         disable_while_typing = false;

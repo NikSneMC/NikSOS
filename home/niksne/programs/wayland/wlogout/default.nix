@@ -16,9 +16,9 @@
       }
       {
         label = "hibernate";
-        action = "systemctl hibernate";
-        text = "Hibernate";
-        keybind = "h";
+        action = "systemctl reboot --firmware-setup";
+        text = "Reboot to BIOS";
+        keybind = "b";
       }
       {
         label = "logout";

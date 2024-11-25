@@ -28,6 +28,8 @@ in {
             subvolumes = mkUserSubvolumes "niksne" [
               ".gradle"
               ".local/share"
+              ".thunderbird"
+              ".zen"
               "Documents"
               "Downloads"
               "Music"

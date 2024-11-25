@@ -64,7 +64,7 @@
 
     input = {
       kb_layout = "us, ru";
-      kb_options = "grp:win_space_toggle, caps:swapescape";
+      kb_options = "grp:win_space_toggle";
       numlock_by_default = true;
       touchpad = {
         disable_while_typing = false;

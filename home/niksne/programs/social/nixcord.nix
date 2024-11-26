@@ -5,21 +5,7 @@
   ...
 }: let
   plugins = {
-    user = {
-      wakatime = {
-        source = "github:wakatime/vencord-wakatime/f508defde2f33217c3fe28fa821d1aee525443f4";
-        settings = {
-          apiKey = lib.pipe "${config.home.homeDirectory}/.wakatime.cfg" [
-            builtins.readFile
-            (builtins.split "=")
-            lib.last
-            lib.trim
-          ];
-          machineName = config.home.host;
-        };
-        lowerNamed = true;
-      };
-    };
+    user = {};
     discord = [];
     vesktop = [
       "webKeybinds"

@@ -9,7 +9,6 @@
         ./home/profiles.nix
         ./hosts
         ./modules
-        ./pkgs
         ./git-hooks.nix
       ];
 
@@ -39,10 +38,12 @@
     };
 
   inputs = {
-    # nixpkgs.url = "github:NixOS/nixpkgs";
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nikspkgs.url = "github:NikSneMC/NikSpkgs";
-    nixpkgs-stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    master.url = "github:NixOS/nixpkgs/master";
+    unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
+    stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+
+    nixpkgs.follows = "unstable";
+    nikspkgs.url = "github:NikSneMC/NikSpkgs/niksos";
 
     systems.url = "github:nix-systems/default-linux";
 
@@ -62,7 +63,7 @@
       url = "github:cachix/git-hooks.nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        nixpkgs-stable.follows = "nixpkgs-stable";
+        nixpkgs-stable.follows = "stable";
         flake-compat.follows = "flake-compat";
       };
     };

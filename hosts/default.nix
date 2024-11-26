@@ -16,18 +16,17 @@ in {
   flake.nixosConfigurations = let
     inherit (inputs.nixpkgs.lib) nixosSystem;
 
-    pkgsArgs = {
-      system = "x86_64-linux";
-      config = {allowUnfree = true;};
-    };
+    mkPkgsOverlays = lib.mapAttrsToList (name: input: _: _: {
+      ${name} = import input {
+        system = "x86_64-linux";
+        config.allowUnfree = true;
+      };
+    });
   in
     builtins.mapAttrs (host: type:
       nixosSystem rec {
         specialArgs = {
           inherit inputs self;
-          spkgs = import inputs.nixpkgs-stable pkgsArgs;
-          npkgs = import inputs.nikspkgs pkgsArgs;
-          lpkgs = inputs.self.packages.${pkgsArgs.system};
         };
         modules =
           type
@@ -58,6 +57,10 @@ in {
                 ];
                 extraSpecialArgs = specialArgs;
               };
+              nixpkgs.overlays = mkPkgsOverlays (with inputs; {
+                inherit master unstable stable;
+                custom = nikspkgs;
+              });
             }
           ];
       })

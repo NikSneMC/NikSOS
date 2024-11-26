@@ -1,6 +1,5 @@
 {
   pkgs,
-  npkgs,
   inputs,
   ...
 }: {
@@ -32,12 +31,11 @@
       tmux
       blockbench
 
-      surrealist
+      custom.surrealist
       postman
 
       mission-center
-    ])
-    ++ (with npkgs; [
-      catppuccin
+
+      custom.catppuccin
     ]);
 }

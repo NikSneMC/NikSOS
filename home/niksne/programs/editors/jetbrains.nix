@@ -1,11 +1,10 @@
 {
   lib,
-  lpkgs,
-  npkgs,
+  pkgs,
   ...
 }: let
   ides =
-    lib.pipe (with npkgs.jetbrains; [
+    lib.pipe (with pkgs.custom.jetbrains; [
       idea-ultimate
       # pycharm-professional
       # webstorm
@@ -21,7 +20,7 @@
               --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
               --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
 
-              -javaagent:${lpkgs.ja-netfilter}/ja-netfilter.jar=jetbrains
+              -javaagent:${pkgs.custom.ja-netfilter}/ja-netfilter.jar=jetbrains
             '';
           }
       ))

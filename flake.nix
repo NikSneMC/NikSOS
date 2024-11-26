@@ -279,10 +279,7 @@
     };
     catppuccin-whiskers = {
       url = "github:catppuccin/whiskers";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        rust-overlay.follows = "rust-overlay";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     helix = {

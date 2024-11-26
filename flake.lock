@@ -141,17 +141,14 @@
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
-        ],
-        "rust-overlay": [
-          "rust-overlay"
         ]
       },
       "locked": {
-        "lastModified": 1728725236,
-        "narHash": "sha256-OLEXy9MCrPQu1KWICsYhe/ayVqxkYIFwyJoJhgiNDz4=",
+        "lastModified": 1732368895,
+        "narHash": "sha256-AZf606SzxtrkspfkypNHwgY0RBgKvPgqoyxY4FLVleg=",
         "owner": "catppuccin",
         "repo": "whiskers",
-        "rev": "0d52962ce697b70c84ce8ffc0e5f0c873a1631d0",
+        "rev": "c36c9fe101448cd6755d91c83321ceb4346b9ae6",
         "type": "github"
       },
       "original": {
@@ -998,11 +995,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1731916449,
-        "narHash": "sha256-DI4naiF2BgrCGqdEtehLODNfkJt7Twq1CZJPrbtLSw8=",
+        "lastModified": 1732381660,
+        "narHash": "sha256-hzV4WCmFsU6Z5Me/lwrPAhjvE81IR4DkdFmk8uX9B00=",
         "owner": "KaylorBen",
         "repo": "nixcord",
-        "rev": "37ce392ad062431b021ca539d8e68839cf1d1474",
+        "rev": "79eb5a668a0344ee161eeb3dc979d6721d9be1a7",
         "type": "github"
       },
       "original": {

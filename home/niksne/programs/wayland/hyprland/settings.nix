@@ -70,7 +70,6 @@
         disable_while_typing = false;
         scroll_factor = 0.5;
         natural_scroll = true;
-        middle_button_emulation = true;
       };
     };
 

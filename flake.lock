@@ -892,11 +892,11 @@
     },
     "nikspkgs": {
       "locked": {
-        "lastModified": 1732587123,
-        "narHash": "sha256-7TDxlHgJyJCiFqd044brmu1eg1Hto/LCHo+Vcegfj9k=",
+        "lastModified": 1733427369,
+        "narHash": "sha256-KK6lJsO6tTF0mAlRwsx1MO7Q4V0mf0ZsmWHACpsrBys=",
         "owner": "NikSneMC",
         "repo": "NikSpkgs",
-        "rev": "af226eb7fc0f8d246b9de37ae557e9feccdb956e",
+        "rev": "98a5cd20dccd70fbaab0c346025349523cf66eb6",
         "type": "github"
       },
       "original": {

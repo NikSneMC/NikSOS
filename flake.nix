@@ -292,7 +292,7 @@
     };
 
     ayugram-desktop = {
-      url = "github:/ayugram-port/ayugram-desktop/release?submodules=1";
+      url = "github:/ndfined-crp/ayugram-desktop/master?submodules=1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

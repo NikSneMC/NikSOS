@@ -88,16 +88,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1731434367,
-        "narHash": "sha256-vF6jBnRhqSvxnlqCz3TG1ad9zOt3qTRneXpHdYq7LCU=",
-        "owner": "ayugram-port",
+        "lastModified": 1732902487,
+        "narHash": "sha256-bjIfVpLKe2bzs3tGqMpzweORaDFUcV7H1n0lhHbiQVA=",
+        "owner": "ndfined-crp",
         "repo": "ayugram-desktop",
-        "rev": "2f1c40afaab5f7e49d1d7d2d44602dec7b27b869",
+        "rev": "d05ee216dce2f1f191587eae1aeaedb5d68417dd",
         "type": "github"
       },
       "original": {
-        "owner": "ayugram-port",
-        "ref": "release",
+        "owner": "ndfined-crp",
+        "ref": "master",
         "repo": "ayugram-desktop",
         "type": "github"
       }

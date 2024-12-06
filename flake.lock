@@ -1402,20 +1402,23 @@
     },
     "zen-browser": {
       "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1732843311,
-        "narHash": "sha256-Oe3dPaZP8Bv9QdN+yfWrqJo+rq0irlOKx06dohfb4Ak=",
-        "owner": "fufexan",
+        "lastModified": 1732911124,
+        "narHash": "sha256-JgZladVB1C3vvyNV0t9Ka5be0SH3mtAkjAM6LaazoEg=",
+        "owner": "NikSneMC",
         "repo": "zen-browser-flake",
-        "rev": "da03eda0c98adcd8b999a21f8e281e82922b6e0c",
+        "rev": "29cf751fa910933c261311aa196d31c05d14d9bb",
         "type": "github"
       },
       "original": {
-        "owner": "fufexan",
+        "owner": "NikSneMC",
         "repo": "zen-browser-flake",
         "type": "github"
       }

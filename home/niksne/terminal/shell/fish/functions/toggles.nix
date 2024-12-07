@@ -74,6 +74,16 @@
           touch $backup_file
       end
     '';
+    toggle_warp.body = ''
+      set WARP_ENABLED (count (sudo awg))
+      if [ "$WARP_ENABLED" = 0 ]
+          sudo awg-quick up WARP
+          echo "Enabled WARP"
+      else
+          sudo awg-quick down WARP
+          echo "Disabled WARP"
+      end
+    '';
     toggle_wifi.body = ''
       set wifi_status (nmcli radio wifi)
       set backup_file ~/.cache/airplane_backup

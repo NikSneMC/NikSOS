@@ -1,6 +1,6 @@
 {
   imports = [
-    ./zapret.nix
+    ./amnezia.nix
   ];
 
   networking.networkmanager = {

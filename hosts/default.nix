@@ -34,7 +34,6 @@ in {
             inputs.disko.nixosModules.disko
             inputs.agenix.nixosModules.age
             inputs.catppuccin.nixosModules.catppuccin
-            self.nixosModules.zapret
             ./${host}
             (
               if type != minimal

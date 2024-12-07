@@ -292,8 +292,8 @@
     };
 
     ayugram-desktop = {
-      url = "github:/ndfined-crp/ayugram-desktop/master?submodules=1";
-      inputs.nixpkgs.follows = "nixpkgs";
+      url = "github:/ndfined-crp/ayugram-desktop/release?submodules=1";
+      # inputs.nixpkgs.follows = "nixpkgs";
     };
 
     activate-niksos = {

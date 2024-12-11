@@ -4,6 +4,6 @@
   ...
 }: {
   home.packages = [
-    inputs.zen-browser.packages.${pkgs.system}.alpha.specific
+    inputs.zen-browser.packages.${pkgs.system}.beta.specific
   ];
 }

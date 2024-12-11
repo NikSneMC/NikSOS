@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: let
-  browser = ["zen-alpha"];
+  browser = ["zen-beta"];
   imageViewer = ["org.gnome.Loupe"];
   videoPlayer = ["io.github.celluloid_player.Celluloid"];
   audioPlayer = ["io.bassi.Amberol"];

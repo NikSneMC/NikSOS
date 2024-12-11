@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }: let
@@ -10,13 +9,12 @@
   audioPlayer = ["io.bassi.Amberol"];
 
   xdgAssociations = type: program: list:
-    lib.pipe list [
-      (map (e: {
-        name = "${type}/${e}";
-        value = program;
-      }))
-      builtins.listToAttrs
-    ];
+    list
+    |> map (e: {
+      name = "${type}/${e}";
+      value = program;
+    })
+    |> builtins.listToAttrs;
 
   image = xdgAssociations "image" imageViewer ["png" "svg" "jpeg" "gif"];
   video = xdgAssociations "video" videoPlayer ["mp4" "avi" "mkv"];
@@ -39,7 +37,7 @@
     ]);
 
   # XDG MIME types
-  associations = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) ({
+  associations = builtins.mapAttrs (_: v: map (e: "${e}.desktop") v) ({
       "application/pdf" = ["org.pwmt.zathura-pdf-mupdf"];
       "text/html" = browser;
       "text/plain" = ["vi"];
@@ -69,11 +67,11 @@ in {
     };
   };
 
-  home.packages = [
+  home.packages = with pkgs; [
     # used by `gio open` and xdp-gtk
-    (pkgs.writeShellScriptBin "xdg-terminal-exec" ''
+    (writeShellScriptBin "xdg-terminal-exec" ''
       wezterm -e "$@"
     '')
-    pkgs.xdg-utils
+    xdg-utils
   ];
 }

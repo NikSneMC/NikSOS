@@ -88,6 +88,15 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    nil = {
+      url = "github:oxalica/nil";
+      inputs = {
+        flake-utils.follows = "flake-utils";
+        nixpkgs.follows = "nixpkgs";
+        rust-overlay.follows = "rust-overlay";
+      };
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";

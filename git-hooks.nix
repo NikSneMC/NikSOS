@@ -5,7 +5,7 @@
     settings.excludes = ["flake.lock"];
 
     settings.hooks = {
-      alejandra.enable = true;
+      # alejandra.enable = true; FIXME: wait for the pipe operator support
       deadnix.enable = true;
     };
   };

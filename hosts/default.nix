@@ -48,12 +48,11 @@ in {
             {
               networking.hostName = host;
               home-manager = {
-                users = lib.pipe homeImports.raw.${host} [
-                  (builtins.map (
-                    user: lib.nameValuePair user {imports = homeImports."${user}@${host}";}
-                  ))
-                  builtins.listToAttrs
-                ];
+                users = homeImports.raw.${host}
+                  |> map (user: 
+                    lib.nameValuePair user {imports = homeImports."${user}@${host}";}
+                  )
+                  |> builtins.listToAttrs;
                 extraSpecialArgs = specialArgs;
               };
               nixpkgs.overlays = mkPkgsOverlays (with inputs; {

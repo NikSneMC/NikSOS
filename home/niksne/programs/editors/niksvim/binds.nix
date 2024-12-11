@@ -1,33 +1,32 @@
 {lib, ...}: let
-  mkKeymaps = lib.mapAttrsToList (
-    name: value: let
-      keymap = {
-        key = name;
-        action = value;
-        options.silent = true;
-      };
-    in (
+  mkKeymaps = lib.mapAttrsToList (name: value:
+    {
+      key = name;
+      action = value;
+      options.silent = true;
+    }
+    |> (keymap:
       if builtins.isString value
       then keymap
-      else
-        (
-          keymap
-          // value
-          // (
-            if value ? "mode" && builtins.isString value.mode
-            then {mode = lib.stringToCharacters value.mode;}
-            else {}
-          )
+      else (
+        keymap
+        // value
+        // (
+          if value ? "mode" && builtins.isString value.mode
+          then {mode = lib.stringToCharacters value.mode;}
+          else {}
         )
+      )
     )
   );
   mkDisabledKeymaps = mode: keymaps:
-    mkKeymaps (builtins.listToAttrs (builtins.map (key:
-      lib.nameValuePair key {
+    keymaps 
+    |> map (key: lib.nameValuePair key {
         action = "";
         inherit mode;
-      })
-    keymaps));
+    })
+    |> builtins.listToAttrs
+    |> mkKeymaps;
 in {
   programs.nixvim.keymaps =
     (mkKeymaps {

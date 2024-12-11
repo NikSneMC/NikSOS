@@ -7,15 +7,13 @@
   mod = "SUPER";
   workspaces = let
     mkWorkspacesBinds = n: m: a: binds:
-      lib.pipe n [
-        (builtins.genList (
-          x: let
-            mod = a: b: a - a / b * b;
-          in
-            binds (toString (mod (x + 1) m)) (toString (x + a))
-        ))
-        builtins.concatLists
-      ];
+      n
+      |> builtins.genList (x:
+        (a: b: a - a / b * b)
+        |> (mod: mod (x + 1) m)
+        |> (ws: binds (toString ws) (toString (x + a)))
+      )
+      |> builtins.concatLists;
   in
     (
       mkWorkspacesBinds 10 10 1 (ws: x: [

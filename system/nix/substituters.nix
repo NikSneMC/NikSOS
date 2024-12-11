@@ -1,4 +1,4 @@
-{lib, ...}: let
+let
   substituters = {
     "cache.nixos.org?priority=10" = "6NCHdD59X431o0gWypbMrAURkbJ16ZPMQFGspcDShjY=";
 
@@ -8,20 +8,17 @@
   };
 in {
   nix.settings = {
-    substituters = lib.pipe substituters [
-      builtins.attrNames
-      (map (s: "https://${s}"))
-    ];
-    trusted-public-keys = lib.pipe substituters [
-      (
-        builtins.mapAttrs (s_: k: let
-          s = lib.pipe s_ [
-            (builtins.split "\\?")
-            builtins.head
-          ];
-        in "${s}-1:${k}")
+    substituters = substituters 
+      |> builtins.attrNames
+      |> map (s: "https://${s}");
+
+    trusted-public-keys = substituters
+    |> builtins.mapAttrs (s_: k: 
+        s_
+        |> builtins.split "\\?"
+        |> builtins.head
+        |> (s: "${s}-1:${k}")
       )
-      builtins.attrValues
-    ];
+      |> builtins.attrValues;
   };
 }

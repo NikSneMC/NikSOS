@@ -210,29 +210,27 @@
   };
 
   mkEnabledPluginsFromList = plugins:
-    lib.pipe plugins [
-      (builtins.map (
-        plugin: let
-          value = {enable = true;};
-        in
-          if builtins.isString plugin
-          then {
-            name = plugin;
-            inherit value;
-          }
-          else {
-            inherit (plugin) name;
-            value = (builtins.removeAttrs plugin ["name"]) // value;
-          }
-      ))
-      builtins.listToAttrs
-    ];
+    plugins
+    |> map (
+      plugin: {enable = true;}
+      |> (value: 
+        if builtins.isString plugin
+        then {
+          name = plugin;
+          inherit value;
+        }
+        else {
+          inherit (plugin) name;
+          value = (builtins.removeAttrs plugin ["name"]) // value;
+        }
+      )
+    )
+    |> builtins.listToAttrs;
 
   mkUserPlugins = p:
-    lib.pipe p [
-      (p: lib.filterAttrs (_: {platform ? "vencord", ...}: platform == p) plugins.user)
-      (builtins.mapAttrs (_: {settings ? {}, ...}: settings // {enable = true;}))
-    ];
+    (_: {platform ? "vencord", ...}: platform == p)
+    |> (condition: lib.filterAttrs condition plugins.user)
+    |> builtins.mapAttrs (_: {settings ? {}, ...}: settings // {enable = true;});
 in {
   imports = [inputs.nixcord.homeManagerModules.nixcord];
 
@@ -250,10 +248,9 @@ in {
       plugins = mkEnabledPluginsFromList plugins.vencord;
     };
     userPlugins = builtins.mapAttrs (_: {source, ...}: source) plugins.user;
-    parseRules.lowerPluginTitles = lib.pipe plugins.user [
-      (lib.filterAttrs (_: {lowerNamed ? false, ...}: lowerNamed))
-      (lib.mapAttrsToList (name: _: name))
-    ];
+    parseRules.lowerPluginTitles = plugins.user
+      |> lib.filterAttrs (_: {lowerNamed ? false, ...}: lowerNamed)
+      |> lib.mapAttrsToList (name: _: name);
     extraConfig.plugins = mkUserPlugins "vencord";
     vencordConfig.plugins = (mkEnabledPluginsFromList plugins.discord) // (mkUserPlugins "discord");
     vesktopConfig.plugins = (mkEnabledPluginsFromList plugins.vesktop) // (mkUserPlugins "vesktop");

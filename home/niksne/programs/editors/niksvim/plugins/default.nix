@@ -5,13 +5,12 @@
   ...
 }: let
   mkPluginsList = plugins:
-    lib.pipe plugins [
-      (builtins.map (plugin: lib.nameValuePair plugin {enable = true;}))
-      builtins.listToAttrs
-    ];
+    plugins
+    |> map (plugin: lib.nameValuePair plugin {enable = true;})
+    |> builtins.listToAttrs;
 
-  mkExtraPluginsList = lib.mapAttrsToList (
-    name: {
+  mkExtraPluginsList = lib.mapAttrsToList (name: 
+    {
       package ? null,
       owner ? null,
       repo ? name,
@@ -22,8 +21,7 @@
       ...
     }: {
       inherit config optional;
-      plugin =
-        if package != null
+      plugin = if package != null
         then package
         else
           pkgs.vimUtils.buildVimPlugin {
@@ -34,17 +32,16 @@
   );
 
   mkExtraPluginsLua = extraPlugins:
-    lib.pipe extraPlugins [
-      (lib.filterAttrs (_: {activate ? false, ...}: activate))
-      (lib.mapAttrsToList (
-        name: {
-          setup ? name,
-          settings ? {},
-          ...
-        }: "require('${setup}').setup(${config.lib.nixvim.toLuaObject settings})"
-      ))
-      (builtins.concatStringsSep "\n")
-    ];
+    extraPlugins
+    |> lib.filterAttrs (_: {activate ? false, ...}: activate)
+    |> lib.mapAttrsToList (name: 
+      {
+        setup ? name,
+        settings ? {},
+        ...
+      }: "require('${setup}').setup(${config.lib.nixvim.toLuaObject settings})"
+    )
+    |> builtins.concatStringsSep "\n";
 in {
   imports = [
     ./barbar.nix

@@ -12,7 +12,7 @@
     pipes-rs
 
     du-dust
-    toybox
+    busybox
     duf
     fd
     file

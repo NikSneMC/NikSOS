@@ -1,5 +1,9 @@
-{pkgs, ...}: {
-  boot.extraModulePackages = with pkgs.linuxKernel.packages.linux_zen; [
+{
+  config,
+  pkgs,
+  ...
+}: {
+  boot.extraModulePackages = with config.boot.kernelPackages; [
     amneziawg
   ];
 

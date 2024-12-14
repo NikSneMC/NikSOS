@@ -119,15 +119,15 @@
     sidebar-mode = true;
   };
   rofi-theme = {
-    "*" = {
-      bg-col = mkLiteral "#${config.theme.colors.base}";
-      bg-col-light = mkLiteral "#${config.theme.colors.base}";
-      border-col = mkLiteral "#${config.theme.colors.accent}";
-      selected-col = mkLiteral "#${config.theme.colors.base}";
-      accent = mkLiteral "#${config.theme.colors.accent}";
-      fg-col = mkLiteral "#${config.theme.colors.text}";
-      fg-col2 = mkLiteral "#${config.theme.colors.red}";
-      grey = mkLiteral "#${config.theme.colors.overlay0}";
+    "*" = with config.theme.colors; {
+      bg-col = mkLiteral "#${base}";
+      bg-col-light = mkLiteral "#${base}";
+      border-col = mkLiteral "#${accent}";
+      selected-col = mkLiteral "#${base}";
+      accent = mkLiteral "#${accent}";
+      fg-col = mkLiteral "#${text}";
+      fg-col2 = mkLiteral "#${red}";
+      grey = mkLiteral "#${overlay0}";
 
       width = 600;
       font = "JetBrainsMono Nerd Font 10";

@@ -55,7 +55,7 @@
       end
       echo ""
     '';
-    fetch_music_player_data.body = ''
+    fetch_music_player_data.body = with config.theme.colors; ''
       set result (fish -c check_streamer_mode)
       if test "$status" -eq 0
           set STATUS (playerctl status 2>&1)
@@ -63,7 +63,7 @@
               if test "$(count $argv)" -eq 0
                   playerctl -a metadata --format "Now playing: {{artist}} - {{markup_escape(title)}}"
               else
-                 playerctl -a metadata --format "{\"text\": \"<span color='#${config.theme.colors.peach}'>{{artist}}</span> - <span color='#${config.theme.colors.mauve}'>{{markup_escape(title)}}</span>\", \"tooltip\": \"<i><span color='#${config.theme.colors.green}'>{{playerName}}</span></i>\n<b><span color='#${config.theme.colors.mauve}'>{{markup_escape(title)}}</span></b>\nby <span color='#${config.theme.colors.peach}'>{{artist}}</span>\non <span color='#${config.theme.colors.teal}'>{{album}}</span>\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}" -F
+                 playerctl -a metadata --format "{\"text\": \"<span color='#${peach}'>{{artist}}</span> - <span color='#${mauve}'>{{markup_escape(title)}}</span>\", \"tooltip\": \"<i><span color='#${green}'>{{playerName}}</span></i>\n<b><span color='#${mauve}'>{{markup_escape(title)}}</span></b>\nby <span color='#${peach}'>{{artist}}</span>\non <span color='#${teal}'>{{album}}</span>\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}" -F
               end
           end
       end

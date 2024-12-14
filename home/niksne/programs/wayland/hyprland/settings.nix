@@ -78,17 +78,17 @@
       workspace_swipe_forever = true;
     };
 
-    group = {
+    group = with config.theme.colors; {
       "col.border_active" = "$accent";
       "col.border_inactive" = "$base";
-      "col.border_locked_active" = "rgba(${config.theme.colors.notable.accent}ff)";
-      "col.border_locked_inactive" = "rgba(${config.theme.colors.notable.text}ff)";
+      "col.border_locked_active" = "rgba(${notable.accent}ff)";
+      "col.border_locked_inactive" = "rgba(${notable.text}ff)";
       groupbar = {
         text_color = "$text";
-        "col.active" = "rgba(${config.theme.colors.base}bb)";
-        "col.inactive" = "rgba(${config.theme.colors.surface1}bb)";
-        "col.locked_active" = "rgba(${config.theme.colors.notable.text}bb)";
-        "col.locked_inactive" = "rgba(${config.theme.colors.notable.subtext0}bb)";
+        "col.active" = "rgba(${base}bb)";
+        "col.inactive" = "rgba(${surface1}bb)";
+        "col.locked_active" = "rgba(${notable.text}bb)";
+        "col.locked_inactive" = "rgba(${notable.subtext0}bb)";
       };
     };
 

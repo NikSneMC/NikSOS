@@ -94,12 +94,12 @@
             weeks-pos = "right";
             on-scroll = 1;
             on-click-right = "mode";
-            format = {
-              months = "<span color='#${config.theme.colors.rosewater}'><b>{}</b></span>";
-              days = "<span color='#${config.theme.colors.text}'><b>{}</b></span>";
-              weeks = "<span color='#${config.theme.colors.mauve}'><b>W{}</b></span>";
-              weekdays = "<span color='#${config.theme.colors.green}'><b>{}</b></span>";
-              today = "<span color='#${config.theme.colors.teal}'><b><u>{}</u></b></span>";
+            format = with config.theme.colors; {
+              months = "<span color='#${rosewater}'><b>{}</b></span>";
+              days = "<span color='#${text}'><b>{}</b></span>";
+              weeks = "<span color='#${mauve}'><b>W{}</b></span>";
+              weekdays = "<span color='#${green}'><b>{}</b></span>";
+              today = "<span color='#${teal}'><b><u>{}</u></b></span>";
             };
           };
         };
@@ -134,24 +134,24 @@
           ];
           format-disconnected = "󰤫  Disconnected";
           tooltip-format = "wifi <span color='#${config.theme.colors.maroon}'>off</span>";
-          tooltip-format-wifi = ''
+          tooltip-format-wifi = with config.theme.colors; ''
             SSID = {essid}({signalStrength}%), {frequency} MHz
             Interface = {ifname}
             IP = {ipaddr}
             GW = {gwaddr}
 
-            <span color='#${config.theme.colors.green}'>{bandwidthUpBits}</span>\t<span color='#${config.theme.colors.maroon}'>{bandwidthDownBits}</span>\t<span color='#${config.theme.colors.mauve}'>󰹹{bandwidthTotalBits}</span>
+            <span color='#${green}'>{bandwidthUpBits}</span>\t<span color='#${maroon}'>{bandwidthDownBits}</span>\t<span color='#${mauve}'>󰹹{bandwidthTotalBits}</span>
           '';
           tooltip-format-disconnected = "<span color='#${config.theme.colors.red}'>disconnected</span>";
           format-ethernet = "󰈀 {ipaddr}/{cidr}";
           format-linked = "󰈀 {ifname} (No IP)";
-          tooltip-format-ethernet = ''            Interface = {ifname}
+          tooltip-format-ethernet = with config.theme.colors; ''            Interface = {ifname}
             IP = {ipaddr}
             GW = {gwaddr}
             Netmask = {netmask}
             CIDR = {cidr}
 
-            <span color='#${config.theme.colors.green}'>{bandwidthUpBits}</span> <span color='#${config.theme.colors.maroon}'>{bandwidthDownBits}</span> <span color='#${config.theme.colors.mauve}'>󰹹{bandwidthTotalBits}</span>'';
+            <span color='#${green}'>{bandwidthUpBits}</span> <span color='#${maroon}'>{bandwidthDownBits}</span> <span color='#${mauve}'>󰹹{bandwidthTotalBits}</span>'';
           max-length = 35;
           on-click = "fish -c toggle_wifi";
           on-click-right = "nm-connection-editor";
@@ -180,7 +180,7 @@
           "custom/media"
         ];
         user = {
-          format = "<span color='#${config.theme.colors.accent}'> {user}</span> (up <span color='#${config.theme.colors.pink}'>{work_d} d</span> <span color='#${config.theme.colors.blue}'>{work_H} h</span> <span color='#${config.theme.colors.red}'>{work_M} min</span> <span color='#${config.theme.colors.green}'>↑</span>)";
+          format = with config.theme.colors; "<span color='#${accent}'> {user}</span> (up <span color='#${pink}'>{work_d} d</span> <span color='#${blue}'>{work_H} h</span> <span color='#${red}'>{work_M} min</span> <span color='#${green}'>↑</span>)";
           icon = true;
         };
         "hyprland/window" = {

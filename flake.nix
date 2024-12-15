@@ -45,6 +45,11 @@
     nixpkgs.follows = "unstable";
     nikspkgs.url = "github:NikSneMC/NikSpkgs/niksos";
 
+    assets = {
+      url = "github:NikSneMC/NikSOS/assets";
+      flake = false;
+    };
+
     systems.url = "github:nix-systems/default-linux";
 
     flake-parts = {

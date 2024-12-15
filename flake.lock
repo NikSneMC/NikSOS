@@ -81,6 +81,23 @@
         "type": "github"
       }
     },
+    "assets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1734294261,
+        "narHash": "sha256-V+oQwA5z6Sg31dTV00A5yebopSNooeGh9ffXlH5laCI=",
+        "owner": "NikSneMC",
+        "repo": "NikSOS",
+        "rev": "5ff9f19001fcb6fc1e0ae01cdbd6c9acba61b5e9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NikSneMC",
+        "ref": "assets",
+        "repo": "NikSOS",
+        "type": "github"
+      }
+    },
     "ayugram-desktop": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -1237,6 +1254,7 @@
       "inputs": {
         "activate-niksos": "activate-niksos",
         "agenix": "agenix",
+        "assets": "assets",
         "ayugram-desktop": "ayugram-desktop",
         "catppuccin": "catppuccin",
         "catppuccin-catwalk": "catppuccin-catwalk",
@@ -1514,11 +1532,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1734257597,
-        "narHash": "sha256-l0dYtBkqxnrFwTQNL3ducBbfLWFubv7z4xC3ZrGRwFA=",
+        "lastModified": 1734293791,
+        "narHash": "sha256-pV7cKcgICtHU4AIcLP7muMAR3RHVyO0K6bWbFpYyMYk=",
         "owner": "NikSneMC",
         "repo": "zen-browser-flake",
-        "rev": "ebe5cad66ee6662cc49a45b5b9ec1794c6954a2e",
+        "rev": "9b33ce8da44cd140aca6f02070f7d1fa728d9c67",
         "type": "github"
       },
       "original": {

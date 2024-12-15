@@ -1,5 +1,5 @@
 {
-  lib,
+  inputs,
   pkgs,
   ...
 }: {
@@ -13,15 +13,7 @@
       "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
       logo = {
         type = "iterm";
-        source = let
-          url = "https://raw.githubusercontent.com/NikSneMC/NikSOS/assets/niksos/niksos.png";
-          sha256 = "1bdm6g2804rdkpx0c567fp1q74910v1c2rm24k8mpy7hd8ji9sqb";
-          filename = lib.last (lib.splitString "/" url);
-        in
-          builtins.fetchurl {
-            name = "${sha256}-fastfetch-${filename}";
-            inherit url sha256;
-          };
+        source = "${inputs.assets}/niksos/niksos.png";
         width = 35;
       };
       display = {

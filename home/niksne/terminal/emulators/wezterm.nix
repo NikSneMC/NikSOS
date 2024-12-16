@@ -5,10 +5,15 @@
   pkgs,
   ...
 }: let
-  mkUpper = str:
-    with builtins;
-      (lib.toUpper (substring 0 1 str)) + (substring 1 (stringLength str) str);
-
+  mkUpper = str: (
+    str
+    |> builtins.substring 0 1
+    |> lib.toUpper
+  ) + (
+    str
+    |> builtins.stringLength
+    |> (l: builtins.substring 1 l str)
+  );
   font = "JetBrainsMono Nerd Font";
 
   mkTabColorFg = bg: fg: ''{ bg_color = "#${config.theme.colors.${bg}}", fg_color = "#${config.theme.colors.${fg}}" }'';

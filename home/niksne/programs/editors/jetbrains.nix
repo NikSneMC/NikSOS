@@ -1,30 +1,24 @@
-{
-  lib,
-  pkgs,
-  ...
-}: let
-  ides =
-    lib.pipe (with pkgs.custom.jetbrains; [
-      idea-ultimate
-      # pycharm-professional
-      # webstorm
-      # rust-rover
-      # goland
-      # phpstorm
-      # clion
-    ]) [
-      (builtins.map (
-        ide:
-          ide.override {
-            vmopts = ''
-              --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
-              --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+{pkgs, ...}: let
+  ides = mkIdesList (with pkgs.custom.jetbrains; [
+    idea-ultimate
+    # pycharm-professional
+    # webstorm
+    # rust-rover
+    # goland
+    # phpstorm
+    # clion
+  ]);
 
-              -javaagent:${pkgs.custom.ja-netfilter}/ja-netfilter.jar=jetbrains
-            '';
-          }
-      ))
-    ];
+  mkIdesList = map (ide:
+    ide.override {
+      vmopts = ''
+        --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
+        --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+
+        -javaagent:${pkgs.custom.ja-netfilter}/ja-netfilter.jar=jetbrains
+      '';
+    }
+  );
 in {
   programs.jetbrains-remote = {
     enable = true;

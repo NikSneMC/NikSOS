@@ -1,9 +1,13 @@
-{lib, ...}: let
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}: let
   mkServersList = servers:
-    lib.pipe servers [
-      (builtins.map (server: lib.nameValuePair server {enable = true;}))
-      builtins.listToAttrs
-    ];
+    servers
+    |> map (server: lib.nameValuePair server {enable = true;})
+    |> builtins.listToAttrs;
 in {
   programs.nixvim.plugins = {
     lsp = {
@@ -35,13 +39,15 @@ in {
           "sqls"
           "svelte"
           "tailwindcss"
+          "volar"
           "yamlls"
           "zls"
         ])
         // {
           nil_ls = {
             enable = true;
-            settings.formatting.command = ["alejandra"];
+            package = inputs.nil.packages.${pkgs.system}.nil;
+            # settings.formatting.command = ["alejandra"];
           };
         };
     };

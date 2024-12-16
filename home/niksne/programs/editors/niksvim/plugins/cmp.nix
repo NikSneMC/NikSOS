@@ -1,9 +1,8 @@
 let
-  mkSources = builtins.map (
-    source:
-      if builtins.isString source
-      then {name = source;}
-      else source
+  mkSources = map (source:
+    if builtins.isString source
+    then {name = source;}
+    else source
   );
 in {
   programs.nixvim.plugins = {

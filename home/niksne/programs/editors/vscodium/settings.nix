@@ -3,8 +3,15 @@
   lib,
   ...
 }: let
-  mkUpper = str:
-    (lib.toUpper (builtins.substring 0 1 str)) + (builtins.substring 1 (builtins.stringLength str) str);
+  mkUpper = str: (
+    str
+    |> builtins.substring 0 1
+    |> lib.toUpper
+  ) + (
+    str
+    |> builtins.stringLength
+    |> (l: builtins.substring 1 l str)
+  );
   flavour = mkUpper config.theme.flavor;
 in {
   programs.vscode.userSettings = {

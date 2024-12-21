@@ -23,17 +23,15 @@
       readOnly = true;
       default = let
         removeHash = builtins.substring 1 6;
-        catppuccin = lib.pipe "${config.catppuccin.sources.palette}/palette.json" [
-          builtins.readFile
-          builtins.fromJSON
-          (builtins.mapAttrs (
-            _: flavor:
-              (builtins.mapAttrs (_: color: removeHash color.hex) flavor.colors)
-              // {
-                accent = removeHash flavor.colors.${config.theme.accent}.hex;
-              }
-          ))
-        ];
+        catppuccin = "${config.catppuccin.sources.palette}/palette.json"
+          |> builtins.readFile
+          |> builtins.fromJSON
+          |> builtins.mapAttrs (_: flavor:
+            (builtins.mapAttrs (_: color: removeHash color.hex) flavor.colors)
+            // {
+              accent = removeHash flavor.colors.${config.theme.accent}.hex;
+            }
+          );
       in
         catppuccin
         // catppuccin.${config.theme.flavor}

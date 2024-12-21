@@ -17,7 +17,7 @@
     else if lib.isString value
     then ''"${value}"''
     else if lib.isList value
-    then "[ ${lib.strings.concatStringsSep "," (map mkValueString value)} ]"
+    then "[ ${value |> map mkValueString |> lib.strings.concatStringsSep ","} ]"
     else abort "Unhandled value type ${builtins.typeOf value}";
 
   mkKeyValue = {
@@ -30,29 +30,28 @@
     then let
       toRasiKeyValue = lib.generators.toKeyValue {mkKeyValue = mkKeyValue {};};
       # Remove null values so the resulting config does not have empty lines
-      configStr = toRasiKeyValue (lib.filterAttrs (_: v: v != null) value);
+      configStr = value |> lib.filterAttrs (_: v: v != null) |> toRasiKeyValue;
     in ''
       ${name} {
       ${configStr}}
     ''
-    else
-      (mkKeyValue {
-          sep = " ";
-          end = "";
-        }
-        name
-        value)
-      + "\n";
+    else (
+      mkKeyValue {
+        sep = " ";
+        end = "";
+      }
+      name
+      value
+    ) + "\n";
 
   toRasi = attrs:
-    lib.pipe [
+    [
       (lib.filterAttrs (n: _: n == "@theme") attrs)
       (lib.filterAttrs (n: _: n == "@import") attrs)
       (removeAttrs attrs ["@theme" "@import"])
-    ] [
-      (lib.concatMap (lib.mapAttrsToList mkRasiSection))
-      (lib.concatStringsSep "\n")
-    ];
+    ]
+    |> lib.concatMap (lib.mapAttrsToList mkRasiSection)
+    |> lib.concatStringsSep "\n";
 
   inherit (config.lib.formats.rasi) mkLiteral;
   script-2fa =

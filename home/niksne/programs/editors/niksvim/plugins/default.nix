@@ -50,6 +50,7 @@ in {
     ./barbar.nix
     ./better-escape.nix
     ./cmp.nix
+    ./colorizer.nix
     ./dap.nix
     ./dashboard.nix
     ./indent-blankline.nix
@@ -59,7 +60,6 @@ in {
     ./neo-tree.nix
     ./neocord.nix
     ./neotest.nix
-    ./nvim-colorizer.nix
     ./project-nvim.nix
     ./refactoring.nix
     ./telescope.nix

@@ -12,10 +12,8 @@
     enable = true;
     package = pkgs.gitFull;
 
-    delta = {
-      enable = true;
-      catppuccin.enable = true;
-    };
+    delta.enable = true;
+
     extraConfig = {
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";

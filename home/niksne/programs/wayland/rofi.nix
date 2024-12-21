@@ -237,7 +237,6 @@
 in {
   programs.rofi = {
     enable = true;
-    catppuccin.enable = false;
     package = pkgs.rofi-wayland;
     location = "right";
     terminal = "wezterm";

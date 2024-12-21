@@ -2,8 +2,6 @@
   programs.zathura = {
     enable = true;
 
-    catppuccin.enable = true;
-
     options = {
       font = "JetBrainsMono Nerd Font 12";
       selection-notification = true;

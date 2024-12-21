@@ -8,8 +8,6 @@
   programs.waybar = {
     enable = true;
     package = inputs.waybar.packages.${pkgs.system}.waybar;
-
-    catppuccin.enable = true;
     settings = [
       {
         name = "top_bar";

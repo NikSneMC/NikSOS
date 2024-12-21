@@ -16,8 +16,6 @@ in {
   programs.kitty = {
     enable = true;
 
-    catppuccin.enable = true;
-
     font = {
       size = 10;
       name = "JetBrainsMono Nerd Font";

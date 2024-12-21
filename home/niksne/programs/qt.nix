@@ -2,9 +2,6 @@
   qt = {
     enable = true;
     platformTheme.name = "kvantum";
-    style = {
-      name = "kvantum";
-      catppuccin.enable = true;
-    };
+    style.name = "kvantum";
   };
 }

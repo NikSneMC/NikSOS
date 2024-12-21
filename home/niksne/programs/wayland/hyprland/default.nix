@@ -20,8 +20,6 @@
     package = inputs.hyprland.packages.${pkgs.system}.hyprland;
     xwayland.enable = true;
 
-    catppuccin.enable = true;
-
     systemd = {
       enable = true;
       variables = ["--all"];

@@ -10,8 +10,6 @@ in {
     enable = true;
     package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
 
-    catppuccin.enable = true;
-
     settings = {
       general = {
         disable_loading_bar = true;

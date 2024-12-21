@@ -3,8 +3,6 @@
     enable = true;
     enableFishIntegration = true;
 
-    catppuccin.enable = true;
-
     defaultCommand = "rg --files --hidden";
 
     changeDirWidgetOptions = [

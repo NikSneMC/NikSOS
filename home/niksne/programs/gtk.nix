@@ -13,11 +13,6 @@
   gtk = {
     enable = true;
 
-    catppuccin = {
-      enable = true;
-      icon.enable = false;
-    };
-
     font = {
       name = "JetBrainsMono Nerd Font";
       package = pkgs.nerd-fonts.jetbrains-mono;
@@ -34,4 +29,6 @@
       };
     };
   };
+
+  catppuccin.gtk.enable = true;
 }

@@ -17,14 +17,10 @@
       grub = {
         enable = true;
         useOSProber = true;
-        catppuccin.enable = true;
       };
       timeout = 3;
     };
 
-    plymouth = {
-      enable = true;
-      catppuccin.enable = true;
-    };
+    plymouth.enable = true;
   };
 }

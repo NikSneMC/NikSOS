@@ -9,13 +9,13 @@
       enable = true;
       package = pkgs.kdePackages.sddm;
       wayland.enable = true;
-      catppuccin = {
-        enable = true;
-        font = "Jetbrains Mono Nerd Font";
-        fontSize = "10";
-        background = "${inputs.assets}/wallpapers/wolfclan.png";
-        loginBackground = false;
-      };
     };
+  };
+
+  catppuccin.sddm = {
+    font = "Jetbrains Mono Nerd Font";
+    fontSize = "10";
+    background = "${inputs.assets}/wallpapers/wolfclan.png";
+    loginBackground = false;
   };
 }

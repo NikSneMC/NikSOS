@@ -56,7 +56,7 @@
 
   config.catppuccin = {
     enable = true;
-    pointerCursor.enable = true;
+    cursors.enable = true;
     inherit (config.theme) flavor accent;
   };
 }

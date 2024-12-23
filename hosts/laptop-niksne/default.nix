@@ -1,6 +1,6 @@
-{
+{inputs, ...}: {
   imports = [
-    ./private
+    "${inputs.private}/laptop-niksne/nixos"
     ../../system/hardware/nvidia.nix
   ];
 

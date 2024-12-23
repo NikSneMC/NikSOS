@@ -1209,6 +1209,22 @@
         "type": "github"
       }
     },
+    "private": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1734917460,
+        "narHash": "sha256-l3QOnYk+IyCLEZbI0HMsCX9p09Cx9fdBKwn+X9+rI4s=",
+        "owner": "NikSneMC",
+        "repo": "NikSOS-private",
+        "rev": "f5d204954a2ce9f1ae068c1e388994bb8fc004d9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NikSneMC",
+        "repo": "NikSOS-private",
+        "type": "github"
+      }
+    },
     "pyprland": {
       "inputs": {
         "flake-compat": [
@@ -1274,6 +1290,7 @@
         ],
         "nixvim": "nixvim",
         "poetry2nix": "poetry2nix",
+        "private": "private",
         "pyprland": "pyprland",
         "spicetify-nix": "spicetify-nix",
         "stable": "stable",

@@ -4,7 +4,7 @@
   ...
 }: {
   imports = [
-    ./private
+    "${inputs.private}/niksos-wsl/nixos"
     inputs.nixos-wsl.nixosModules.default
     ../../system/programs/development.nix
   ];

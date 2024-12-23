@@ -25,8 +25,8 @@
       rawMk (
         host: user:
           lib.nameValuePair "${user}@${host}" [
-            self.homeManagerModules.hosts
             inputs.catppuccin.homeManagerModules.catppuccin
+            self.homeManagerModules.hosts
             self.homeManagerModules.theme
             ./${user}
             ./${user}/profiles/${host}

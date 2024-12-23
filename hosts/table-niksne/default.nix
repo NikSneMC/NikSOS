@@ -1,6 +1,6 @@
-{
+{inputs, ...}: {
   imports = [
-    ./private
+    "${inputs.private}/table-niksne/nixos"
     # ../../system/hardware/nvidia.nix
     ../../system/hardware/amd.nix
     ../../system/hardware/razer.nix

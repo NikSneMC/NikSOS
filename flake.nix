@@ -73,11 +73,6 @@
       };
     };
 
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     poetry2nix = {
       url = "github:nix-community/poetry2nix";
       inputs = {
@@ -233,7 +228,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
-        rust-overlay.follows = "rust-overlay";
       };
     };
 
@@ -285,15 +279,6 @@
     catppuccin-whiskers = {
       url = "github:catppuccin/whiskers";
       inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    helix = {
-      url = "github:helix-editor/helix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-        rust-overlay.follows = "rust-overlay";
-      };
     };
 
     ayugram-desktop = {

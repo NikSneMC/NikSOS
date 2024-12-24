@@ -34,6 +34,7 @@ in {
             inputs.disko.nixosModules.disko
             inputs.agenix.nixosModules.age
             inputs.catppuccin.nixosModules.catppuccin
+            self.niksosModules.all
             ./${host}
             (
               if type != minimal

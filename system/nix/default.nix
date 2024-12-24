@@ -6,9 +6,9 @@
   ...
 }: {
   imports = [
+    ./caches.nix
     ./nh.nix
     ./nixpkgs.nix
-    ./substituters.nix
   ];
 
   environment.systemPackages = [pkgs.git];

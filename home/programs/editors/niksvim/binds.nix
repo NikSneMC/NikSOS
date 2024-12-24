@@ -22,7 +22,7 @@
     )
   );
   mkDisabledKeymaps = mode: keymaps:
-    mkKeymaps (builtins.listToAttrs (builtins.map (key:
+    mkKeymaps (builtins.listToAttrs (map (key:
       lib.nameValuePair key {
         action = "";
         inherit mode;

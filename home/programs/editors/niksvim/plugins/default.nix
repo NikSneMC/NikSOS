@@ -6,7 +6,7 @@
 }: let
   mkPluginsList = plugins:
     lib.pipe plugins [
-      (builtins.map (plugin: lib.nameValuePair plugin {enable = true;}))
+      (map (plugin: lib.nameValuePair plugin {enable = true;}))
       builtins.listToAttrs
     ];
 

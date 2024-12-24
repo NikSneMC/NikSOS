@@ -1,7 +1,7 @@
 {lib, ...}: let
   mkServersList = servers:
     lib.pipe servers [
-      (builtins.map (server: lib.nameValuePair server {enable = true;}))
+      (map (server: lib.nameValuePair server {enable = true;}))
       builtins.listToAttrs
     ];
 in {

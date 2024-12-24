@@ -13,7 +13,7 @@
       # phpstorm
       # clion
     ]) [
-      (builtins.map (
+      (map (
         ide:
           ide.override {
             vmopts = ''

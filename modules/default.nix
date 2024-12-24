@@ -1,7 +1,7 @@
 {
   flake = {
     homeManagerModules = {
-      hosts = import ./hosts;
+      homes = import ./homes;
       theme = import ./theme;
     };
   };

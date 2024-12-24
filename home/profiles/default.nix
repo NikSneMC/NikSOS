@@ -23,13 +23,16 @@
   homeImports =
     (
       rawMk (
-        host: user:
-          lib.nameValuePair "${user}@${host}" [
+        host: user: let
+          modules = ../.;
+        in
+          lib.nameValuePair "${user}@${host}"
+          [
             inputs.catppuccin.homeManagerModules.catppuccin
-            self.homeManagerModules.hosts
+            self.homeManagerModules.homes
             self.homeManagerModules.theme
-            ./${user}
-            ./${user}/profiles/${host}
+            (import ./${user} modules)
+            (import ./${user}/hosts/${host} modules)
             {home = {inherit host user;};}
           ]
       )

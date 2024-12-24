@@ -49,7 +49,7 @@ in {
               networking.hostName = host;
               home-manager = {
                 users = lib.pipe homeImports.raw.${host} [
-                  (builtins.map (
+                  (map (
                     user: lib.nameValuePair user {imports = homeImports."${user}@${host}";}
                   ))
                   builtins.listToAttrs

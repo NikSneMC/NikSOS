@@ -1,5 +1,6 @@
 {
   config,
+  inputs,
   lib,
   options,
   ...
@@ -17,6 +18,7 @@
       username = config.home.user;
       homeDirectory = "/home/${config.home.user}";
       stateVersion = "24.11";
+      file.".face".source = "${inputs.assets}/users/${config.home.user}.png";
     };
 
     manual = {

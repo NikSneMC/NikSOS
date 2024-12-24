@@ -6,7 +6,7 @@
       systems = ["x86_64-linux"];
 
       imports = [
-        ./home/profiles.nix
+        ./home/profiles
         ./hosts
         ./modules
         ./git-hooks.nix

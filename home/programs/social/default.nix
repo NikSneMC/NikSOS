@@ -9,7 +9,7 @@
 
   home.packages = with pkgs; [
     thunderbird
-    inputs.ayugram-desktop.packages.${pkgs.system}.ayugram-desktop
+    inputs.ayugram-desktop.packages.${system}.ayugram-desktop
 
     chatterino2
   ];

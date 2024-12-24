@@ -1,5 +1,5 @@
 let
-  mkSources = builtins.map (
+  mkSources = map (
     source:
       if builtins.isString source
       then {name = source;}

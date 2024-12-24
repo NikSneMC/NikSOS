@@ -1,8 +1,8 @@
 {lib, ...}: let
   mkUserSubvolumes = user: folders:
     lib.pipe folders [
-      (builtins.map (folder: "/home/${user}/${folder}"))
-      (builtins.map (
+      (map (folder: "/home/${user}/${folder}"))
+      (map (
         mountpoint: {
           name = mountpoint;
           value = {

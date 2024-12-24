@@ -211,7 +211,7 @@
 
   mkEnabledPluginsFromList = plugins:
     lib.pipe plugins [
-      (builtins.map (
+      (map (
         plugin: let
           value = {enable = true;};
         in

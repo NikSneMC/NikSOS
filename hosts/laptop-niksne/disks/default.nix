@@ -1,7 +1,7 @@
 {lib, ...}: let
   mkSubvolumes = subvolumes:
     lib.pipe subvolumes [
-      (builtins.map (
+      (map (
         subvolume:
           if builtins.isString subvolume
           then {

@@ -15,9 +15,9 @@
       }
       {
         label = "hibernate";
-        action = "systemctl reboot --firmware-setup";
-        text = "Reboot to BIOS";
-        keybind = "b";
+        action = "hyprlock & sleep 1 && hyprctl dispatch dpms off";
+        text = "Lock & screen off";
+        keybind = "d";
       }
       {
         label = "logout";

@@ -5,7 +5,7 @@
       supportedFilesystems = ["fat32" "ext4" "btrfs" "ntfs"];
     };
 
-    kernelPackages = pkgs.linuxPackages_zen;
+    kernelPackages = pkgs.linuxPackages_latest;
     consoleLogLevel = 3;
     kernelParams = [
       # "quiet"

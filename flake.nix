@@ -8,6 +8,7 @@
       imports = [
         ./home/profiles
         ./hosts
+        ./lib
         ./modules
         ./git-hooks.nix
       ];
@@ -38,6 +39,7 @@
     };
 
   inputs = {
+    # important
     master.url = "github:NixOS/nixpkgs/master";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
     stable.url = "github:NixOS/nixpkgs/nixos-24.11";
@@ -93,6 +95,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    agenix = {
+      url = "github:ryantm/agenix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        darwin.follows = "";
+        home-manager.follows = "hm";
+        systems.follows = "systems";
+      };
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -103,14 +115,26 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        darwin.follows = "";
-        home-manager.follows = "hm";
-        systems.follows = "systems";
-      };
+    catppuccin.url = "github:NikSneMC/catppuccin-nix";
+
+    # common
+    activate-niksos = {
+      url = "github:NikSneMC/activate-niksos";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ayugram-desktop = {
+      url = "github:/ndfined-crp/ayugram-desktop/release?submodules=1";
+      # inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    catppuccin-catwalk = {
+      url = "github:catppuccin/catwalk";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    catppuccin-whiskers = {
+      url = "github:catppuccin/whiskers";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     hyprland = {
@@ -145,6 +169,7 @@
         hyprutils.follows = "hyprland/hyprutils";
         hyprlang.follows = "hyprland/hyprlang";
         hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
+        hyprgraphics.follows = "hyprland/hyprgraphics";
       };
     };
     hyprpicker = {
@@ -172,6 +197,7 @@
         systems.follows = "hyprland/systems";
         hyprutils.follows = "hyprland/hyprutils";
         hyprlang.follows = "hyprland/hyprlang";
+        hyprgraphics.follows = "hyprland/hyprgraphics";
       };
     };
     hyprsunset = {
@@ -201,16 +227,6 @@
       };
     };
 
-    catppuccin.url = "github:NikSneMC/catppuccin-nix";
-
-    waybar = {
-      url = "github:Alexays/Waybar";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "flake-compat";
-      };
-    };
-
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
       inputs = {
@@ -227,34 +243,13 @@
         flake-compat.follows = "flake-compat";
       };
     };
-
-    wezterm = {
-      url = "github:wez/wezterm?dir=nix";
+    nixcord = {
+      url = "github:KaylorBen/nixcord";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-      };
-    };
-
-    nixvim = {
-      url = "github:nix-community/nixvim";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
-        nuschtosSearch.follows = "";
-        home-manager.follows = "hm";
-        nix-darwin.follows = "";
         flake-compat.follows = "flake-compat";
-        git-hooks.follows = "";
+        systems.follows = "systems";
         treefmt-nix.follows = "treefmt-nix";
-      };
-    };
-
-    spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "flake-compat";
       };
     };
 
@@ -267,33 +262,43 @@
       };
     };
 
-    nixcord = {
-      url = "github:KaylorBen/nixcord";
+    niksvim = {
+      url = "github:NikSneMC/NikSVim";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "flake-compat";
-        systems.follows = "systems";
-        treefmt-nix.follows = "treefmt-nix";
+        flake-parts.follows = "flake-parts";
+        home-manager.follows = "hm";
+        nix-darwin.follows = "";
       };
     };
 
-    catppuccin-catwalk = {
-      url = "github:catppuccin/catwalk";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    catppuccin-whiskers = {
-      url = "github:catppuccin/whiskers";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
-    ayugram-desktop = {
-      url = "github:/ndfined-crp/ayugram-desktop/release?submodules=1";
-      # inputs.nixpkgs.follows = "nixpkgs";
+    spicetify-nix = {
+      url = "github:Gerg-L/spicetify-nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-compat.follows = "flake-compat";
+      };
     };
 
-    activate-niksos = {
-      url = "github:NikSneMC/activate-niksos";
-      inputs.nixpkgs.follows = "nixpkgs";
+    vscode-file-nesting-config-json = {
+      url = "github:NikSneMC/vscode-file-nesting-config-json";
+      flake = false;
+    };
+
+    waybar = {
+      url = "github:Alexays/Waybar";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-compat.follows = "flake-compat";
+      };
+    };
+
+    wezterm = {
+      url = "github:wez/wezterm?dir=nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
     };
 
     zen-browser = {

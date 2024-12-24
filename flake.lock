@@ -172,27 +172,6 @@
         "type": "github"
       }
     },
-    "devshell": {
-      "inputs": {
-        "nixpkgs": [
-          "nixvim",
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1728330715,
-        "narHash": "sha256-xRJ2nPOXb//u1jaBnDP56M7v5ldavjbtR6lfGqSvcKg=",
-        "owner": "numtide",
-        "repo": "devshell",
-        "rev": "dd6b80932022cea34a019e2bb32f6fa9e494dfef",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "devshell",
-        "type": "github"
-      }
-    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -473,64 +452,6 @@
         "type": "github"
       }
     },
-    "hyprgraphics_2": {
-      "inputs": {
-        "hyprutils": [
-          "hyprlock",
-          "hyprutils"
-        ],
-        "nixpkgs": [
-          "hyprlock",
-          "nixpkgs"
-        ],
-        "systems": [
-          "hyprlock",
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1733684019,
-        "narHash": "sha256-2kYREgmSmbLsmDpLEq96hxVAU3qz8aCvVhF65yCFZHY=",
-        "owner": "hyprwm",
-        "repo": "hyprgraphics",
-        "rev": "fb2c0268645a77403af3b8a4ce8fa7ba5917f15d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hyprwm",
-        "repo": "hyprgraphics",
-        "type": "github"
-      }
-    },
-    "hyprgraphics_3": {
-      "inputs": {
-        "hyprutils": [
-          "hyprpaper",
-          "hyprutils"
-        ],
-        "nixpkgs": [
-          "hyprpaper",
-          "nixpkgs"
-        ],
-        "systems": [
-          "hyprpaper",
-          "systems"
-        ]
-      },
-      "locked": {
-        "lastModified": 1733684019,
-        "narHash": "sha256-2kYREgmSmbLsmDpLEq96hxVAU3qz8aCvVhF65yCFZHY=",
-        "owner": "hyprwm",
-        "repo": "hyprgraphics",
-        "rev": "fb2c0268645a77403af3b8a4ce8fa7ba5917f15d",
-        "type": "github"
-      },
-      "original": {
-        "owner": "hyprwm",
-        "repo": "hyprgraphics",
-        "type": "github"
-      }
-    },
     "hypridle": {
       "inputs": {
         "hyprlang": [
@@ -735,7 +656,10 @@
     },
     "hyprlock": {
       "inputs": {
-        "hyprgraphics": "hyprgraphics_2",
+        "hyprgraphics": [
+          "hyprland",
+          "hyprgraphics"
+        ],
         "hyprlang": [
           "hyprland",
           "hyprlang"
@@ -769,7 +693,10 @@
     },
     "hyprpaper": {
       "inputs": {
-        "hyprgraphics": "hyprgraphics_3",
+        "hyprgraphics": [
+          "hyprland",
+          "hyprgraphics"
+        ],
         "hyprlang": [
           "hyprland",
           "hyprlang"
@@ -999,6 +926,34 @@
         "type": "github"
       }
     },
+    "niksvim": {
+      "inputs": {
+        "flake-parts": [
+          "flake-parts"
+        ],
+        "home-manager": [
+          "hm"
+        ],
+        "nix-darwin": [],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixvim": "nixvim"
+      },
+      "locked": {
+        "lastModified": 1735065066,
+        "narHash": "sha256-mqrZ3TVlJItbH3rKOmnsaeKRas3HPnch6I63HXorXwY=",
+        "owner": "NikSneMC",
+        "repo": "NikSVim",
+        "rev": "4e009cd427e62aa045fa4b5b1428d965d36d20e8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NikSneMC",
+        "repo": "NikSVim",
+        "type": "github"
+      }
+    },
     "nix-github-actions": {
       "inputs": {
         "nixpkgs": [
@@ -1145,32 +1100,44 @@
     },
     "nixvim": {
       "inputs": {
-        "devshell": "devshell",
+        "devshell": [
+          "niksvim"
+        ],
         "flake-compat": [
-          "flake-compat"
+          "niksvim"
         ],
         "flake-parts": [
+          "niksvim",
           "flake-parts"
         ],
-        "git-hooks": [],
-        "home-manager": [
-          "hm"
+        "git-hooks": [
+          "niksvim"
         ],
-        "nix-darwin": [],
+        "home-manager": [
+          "niksvim",
+          "home-manager"
+        ],
+        "nix-darwin": [
+          "niksvim",
+          "nix-darwin"
+        ],
         "nixpkgs": [
+          "niksvim",
           "nixpkgs"
         ],
-        "nuschtosSearch": [],
+        "nuschtosSearch": [
+          "niksvim"
+        ],
         "treefmt-nix": [
-          "treefmt-nix"
+          "niksvim"
         ]
       },
       "locked": {
-        "lastModified": 1734737053,
-        "narHash": "sha256-F0MURlUdht/xHNpRrVPmvhcPZYCY2N9mvs/iY3YE56g=",
+        "lastModified": 1734956286,
+        "narHash": "sha256-8h7Fs6S+Ftg3NNmwT/KkYWI9epUNPCMPn56QFXOfmTM=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "354fc0f288e045594e2e30da7ff95189d3545a9a",
+        "rev": "8938e09db14d510dcc2f266e8b2e738ee527d386",
         "type": "github"
       },
       "original": {
@@ -1281,6 +1248,7 @@
         "hyprsunset": "hyprsunset",
         "master": "master",
         "nikspkgs": "nikspkgs",
+        "niksvim": "niksvim",
         "nix-minecraft": "nix-minecraft",
         "nix-python": "nix-python",
         "nixcord": "nixcord",
@@ -1288,7 +1256,6 @@
         "nixpkgs": [
           "unstable"
         ],
-        "nixvim": "nixvim",
         "poetry2nix": "poetry2nix",
         "private": "private",
         "pyprland": "pyprland",
@@ -1297,6 +1264,7 @@
         "systems": "systems",
         "treefmt-nix": "treefmt-nix",
         "unstable": "unstable",
+        "vscode-file-nesting-config-json": "vscode-file-nesting-config-json",
         "waybar": "waybar",
         "wezterm": "wezterm",
         "zen-browser": "zen-browser"
@@ -1427,6 +1395,22 @@
         "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "vscode-file-nesting-config-json": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1735069137,
+        "narHash": "sha256-uEIJT8nvD8RT+NxU/vlSD4YXmmo3qI4MF1fQUhPI/sc=",
+        "owner": "NikSneMC",
+        "repo": "vscode-file-nesting-config-json",
+        "rev": "249cb3bd43a8ee6e108c36fe9b1b56b8526a21dc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NikSneMC",
+        "repo": "vscode-file-nesting-config-json",
         "type": "github"
       }
     },

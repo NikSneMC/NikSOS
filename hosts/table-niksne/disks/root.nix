@@ -1,22 +1,5 @@
 {lib, ...}: let
-  mkSubvolumes = subvolumes:
-    lib.pipe subvolumes [
-      (map (
-        subvolume:
-          if builtins.isString subvolume
-          then {
-            name = subvolume;
-            value = {
-              mountpoint = subvolume;
-            };
-          }
-          else {
-            name = subvolume.mountpoint;
-            value = subvolume;
-          }
-      ))
-      builtins.listToAttrs
-    ];
+  inherit (import (../../../lib + "/lib'/disks.nix") {inherit lib;}) mkSubvolumes;
 in {
   disko.devices.disk.nvme0n1 = {
     type = "disk";

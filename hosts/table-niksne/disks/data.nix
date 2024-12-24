@@ -1,18 +1,5 @@
 {lib, ...}: let
-  mkUserSubvolumes = user: folders:
-    lib.pipe folders [
-      (map (folder: "/home/${user}/${folder}"))
-      (map (
-        mountpoint: {
-          name = mountpoint;
-          value = {
-            mountOptions = ["compress=zstd"];
-            inherit mountpoint;
-          };
-        }
-      ))
-      builtins.listToAttrs
-    ];
+  inherit (import (../../../lib + "/lib'/disks.nix") {inherit lib;}) mkUserSubvolumes;
 in {
   disko.devices.disk.sda = {
     type = "disk";

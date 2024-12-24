@@ -1,21 +1,13 @@
 {
   inputs,
   lib,
+  lib',
   pkgs,
   ...
 }: let
   mod = "SUPER";
   workspaces = let
-    mkWorkspacesBinds = n: m: a: binds:
-      lib.pipe n [
-        (builtins.genList (
-          x: let
-            mod = a: b: a - a / b * b;
-          in
-            binds (toString (mod (x + 1) m)) (toString (x + a))
-        ))
-        builtins.concatLists
-      ];
+    inherit (lib'.hyprland) mkWorkspacesBinds;
   in
     (
       mkWorkspacesBinds 10 10 1 (ws: x: [

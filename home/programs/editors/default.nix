@@ -1,6 +1,6 @@
 {
   imports = [
-    ./niksvim
     ./vscodium
+    ./niksvim.nix
   ];
 }

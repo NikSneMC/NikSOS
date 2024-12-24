@@ -1,7 +1,6 @@
 {
   config,
-  pkgs,
-  lib,
+  lib',
   ...
 }: {
   programs.wlogout = {
@@ -46,37 +45,13 @@
       }
     ];
 
-    style = let
-      bgImageSection = name:
-        lib.pipe "${pkgs.wlogout}/share/wlogout/assets/${name}.svg" [
-          builtins.readFile
-          (builtins.split "\n")
-          (builtins.filter builtins.isString)
-          (lines: ''
-            ${builtins.elemAt lines 0}
-            ${builtins.elemAt lines 3}
-            <defs><style type="text/css"><![CDATA[
-                path {
-                   fill: #${config.theme.colors.accent};
-                }
-            ]]></style></defs>
-            ${builtins.elemAt lines 5}
-            ${builtins.elemAt lines 6}
-          '')
-          (builtins.toFile "wlogout-${name}-icon.svg")
-          (file: ''
-            #${name} {
-              background-image: image(url("${file}"));
-            }
-          '')
-        ];
-    in ''
+    style = ''
       @import "${config.catppuccin.sources.waybar}/themes/${config.theme.flavor}.css";
       @define-color accent @${config.theme.accent};
 
       ${builtins.readFile ./style.css}
 
-      ${lib.concatMapStringsSep "\n" bgImageSection [
+      ${lib'.wlogout.mkBgImageCss config [
         "lock"
         "logout"
         "suspend"

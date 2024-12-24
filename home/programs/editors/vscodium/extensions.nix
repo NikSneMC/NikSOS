@@ -18,6 +18,6 @@
     rust-lang.rust-analyzer
     stylelint.vscode-stylelint
     bradlc.vscode-tailwindcss
-    wakatime.vscode-wakatime
+    # wakatime.vscode-wakatime
   ];
 }

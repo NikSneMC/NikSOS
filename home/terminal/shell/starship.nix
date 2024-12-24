@@ -13,7 +13,6 @@
 
       directory = {
         truncation_length = 4;
-        # Catppuccin 'lavender'
         style = "bold lavender";
       };
     };

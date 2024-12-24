@@ -1,9 +1,15 @@
-{config, ...}: {
+{
+  config,
+  lib',
+  ...
+}: {
   programs.fish.functions = {
-    notifications.body = with config.theme.colors; ''
+    notifications.body = let
+      tooltip = lib'.fish.mkTooltips config.theme.colors "󰂜" "󰪑" "notifications";
+    in ''
       set COUNT (swaync-client -c)
-      set ENABLED "{ \"text\": \"󰂜\", \"tooltip\": \"notifications <span color='#${green}'>on</span>\", \"class\": \"on\" }"
-      set DISABLED "{ \"text\": \"󰪑\", \"tooltip\": \"notifications <span color='#${maroon}'>off</span>\", \"class\": \"off\" }"
+      set ENABLED ${tooltip.on}
+      set DISABLED ${tooltip.off}
 
       if [ $COUNT != 0 ]
           set ENABLED "{ \"text\": \"󰂚 $COUNT\", \"tooltip\": \"$COUNT notifications\", \"class\": \"on\" }"

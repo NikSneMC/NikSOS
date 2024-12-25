@@ -4,6 +4,7 @@ let
     ./nix
     ./programs/fish.nix
     ./programs/home-manager.nix
+    ./virtualisation/docker.nix
   ];
 
   desktop =
@@ -14,6 +15,7 @@ let
       ./network
       ./programs
       ./services
+      ./virtualisation
     ];
 
   laptop =

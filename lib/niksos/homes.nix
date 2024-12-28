@@ -8,7 +8,7 @@
   rawMk = nameValueFunction: hosts:
     lib.pipe hosts [
       (lib.mapAttrsToList (
-        host: builtins.map (user: nameValueFunction host user)
+        host: map (user: nameValueFunction host user)
       ))
       builtins.concatLists
       builtins.listToAttrs

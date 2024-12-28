@@ -7,6 +7,7 @@
 in {
   hardware.graphics = {
     enable = true;
+    enable32Bit = true;
     package = pkgs-hyprland.mesa.drivers;
 
     extraPackages = with pkgs; [

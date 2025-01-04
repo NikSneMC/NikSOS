@@ -5,6 +5,10 @@
   ...
 }: {
   wayland.windowManager.hyprland.settings = {
+    source = [
+      "./monitors.conf"
+    ];
+
     env = [
       "XDG_CURRENT_DESKTOP, Hyprland"
       "XDG_SESSION_DESKTOP, Hyprland"

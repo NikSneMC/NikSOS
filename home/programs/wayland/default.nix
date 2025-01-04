@@ -19,6 +19,7 @@
     wtype
     wl-screenrec
     wlr-randr
+    nwg-displays
   ];
 
   # make stuff work on wayland

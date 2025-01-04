@@ -7,15 +7,7 @@
     #   "__GLX_VENDOR_LIBRARY_NAME,nvidia"
     # ];
     cursor.no_hardware_cursors = true;
-    monitor = [
-      # "HDMI-A-1, 1440x900@60, 0x0, 1"
-      # "DP-1, 3440x1440@100, 1440x0, 1"
-      # "DP-2, 1920x1080@60, 4880x0, 1"
-      # "Unknown-1, disable"
 
-      "VGA-1, 1440x900@60, 0x0, 1"
-      "HDMI-A-1, 1920x1080@60, 1440x0, 1"
-    ];
     workspace = [
       # "11, monitor:DP-1"
       # "12, monitor:DP-1"

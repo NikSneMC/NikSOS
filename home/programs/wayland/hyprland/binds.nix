@@ -73,9 +73,10 @@ in {
         "${mod} CTRL, W, Toggle wi-fi, exec, fish -c toggle_wifi"
 
         # Scratchpads
-        "${mod} CTRL, M, Toggle music player, exec, pypr toggle player"
-        "${mod} CTRL, T, Toggle terminal, exec, pypr toggle term"
-        "${mod} CTRL, V, Toggle volume menu, exec, pypr toggle volume"
+        "${mod} CTRL, D, Toggle displays manager, exec, pypr toggle displays"
+        "${mod} CTRL, M, Toggle music player    , exec, pypr toggle player"
+        "${mod} CTRL, T, Toggle terminal        , exec, pypr toggle term"
+        "${mod} CTRL, V, Toggle volume menu     , exec, pypr toggle volume"
 
         # Move focus with mod + arrow keys
         "${mod}, up, Move focus to the top window, movefocus, u"

@@ -2,6 +2,7 @@
   dropterm = "class:^(wezterm_dropdown)$";
   volume_sidemenu = "class:^(org.pulseaudio.pavucontrol)$";
   player = "initialTitle:^(Spotify Free)$";
+  displays_sidemenu = "class:^(nwg-displays)$";
 in {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
@@ -73,6 +74,9 @@ in {
 
       "float, ${player}"
       "workspace special:scratch_player silent, ${player}"
+
+      "float, ${displays_sidemenu}"
+      "workspace special:scratch_displays silent, ${displays_sidemenu}"
     ];
 
     layerrule = [

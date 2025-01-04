@@ -50,6 +50,18 @@ in {
         lazy = true;
         process_tracking = false;
       };
+      displays = {
+        command = "nwg-displays";
+        animation = "fromLeft";
+        size = "40% 70%";
+        match_by = "class";
+        class = "nwg-displays";
+        excludes = "*";
+        multi = false;
+        unfocus = "hide";
+        margin = 145;
+        lazy = true;
+      };
     };
   };
 

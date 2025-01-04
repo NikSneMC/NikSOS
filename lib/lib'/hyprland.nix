@@ -9,6 +9,12 @@
       ))
       builtins.concatLists
     ];
+
+  mkBind = mod: rec {
+    toggle = key: desc: cmd: "${mod} CTRL, ${key}, Toggle ${desc}, exec, ${cmd}";
+    fishToggle = key: desc: script: toggle key desc "fish -c ${script}";
+    scratchpad = key: desc: name: toggle key desc "pypr toggle ${name}";
+  };
 in {
-  inherit mkWorkspacesBinds;
+  inherit mkWorkspacesBinds mkBind;
 }

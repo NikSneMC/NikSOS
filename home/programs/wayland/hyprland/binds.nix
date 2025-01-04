@@ -5,9 +5,18 @@
   pkgs,
   ...
 }: let
+  inherit (lib') hyprland;
   mod = "SUPER";
+
+  mkBind = hyprland.mkBind mod;
+
+  programs = builtins.mapAttrs (_: v: lib.getExe v) {
+    activate-niksos = inputs.activate-niksos.packages.${pkgs.system}.default;
+    ani-cli = pkgs.ani-cli;
+  };
+
   workspaces = let
-    inherit (lib'.hyprland) mkWorkspacesBinds;
+    inherit (hyprland) mkWorkspacesBinds;
   in
     (
       mkWorkspacesBinds 10 10 1 (ws: x: [
@@ -62,21 +71,21 @@ in {
         "${mod} SHIFT, S, Take screenshot, exec, fish -c record_screen_png"
         "${mod} SHIFT, T, Launch Telegram, exec, ayugram-desktop"
         "${mod} SHIFT, V, Launch VSCodium, exec, codium"
-        "${mod} SHIFT, W, Launch ani-cli, exec, ${lib.getExe pkgs.ani-cli} --rofi"
+        "${mod} SHIFT, W, Launch ani-cli, exec, ${programs.ani-cli} --rofi"
         "${mod} SHIFT, X, Clear clipboard, exec, fish -c clipboard_clear"
 
         # diferrent toggles
-        "${mod} CTRL, A, Toggle airplane mode, exec, fish -c toggle_airplane_mode"
-        "${mod} CTRL, N, toggle night light, exec, fish -c toggle_night_mode"
-        "${mod} CTRL, O, Toggle funky stuff, exec, fish -c toggle_funky_stuff"
-        "${mod} CTRL, P, Toggle easter egg, exec, pkill -9 activate-niksos || ${lib.getExe inputs.activate-niksos.packages.${pkgs.system}.default}"
-        "${mod} CTRL, W, Toggle wi-fi, exec, fish -c toggle_wifi"
+        (mkBind.fishToggle "A" "airplane mode" "toggle_airplane_mode")
+        (mkBind.fishToggle "N" "night light" "toggle_night_mode")
+        (mkBind.fishToggle "O" "funky stuff" "toggle_funky_stuff")
+        (mkBind.toggle "P" "easter egg" "pkill -9 activate-niksos || ${programs.activate-niksos}")
+        (mkBind.fishToggle "W" "wi-fi" "toggle_wifi")
 
         # Scratchpads
-        "${mod} CTRL, D, Toggle displays manager, exec, pypr toggle displays"
-        "${mod} CTRL, M, Toggle music player    , exec, pypr toggle player"
-        "${mod} CTRL, T, Toggle terminal        , exec, pypr toggle term"
-        "${mod} CTRL, V, Toggle volume menu     , exec, pypr toggle volume"
+        (mkBind.scratchpad "D" "displays manager" "displays")
+        (mkBind.scratchpad "M" "music player" "player")
+        (mkBind.scratchpad "T" "terminal" "term")
+        (mkBind.scratchpad "V" "volume menu" "volume")
 
         # Move focus with mod + arrow keys
         "${mod}, up, Move focus to the top window, movefocus, u"

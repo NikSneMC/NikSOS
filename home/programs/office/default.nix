@@ -5,5 +5,6 @@
 
   home.packages = with pkgs; [
     libreoffice
+    simple-scan
   ];
 }

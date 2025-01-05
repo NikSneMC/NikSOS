@@ -1,3 +1,3 @@
 {lib, ...}: {
-  programs.nixvim.plugins.neocord.enable = lib.mkForce false;
+  programs.niksvim.plugins.neocord.enable = lib.mkForce false;
 }

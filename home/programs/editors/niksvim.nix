@@ -4,7 +4,7 @@
   pkgs,
   ...
 }: {
-  imports = [inputs.niksvim.modules.config];
+  imports = [inputs.niksvim.homeManagerModules.config];
 
-  config.programs.nixvim.plugins.treesitter.package = lib.mkForce pkgs.master.vimPlugins.nvim-treesitter;
+  programs.niksvim.plugins.treesitter.package = lib.mkForce pkgs.master.vimPlugins.nvim-treesitter;
 }

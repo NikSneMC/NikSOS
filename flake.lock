@@ -941,11 +941,11 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1735065066,
-        "narHash": "sha256-mqrZ3TVlJItbH3rKOmnsaeKRas3HPnch6I63HXorXwY=",
+        "lastModified": 1736158003,
+        "narHash": "sha256-Ve5ZE1p6OyOzKgfcdYMEG7eAGhXzuI+4njJGLI6uxns=",
         "owner": "NikSneMC",
         "repo": "NikSVim",
-        "rev": "4e009cd427e62aa045fa4b5b1428d965d36d20e8",
+        "rev": "0bf8acb26e9fefdde3c14cf8298a63f7b3230559",
         "type": "github"
       },
       "original": {

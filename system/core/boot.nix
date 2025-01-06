@@ -1,4 +1,11 @@
-{pkgs, ...}: {
+{
+  inputs,
+  lib,
+  pkgs,
+  ...
+}: let
+  niksos-logo = "${inputs.assets}/niksos/niksos100.png";
+in {
   boot = {
     initrd = {
       systemd.enable = true;
@@ -17,10 +24,14 @@
       grub = {
         enable = true;
         useOSProber = true;
+        extraFiles."theme/logo.png" = lib.mkForce niksos-logo;
       };
       timeout = 3;
     };
 
-    plymouth.enable = true;
+    plymouth = {
+      enable = true;
+      logo = niksos-logo;
+    };
   };
 }

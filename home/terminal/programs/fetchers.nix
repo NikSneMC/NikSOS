@@ -13,7 +13,7 @@
       "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
       logo = {
         type = "iterm";
-        source = "${inputs.assets}/niksos/niksos.png";
+        source = "${inputs.assets}/niksos/niksos2048.png";
         width = 35;
       };
       display = {

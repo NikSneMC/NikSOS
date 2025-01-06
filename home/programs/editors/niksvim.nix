@@ -6,5 +6,9 @@
 }: {
   imports = [inputs.niksvim.homeManagerModules.config];
 
-  programs.niksvim.plugins.treesitter.package = lib.mkForce pkgs.master.vimPlugins.nvim-treesitter;
+  programs.niksvim = {
+    disableArrowKeys = true;
+
+    nixvim.plugins.treesitter.package = lib.mkForce pkgs.master.vimPlugins.nvim-treesitter;
+  };
 }

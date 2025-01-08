@@ -32,4 +32,9 @@
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    libGL
+    glfw-wayland-minecraft
+  ];
 }

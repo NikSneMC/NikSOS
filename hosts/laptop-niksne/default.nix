@@ -1,7 +1,7 @@
-{inputs, ...}: {
-  imports = [
-    "${inputs.private}/laptop-niksne/nixos"
-    ../../system/hardware/nvidia.nix
+mkNixosModules: {
+  imports = mkNixosModules [
+    "hardware/nvidia.nix"
+    "programs/obs-studio.nix"
   ];
 
   boot.loader = {

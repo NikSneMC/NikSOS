@@ -1,9 +1,8 @@
-{inputs, ...}: {
-  imports = [
-    "${inputs.private}/table-niksne/nixos"
-    # ../../system/hardware/nvidia.nix
-    ../../system/hardware/amd.nix
-    ../../system/hardware/razer.nix
+mkNixosModules: {
+  imports = mkNixosModules [
+    # "hardware/nvidia.nix"
+    "hardware/amd.nix"
+    "hardware/razer.nix"
   ];
 
   boot.loader = {

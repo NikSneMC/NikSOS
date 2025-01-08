@@ -1,6 +1,6 @@
-modules: {
-  imports = [
-    "${modules}/programs/editors/niksvim"
+mkHmModules: {
+  imports = mkHmModules [
+    "programs/editors/niksvim"
 
     ./niksvim.nix
   ];

@@ -15,6 +15,13 @@
     };
   });
 
+  mkNixosModules = map (
+    import:
+      if (builtins.isString import)
+      then "${self}/system/${import}"
+      else import
+  );
+
   mkHosts = builtins.mapAttrs (host: type:
     inputs.nixpkgs.lib.nixosSystem rec {
       specialArgs = {
@@ -27,7 +34,8 @@
           inputs.agenix.nixosModules.age
           inputs.catppuccin.nixosModules.catppuccin
           self.niksosModules.all
-          "${self}/hosts/${host}"
+          (import "${inputs.private}" "nixos" host)
+          (import "${self}/hosts/${host}" mkNixosModules)
           (
             if type != systemProfiles.minimal
             then "${self}/hosts/${host}/disks"

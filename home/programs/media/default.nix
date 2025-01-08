@@ -18,7 +18,7 @@
     # images
     loupe
     imagemagick
-    gimp-with-plugins
+    # gimp-with-plugins
 
     # videos
     celluloid

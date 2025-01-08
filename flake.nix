@@ -48,7 +48,7 @@
     nikspkgs.url = "github:NikSneMC/NikSpkgs/niksos";
 
     private = {
-      url = "github:NikSneMC/NikSOS-private";
+      url = "path:/home/niksne/Projects/NikSneMC/NikSOS-private";
       flake = false;
     };
 
@@ -75,7 +75,6 @@
       url = "github:cachix/git-hooks.nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        nixpkgs-stable.follows = "stable";
         flake-compat.follows = "flake-compat";
       };
     };
@@ -115,7 +114,18 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    catppuccin.url = "github:NikSneMC/catppuccin-nix";
+    catppuccin = {
+      url = "github:NikSneMC/catppuccin-nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "hm";
+        nixpkgs-stable.follows = "";
+        home-manager-stable.follows = "";
+        nuscht-search.follows = "";
+        catppuccin-v1_1.follows = "";
+        catppuccin-v1_2.follows = "";
+      };
+    };
 
     # common
     activate-niksos = {
@@ -257,13 +267,12 @@
       url = "github:nix-community/NixOS-WSL";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
         flake-compat.follows = "flake-compat";
       };
     };
 
     niksvim = {
-      url = "github:NikSneMC/NikSVim";
+      url = "path:/home/niksne/Projects/NikSneMC/NikSVim";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";

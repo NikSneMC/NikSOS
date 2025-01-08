@@ -14,19 +14,25 @@
       builtins.listToAttrs
     ];
 
+  mkHmModules = map (
+    import:
+      if (builtins.isString import)
+      then "${self}/home/${import}"
+      else import
+  );
+
   mkHomeImports = users:
     (
       rawMk (
-        host: user: let
-          modules = "${self}/home";
-        in
+        host: user:
           lib.nameValuePair "${user}@${host}"
           [
             inputs.catppuccin.homeManagerModules.catppuccin
             self.homeManagerModules.homes
             self.homeManagerModules.theme
-            (import "${self}/home/profiles/${user}" modules)
-            (import "${self}/home/profiles/${user}/hosts/${host}" modules)
+            (import "${inputs.private}" "hm" host)
+            (import "${self}/home/profiles/${user}" mkHmModules)
+            (import "${self}/home/profiles/${user}/hosts/${host}" mkHmModules)
             {home = {inherit host user;};}
           ]
       )

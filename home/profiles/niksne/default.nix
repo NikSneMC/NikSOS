@@ -1,6 +1,6 @@
-modules: {inputs, ...}: {
-  imports = [
-    "${modules}/terminal"
+mkHmModules: {inputs, ...}: {
+  imports = mkHmModules [
+    "terminal"
   ];
 
   theme = {

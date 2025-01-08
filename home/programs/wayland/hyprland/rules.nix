@@ -7,7 +7,7 @@ in {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [
       # VSCodium
-      "workspace 11, class:^(codium-url-handler)$"
+      "workspace 11, class:^(codium)$"
 
       # IntelliJ IDEA
       "workspace 12, class:^(jetbrains-idea)$"
@@ -47,7 +47,7 @@ in {
       "workspace 20, class:^(org.prismlauncher.PrismLauncher)$"
 
       # Minecraft
-      "workspace 21, class:^(com.mojang.minecraft)$"
+      "workspace 21, class:^(com.mojang.*)$"
       "tile, class:^(Minecraft.*)$"
       "workspace 21, class:^(Minecraft.*)$"
 

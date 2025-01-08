@@ -335,6 +335,7 @@
           tooltip-format = "{timeTo}";
         };
         backlight = {
+          reverse-scrolling = true;
           format = "{icon} {percent}%";
           format-icons = [
             "󰌶"

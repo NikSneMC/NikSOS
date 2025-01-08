@@ -1,8 +1,4 @@
 {
-  config,
-  lib',
-  ...
-}: {
   programs.wlogout = {
     enable = true;
 
@@ -44,21 +40,6 @@
         keybind = "r";
       }
     ];
-
-    style = ''
-      @import "${config.catppuccin.sources.waybar}/themes/${config.theme.flavor}.css";
-      @define-color accent @${config.theme.accent};
-
-      ${builtins.readFile ./style.css}
-
-      ${lib'.wlogout.mkBgImageCss config [
-        "lock"
-        "logout"
-        "suspend"
-        "hibernate"
-        "shutdown"
-        "reboot"
-      ]}
-    '';
   };
+  catppuccin.wlogout.extraStyle = builtins.readFile ./style.css;
 }

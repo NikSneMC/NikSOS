@@ -1,12 +1,12 @@
-modules: {
-  imports = [
-    "${modules}/programs"
-    # "${modules}/programs/editors/jetbrains.nix"
-    "${modules}/programs/games"
+mkHmModules: {
+  imports = mkHmModules [
+    "programs"
+    "programs/editors/jetbrains.nix"
+    "programs/games"
 
-    "${modules}/services"
+    "services"
 
-    "${modules}/terminal/emulators/wezterm.nix"
+    "terminal/emulators/wezterm.nix"
 
     ./hypridle.nix
     ./hyprland.nix

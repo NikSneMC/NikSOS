@@ -16,9 +16,6 @@ in {
     package = inputs.wezterm.packages.${pkgs.system}.default;
 
     extraConfig = ''
-      local wezterm = require 'wezterm'
-      local act = wezterm.action
-
       return {
         window_close_confirmation = "NeverPrompt",
 

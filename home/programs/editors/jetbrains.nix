@@ -12,6 +12,7 @@
       # goland
       # phpstorm
       # clion
+      datagrip
     ]) [
       (map (
         ide:

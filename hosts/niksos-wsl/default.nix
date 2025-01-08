@@ -1,12 +1,11 @@
-{
+mkNixosModules: {
   inputs,
   lib,
   ...
 }: {
-  imports = [
-    "${inputs.private}/niksos-wsl/nixos"
+  imports = mkNixosModules [
     inputs.nixos-wsl.nixosModules.default
-    ../../system/programs/development.nix
+    "programs/development.nix"
   ];
 
   wsl = {

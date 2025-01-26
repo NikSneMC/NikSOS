@@ -48,7 +48,7 @@
     nikspkgs.url = "github:NikSneMC/NikSpkgs/niksos";
 
     private = {
-      url = "path:/home/niksne/Projects/NikSneMC/NikSOS-private";
+      url = "github:NikSneMC/NikSOS-private";
       flake = false;
     };
 
@@ -272,7 +272,7 @@
     };
 
     niksvim = {
-      url = "path:/home/niksne/Projects/NikSneMC/NikSVim";
+      url = "github:NikSneMC/NikSVim";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";

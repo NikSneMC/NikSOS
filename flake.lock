@@ -977,14 +977,17 @@
         "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1737206943,
-        "narHash": "sha256-UQS33szTvM3tHPt8OaU/Oy8fJGDvaPPenApso0OuT3w=",
-        "path": "/home/niksne/Projects/NikSneMC/NikSVim",
-        "type": "path"
+        "lastModified": 1737916541,
+        "narHash": "sha256-KqI998+TONAfdca3htlXkYUyI7f1FREgcl2DiZrr4Fg=",
+        "owner": "NikSneMC",
+        "repo": "NikSVim",
+        "rev": "6fc151d3a602790f5b8d0b9bd2589c82bd70ae19",
+        "type": "github"
       },
       "original": {
-        "path": "/home/niksne/Projects/NikSneMC/NikSVim",
-        "type": "path"
+        "owner": "NikSneMC",
+        "repo": "NikSVim",
+        "type": "github"
       }
     },
     "nix-github-actions": {
@@ -1209,14 +1212,17 @@
     "private": {
       "flake": false,
       "locked": {
-        "lastModified": 1737207369,
-        "narHash": "sha256-Pu151iexdCOa+dV/zYvmFgC+8QkaOn26uQLb9qgF8os=",
-        "path": "/home/niksne/Projects/NikSneMC/NikSOS-private",
-        "type": "path"
+        "lastModified": 1737916471,
+        "narHash": "sha256-bhGA0c8sy9uUOlzaq2mh5v2LrEmVuXv2vOYbkWi/7is=",
+        "owner": "NikSneMC",
+        "repo": "NikSOS-private",
+        "rev": "fb44f4a47e513ab2423bd22b7eb2890eeeaceef1",
+        "type": "github"
       },
       "original": {
-        "path": "/home/niksne/Projects/NikSneMC/NikSOS-private",
-        "type": "path"
+        "owner": "NikSneMC",
+        "repo": "NikSOS-private",
+        "type": "github"
       }
     },
     "pyprland": {

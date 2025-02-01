@@ -10,7 +10,7 @@
         hyprtrails
       ])
       ++ [
-        # hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors
+        hypr-dynamic-cursors.packages.${pkgs.system}.hypr-dynamic-cursors
       ];
 
     settings.plugin = {

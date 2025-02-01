@@ -2,6 +2,7 @@ mkNixosModules: {
   imports = mkNixosModules [
     "hardware/nvidia.nix"
     "programs/obs-studio.nix"
+    "services/ollama.nix"
   ];
 
   boot.loader = {

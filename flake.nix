@@ -271,7 +271,7 @@
         devshell.follows = "";
         flake-compat.follows = "";
         git-hooks.follows = "";
-        treefmt-nix.follows = "";      
+        treefmt-nix.follows = "";
       };
     };
 

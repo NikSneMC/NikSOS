@@ -1,14 +1,7 @@
 {
   inputs,
-  lib,
   pkgs,
   ...
 }: {
-  imports = [inputs.niksvim.homeManagerModules.config];
-
-  programs.niksvim = {
-    # disableArrowKeys = true;
-
-    nixvim.plugins.treesitter.package = lib.mkForce pkgs.master.vimPlugins.nvim-treesitter;
-  };
+  home.packages = [inputs.niksvim.packages.${pkgs.system}.with-codeium];
 }

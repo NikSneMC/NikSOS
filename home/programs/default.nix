@@ -31,7 +31,7 @@
       tmux
       blockbench
 
-      custom.surrealist
+      surrealist
       postman
 
       mission-center

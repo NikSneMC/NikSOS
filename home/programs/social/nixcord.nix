@@ -2,6 +2,7 @@
   config,
   inputs,
   lib',
+  pkgs,
   ...
 }: let
   plugins = {
@@ -214,8 +215,14 @@ in {
 
   programs.nixcord = {
     enable = true;
-    discord.enable = true;
-    vesktop.enable = true;
+    discord = {
+      enable = true;
+      package = pkgs.discord;
+    };
+    vesktop = {
+      enable = true;
+      package = pkgs.vesktop;
+    };
     config = {
       themeLinks = [
         "https://catppuccin.github.io/discord/dist/catppuccin-${config.theme.flavor}-${config.theme.accent}.theme.css"

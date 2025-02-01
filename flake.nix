@@ -116,15 +116,7 @@
 
     catppuccin = {
       url = "github:NikSneMC/catppuccin-nix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "hm";
-        nixpkgs-stable.follows = "";
-        home-manager-stable.follows = "";
-        nuscht-search.follows = "";
-        catppuccin-v1_1.follows = "";
-        catppuccin-v1_2.follows = "";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     # common
@@ -276,8 +268,10 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
-        home-manager.follows = "hm";
-        nix-darwin.follows = "";
+        devshell.follows = "";
+        flake-compat.follows = "";
+        git-hooks.follows = "";
+        treefmt-nix.follows = "";      
       };
     };
 

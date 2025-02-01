@@ -6,11 +6,15 @@
   services.xserver.videoDrivers = ["nvidia"];
   hardware.nvidia = {
     modesetting.enable = true;
-    powerManagement.enable = false;
-    powerManagement.finegrained = false;
+    powerManagement = {
+      enable = false;
+      finegrained = false;
+    };
     open = false;
     nvidiaSettings = true;
     package = config.boot.kernelPackages.nvidiaPackages.beta;
+    #
+    # If you want specifix version:
     # package = let
     #   version = "560.35.03";
     # in (config.boot.kernelPackages.nvidiaPackages.stable.overrideAttrs {

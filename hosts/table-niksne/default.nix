@@ -3,6 +3,7 @@ mkNixosModules: {
     # "hardware/nvidia.nix"
     "hardware/amd.nix"
     "hardware/razer.nix"
+    "services/ollama.nix"
   ];
 
   boot.loader = {

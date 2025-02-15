@@ -1,7 +1,7 @@
 mkHmModules: {
   imports = mkHmModules [
     "programs"
-    # "programs/editors/jetbrains.nix"
+    "programs/editors/jetbrains.nix"
     "programs/games"
 
     "services"

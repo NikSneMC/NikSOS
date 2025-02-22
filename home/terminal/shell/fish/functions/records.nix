@@ -2,7 +2,7 @@
   programs.fish.functions = {
     record_screen_png.body = ''
       set screenshot_filename (echo "$HOME/Pictures/Screenshots/screenshot-$(date +"%d-%m-%Y_%H:%M:%S").png")
-      grimblast --cursor --freeze save area $screenshot_filename
+      grimblast --freeze save area $screenshot_filename
 
       if [ -e $screenshot_filename ]
           cat $screenshot_filename | wl-copy --type image/png

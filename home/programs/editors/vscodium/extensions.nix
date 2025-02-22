@@ -15,7 +15,7 @@
     jnoortheen.nix-ide
     brettm12345.nixfmt-vscode
     ms-python.python
-    rust-lang.rust-analyzer
+    # rust-lang.rust-analyzer
     stylelint.vscode-stylelint
     bradlc.vscode-tailwindcss
     # wakatime.vscode-wakatime

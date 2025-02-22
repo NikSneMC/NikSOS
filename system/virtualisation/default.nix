@@ -1,6 +1,6 @@
 {
   imports = [
     ./bottles.nix
-    ./docker.nix
+    ./podman.nix
   ];
 }

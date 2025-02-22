@@ -110,7 +110,7 @@
     };
 
     hm = {
-      url = "github:NikSneMC/home-manager";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -277,10 +277,7 @@
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "flake-compat";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     vscode-file-nesting-config-json = {

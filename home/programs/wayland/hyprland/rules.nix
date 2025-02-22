@@ -19,8 +19,7 @@ in {
       "workspace 14, class:^(Blockbench)$"
 
       # Vesktop
-      "tile, class:^(vesktop)$"
-      "workspace 15 silent, class:^(vesktop)$"
+      "workspace 15 silent, class:^(discord)$"
 
       # Telegram
       "float, title:^(Media viewer)$"

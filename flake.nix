@@ -127,7 +127,8 @@
 
     ayugram-desktop = {
       url = "github:/ndfined-crp/ayugram-desktop/release?submodules=1";
-      # inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+      };
     };
 
     catppuccin-catwalk = {
@@ -142,7 +143,6 @@
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
         systems.follows = "systems";
         pre-commit-hooks.follows = "git-hooks";
       };
@@ -150,9 +150,10 @@
     hyprpolkitagent = {
       url = "github:hyprwm/hyprpolkitagent";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "hyprland/nixpkgs";
         systems.follows = "systems";
         hyprutils.follows = "hyprland/hyprutils";
+        hyprland-qt-support.follows = "hyprland/hyprland-qtutils/hyprland-qt-support";
       };
     };
     hyprland-plugins = {
@@ -188,8 +189,10 @@
       inputs = {
         nixpkgs.follows = "hyprland/nixpkgs";
         systems.follows = "hyprland/systems";
+        hyprland-protocols.follows = "hyprland/hyprland-protocols";
         hyprlang.follows = "hyprland/hyprlang";
         hyprutils.follows = "hyprland/hyprutils";
+        hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
       };
     };
     hyprlock = {
@@ -200,6 +203,7 @@
         hyprutils.follows = "hyprland/hyprutils";
         hyprlang.follows = "hyprland/hyprlang";
         hyprgraphics.follows = "hyprland/hyprgraphics";
+        hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
       };
     };
     hyprsunset = {
@@ -245,6 +249,7 @@
         flake-compat.follows = "flake-compat";
       };
     };
+
     nixcord = {
       url = "github:KaylorBen/nixcord";
       inputs = {
@@ -277,7 +282,10 @@
 
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+      };
     };
 
     vscode-file-nesting-config-json = {
@@ -296,7 +304,6 @@
     wezterm = {
       url = "github:wez/wezterm?dir=nix";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
       };
     };

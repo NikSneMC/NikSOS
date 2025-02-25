@@ -18,8 +18,8 @@ in {
       # Blockbench
       "workspace 14, class:^(Blockbench)$"
 
-      # Vesktop
-      "workspace 15 silent, class:^(discord)$"
+      # Equibop
+      "workspace 15 silent, class:^(equibop)$"
 
       # Telegram
       "float, title:^(Media viewer)$"

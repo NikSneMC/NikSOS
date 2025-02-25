@@ -1,4 +1,4 @@
-{
+{config, ...}: {
   programs.wlogout = {
     enable = true;
 
@@ -41,5 +41,9 @@
       }
     ];
   };
-  catppuccin.wlogout.extraStyle = builtins.readFile ./style.css;
+  catppuccin.wlogout.extraStyle = ''
+    @define-color surface0 @${config.theme.colors.surface0};
+
+    ${builtins.readFile ./style.css}
+  '';
 }

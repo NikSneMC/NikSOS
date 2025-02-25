@@ -48,7 +48,7 @@
       };
     };
     style = ''
-      @import "${config.catppuccin.sources.waybar}/themes/${config.theme.flavor}.css";
+      @import "${config.catppuccin.sources.waybar}/${config.theme.flavor}.css";
 
       ${builtins.readFile ./style.css}
     '';

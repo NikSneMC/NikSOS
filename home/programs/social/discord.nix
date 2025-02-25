@@ -44,10 +44,6 @@
       spectrographColor = "33, 150, 243";
       spectrographSolidColor = false;
     }
-    {
-      name = "BetterBanReasons";
-      reasons = [""];
-    }
     "BetterGifAltText"
     "BetterGifPicker"
     "BetterInvites"
@@ -89,16 +85,6 @@
     {
       name = "CallTimer";
       format = "human";
-    }
-    {
-      name = "ChannelTabs";
-      bookmarkNotificationDot = true;
-      noPomeloNames = false;
-      onStartup = "nothing";
-      showBookmarkBar = true;
-      showStatusIndicators = true;
-      tabSet = {};
-      widerTabsAndBookmarks = false;
     }
     {
       name = "CharacterCounter";
@@ -151,12 +137,6 @@
     {
       name = "Decor";
       baseUrl = "https://decor.fieryflames.dev";
-    }
-    {
-      name = "Demonstration";
-      keyBind = "F6";
-      showConfirmationModal = true;
-      soundVolume = 0.5;
     }
     "DisableCallIdle"
     "DisableCameras"
@@ -709,7 +689,6 @@
     "https://discord-themes.com/api/126"
     "https://discord-themes.com/api/129"
     "https://discord-themes.com/api/128"
-    "https://discord-themes.com/api/124"
   ];
 in {
   xdg.configFile = let

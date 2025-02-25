@@ -97,6 +97,7 @@
       "**/.classpath"
       "**/.factorypath"
       "**/bin"
+      "target"
     ];
 
     extraConfig.credential.helper = "store";

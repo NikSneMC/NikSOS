@@ -42,7 +42,7 @@
     ];
   };
   catppuccin.wlogout.extraStyle = ''
-    @define-color surface0 @${config.theme.colors.surface0};
+    @define-color surface0 #${config.theme.colors.surface0};
 
     ${builtins.readFile ./style.css}
   '';

@@ -116,6 +116,9 @@
 
     debug.disable_logs = false;
 
-    dwindle.smart_resizing = true;
+    dwindle = {
+      preserve_split = true;
+      smart_resizing = true;
+    };
   };
 }

@@ -111,9 +111,17 @@ in {
         "${mod} SHIFT, bracketleft, Switch to the left monitor, focusmonitor, l"
         "${mod} SHIFT, bracketright, Switch to the right monitor, focusmonitor, r"
 
+        # cycle monitors with mod + CTRL + SHIFT + [/]
+        "${mod} CTRL SHIFT, bracketleft, Switch to the bottom monitor, focusmonitor, d"
+        "${mod} CTRL SHIFT, bracketright, Switch to the top monitor, focusmonitor, u"
+
         # send focused workspace to left/right monitors with mod + SHIFT + ALT + [/]
         "${mod} SHIFT ALT, bracketleft, Send focused workspace to the left monitor, movecurrentworkspacetomonitor, l"
         "${mod} SHIFT ALT, bracketright, Send focused workspace to the right monitor, movecurrentworkspacetomonitor, r"
+
+        # send focused workspace to bottom/top monitors with mod + CTRL + SHIFT + ALT + [/]
+        "${mod} CTRL SHIFT ALT, bracketleft, Send focused workspace to the bottom monitor, movecurrentworkspacetomonitor, d"
+        "${mod} CTRL SHIFT ALT, bracketright, Send focused workspace to the top monitor, movecurrentworkspacetomonitor, u"
       ]
       ++ (let
         movewindoworgroupDescription = direction: "If focused window is in group then move it ${direction} out of the group. If there's group ${direction}-side window then move it into that group. Else move window ${direction}";

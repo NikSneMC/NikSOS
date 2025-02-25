@@ -26,8 +26,8 @@
     ];
 
     general = {
-      border_size = 2;
-      gaps_in = 5;
+      border_size = 0;
+      gaps_in = 2;
       gaps_out = 10;
       "col.inactive_border" = "$surface1";
       "col.active_border" = "$accent";
@@ -68,7 +68,7 @@
 
     input = {
       kb_layout = "us, ru";
-      kb_options = "grp:win_space_toggle";
+      kb_options = "grp:alt_shift_toggle";
       numlock_by_default = true;
       touchpad = {
         disable_while_typing = false;

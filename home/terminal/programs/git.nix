@@ -97,16 +97,17 @@
       "**/.classpath"
       "**/.factorypath"
       "**/bin"
+      "target"
     ];
 
     extraConfig.credential.helper = "store";
-    userEmail = "commits@niksne.ru";
-    userName = "NikSne";
+    userEmail = "tycoon111222333@gmail.com";
+    userName = "Warl0rdd";
 
-    signing = {
-      key = "${config.home.homeDirectory}/.ssh/git_sign";
-      signByDefault = true;
-    };
-    extraConfig.gpg.format = "ssh";
+    # signing = {
+    #  key = "${config.home.homeDirectory}/.ssh/git_sign";
+    #  signByDefault = true;
+    # };
+    # extraConfig.gpg.format = "ssh";
   };
 }

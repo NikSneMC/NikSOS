@@ -39,13 +39,13 @@ in {
         "${mod}, J, Toggle window split, layoutmsg, togglesplit" # dwindle
         "${mod}, P, Move window to pseudo workspace, pseudo," # dwindle
         "${mod} CTRL, E, Exit hyprland, exit,"
-        "${mod} SHIFT, Q, Close active window, killactive,"
+        "${mod}, C, Close active window, killactive,"
 
         "${mod} CTRL ALT, B, Reload bar, exec, fish -c reload_bar"
         "${mod} CTRL ALT, N, Reload notifications, exec, fish -c reload_notifications"
         "${mod} CTRL ALT, P, Reload pyprland, exec, fish -c reload_pyprland"
 
-        "${mod}, A, Launch app menu, exec, rofi -show drun"
+        "${mod}, TAB, Launch app menu, exec, rofi -show drun"
         "${mod}, B, Launch browser, exec, zen"
         "${mod}, D, Launch Discord, exec, equibop"
         "${mod}, E, Launch file manager, exec, thunar"
@@ -58,7 +58,7 @@ in {
         "${mod}, V, Open clipboard history, exec, fish -c clipboard_log"
         "${mod}, W, Open \"Bring window to the workspace\" menu, exec, pypr fetch_client_menu"
         "${mod}, X, Delete item from clipboard, exec, fish -c clipboard_delete_item"
-        "${mod}, TAB, Launch hyprexpo, hyprexpo:expo, toggle"
+        "${mod}, A, Launch hyprexpo, hyprexpo:expo, toggle"
         "${mod}, ESCAPE, Open logout menu, exec, wlogout"
         "${mod}, SEMICOLON, Open emoji menu, exec, fish -c clipboard_emoji"
 

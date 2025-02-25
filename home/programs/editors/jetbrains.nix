@@ -5,11 +5,11 @@
 }: let
   ides =
     lib.pipe (with pkgs.custom.jetbrains; [
-      idea-ultimate
+      # idea-ultimate
       # pycharm-professional
       # webstorm
       # rust-rover
-      # goland
+      goland
       # phpstorm
       # clion
       datagrip

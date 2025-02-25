@@ -3,7 +3,7 @@
 in {
   disko.devices.disk.nvme0n1 = {
     type = "disk";
-    device = "/dev/disk/by-id/nvme-KINGSTON_SFYRS1000G_50026B7382DA7E5E_1";
+    device = "/dev/disk/by-id/nvme-KINGSTON_OM8PCP3512F-AI1_50026B76842EC49B";
     content = {
       type = "gpt";
       partitions = {
@@ -40,7 +40,7 @@ in {
               #  }
             ];
             mountpoint = "/";
-            # swap.swapfile.size = "32G";
+            swap.swapfile.size = "16G";
           };
         };
       };

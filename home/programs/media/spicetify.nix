@@ -35,7 +35,7 @@
       showQueueDuration
       copyToClipboard
       betterGenres
-      hidePodcasts
+      furiganaLyrics      
       adblock
       autoSkip
       playNext

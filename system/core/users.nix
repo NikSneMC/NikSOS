@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   users.users = {
-    niksne = {
+    WarlOrd = {
       isNormalUser = true;
       description = "NikSne";
       shell = pkgs.fish;
@@ -9,6 +9,7 @@
         "networkmanager"
         "video"
         "wheel"
+
       ];
     };
   };

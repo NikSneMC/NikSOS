@@ -34,7 +34,7 @@
           inputs.agenix.nixosModules.age
           inputs.catppuccin.nixosModules.catppuccin
           self.niksosModules.all
-          (import "${inputs.private}" "nixos" host)
+        #  (import "${inputs.private}" "nixos" host)
           (import "${self}/hosts/${host}" mkNixosModules)
           (
             if type != systemProfiles.minimal

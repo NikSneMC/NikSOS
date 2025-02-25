@@ -2,6 +2,7 @@ mkNixosModules: {
   imports = mkNixosModules [
     "hardware/nvidia.nix"
     "programs/obs-studio.nix"
+    "hardware/razer.nix"
     "services/ollama.nix"
   ];
 
@@ -27,4 +28,6 @@ mkNixosModules: {
   services = {
     fstrim.enable = true;
   };
+
+  hardware.openrazer.users = ["niksne"];
 }

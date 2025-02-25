@@ -1084,35 +1084,6 @@
         "type": "github"
       }
     },
-    "nixcord": {
-      "inputs": {
-        "flake-compat": [
-          "flake-compat"
-        ],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "systems": [
-          "systems"
-        ],
-        "treefmt-nix": [
-          "treefmt-nix"
-        ]
-      },
-      "locked": {
-        "lastModified": 1739973692,
-        "narHash": "sha256-UMQqmnv/Ah7ukx+IvMZ4FtfCIBfgoXQpWAn/eKhcmnE=",
-        "owner": "KaylorBen",
-        "repo": "nixcord",
-        "rev": "e759e621b5f5464278d1ac0e8a7239f98fa9b6da",
-        "type": "github"
-      },
-      "original": {
-        "owner": "KaylorBen",
-        "repo": "nixcord",
-        "type": "github"
-      }
-    },
     "nixos-wsl": {
       "inputs": {
         "flake-compat": [
@@ -1339,7 +1310,6 @@
         "niksvim": "niksvim",
         "nix-minecraft": "nix-minecraft",
         "nix-python": "nix-python",
-        "nixcord": "nixcord",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": [
           "unstable"

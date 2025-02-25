@@ -250,16 +250,6 @@
       };
     };
 
-    nixcord = {
-      url = "github:KaylorBen/nixcord";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "flake-compat";
-        systems.follows = "systems";
-        treefmt-nix.follows = "treefmt-nix";
-      };
-    };
-
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs = {

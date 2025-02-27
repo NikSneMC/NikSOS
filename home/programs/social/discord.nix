@@ -179,10 +179,10 @@
     "FriendshipRanks"
     "FullSearchContext"
     "FullUserInChatbox"
-    {
-      name = "GameActivityToggle";
-      oldIcon = false;
-    }
+    # { # TODO: uncomment when fixed
+    #   name = "GameActivityToggle";
+    #   oldIcon = false;
+    # }
     "GifPaste"
     {
       name = "Glide";

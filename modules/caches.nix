@@ -35,7 +35,7 @@ in {
               (builtins.split "\\?")
               builtins.head
             ];
-          in "${s}-1:${k}")
+          in "${s}${k}")
         )
         builtins.attrValues
       ];

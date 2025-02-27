@@ -1238,11 +1238,11 @@
     "private": {
       "flake": false,
       "locked": {
-        "lastModified": 1739543419,
-        "narHash": "sha256-IMq9TQDlpFvNACOKQ6cm8+MNwSxeuAHbLrvaVWu2j8A=",
+        "lastModified": 1740561342,
+        "narHash": "sha256-bngIcjI6c6r7QNrEmqyRkgaQNdnbtG6bZUbhYgWVzGY=",
         "owner": "NikSneMC",
         "repo": "NikSOS-private",
-        "rev": "0637197fc5ee3001ffc1eedd472ec6dd9cc7998d",
+        "rev": "de6e26640480a96a8cb93658203c71f2af1725fa",
         "type": "github"
       },
       "original": {

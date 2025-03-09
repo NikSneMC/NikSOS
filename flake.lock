@@ -969,11 +969,11 @@
     },
     "nikspkgs": {
       "locked": {
-        "lastModified": 1738378000,
-        "narHash": "sha256-eZgc/1zDog2dzJp1YU6CJUGA0YlZEwpzlTviK9Vs+1U=",
+        "lastModified": 1740664372,
+        "narHash": "sha256-IISTB+lLvexiZ+8D1iOFUDeyMpJl3Lups69U7aunyZQ=",
         "owner": "NikSneMC",
         "repo": "NikSpkgs",
-        "rev": "e6c9c0e5aeb2053683b6ba8bf67fe8ea4f6d1a99",
+        "rev": "f754dd93dbc8b56139a4a1e9931bd8cfeb0db413",
         "type": "github"
       },
       "original": {
@@ -992,7 +992,7 @@
         ],
         "git-hooks": [],
         "nixpkgs": [
-          "nixpkgs"
+          "master"
         ],
         "nixvim": "nixvim",
         "treefmt-nix": []
@@ -1574,11 +1574,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1735175082,
-        "narHash": "sha256-t+6c+cbKv9Ff4ctJl5pZpyISPcrtBQEf+tbt1xn9cnw=",
+        "lastModified": 1741515515,
+        "narHash": "sha256-6+fXC8x2DRg5p9LevHPAdMHfUF8NXMFCEecyQCVhV48=",
         "owner": "NikSneMC",
         "repo": "zen-browser-flake",
-        "rev": "c0bbbbd4cfc3ddc2883a31d92d84370f4822cecd",
+        "rev": "de7b7f312297b5d2750e85c9b91dd35e24d3aff6",
         "type": "github"
       },
       "original": {

@@ -8,8 +8,6 @@
 
   environment.systemPackages = with pkgs; [
     podman-compose
-    kubectl
-    kind
     podman-desktop
   ];
 }

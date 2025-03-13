@@ -58,6 +58,16 @@ in {
         }
         {
           monitor = "";
+          text = "$FPRINTPROMPT";
+          color = "$text";
+          font_size = 14;
+          inherit font_family;
+          position = "0, -107";
+          halign = "center";
+          valign = "center";
+        }
+        {
+          monitor = "";
           text = "cmd[update:1000] fish -c fetch_music_player_data";
           color = "$text";
           font_size = 18;

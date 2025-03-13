@@ -263,10 +263,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
-        devshell.follows = "";
-        flake-compat.follows = "";
-        git-hooks.follows = "";
-        treefmt-nix.follows = "";
       };
     };
 

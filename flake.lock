@@ -953,11 +953,11 @@
     },
     "master": {
       "locked": {
-        "lastModified": 1740292520,
-        "narHash": "sha256-Bk5s8fBJawYK4X1FIjnvLJiaURxJbG+n3vCCwL/4G18=",
+        "lastModified": 1741518407,
+        "narHash": "sha256-K+iGQ/I1toUlWbTO5DxK8w7qxLEutXaADgQSrZfff1M=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "302bf0dc7702281d672911d3e857fd1e0f1cad0e",
+        "rev": "2eae096472e7ead3f1b2b3ce3e6e377cf32b8c29",
         "type": "github"
       },
       "original": {
@@ -985,24 +985,20 @@
     },
     "niksvim": {
       "inputs": {
-        "devshell": [],
-        "flake-compat": [],
         "flake-parts": [
           "flake-parts"
         ],
-        "git-hooks": [],
         "nixpkgs": [
-          "master"
+          "nixpkgs"
         ],
-        "nixvim": "nixvim",
-        "treefmt-nix": []
+        "nixvim": "nixvim"
       },
       "locked": {
-        "lastModified": 1740378131,
-        "narHash": "sha256-taJ5sQuUJe39QKNbnoxmEbBmoAqvUmcXiAotN/ejlvo=",
+        "lastModified": 1741523611,
+        "narHash": "sha256-mQJDqtFYte0Wpyfg+lWmRC1kvTauVVYyu2ASJT3TGkE=",
         "owner": "NikSneMC",
         "repo": "NikSVim",
-        "rev": "fe31692168e99a62c3d26136a1fae0f48e889f42",
+        "rev": "10202ebde389084cb2d41a616f7f135de58b5fa2",
         "type": "github"
       },
       "original": {
@@ -1157,27 +1153,9 @@
     },
     "nixvim": {
       "inputs": {
-        "devshell": [
-          "niksvim",
-          "devshell"
-        ],
-        "flake-compat": [
-          "niksvim",
-          "flake-compat"
-        ],
         "flake-parts": [
           "niksvim",
           "flake-parts"
-        ],
-        "git-hooks": [
-          "niksvim",
-          "git-hooks"
-        ],
-        "home-manager": [
-          "niksvim"
-        ],
-        "nix-darwin": [
-          "niksvim"
         ],
         "nixpkgs": [
           "niksvim",
@@ -1185,18 +1163,14 @@
         ],
         "nuschtosSearch": [
           "niksvim"
-        ],
-        "treefmt-nix": [
-          "niksvim",
-          "treefmt-nix"
         ]
       },
       "locked": {
-        "lastModified": 1739902813,
-        "narHash": "sha256-BgOQcKKz7VNvSHIbBllHisv32HvF3W3ALF9sdnC++V8=",
+        "lastModified": 1741098523,
+        "narHash": "sha256-gXDSXDr6tAb+JgxGMvcEjKC9YO8tVOd8hMMZHJLyQ6Q=",
         "owner": "nix-community",
         "repo": "nixvim",
-        "rev": "0ab9947137cd034ec64eb5cd9ede94e53af21f50",
+        "rev": "03065fd4708bfdf47dd541d655392a60daa25ded",
         "type": "github"
       },
       "original": {

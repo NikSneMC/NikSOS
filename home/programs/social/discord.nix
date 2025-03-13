@@ -76,7 +76,7 @@
       checkInterval = 20;
     }
     "BetterUploadButton"
-    "BetterUserArea"
+    # "BetterUserArea" # TODO: uncomment when fixed
     "BiggerStreamPreview"
     {
       name = "BlurNSFW";
@@ -736,6 +736,6 @@ in {
   };
 
   home.packages = with pkgs; [
-    equibop
+    master.equibop
   ];
 }

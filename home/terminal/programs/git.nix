@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.packages = [pkgs.gh];
 
   # enable scrolling in git diff
@@ -101,13 +97,9 @@
     ];
 
     extraConfig.credential.helper = "store";
-    userEmail = "commits@niksne.ru";
-    userName = "NikSne";
 
-    signing = {
-      key = "${config.home.homeDirectory}/.ssh/git_sign";
-      signByDefault = true;
-    };
+    signing.signByDefault = true;
+
     extraConfig.gpg.format = "ssh";
   };
 }

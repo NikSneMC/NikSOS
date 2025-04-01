@@ -1,10 +1,10 @@
 {pkgs, ...}: {
   imports = [
     ./hyprland
-    ./wlogout
     ./hyprlock.nix
     ./pyprland.nix
     ./rofi.nix
+    ./wlogout.nix
   ];
 
   home.packages = with pkgs; [

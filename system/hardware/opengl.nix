@@ -8,7 +8,7 @@ in {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    package = pkgs-hyprland.mesa.drivers;
+    package = pkgs-hyprland.mesa;
 
     extraPackages = with pkgs; [
       libva

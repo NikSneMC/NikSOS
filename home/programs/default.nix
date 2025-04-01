@@ -19,10 +19,10 @@
     package = pkgs.zulu21;
   };
 
-  home.packages = with inputs;
+  home.packages = with inputs.catppuccin.packages.${pkgs.system};
     [
-      catppuccin-whiskers.packages.${pkgs.system}.whiskers
-      catppuccin-catwalk.packages.${pkgs.system}.catwalk
+      whiskers
+      catwalk
     ]
     ++ (with pkgs; [
       file-roller

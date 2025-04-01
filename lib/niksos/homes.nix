@@ -27,7 +27,7 @@
         host: user:
           lib.nameValuePair "${user}@${host}"
           [
-            inputs.catppuccin.homeManagerModules.catppuccin
+            inputs.catppuccin.homeModules.catppuccin
             self.homeManagerModules.homes
             self.homeManagerModules.theme
             (import "${inputs.private}" "hm" host)

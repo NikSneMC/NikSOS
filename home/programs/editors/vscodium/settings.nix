@@ -7,7 +7,7 @@
 }: let
   flavour = lib'.strings.mkUpper config.theme.flavor;
 in {
-  programs.vscode.userSettings =
+  programs.vscode.profiles.default.userSettings =
     {
       window.autoDetectColorScheme = true;
       workbench = {

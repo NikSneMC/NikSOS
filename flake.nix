@@ -125,20 +125,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    ayugram-desktop = {
-      url = "github:/ndfined-crp/ayugram-desktop/release?submodules=1";
-      inputs = {
-      };
-    };
-
-    catppuccin-catwalk = {
-      url = "github:catppuccin/catwalk";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    catppuccin-whiskers = {
-      url = "github:catppuccin/whiskers";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    ayugram-desktop.url = "github:/ndfined-crp/ayugram-desktop/release?submodules=1";
 
     hyprland = {
       url = "github:hyprwm/Hyprland";
@@ -279,27 +266,13 @@
       flake = false;
     };
 
-    waybar = {
-      url = "github:Alexays/Waybar";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "flake-compat";
-      };
-    };
+    waybar.url = "github:Alexays/Waybar";
 
-    wezterm = {
-      url = "github:wez/wezterm?dir=nix";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-      };
-    };
+    wezterm.url = "github:wez/wezterm?dir=nix";
 
     zen-browser = {
       url = "github:NikSneMC/zen-browser-flake";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 }

@@ -126,4 +126,5 @@ in {
       ];
     };
   };
+  catppuccin.hyprlock.useDefaultConfig = false;
 }

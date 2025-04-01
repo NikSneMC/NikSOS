@@ -61,6 +61,7 @@
               inherit master unstable stable;
               custom = nikspkgs;
             });
+            catppuccin.cache.enable = true;
           }
         ];
     });

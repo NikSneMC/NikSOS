@@ -44,6 +44,8 @@
   catppuccin.wlogout.extraStyle = ''
     @define-color surface0 #${config.theme.colors.surface0};
 
-    ${builtins.readFile ./style.css}
+    button {
+        background-color: alpha(@surface0, 0.9);
+    }
   '';
 }

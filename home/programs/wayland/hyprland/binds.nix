@@ -50,7 +50,7 @@ in {
         "${mod}, D, Launch Discord, exec, equibop"
         "${mod}, E, Launch file manager, exec, thunar"
         "${mod}, K, Enter kill mode, exec, hyprctl kill"
-        "${mod}, L, Lock session, exec, hyprlock"
+        "${mod}, L, Lock session, exec, loginctl lock-session"
         "${mod}, M, Open mail client, exec, thunderbird"
         "${mod}, N, Open notification center, exec, swaync-client -t"
         "${mod}, R, Execute command, exec, rofi -show run"

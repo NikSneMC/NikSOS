@@ -1,5 +1,5 @@
 {config, ...}: let
-  dropterm = "class:^(wezterm_dropdown)$";
+  dropterm = "initialTitle:^(terminal_dropdown)$";
   volume_sidemenu = "class:^(org.pulseaudio.pavucontrol)$";
   player = "initialTitle:^(Spotify Free)$";
   displays_sidemenu = "class:^(nwg-displays)$";
@@ -18,8 +18,8 @@ in {
       # Blockbench
       "workspace 14, class:^(Blockbench)$"
 
-      # Equibop
-      "workspace 15 silent, class:^(equibop)$"
+      # Discord
+      "workspace 15 silent, class:^(vesktop)$"
 
       # Telegram
       "float, title:^(Media viewer)$"

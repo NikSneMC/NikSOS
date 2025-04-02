@@ -15,11 +15,11 @@ in {
     fetch_client_menu.separator = "";
     scratchpads = {
       term = {
-        command = "wezterm start --class wezterm_dropdown";
+        command = "rio --title-placeholder terminal_dropdown";
         animation = "fromTop";
         size = "70% 70%";
-        match_by = "class";
-        class = "wezterm_dropdown";
+        match_by = "initialTitle";
+        initialTitle = "terminal_dropdown";
         multi = false;
         excludes = "*";
         unfocus = "hide";

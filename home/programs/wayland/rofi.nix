@@ -190,7 +190,7 @@ in {
     enable = true;
     package = pkgs.rofi-wayland;
     location = "right";
-    terminal = "wezterm";
+    terminal = "rio";
     extraConfig =
       common-config
       // {
@@ -224,7 +224,7 @@ in {
       common-config
       // {
         location = 4;
-        terminal = "wezterm";
+        terminal = "rio";
         modes = "log:${script-clipboard},emoji:${lib.getExe pkgs.rofimoji}";
         display-emoji = " 󰞅 ";
         display-log = " 󱃔 ";

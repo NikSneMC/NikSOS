@@ -268,7 +268,7 @@
 
     waybar.url = "github:Alexays/Waybar";
 
-    wezterm.url = "github:wez/wezterm?dir=nix";
+    # wezterm.url = "github:wez/wezterm?dir=nix";
 
     zen-browser = {
       url = "github:NikSneMC/zen-browser-flake";

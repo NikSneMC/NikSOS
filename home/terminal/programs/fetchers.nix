@@ -182,44 +182,44 @@
           type = "swap";
         }
         {
-          key = "╭─ Terminal Font";
-          keyColor = "red";
-          type = "terminalfont";
-        }
-        {
-          key = "├─󰭠 WM Theme     ";
-          keyColor = "green";
-          type = "wmtheme";
-        }
-        {
-          key = "├─󱕕 Theme        ";
-          keyColor = "yellow";
+          key = "╭─󱕕 Theme        ";
+          keyColor = "white";
           type = "theme";
         }
         {
+          key = "├─󰭠 WM Theme     ";
+          keyColor = "red";
+          type = "wmtheme";
+        }
+        {
           key = "├─󱁹 Icons        ";
-          keyColor = "blue";
+          keyColor = "yellow";
           type = "icons";
         }
         {
           key = "├─ Font         ";
-          keyColor = "magenta";
+          keyColor = "green";
           type = "font";
         }
         {
+          key = "├─ Terminal Font";
+          keyColor = "blue";
+          type = "terminalfont";
+        }
+        {
           key = "├─ Media Player ";
-          keyColor = "cyan";
+          keyColor = "magenta";
           type = "player";
         }
         {
           format = "{3} - {1} {4}";
           key = "├─ Media        ";
-          keyColor = "white";
+          keyColor = "cyan";
           type = "media";
         }
         {
           key = "╰─󰇀 Cursor       ";
-          keyColor = "red";
+          keyColor = "white";
           type = "cursor";
         }
         "break"

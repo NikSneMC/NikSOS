@@ -19,7 +19,7 @@
       "wl-paste --type text --watch cliphist store"
       "wl-paste --type image --watch cliphist store"
       "${lib.getExe pkgs.hyprland-per-window-layout}"
-      "vesktop"
+      "equibop"
       "ayugram-desktop"
       "thunderbird"
       "pypr"

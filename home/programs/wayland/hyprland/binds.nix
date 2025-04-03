@@ -47,7 +47,7 @@ in {
 
         "${mod}, A, Launch app menu, exec, rofi -show drun"
         "${mod}, B, Launch browser, exec, zen"
-        "${mod}, D, Launch Discord, exec, vesktop"
+        "${mod}, D, Launch Discord, exec, equibop"
         "${mod}, E, Launch file manager, exec, thunar"
         "${mod}, K, Enter kill mode, exec, hyprctl kill"
         "${mod}, L, Lock session, exec, hyprlock"

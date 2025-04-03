@@ -19,7 +19,7 @@ in {
       "workspace 14, class:^(Blockbench)$"
 
       # Discord
-      "workspace 15 silent, class:^(vesktop)$"
+      "workspace 15 silent, class:^(equibop)$"
 
       # Telegram
       "float, title:^(Media viewer)$"

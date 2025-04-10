@@ -93,6 +93,7 @@
     }
     "ChatInputButtonAPI"
     "ClearURLs"
+    "ClipsEnhancements"
     {
       name = "CommandPalette";
       allowMouseControl = true;
@@ -173,6 +174,7 @@
     }
     "ForceOwnerCrown"
     "FrequentQuickSwitcher"
+    "FriendCodes"
     "FriendInvites"
     "FriendTags"
     "FriendsSince"
@@ -184,6 +186,7 @@
     #   oldIcon = false;
     # }
     "GifPaste"
+    "GitHubRepos"
     {
       name = "Glide";
       Accent = "313338";
@@ -552,6 +555,7 @@
       keepSpotifyActivityOnIdle = false;
       noSpotifyAutoPause = true;
     }
+    "SpotifyLyrics"
     "SpotifyShareCommands"
     "StartupTimings"
     "StatusPresets"
@@ -622,9 +626,10 @@
       showInMessages = true;
       showInUserProfileModal = true;
     }
-    "VCSupport"
     "ValidReply"
     "ValidUser"
+    "VCPanelSettings"
+    "VCSupport"
     {
       name = "VideoSpeed";
       preservePitch = false;

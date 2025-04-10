@@ -138,7 +138,7 @@
       url = "github:hyprwm/hyprpolkitagent";
       inputs = {
         nixpkgs.follows = "hyprland/nixpkgs";
-        systems.follows = "systems";
+        systems.follows = "hyprland/systems";
         hyprutils.follows = "hyprland/hyprutils";
         hyprland-qt-support.follows = "hyprland/hyprland-qtutils/hyprland-qt-support";
       };
@@ -196,8 +196,8 @@
     hyprsunset = {
       url = "github:hyprwm/hyprsunset";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
         hyprland-protocols.follows = "hyprland/hyprland-protocols";
         hyprutils.follows = "hyprland/hyprutils";
         hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
@@ -206,8 +206,8 @@
     pyprland = {
       url = "github:hyprland-community/pyprland";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
+        nixpkgs.follows = "hyprland/nixpkgs";
+        systems.follows = "hyprland/systems";
         flake-compat.follows = "flake-compat";
         poetry2nix.follows = "poetry2nix";
       };
@@ -215,7 +215,7 @@
     hypr-dynamic-cursors = {
       url = "github:VirtCode/hypr-dynamic-cursors";
       inputs = {
-        nixpkgs.follows = "nixpkgs";
+        nixpkgs.follows = "hyprland/nixpkgs";
         hyprland.follows = "hyprland";
       };
     };
@@ -246,7 +246,7 @@
     };
 
     niksvim = {
-      url = "github:NikSneMC/NikSVim";
+      url = "path:/home/niksne/Projects/github/NikSneMC/NikSVim";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";

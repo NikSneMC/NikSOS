@@ -181,10 +181,11 @@
     "FriendshipRanks"
     "FullSearchContext"
     "FullUserInChatbox"
-    # { # TODO: uncomment when fixed
-    #   name = "GameActivityToggle";
-    #   oldIcon = false;
-    # }
+    {
+      # TODO: uncomment when fixed
+      name = "GameActivityToggle";
+      oldIcon = false;
+    }
     "GifPaste"
     "GitHubRepos"
     {
@@ -683,7 +684,8 @@
 
   themes = [
     "https://catppuccin.github.io/discord/dist/catppuccin-${config.theme.flavor}-${config.theme.accent}.theme.css"
-    "https://raw.githubusercontent.com/NikSneMC/discord-jetbrainsmono-nerd-font-theme/main/font.css"
+    "https://raw.githubusercontent.com/NikSneMC/discord-css/main/jetbrainsmono-nerd-font.css"
+    "https://raw.githubusercontent.com/NikSneMC/discord-css/main/make-discord-ui-great-again.css"
   ];
 in {
   xdg.configFile = let
@@ -731,6 +733,6 @@ in {
   };
 
   home.packages = with pkgs; [
-    master.equibop
+    equibop
   ];
 }

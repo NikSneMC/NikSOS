@@ -246,7 +246,7 @@
     };
 
     niksvim = {
-      url = "path:/home/niksne/Projects/github/NikSneMC/NikSVim";
+      url = "github:NikSneMC/NikSVim";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";

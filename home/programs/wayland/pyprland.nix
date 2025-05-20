@@ -43,8 +43,8 @@ in {
         animation = "fromBottom";
         size = "70% 70%";
         multi = false;
-        match_by = "initialTitle";
-        initialTitle = "Spotify Free";
+        match_by = "class";
+        initialTitle = "spotify";
         excludes = "*";
         margin = 75;
         lazy = true;

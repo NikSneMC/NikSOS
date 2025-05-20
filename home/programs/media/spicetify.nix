@@ -14,6 +14,9 @@
   in {
     enable = true;
 
+    windowManagerPatch = true;
+    wayland = true;
+
     theme = spicePkgs.themes.catppuccin;
 
     colorScheme = config.theme.flavor;

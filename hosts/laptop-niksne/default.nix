@@ -4,6 +4,7 @@ mkNixosModules: {
     "hardware/nvidia-prime.nix"
     "programs/obs-studio.nix"
     "hardware/razer.nix"
+    "services/thermald.nix"
     # "services/ollama.nix"
   ];
 

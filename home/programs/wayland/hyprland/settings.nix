@@ -112,7 +112,10 @@
 
     xwayland.force_zero_scaling = true;
 
-    render.direct_scanout = true;
+    render = {
+      direct_scanout = true;
+      explicit_sync = 0;
+    };
 
     debug.disable_logs = false;
 

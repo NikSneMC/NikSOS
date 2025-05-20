@@ -7,6 +7,7 @@
 }: {
   imports = [
     ./caches.nix
+    ./index.nix
     ./nh.nix
     ./nixpkgs.nix
   ];

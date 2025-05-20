@@ -1,6 +1,7 @@
 mkNixosModules: {
   imports = mkNixosModules [
     "hardware/nvidia.nix"
+    "hardware/nvidia-prime.nix"
     "programs/obs-studio.nix"
     "hardware/razer.nix"
     # "services/ollama.nix"
@@ -29,5 +30,12 @@ mkNixosModules: {
     fstrim.enable = true;
   };
 
-  hardware.openrazer.users = ["niksne"];
+  hadware = {
+    nvidia.prime = {
+      nvidiaBusId = "PCI:1:0:0";
+      intelBusId = "PCI:0:2:0";
+    };
+
+    openrazer.users = ["niksne"];
+  };
 }

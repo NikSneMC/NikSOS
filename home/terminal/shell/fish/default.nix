@@ -25,8 +25,6 @@
       unlock = "pkill -10 hyprlock";
       nixbtw = "fastfetch";
       nixvim = "nvim";
-      npm = "pnpm";
-      npx = "pnpx";
     };
     shellInit = ''
       starship init fish | source

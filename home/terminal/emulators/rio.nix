@@ -7,11 +7,8 @@
     enable = true;
     settings = {
       colors = with config.theme.colors; {
-        bar = "#${mantle}";
-        tabs-foreground = "#${text}";
         tabs-active = lib.mkForce "#${accent}";
-        tabs-active-highlight = "#${accent}";
-        tabs-active-foreground = "#${crust}";
+        tabs-active-highlight = lib.mkForce "#${accent}";
       };
       confirm-before-quit = false;
       fonts = {
@@ -43,4 +40,5 @@
       ];
     };
   };
+  catppuccin.rio.enable = true;
 }

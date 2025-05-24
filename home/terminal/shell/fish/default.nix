@@ -26,10 +26,12 @@
       nixbtw = "fastfetch";
       nixvim = "nvim";
     };
-    shellInit = ''
-      starship init fish | source
-      fish_vi_key_bindings
-    '';
+    shellInit =
+      # fish
+      ''
+        starship init fish | source
+        fish_vi_key_bindings
+      '';
     functions.fish_greeting.body = '''';
   };
 }

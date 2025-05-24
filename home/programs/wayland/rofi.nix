@@ -8,6 +8,7 @@
   inherit (config.lib.formats.rasi) mkLiteral;
   script-2fa =
     pkgs.writeScript "rofi-script-2fa"
+    # py
     ''
       #!/usr/bin/env python
       from sys import argv
@@ -37,6 +38,7 @@
     '';
   script-clipboard =
     pkgs.writeScript "rofi-script-clipboard.sh"
+    # sh
     ''
       #!/usr/bin/env bash
 
@@ -199,14 +201,17 @@ in {
         display-drun = " 󰵆 ";
         display-filebrowser = " 󰥨 ";
         display-2fa = " 󰦯 ";
-        "// bad way to do this" = config.lib.formats.rasi.mkLiteral ''
+        "// bad way to do this" =
+          config.lib.formats.rasi.mkLiteral
+          # rasi
+          ''
 
-            filebrowser {
-              directory: "~";
-              sorting-method: "name";
-              directories-first: true;
-            }
-          // I'll fix it later'';
+              filebrowser {
+                directory: "~";
+                sorting-method: "name";
+                directories-first: true;
+              }
+            // I'll fix it later'';
       };
     theme = rofi-theme;
   };

@@ -41,11 +41,13 @@
       }
     ];
   };
-  catppuccin.wlogout.extraStyle = ''
-    @define-color surface0 #${config.theme.colors.surface0};
+  catppuccin.wlogout.extraStyle =
+    # css
+    ''
+      @define-color surface0 #${config.theme.colors.surface0};
 
-    button {
-        background-color: alpha(@surface0, 0.9);
-    }
-  '';
+      button {
+          background-color: alpha(@surface0, 0.9);
+      }
+    '';
 }

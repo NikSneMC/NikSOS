@@ -488,10 +488,12 @@
         };
       }
     ];
-    style = ''
-      @define-color accent @${config.theme.accent};
+    style =
+      # css
+      ''
+        @define-color accent @${config.theme.accent};
 
-      ${builtins.readFile ./style.css}
-    '';
+        ${builtins.readFile ./style.css}
+      '';
   };
 }

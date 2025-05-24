@@ -7,6 +7,7 @@
     enable = true;
     settings = {
       colors = with config.theme.colors; {
+        bar = "#${mantle}";
         tabs-active = lib.mkForce "#${accent}";
         tabs-active-highlight = lib.mkForce "#${accent}";
       };

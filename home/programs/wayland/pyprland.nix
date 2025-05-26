@@ -44,7 +44,7 @@ in {
         size = "70% 70%";
         multi = false;
         match_by = "class";
-        initialTitle = "spotify";
+        class = "spotify";
         excludes = "*";
         margin = 75;
         lazy = true;

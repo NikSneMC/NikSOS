@@ -7,7 +7,7 @@ mkHmModules: {
     "services"
 
     # "terminal/emulators/wezterm.nix"
-    "terminal/emulators/rio.nix"
+    "terminal/emulators/kitty.nix"
 
     ./hyprland.nix
     ./programs.nix

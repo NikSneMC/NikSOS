@@ -15,11 +15,11 @@ in {
     fetch_client_menu.separator = "";
     scratchpads = {
       term = {
-        command = "rio --title-placeholder terminal_dropdown";
+        command = "kitty --class terminal_dropdown";
         animation = "fromTop";
         size = "70% 70%";
-        match_by = "initialTitle";
-        initialTitle = "terminal_dropdown";
+        match_by = "initialClass";
+        initialClass = "terminal_dropdown";
         multi = false;
         excludes = "*";
         unfocus = "hide";

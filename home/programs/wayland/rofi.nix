@@ -192,7 +192,7 @@ in {
     enable = true;
     package = pkgs.rofi-wayland;
     location = "right";
-    terminal = "rio";
+    terminal = "kitty";
     extraConfig =
       common-config
       // {
@@ -229,7 +229,7 @@ in {
       common-config
       // {
         location = 4;
-        terminal = "rio";
+        terminal = "kitty";
         modes = "log:${script-clipboard},emoji:${lib.getExe pkgs.rofimoji}";
         display-emoji = " 󰞅 ";
         display-log = " 󱃔 ";

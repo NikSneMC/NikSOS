@@ -13,7 +13,7 @@
     settings = {
       "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
       logo = {
-        type = "iterm";
+        type = "kitty";
         source = "${inputs.assets}/niksos/niksos2048.png";
         width = 35;
       };
@@ -106,7 +106,7 @@
           type = "memory";
         }
         {
-          format = "{2} - {1} [{3}, {4}, {7}] ({5}) {10}";
+          format = "{2} - {1} [{3}, {4}, {7}] {10}";
           key = "├─󰋊 Drive        ";
           keyColor = "cyan";
           temp = {

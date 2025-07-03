@@ -12,7 +12,7 @@
 
   programs = builtins.mapAttrs (_: v: lib.getExe v) {
     activate-niksos = inputs.activate-niksos.packages.${pkgs.system}.default;
-    ani-cli = pkgs.ani-cli;
+    inherit (pkgs) ani-cli;
   };
 
   workspaces = let
@@ -54,11 +54,11 @@ in {
         "${mod}, M, Open mail client, exec, thunderbird"
         "${mod}, N, Open notification center, exec, swaync-client -t"
         "${mod}, R, Execute command, exec, rofi -show run"
-        "${mod}, T, Open terminal, exec, kitty"
+        "${mod}, T, Open terminal, exec, wezterm"
         "${mod}, V, Open clipboard history, exec, fish -c clipboard_log"
         "${mod}, W, Open \"Bring window to the workspace\" menu, exec, pypr fetch_client_menu"
         "${mod}, X, Delete item from clipboard, exec, fish -c clipboard_delete_item"
-        "${mod}, TAB, Launch hyprexpo, hyprexpo:expo, toggle"
+        # "${mod}, TAB, Launch hyprexpo, hyprexpo:expo, toggle"
         "${mod}, ESCAPE, Open logout menu, exec, wlogout"
         "${mod}, SEMICOLON, Open emoji menu, exec, fish -c clipboard_emoji"
 

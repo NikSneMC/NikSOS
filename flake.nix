@@ -187,7 +187,7 @@
       inputs = {
         nixpkgs.follows = "hyprland/nixpkgs";
         systems.follows = "hyprland/systems";
-        hyprutils.follows = "hyprland/hyprutils";
+        # hyprutils.follows = "hyprland/hyprutils";
         hyprlang.follows = "hyprland/hyprlang";
         hyprgraphics.follows = "hyprland/hyprgraphics";
         hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
@@ -269,8 +269,6 @@
     };
 
     waybar.url = "github:Alexays/Waybar";
-
-    # wezterm.url = "github:wez/wezterm?dir=nix";
 
     zen-browser = {
       url = "github:NikSneMC/zen-browser-flake";

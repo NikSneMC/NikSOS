@@ -1,5 +1,5 @@
 {config, ...}: let
-  dropterm = "initialTitle:^(terminal_dropdown)$";
+  dropterm = "class:^(terminal_dropdown)$";
   volume_sidemenu = "class:^(org.pulseaudio.pavucontrol)$";
   player = "initialTitle:^(Spotify Free)$";
   displays_sidemenu = "class:^(nwg-displays)$";

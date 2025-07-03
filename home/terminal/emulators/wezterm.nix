@@ -1,9 +1,4 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
-}: let
+{config, ...}: let
   font = "JetBrainsMono Nerd Font";
 
   mkTabColorFg = bg: fg:
@@ -18,7 +13,7 @@
 in {
   programs.wezterm = {
     enable = true;
-    package = inputs.wezterm.packages.${pkgs.system}.default;
+    # package = inputs.wezterm.packages.${pkgs.system}.default;
 
     extraConfig =
       # lua
@@ -48,6 +43,5 @@ in {
         return config
       '';
   };
-
   catppuccin.wezterm.apply = true;
 }

@@ -15,7 +15,7 @@ in {
     fetch_client_menu.separator = "";
     scratchpads = {
       term = {
-        command = "kitty --class terminal_dropdown";
+        command = "wezterm -e --class terminal_dropdown";
         animation = "fromTop";
         size = "70% 70%";
         match_by = "initialClass";

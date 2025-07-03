@@ -17,7 +17,7 @@ in {
     enable = true;
 
     font = {
-      size = 10;
+      size = 11;
       name = "JetBrainsMono Nerd Font";
     };
 

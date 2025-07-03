@@ -2,6 +2,8 @@
   inputs,
   pkgs,
   ...
-}: {
-  home.packages = [inputs.niksvim.packages.${pkgs.system}.default];
+}: let
+  niksvim = inputs.niksvim.packages.${pkgs.system}.default;
+in {
+  home.packages = [niksvim];
 }

@@ -10,4 +10,6 @@
   environment.systemPackages = with pkgs; [
     amneziawg-tools
   ];
+
+  programs.amnezia-vpn.enable = true;
 }

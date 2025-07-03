@@ -1,5 +1,5 @@
 {
-  imports = [./functions];
+  imports = [./functions ./plugins.nix];
 
   programs.fish = {
     enable = true;

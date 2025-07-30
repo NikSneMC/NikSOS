@@ -1,8 +1,9 @@
 {config, ...}: let
   dropterm = "class:^(terminal_dropdown)$";
   volume_sidemenu = "class:^(org.pulseaudio.pavucontrol)$";
-  player = "initialTitle:^(Spotify Free)$";
+  player = "class:^(spotify)$";
   displays_sidemenu = "class:^(nwg-displays)$";
+  antirkn = "initialTitle:^(AmneziaVPN)$";
 in {
   wayland.windowManager.hyprland.settings = {
     windowrulev2 = [

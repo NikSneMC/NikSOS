@@ -1,14 +1,7 @@
-{
-  pkgs,
-  inputs,
-  ...
-}: let
-  pkgs-hyprland = inputs.hyprland.inputs.nixpkgs.legacyPackages.${pkgs.stdenv.hostPlatform.system};
-in {
+{pkgs, ...}: {
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
-    package = pkgs-hyprland.mesa;
 
     extraPackages = with pkgs; [
       libva

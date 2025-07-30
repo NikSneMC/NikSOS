@@ -27,6 +27,17 @@
 
     steam = {
       enable = true;
+      package = pkgs.steam.override {
+        extraPkgs = p:
+          with p; [
+            SDL2
+            openal
+            libglvnd
+            gtk3
+            mono
+          ];
+      };
+      protontricks.enable = true;
       remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
       dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
       localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers

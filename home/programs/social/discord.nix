@@ -170,7 +170,7 @@
     {
       name = "FontLoader";
       applyOnClodeBlocks = true;
-      selectedFont = "JetBrains Mono";
+      selectedFont = "JetBrainsMono Nerd Font Propo";
     }
     "ForceOwnerCrown"
     "FrequentQuickSwitcher"
@@ -196,7 +196,7 @@
       Primary = "000000";
       Text = "ffffff";
       animationSpeed = "0.2";
-      customFont = "JetBrains Mono";
+      customFont = "JetBrainsMono Nerd Font Propo";
       memberListAnim = true;
       pastelStatuses = true;
       privacyBlur = false;

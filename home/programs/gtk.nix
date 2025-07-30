@@ -14,7 +14,7 @@
     enable = true;
 
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "JetBrainsMono Nerd Font Propo";
       package = pkgs.nerd-fonts.jetbrains-mono;
       size = 10;
     };

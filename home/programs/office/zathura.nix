@@ -3,7 +3,7 @@
     enable = true;
 
     options = {
-      font = "JetBrainsMono Nerd Font 12";
+      font = "JetBrainsMono Nerd Font Mono 12";
       selection-notification = true;
 
       selection-clipboard = "clipboard";

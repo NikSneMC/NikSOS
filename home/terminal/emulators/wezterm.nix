@@ -1,5 +1,5 @@
 {config, ...}: let
-  font = "JetBrainsMono Nerd Font";
+  font = "JetBrainsMono Nerd Font Mono";
 
   mkTabColorFg = bg: fg:
   # lua
@@ -23,7 +23,7 @@ in {
         config.enable_tab_bar = true
         config.hide_tab_bar_if_only_one_tab = true
 
-        config.font = wezterm.font_with_fallback { "${font}", "JetBrainsMono Nerd Font" }
+        config.font = wezterm.font_with_fallback { "${font}", "JetBrainsMono Nerd Font Mono" }
         config.window_frame = {
           font = wezterm.font { family = "${font}", weight = "Bold" },
           font_size = 10,

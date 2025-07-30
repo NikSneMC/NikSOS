@@ -18,7 +18,7 @@ in {
 
     font = {
       size = 11;
-      name = "JetBrainsMono Nerd Font";
+      name = "JetBrainsMono Nerd Font Mono";
     };
 
     settings = with config.theme.colors; {

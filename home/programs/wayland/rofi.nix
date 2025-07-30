@@ -83,7 +83,7 @@
       grey = mkLiteral "#${overlay0}";
 
       width = 600;
-      font = "JetBrainsMono Nerd Font 10";
+      font = "JetBrainsMono Nerd Font Propo 10";
     };
 
     "element-text, element-icon, mode-switcher" = {

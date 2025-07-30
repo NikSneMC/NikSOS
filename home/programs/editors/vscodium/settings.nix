@@ -21,7 +21,7 @@ in {
         "*.lock" = "json";
       };
       editor = {
-        fontFamily = "'JetBrainsMono Nerd Font', 'monospace', monospace";
+        fontFamily = "'JetBrainsMono Nerd Font Mono', 'monospace', monospace";
         fontLigatures = true;
       };
       codeium.enableConfig = {

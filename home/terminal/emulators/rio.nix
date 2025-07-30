@@ -13,7 +13,7 @@
       };
       confirm-before-quit = false;
       fonts = {
-        family = "JetBrainsMono Nerd Font";
+        family = "JetBrainsMono Nerd Font Mono";
         size = 15;
         extras = [{family = "Noto Sans Mono CJK JP";}];
         emojis = [{family = "Noto Color Emoji";}];

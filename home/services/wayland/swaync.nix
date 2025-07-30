@@ -48,5 +48,5 @@
       };
     };
   };
-  catppuccin.swaync.font = "JetBrainsMono Nerd Font";
+  catppuccin.swaync.font = "JetBrainsMono Nerd Font Propo";
 }

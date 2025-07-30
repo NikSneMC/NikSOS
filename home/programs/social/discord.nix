@@ -734,5 +734,6 @@ in {
 
   home.packages = with pkgs; [
     equibop
+    vesktop
   ];
 }

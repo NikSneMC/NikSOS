@@ -139,15 +139,9 @@
           type = "battery";
         }
         {
-          format = "{4} - {10} ({7})";
-          key = "├─ WiFi         ";
-          keyColor = "green";
-          type = "wifi";
-        }
-        {
           format = "{1} {2} [{6}] ({3})";
           key = "├─ GPU          ";
-          keyColor = "yellow";
+          keyColor = "green";
           temp = {
             green = 40;
             yellow = 60;
@@ -157,7 +151,7 @@
         {
           format = "{6} - {1}x{2}@{3}Hz (as {4}x{5})";
           key = "├─ Display      ";
-          keyColor = "blue";
+          keyColor = "yellow";
           order = "desc";
           preciseRefreshRate = false;
           type = "display";
@@ -165,7 +159,7 @@
         {
           format = "{1} - {3} ({4})";
           key = "├─ Bluetooth    ";
-          keyColor = "magenta";
+          keyColor = "blue";
           percent = {
             green = 50;
             yellow = 80;
@@ -174,7 +168,7 @@
         }
         {
           key = "╰─ Swap         ";
-          keyColor = "cyan";
+          keyColor = "magenta";
           percent = {
             green = 50;
             yellow = 80;
@@ -183,43 +177,43 @@
         }
         {
           key = "╭─󱕕 Theme        ";
-          keyColor = "white";
+          keyColor = "cyan";
           type = "theme";
         }
         {
           key = "├─󰭠 WM Theme     ";
-          keyColor = "red";
+          keyColor = "white";
           type = "wmtheme";
         }
         {
           key = "├─󱁹 Icons        ";
-          keyColor = "yellow";
+          keyColor = "red";
           type = "icons";
         }
         {
           key = "├─ Font         ";
-          keyColor = "green";
+          keyColor = "yellow";
           type = "font";
         }
         {
           key = "├─ Terminal Font";
-          keyColor = "blue";
+          keyColor = "green";
           type = "terminalfont";
         }
         {
           key = "├─ Media Player ";
-          keyColor = "magenta";
+          keyColor = "blue";
           type = "player";
         }
         {
           format = "{3} - {1} {4}";
           key = "├─ Media        ";
-          keyColor = "cyan";
+          keyColor = "magenta";
           type = "media";
         }
         {
           key = "╰─󰇀 Cursor       ";
-          keyColor = "white";
+          keyColor = "cyan";
           type = "cursor";
         }
         "break"

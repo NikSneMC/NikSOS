@@ -1,5 +1,6 @@
 {
   imports = [
+    ./zellij
     ./bat.nix
     ./cli.nix
     ./fetchers.nix

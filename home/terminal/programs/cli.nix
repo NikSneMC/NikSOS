@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     # archives
     zip
@@ -22,6 +26,7 @@
     wf-recorder
 
     packwiz
+    inputs.git-helper.packages.${system}.git-helper
   ];
 
   programs = {
@@ -30,5 +35,6 @@
     eza.enable = true;
     ssh.enable = true;
     yazi.enable = true;
+    zoxide.enable = true;
   };
 }

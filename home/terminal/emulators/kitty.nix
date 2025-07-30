@@ -40,5 +40,4 @@ in {
 
     keybindings = gotoTabs;
   };
-  catppuccin.kitty.enable = true;
 }

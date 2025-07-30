@@ -41,5 +41,4 @@
       ];
     };
   };
-  catppuccin.rio.enable = true;
 }

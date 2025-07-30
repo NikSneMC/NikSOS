@@ -1,7 +1,9 @@
 mkNixosModules: {
   imports = mkNixosModules [
-    "hardware/nvidia.nix"
+    # "hardware/intel.nix"
     "hardware/nvidia-prime.nix"
+    "hardware/nvidia.nix"
+    "programs/niri.nix"
     "programs/obs-studio.nix"
     "hardware/razer.nix"
     "services/thermald.nix"
@@ -28,6 +30,7 @@ mkNixosModules: {
   };
 
   services = {
+    displayManager.defaultSession = "niri";
     fstrim.enable = true;
   };
 

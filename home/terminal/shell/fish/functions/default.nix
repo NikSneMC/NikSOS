@@ -1,11 +1,15 @@
 {
+  lib,
+  pkgs,
+  ...
+}: {
   imports = [
     ./checkers.nix
     ./clipboard.nix
     ./fetchers.nix
     ./notifications.nix
-    ./records.nix
     ./reloads.nix
+    ./screenshot.nix
     ./toggles.nix
   ];
 

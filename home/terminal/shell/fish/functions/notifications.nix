@@ -14,8 +14,8 @@
         set DISABLED ${tooltip.off}
 
         if [ $COUNT != 0 ]
-            set ENABLED "{ \"text\": \"󰂚 $COUNT\", \"tooltip\": \"$COUNT notifications\", \"class\": \"on\" }"
-            set DISABLED "{ \"text\": \"󰂛 $COUNT\", \"tooltip\": \"(silent) $COUNT notifications\", \"class\": \"off\" }"
+            set ENABLED "{ \"text\": \"󰂚$COUNT\", \"tooltip\": \"$COUNT notifications\", \"class\": \"on\" }"
+            set DISABLED "{ \"text\": \"󰂛$COUNT\", \"tooltip\": \"(silent) $COUNT notifications\", \"class\": \"off\" }"
         end
 
         if swaync-client -D | rg -q "false"

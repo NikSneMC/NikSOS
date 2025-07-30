@@ -79,18 +79,8 @@
       };
     };
 
-    poetry2nix = {
-      url = "github:nix-community/poetry2nix";
-      inputs = {
-        flake-utils.follows = "flake-utils";
-        nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
-        treefmt-nix.follows = "treefmt-nix";
-      };
-    };
-
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -127,6 +117,15 @@
 
     ayugram-desktop.url = "github:/ndfined-crp/ayugram-desktop/release?submodules=1";
 
+    git-helper = {
+      url = "github:NiKSneMC/git-helper";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+        rust-overlay.follows = "rust-overlay";
+      };
+    };
+
     hyprland = {
       url = "github:hyprwm/Hyprland";
       inputs = {
@@ -134,90 +133,9 @@
         pre-commit-hooks.follows = "git-hooks";
       };
     };
-    hyprpolkitagent = {
-      url = "github:hyprwm/hyprpolkitagent";
-      inputs = {
-        nixpkgs.follows = "hyprland/nixpkgs";
-        systems.follows = "hyprland/systems";
-        hyprutils.follows = "hyprland/hyprutils";
-        hyprland-qt-support.follows = "hyprland/hyprland-qtutils/hyprland-qt-support";
-      };
-    };
     hyprland-plugins = {
       url = "github:hyprwm/hyprland-plugins";
       inputs.hyprland.follows = "hyprland";
-    };
-    hyprland-contrib = {
-      url = "github:hyprwm/contrib";
-      inputs.nixpkgs.follows = "hyprland/nixpkgs";
-    };
-    hyprpaper = {
-      url = "github:hyprwm/hyprpaper";
-      inputs = {
-        nixpkgs.follows = "hyprland/nixpkgs";
-        systems.follows = "hyprland/systems";
-        hyprutils.follows = "hyprland/hyprutils";
-        hyprlang.follows = "hyprland/hyprlang";
-        hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
-        hyprgraphics.follows = "hyprland/hyprgraphics";
-      };
-    };
-    hyprpicker = {
-      url = "github:hyprwm/hyprpicker";
-      inputs = {
-        nixpkgs.follows = "hyprland/nixpkgs";
-        systems.follows = "hyprland/systems";
-        hyprutils.follows = "hyprland/hyprutils";
-        hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
-      };
-    };
-    hypridle = {
-      url = "github:hyprwm/hypridle";
-      inputs = {
-        nixpkgs.follows = "hyprland/nixpkgs";
-        systems.follows = "hyprland/systems";
-        hyprland-protocols.follows = "hyprland/hyprland-protocols";
-        hyprlang.follows = "hyprland/hyprlang";
-        hyprutils.follows = "hyprland/hyprutils";
-        hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
-      };
-    };
-    hyprlock = {
-      url = "github:hyprwm/hyprlock";
-      inputs = {
-        nixpkgs.follows = "hyprland/nixpkgs";
-        systems.follows = "hyprland/systems";
-        # hyprutils.follows = "hyprland/hyprutils";
-        hyprlang.follows = "hyprland/hyprlang";
-        hyprgraphics.follows = "hyprland/hyprgraphics";
-        hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
-      };
-    };
-    hyprsunset = {
-      url = "github:hyprwm/hyprsunset";
-      inputs = {
-        nixpkgs.follows = "hyprland/nixpkgs";
-        systems.follows = "hyprland/systems";
-        hyprland-protocols.follows = "hyprland/hyprland-protocols";
-        hyprutils.follows = "hyprland/hyprutils";
-        hyprwayland-scanner.follows = "hyprland/hyprwayland-scanner";
-      };
-    };
-    pyprland = {
-      url = "github:hyprland-community/pyprland";
-      inputs = {
-        nixpkgs.follows = "hyprland/nixpkgs";
-        systems.follows = "hyprland/systems";
-        flake-compat.follows = "flake-compat";
-        poetry2nix.follows = "poetry2nix";
-      };
-    };
-    hypr-dynamic-cursors = {
-      url = "github:VirtCode/hypr-dynamic-cursors";
-      inputs = {
-        nixpkgs.follows = "hyprland/nixpkgs";
-        hyprland.follows = "hyprland";
-      };
     };
 
     nix-minecraft = {
@@ -255,6 +173,8 @@
       };
     };
 
+    niri-flake.url = "github:sodiboo/niri-flake";
+
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs = {
@@ -269,6 +189,10 @@
     };
 
     waybar.url = "github:Alexays/Waybar";
+
+    zjstatus = {
+      url = "github:dj95/zjstatus";
+    };
 
     zen-browser = {
       url = "github:NikSneMC/zen-browser-flake";

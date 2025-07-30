@@ -28,7 +28,6 @@
       file-roller
 
       qbittorrent
-      tmux
       blockbench
 
       surrealist

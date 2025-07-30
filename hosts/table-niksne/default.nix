@@ -3,6 +3,7 @@ mkNixosModules: {
     # "hardware/nvidia.nix"
     "hardware/amd.nix"
     "hardware/razer.nix"
+    "programs/niri.nix"
     "services/ollama.nix"
   ];
 
@@ -26,6 +27,7 @@ mkNixosModules: {
   };
 
   services = {
+    displayManager.defaultSession = "hyprland";
     fstrim.enable = true;
   };
 

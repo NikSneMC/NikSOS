@@ -24,9 +24,9 @@
     in
       # fish
       ''
-        set target_process "hyprsunset"
+        set backup_file ~/.cache/night_backup
 
-        if pgrep $target_process > /dev/null
+        if test -e $backup_file
             echo ${tooltip.on}
         else
           echo ${tooltip.off}

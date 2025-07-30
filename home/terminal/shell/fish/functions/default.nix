@@ -13,7 +13,7 @@
     select_color.body =
       # fish
       ''
-        set COLOR (hyprpicker -a -r)
+        set COLOR (${lib.getExe pkgs.hyprpicker} -a -r)
         if [ $COLOR != "" ]
             notify-send hyprpicker "copied selected color to the clipboard!"
         end

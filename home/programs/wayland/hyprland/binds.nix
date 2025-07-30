@@ -38,7 +38,7 @@ in {
         "${mod}, F, Toggle window floating, togglefloating,"
         "${mod}, J, Toggle window split, layoutmsg, togglesplit" # dwindle
         "${mod}, P, Move window to pseudo workspace, pseudo," # dwindle
-        "${mod} CTRL, E, Exit hyprland, exit,"
+        "${mod} CTRL ALT SHIFT, E, Exit hyprland, exit,"
         "${mod} SHIFT, Q, Close active window, killactive,"
 
         "${mod} CTRL ALT, B, Reload bar, exec, fish -c reload_bar"
@@ -65,24 +65,23 @@ in {
         "${mod} SHIFT, A, Open 2fa menu, exec, rofi -show 2fa"
         "${mod} SHIFT, C, Launch color picker, exec, fish -c select_color"
         "${mod} SHIFT, F, Open file browser menu, exec, rofi -show filebrowser"
-        "${mod} SHIFT, G, Start screen recording (GIF), exec, fish -c record_screen_gif"
         "${mod} SHIFT, N, Mute notifications, exec, swaync-client -d"
-        "${mod} SHIFT, R, Start screen recording (MP4), exec, fish -c record_screen_mp4"
-        "${mod} SHIFT, S, Take screenshot, exec, fish -c record_screen_png"
+        "${mod} SHIFT, S, Take screenshot, exec, fish -c take_screenshot_hypr"
         "${mod} SHIFT, T, Launch Telegram, exec, ayugram-desktop"
         "${mod} SHIFT, V, Launch VSCodium, exec, codium"
         "${mod} SHIFT, W, Launch ani-cli, exec, ${programs.ani-cli} --rofi"
         "${mod} SHIFT, X, Clear clipboard, exec, fish -c clipboard_clear"
 
         # diferrent toggles
-        (mkBind.fishToggle "A" "airplane mode" "toggle_airplane_mode")
+        (mkBind.toggle "E" "easter egg" "pkill -9 activate-niksos || ${programs.activate-niksos}")
+        (mkBind.fishToggle "P" "airplane mode" "toggle_airplane_mode")
         (mkBind.fishToggle "N" "night light" "toggle_night_mode")
-        (mkBind.fishToggle "O" "funky stuff" "toggle_funky_stuff")
-        (mkBind.toggle "P" "easter egg" "pkill -9 activate-niksos || ${programs.activate-niksos}")
+        (mkBind.fishToggle "O" "funky stuff" "toggle_funky_hypr_stuff")
         (mkBind.fishToggle "W" "wi-fi" "toggle_wifi")
 
         # Scratchpads
-        (mkBind.scratchpad "D" "displays manager" "displays")
+        (mkBind.scratchpad "A" "anti RKN" "antirkn")
+        (mkBind.scratchpad "D" "display manager" "displays")
         (mkBind.scratchpad "M" "music player" "player")
         (mkBind.scratchpad "T" "terminal" "term")
         (mkBind.scratchpad "V" "volume menu" "volume")

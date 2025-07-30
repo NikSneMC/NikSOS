@@ -4,13 +4,10 @@
   pkgs,
   ...
 }: {
-  services.displayManager = {
-    defaultSession = "hyprland";
-    sddm = {
-      enable = true;
-      package = lib.mkForce pkgs.kdePackages.sddm;
-      wayland.enable = true;
-    };
+  services.displayManager.sddm = {
+    enable = true;
+    package = lib.mkForce pkgs.kdePackages.sddm;
+    wayland.enable = true;
   };
 
   catppuccin.sddm = {

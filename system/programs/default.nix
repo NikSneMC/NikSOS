@@ -3,7 +3,6 @@
     ./development.nix
     ./fonts.nix
     ./gaming.nix
-    ./hyprland.nix
     ./qt.nix
     ./xdg.nix
   ];

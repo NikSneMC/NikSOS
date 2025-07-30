@@ -1,9 +1,4 @@
 {
-  inputs,
-  lib,
-  pkgs,
-  ...
-}: {
   programs.fish.functions = {
     toggle_airplane_mode.body =
       # fish
@@ -46,7 +41,7 @@
           end
         end
       '';
-    toggle_funky_stuff.body =
+    toggle_funky_hypr_stuff.body =
       # fish
       ''
         set FUNKY_STUFF_ENABLED (hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
@@ -65,12 +60,19 @@
     toggle_night_mode =
       # fish
       ''
-        set target_process "hyprsunset"
+        set backup_file ~/.cache/night_backup
+
+        if test -e $backup_file
+            rm $backup_file
+            busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +2500
+        else
+            touch $backup_file
+            busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -2500
+        end
 
         if pgrep $target_process > /dev/null
           killall -s SIGINT hyprsunset
         else
-          ${lib.getExe inputs.hyprsunset.packages.${pkgs.system}.hyprsunset} -t 5000
         end
       '';
     toggle_streamer_mode.body =

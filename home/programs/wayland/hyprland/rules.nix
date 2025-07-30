@@ -76,6 +76,9 @@ in {
 
       "float, ${displays_sidemenu}"
       "workspace special:scratch_displays silent, ${displays_sidemenu}"
+
+      "float, ${antirkn}"
+      "workspace special:scratch_antirkn silent, ${antirkn}"
     ];
 
     layerrule = [

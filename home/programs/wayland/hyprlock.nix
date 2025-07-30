@@ -1,14 +1,8 @@
-{
-  config,
-  inputs,
-  pkgs,
-  ...
-}: let
-  font_family = "JetBrainsMono Nerd Font";
+{config, ...}: let
+  font_family = "JetBrainsMono Nerd Font Propo";
 in {
   programs.hyprlock = {
     enable = true;
-    package = inputs.hyprlock.packages.${pkgs.system}.hyprlock;
 
     settings = {
       general = {

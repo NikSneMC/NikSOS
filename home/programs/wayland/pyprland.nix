@@ -1,11 +1,7 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   tomlFormat = pkgs.formats.toml {};
 in {
-  home.packages = [inputs.pyprland.packages.${pkgs.system}.pyprland];
+  home.packages = with pkgs; [pyprland];
 
   xdg.configFile."hypr/pyprland.toml".source = tomlFormat.generate "pyprland-config" {
     pyprland.plugins = [
@@ -60,6 +56,16 @@ in {
         multi = false;
         unfocus = "hide";
         margin = 145;
+        lazy = true;
+      };
+      antirkn = {
+        command = "AmneziaVPN";
+        animation = "fromRight";
+        match_by = "initialTitle";
+        initialTitle = "AmneziaVPN";
+        excludes = "*";
+        multi = false;
+        unfocus = "hide";
         lazy = true;
       };
     };

@@ -1,8 +1,6 @@
 {pkgs, ...}: {
   imports = [
-    ./hyprland
     ./hyprlock.nix
-    ./pyprland.nix
     ./rofi.nix
     ./wlogout.nix
   ];
@@ -24,7 +22,7 @@
 
   # make stuff work on wayland
   home.sessionVariables = {
-    GDK_BACKEND = "wayland,x11,*";
+    GDK_BACKEND = "wayland";
     QT_QPA_PLATFORM = "wayland;xcb";
     SDL_VIDEODRIVER = "wayland";
     CLUTTER_BACKEND = "wayland";

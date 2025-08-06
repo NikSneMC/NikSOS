@@ -360,6 +360,18 @@
           action = focus-workspace-up;
           cooldown-ms = 150;
         }
+        {
+          bind = "Mod+Shift+WheelScrollDown";
+          desc = "Move the focused workspace down";
+          action = move-workspace-down;
+          cooldown-ms = 150;
+        }
+        {
+          bind = "Mod+Shift+WheelScrollUp";
+          desc = "Move the focused workspace up";
+          action = move-workspace-up;
+          cooldown-ms = 150;
+        }
       ]
       ++ [
         {

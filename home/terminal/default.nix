@@ -5,8 +5,7 @@
 in {
   imports = [
     ./programs
-    ./shell/starship.nix
-    ./shell/fish
+    ./shell
   ];
 
   # add environment variables

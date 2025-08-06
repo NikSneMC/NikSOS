@@ -21,10 +21,7 @@ mkNixosModules: {
     accent = "sky";
   };
 
-  nix.settings = rec {
-    cores = 36;
-    max-jobs = cores * 4;
-  };
+  nix.settings.cores = 36;
 
   services = {
     displayManager.defaultSession = "hyprland";

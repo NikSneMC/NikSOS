@@ -46,7 +46,8 @@
             then "${self}/hosts/${host}/hardware-configuration.nix"
             else {}
           )
-          {
+          ({config, ...}: {
+            nix.settings.max-jobs = config.nix.settings.cores * 4;
             networking.hostName = host;
             home-manager = {
               users = lib.pipe homeImports.raw.${host} [
@@ -62,7 +63,7 @@
               custom = nikspkgs;
             });
             catppuccin.cache.enable = true;
-          }
+          })
         ];
     });
 in {

@@ -24,10 +24,7 @@ mkNixosModules: {
     accent = "blue";
   };
 
-  nix.settings = rec {
-    cores = 8;
-    max-jobs = cores * 4;
-  };
+  nix.settings.cores = 8;
 
   services = {
     displayManager.defaultSession = "niri";

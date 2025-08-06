@@ -13,7 +13,7 @@
   catppuccin.sddm = {
     font = "Jetbrains Mono Nerd Font";
     fontSize = "10";
-    background = "${inputs.assets}/wallpapers/wolfclan.png";
+    background = "${inputs.assets}/wallpapers/night_forest.png";
     loginBackground = false;
   };
 }

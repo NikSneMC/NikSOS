@@ -15,6 +15,7 @@ window.left-bar .modules-left {
 }
 
 #workspaces {
+  margin-top: 5px;
 }
 
 #workspaces button.active {
@@ -27,7 +28,7 @@ window.left-bar .modules-left {
 
 #workspaces button {
   color: @text;
-  font-size: 25px;
+  font-size: 20px;
 }
 
 window.left-bar .modules-center {

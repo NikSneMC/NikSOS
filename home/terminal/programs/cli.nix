@@ -16,7 +16,7 @@
     pipes-rs
 
     du-dust
-    busybox
+    uutils-coreutils
     duf
     fd
     file

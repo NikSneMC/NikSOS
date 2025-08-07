@@ -84,11 +84,11 @@
     "assets": {
       "flake": false,
       "locked": {
-        "lastModified": 1754510230,
-        "narHash": "sha256-Wiwz4V27mP7rcXSZSExXuveMUVD5XAxir9n4uccjCYg=",
+        "lastModified": 1754526800,
+        "narHash": "sha256-YRtkbCyR1wOs0AiCAPEGRIUIIh7ui0s9hawbBzs+XwY=",
         "owner": "NikSneMC",
         "repo": "NikSOS",
-        "rev": "40af3e22f7d44fa270eea474198d50ed623e37c3",
+        "rev": "963a6892f6cbd73ae94c374d8604b9d44a9a3ffc",
         "type": "github"
       },
       "original": {

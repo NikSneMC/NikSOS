@@ -22,6 +22,5 @@
     unlock = "pkill -10 hyprlock";
     jq = "jaq";
     fetch = "fastfetch";
-    cd = "z";
   };
 }

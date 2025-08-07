@@ -35,6 +35,5 @@
     eza.enable = true;
     ssh.enable = true;
     yazi.enable = true;
-    zoxide.enable = true;
   };
 }

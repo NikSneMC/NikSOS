@@ -7,5 +7,6 @@
     ./git.nix
     ./skim.nix
     ./xdg.nix
+    ./zoxide.nix
   ];
 }

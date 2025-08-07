@@ -375,6 +375,32 @@
       ]
       ++ [
         {
+          bind = "Mod+Ctrl+WheelScrollDown";
+          desc = "Focus the column to the left";
+          action = focus-column-left;
+          cooldown-ms = 150;
+        }
+        {
+          bind = "Mod+Ctrl+WheelScrollUp";
+          desc = "Focus the column to the right";
+          action = focus-column-right;
+          cooldown-ms = 150;
+        }
+        {
+          bind = "Mod+Ctrl+Shift+WheelScrollDown";
+          desc = "Move the focused column to the left";
+          action = move-column-left;
+          cooldown-ms = 150;
+        }
+        {
+          bind = "Mod+Ctrl+Shift+WheelScrollUp";
+          desc = "Move the focused column to the right";
+          action = move-column-right;
+          cooldown-ms = 150;
+        }
+      ]
+      ++ [
+        {
           bind = "Mod+Page_Down";
           desc = "Focus the workspace below";
           action = focus-workspace-down;

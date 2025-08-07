@@ -7,7 +7,7 @@
       track-layout = "window";
       xkb = {
         layout = "us, ru";
-        options = "grp:win_space_toggle, compose:ralt";
+        options = "grp:win_space_toggle, compose:ralt, caps:ctrl_modifier";
       };
     };
 

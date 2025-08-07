@@ -26,7 +26,7 @@
       ++ [
         {
           bind = "Mod+K";
-          desc = "Enter kill mode";
+          desc = "Enter the `kill mode`";
           action = fish "pkill -9 -P $(niri msg -j pick-window | jaq .pid)";
         }
         {

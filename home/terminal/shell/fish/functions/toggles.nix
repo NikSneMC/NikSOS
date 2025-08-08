@@ -75,17 +75,6 @@
         else
         end
       '';
-    toggle_streamer_mode.body =
-      # fish
-      ''
-        set backup_file ~/.cache/streamer_backup
-
-        if test -e $backup_file
-            rm $backup_file
-        else
-            touch $backup_file
-        end
-      '';
     toggle_wifi.body =
       # fish
       ''

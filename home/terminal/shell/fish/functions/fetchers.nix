@@ -60,16 +60,13 @@
     fetch_music_player_data.body = with config.theme.colors;
     # fish
       ''
-        set result (fish -c check_streamer_mode)
-        if test "$status" -eq 0
-            set STATUS (playerctl status 2>&1)
-            if [ $STATUS != Paused -a $STATUS != Stopped -a $STATUS != "No players found" ]
-                if test "$(count $argv)" -eq 0
-                    playerctl -a metadata --format "Now playing: {{artist}} - {{markup_escape(title)}}"
-                else
-                   playerctl -a metadata --format "{\"text\": \"<span color='#${peach}'>{{artist}}</span> - <span color='#${mauve}'>{{markup_escape(title)}}</span>\", \"tooltip\": \"<i><span color='#${green}'>{{playerName}}</span></i>\n<b><span color='#${mauve}'>{{markup_escape(title)}}</span></b>\nby <span color='#${peach}'>{{artist}}</span>\non <span color='#${teal}'>{{album}}</span>\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}" -F
-                end
-            end
+        set STATUS (playerctl status 2>&1)
+        if [ $STATUS != Paused -a $STATUS != Stopped -a $STATUS != "No players found" ]
+          if test "$(count $argv)" -eq 0
+            playerctl -a metadata --format "Now playing: {{artist}} - {{markup_escape(title)}}"
+          else
+            playerctl -a metadata --format "{\"text\": \"<span color='#${peach}'>{{artist}}</span> - <span color='#${mauve}'>{{markup_escape(title)}}</span>\", \"tooltip\": \"<i><span color='#${green}'>{{playerName}}</span></i>\n<b><span color='#${mauve}'>{{markup_escape(title)}}</span></b>\nby <span color='#${peach}'>{{artist}}</span>\non <span color='#${teal}'>{{album}}</span>\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}" -F
+          end
         end
       '';
   };

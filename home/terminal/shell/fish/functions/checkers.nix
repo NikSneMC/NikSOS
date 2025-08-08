@@ -32,22 +32,6 @@
           echo ${tooltip.off}
         end
       '';
-    check_streamer_mode.body = let
-      tooltip = mkTooltips "󰵝" "󱦿" "streamer-mode";
-    in
-      # fish
-      ''
-        set backup_file ~/.cache/streamer_backup
-
-        if test -e $backup_file
-            echo ${tooltip.on}
-            if test "$(count $argv)" -eq 0
-                exit 1
-            end
-        else
-          echo ${tooltip.off}
-        end
-      '';
     check_recording.body =
       # fish
       ''

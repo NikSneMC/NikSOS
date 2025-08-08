@@ -34,7 +34,6 @@
         modules-right = [
           "group/misc"
           "tray"
-          "custom/weather"
           "custom/media"
           "network"
           "niri/language"
@@ -322,12 +321,6 @@
         tray = {
           icon-size = 20;
           spacing = 2;
-        };
-        "custom/weather" = {
-          format = "{}°";
-          interval = 600;
-          exec = "${lib.getExe pkgs.wttrbar} --date-format \"%d-%m-%Y\"";
-          return-type = "json";
         };
         "custom/media" = {
           format = "{icon}";

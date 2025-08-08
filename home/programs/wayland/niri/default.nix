@@ -13,8 +13,8 @@
   ];
 
   programs.niri.settings = {
-    spawn-at-startup = let
-      commands = [
+    spawn-at-startup =
+      [
         ["${lib.getExe pkgs.wl-gammarelay-rs}" "run"]
         ["waybar"]
         ["fish" "-c" "wl-paste --type text --watch cliphist store"]
@@ -22,9 +22,8 @@
         ["equibop"]
         ["ayugram-desktop"]
         ["thunderbird"]
-      ];
-    in
-      map (command: {inherit command;}) commands;
+      ]
+      |> map (command: {inherit command;});
 
     workspaces = {
       "1".name = "development";

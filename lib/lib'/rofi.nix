@@ -40,14 +40,13 @@
       + "\n";
 
   toRasi = attrs:
-    lib.pipe [
+    [
       (lib.filterAttrs (n: _: n == "@theme") attrs)
       (lib.filterAttrs (n: _: n == "@import") attrs)
       (removeAttrs attrs ["@theme" "@import"])
-    ] [
-      (lib.concatMap (lib.mapAttrsToList mkRasiSection))
-      (lib.concatStringsSep "\n")
-    ];
+    ]
+    |> lib.concatMap (lib.mapAttrsToList mkRasiSection)
+    |> lib.concatStringsSep "\n";
 in {
   inherit mkValueString mkKeyValue mkRasiSection toRasi;
 }

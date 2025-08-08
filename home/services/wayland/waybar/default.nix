@@ -51,34 +51,22 @@
               "󰊗"
               ""
             ];
-            named = lib.pipe config.programs.niri.settings.workspaces [
-              builtins.attrValues
-              (map (ws: ws.name))
-              (lib.zipLists icons)
-              (map ({
+            named =
+              config.programs.niri.settings.workspaces
+              |> builtins.attrValues
+              |> map (ws: ws.name)
+              |> lib.zipLists icons
+              |> map ({
                 fst,
                 snd,
               }:
-                lib.nameValuePair snd fst))
-              builtins.listToAttrs
-            ];
+                lib.nameValuePair snd fst)
+              |> builtins.listToAttrs;
           in
             named
             // {
               default = "";
             };
-          #   in {
-          #   "development" = "󰲠";
-          #   "2" = "󰲢";
-          #   "3" = "󰲤";
-          #   "4" = "󰲦";
-          #   "5" = "󰲨";
-          #   "6" = "󰲪";
-          #   "7" = "󰲬";
-          #   "8" = "󰲮";
-          #   "9" = "󰲰";
-          #   "10" = "󰿬";
-          # };
         };
 
         cpu = {

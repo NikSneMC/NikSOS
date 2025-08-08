@@ -1,7 +1,6 @@
 {
   config,
   inputs,
-  lib,
   lib',
   ...
 }: let
@@ -31,9 +30,8 @@ in {
       git.autofetch = true;
     }
     // (
-      lib.pipe "${inputs.vscode-file-nesting-config-json}/settings.json" [
-        builtins.readFile
-        builtins.fromJSON
-      ]
+      "${inputs.vscode-file-nesting-config-json}/settings.json"
+      |> builtins.readFile
+      |> builtins.fromJSON
     );
 }

@@ -17,11 +17,12 @@
     };
   in
     mkBinds (
-      (lib.pipe config.programs.niri.settings.workspaces [
-        builtins.attrValues
-        (map (ws: ws.name))
-        mkWorkspacesBinds
-      ])
+      (
+        config.programs.niri.settings.workspaces
+        |> builtins.attrValues
+        |> map (ws: ws.name)
+        |> mkWorkspacesBinds
+      )
       ++ (mkColumnsBinds 10)
       ++ [
         {

@@ -3,7 +3,7 @@
   lib,
   ...
 }: let
-  inherit (lib) types mkOption mkIf pipe;
+  inherit (lib) types mkOption mkIf;
 
   cfg = config.niksos.caches;
 in {
@@ -24,21 +24,19 @@ in {
   config = mkIf (cfg
     != {}) {
     nix.settings = {
-      substituters = pipe cfg [
-        builtins.attrNames
-        (map (s: "https://${s}"))
-      ];
-      trusted-public-keys = pipe cfg [
-        (
-          builtins.mapAttrs (s_: k: let
-            s = pipe s_ [
-              (builtins.split "\\?")
-              builtins.head
-            ];
-          in "${s}${k}")
-        )
-        builtins.attrValues
-      ];
+      substituters =
+        cfg
+        |> builtins.attrNames
+        |> map (s: "https://${s}");
+      trusted-public-keys =
+        cfg
+        |> builtins.mapAttrs (s_: k: let
+          s =
+            s_
+            |> builtins.split "\\?"
+            |> builtins.head;
+        in "${s}${k}")
+        |> builtins.attrValues;
     };
   };
 }

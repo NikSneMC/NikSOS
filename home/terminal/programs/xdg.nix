@@ -1,6 +1,5 @@
 {
   config,
-  lib,
   pkgs,
   ...
 }: let
@@ -10,13 +9,12 @@
   audioPlayer = ["io.bassi.Amberol"];
 
   xdgAssociations = type: program: list:
-    lib.pipe list [
-      (map (e: {
-        name = "${type}/${e}";
-        value = program;
-      }))
-      builtins.listToAttrs
-    ];
+    list
+    |> map (e: {
+      name = "${type}/${e}";
+      value = program;
+    })
+    |> builtins.listToAttrs;
 
   image = xdgAssociations "image" imageViewer ["png" "svg" "jpeg" "gif"];
   video = xdgAssociations "video" videoPlayer ["mp4" "avi" "mkv"];

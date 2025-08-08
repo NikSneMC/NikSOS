@@ -1,10 +1,6 @@
-{
-  lib,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   ides =
-    lib.pipe (with pkgs.custom.jetbrains; [
+    (with pkgs.custom.jetbrains; [
       idea-ultimate
       # pycharm-professional
       # webstorm
@@ -13,19 +9,18 @@
       # phpstorm
       # clion
       datagrip
-    ]) [
-      (map (
-        ide:
-          ide.override {
-            vmopts = ''
-              --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
-              --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+    ])
+    |> map (
+      ide:
+        ide.override {
+          vmopts = ''
+            --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
+            --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
 
-              -javaagent:${pkgs.custom.ja-netfilter}/ja-netfilter.jar=jetbrains
-            '';
-          }
-      ))
-    ];
+            -javaagent:${pkgs.custom.ja-netfilter}/ja-netfilter.jar=jetbrains
+          '';
+        }
+    );
 in {
   programs.jetbrains-remote = {
     enable = true;

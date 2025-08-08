@@ -6,13 +6,12 @@
   ...
 }: let
   rawMk = nameValueFunction: hosts:
-    lib.pipe hosts [
-      (lib.mapAttrsToList (
-        host: map (user: nameValueFunction host user)
-      ))
-      builtins.concatLists
-      builtins.listToAttrs
-    ];
+    hosts
+    |> lib.mapAttrsToList (
+      host: map (user: nameValueFunction host user)
+    )
+    |> builtins.concatLists
+    |> builtins.listToAttrs;
 
   mkHmModules = map (
     import:

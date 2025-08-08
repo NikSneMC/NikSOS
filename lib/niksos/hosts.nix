@@ -50,12 +50,12 @@
             nix.settings.max-jobs = config.nix.settings.cores * 4;
             networking.hostName = host;
             home-manager = {
-              users = lib.pipe homeImports.raw.${host} [
-                (map (
+              users =
+                homeImports.raw.${host}
+                |> map (
                   user: lib.nameValuePair user {imports = homeImports."${user}@${host}";}
-                ))
-                builtins.listToAttrs
-              ];
+                )
+                |> builtins.listToAttrs;
               extraSpecialArgs = specialArgs;
             };
             nixpkgs.overlays = mkPkgsOverlays (with inputs; {

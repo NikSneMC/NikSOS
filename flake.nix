@@ -166,10 +166,10 @@
     niksvim = {
       url = "github:NikSneMC/NikSVim";
       inputs = {
+        systems.follows = "systems";
         nixpkgs.follows = "nixpkgs";
         flake-parts.follows = "flake-parts";
-        flake-utils.follows = "flake-utils";
-        systems.follows = "systems";
+        flake-compat.follows = "flake-compat";
       };
     };
 

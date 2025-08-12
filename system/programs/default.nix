@@ -17,15 +17,6 @@
     nix-ld.enable = true;
 
     gdk-pixbuf.modulePackages = [pkgs.librsvg];
-
-    thunar = {
-      enable = true;
-      plugins = with pkgs.xfce; [
-        thunar-archive-plugin
-        thunar-volman
-        thunar-media-tags-plugin
-      ];
-    };
   };
 
   environment.systemPackages = with pkgs; [

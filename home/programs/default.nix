@@ -12,6 +12,7 @@
     ./wayland
     ./gtk.nix
     ./qt.nix
+    ./thunar.nix
   ];
 
   programs.java = {

@@ -1,6 +1,6 @@
 {pkgs, ...}: let
   ides =
-    (with pkgs.custom.jetbrains; [
+    (with pkgs.jetbrains; [
       idea-ultimate
       # pycharm-professional
       # webstorm

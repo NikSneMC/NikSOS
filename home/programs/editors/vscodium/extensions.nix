@@ -2,8 +2,6 @@
   programs.vscode.profiles.default.extensions = with pkgs.vscode-extensions; [
     asciidoctor.asciidoctor-vscode
     astro-build.astro-vscode
-    catppuccin.catppuccin-vsc
-    catppuccin.catppuccin-vsc-icons
     naumovs.color-highlight
     serayuzgur.crates
     mkhl.direnv

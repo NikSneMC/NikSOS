@@ -79,9 +79,17 @@
       };
     };
 
-    rust-overlay = {
-      url = "github:oxalica/rust-overlay";
+    fenix = {
+      url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    naersk = {
+      url = "github:nix-community/naersk";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        fenix.follows = "fenix";
+      };
     };
 
     agenix = {
@@ -112,7 +120,11 @@
     # common
     activate-niksos = {
       url = "github:NikSneMC/activate-niksos";
-      inputs.nixpkgs.follows = "nixpkgs";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        fenix.follows = "fenix";
+        naersk.follows = "naersk";
+      };
     };
 
     ayugram-desktop.url = "github:/ndfined-crp/ayugram-desktop/release?submodules=1";
@@ -122,7 +134,8 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
-        rust-overlay.follows = "rust-overlay";
+        fenix.follows = "fenix";
+        naersk.follows = "naersk";
       };
     };
 
@@ -168,8 +181,9 @@
       inputs = {
         systems.follows = "systems";
         nixpkgs.follows = "nixpkgs";
-        flake-parts.follows = "flake-parts";
         flake-compat.follows = "flake-compat";
+        flake-parts.follows = "flake-parts";
+        flake-utils.follows = "flake-utils";
       };
     };
 

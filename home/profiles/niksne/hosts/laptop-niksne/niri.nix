@@ -18,8 +18,11 @@
           x = 0;
           y = 0;
         };
+        scale = 1;
       };
-      "HDMI-A-1" = {};
+      "HDMI-A-1" = {
+        scale = 1;
+      };
     };
 
     workspaces = {

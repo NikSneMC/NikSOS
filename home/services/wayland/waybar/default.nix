@@ -122,7 +122,7 @@
             ];
           }
           // (
-            if config.home.host == "laptop-niksne"
+            if config.home.host == "nakama"
             then {
               hwmon-path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input";
             }

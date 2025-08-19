@@ -2,9 +2,9 @@
   inherit (niksos.homes) mkHomeImports mkHomes;
 
   users = {
-    table-niksne = ["niksne"];
-    laptop-niksne = ["niksne"];
-    niksos-wsl = ["niksne"];
+    konran = ["niksne"];
+    nakama = ["niksne"];
+    tobichi = ["niksne"];
   };
 
   homeImports = mkHomeImports users;

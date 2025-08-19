@@ -1071,11 +1071,11 @@
     "private": {
       "flake": false,
       "locked": {
-        "lastModified": 1754665712,
-        "narHash": "sha256-DydFKIiPgbhZBt5ULFgXNvFOYlZmtqV+xFdhge0iGBg=",
+        "lastModified": 1755623842,
+        "narHash": "sha256-iDttmwkhg7oj+ZI7vGdZk71WU8ogL6HMzj47fzCwNbo=",
         "owner": "NikSneMC",
         "repo": "NikSOS-private",
-        "rev": "41601804281ce619324d7345303301ce9981e91d",
+        "rev": "52c331763c8022e57094e04ad7ad1f309ac745a0",
         "type": "github"
       },
       "original": {

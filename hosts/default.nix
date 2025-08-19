@@ -1,8 +1,10 @@
 {niksos, ...}: {
-  flake.nixosConfigurations = with niksos.hosts;
+  flake.nixosConfigurations = let
+    inherit (niksos.hosts) mkHosts systemProfiles;
+  in
     mkHosts {
-      table-niksne = systemProfiles.desktop;
-      laptop-niksne = systemProfiles.laptop;
-      niksos-wsl = systemProfiles.minimal;
+      konran = systemProfiles.desktop;
+      nakama = systemProfiles.laptop;
+      tobichi = systemProfiles.minimal;
     };
 }

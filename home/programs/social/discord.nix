@@ -18,6 +18,11 @@
       trackSelf = true;
       watchLargeGuilds = false;
     }
+    "AmITyping"
+    {
+      name = "Anammox";
+      gift = false;
+    }
     {
       name = "AnonymiseFileNames";
       anonymiseByDefault = true;
@@ -44,6 +49,9 @@
       spectrographColor = "33, 150, 243";
       spectrographSolidColor = false;
     }
+    "BetterBanReasons"
+    "BetterBlockedUsers"
+    "BetterCommands"
     "BetterGifAltText"
     "BetterGifPicker"
     "BetterInvites"
@@ -116,6 +124,8 @@
       copyUnicode = true;
     }
     "CopyFileContents"
+    "BetterCommands"
+
     "CopyUserMention"
     "CopyUserURLs"
     {
@@ -143,6 +153,10 @@
     "DisableCameras"
     "DontFilterMe"
     "DontRoundMyTimestamps"
+    {
+      name = "Downloadify";
+      defaultDirectory = "${config.home.homeDirectory}/Downloads/Equibop";
+    }
     "DynamicImageModalAPI"
     "EmojiDumper"
     "EmoteCloner"
@@ -414,7 +428,8 @@
     }
     "PreviewMessage"
     "PurgeMessages"
-    "QuestCompleter"
+    "QuestFocused"
+    ""
     "QuickMention"
     {
       name = "Quoter";
@@ -545,6 +560,7 @@
       IconLocation = "toolbar";
       soundVolume = 0.5;
     }
+    "SplitLargeMessages"
     {
       name = "SpotifyControls";
       hoverControls = false;

@@ -34,7 +34,7 @@
         }
         {
           key = "├─󰌢 Host         ";
-          keyColor = "red";
+          keyColor = "green";
           type = "host";
         }
         {
@@ -69,14 +69,44 @@
           type = "de";
         }
         {
-          key = "├─ WM           ";
+          key = "├─ Terminal     ";
           keyColor = "green";
+          type = "terminal";
+        }
+        {
+          key = "├─ Terminal Font";
+          keyColor = "yellow";
+          type = "terminalfont";
+        }
+        {
+          key = "├─ WM           ";
+          keyColor = "blue";
           type = "wm";
         }
         {
-          key = "╰─ Terminal     ";
+          key = "├─󰭠 WM Theme     ";
+          keyColor = "magenta";
+          type = "wmtheme";
+        }
+        {
+          key = "├─󱕕 Theme        ";
+          keyColor = "cyan";
+          type = "theme";
+        }
+        {
+          key = "├─󱁹 Icons        ";
+          keyColor = "white";
+          type = "icons";
+        }
+        {
+          key = "├─ Font         ";
+          keyColor = "red";
+          type = "font";
+        }
+        {
+          key = "╰─󰇀 Cursor       ";
           keyColor = "yellow";
-          type = "terminal";
+          type = "cursor";
         }
         {
           key = "╭─ CPU          ";
@@ -174,47 +204,6 @@
             yellow = 80;
           };
           type = "swap";
-        }
-        {
-          key = "╭─󱕕 Theme        ";
-          keyColor = "cyan";
-          type = "theme";
-        }
-        {
-          key = "├─󰭠 WM Theme     ";
-          keyColor = "white";
-          type = "wmtheme";
-        }
-        {
-          key = "├─󱁹 Icons        ";
-          keyColor = "red";
-          type = "icons";
-        }
-        {
-          key = "├─ Font         ";
-          keyColor = "yellow";
-          type = "font";
-        }
-        {
-          key = "├─ Terminal Font";
-          keyColor = "green";
-          type = "terminalfont";
-        }
-        {
-          key = "├─ Media Player ";
-          keyColor = "blue";
-          type = "player";
-        }
-        {
-          format = "{3} - {1} {4}";
-          key = "├─ Media        ";
-          keyColor = "magenta";
-          type = "media";
-        }
-        {
-          key = "╰─󰇀 Cursor       ";
-          keyColor = "cyan";
-          type = "cursor";
         }
         "break"
         "colors"

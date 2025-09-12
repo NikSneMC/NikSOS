@@ -1,30 +1,40 @@
-{pkgs, ...}: let
-  ides =
-    (with pkgs.jetbrains; [
-      idea-ultimate
-      # pycharm-professional
-      # webstorm
-      rust-rover
-      # goland
-      # phpstorm
-      # clion
-      datagrip
-    ])
-    |> map (
-      ide:
-        ide.override {
-          vmopts = ''
-            --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
-            --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
+{
+  lib',
+  pkgs,
+  ...
+}: let
+  ides = [
+    "idea-ultimate"
+    # pycharm-professional
+    # webstorm
+    # "rust-rover"
+    # goland
+    # phpstorm
+    # clion
+    "datagrip"
+  ];
 
-            -javaagent:${pkgs.custom.ja-netfilter}/ja-netfilter.jar=jetbrains
-          '';
-        }
-    );
+  plugins = {
+    common = [
+      "catppuccin-theme"
+      "catppuccin-icons"
+      "ideavim"
+      "nixidea"
+      "rainbow-brackets"
+      "-env-files"
+      "gitlab"
+    ];
+    "idea-ultimate" = [
+      "scala"
+      "minecraft-development"
+    ];
+  };
+
+  ides' = lib'.jetbrains.mkIdes pkgs ides plugins;
 in {
   programs.jetbrains-remote = {
     enable = true;
-    inherit ides;
+    ides = ides';
   };
-  home.packages = ides;
+  home.packages = ides';
 }

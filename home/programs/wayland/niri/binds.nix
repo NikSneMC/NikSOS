@@ -268,12 +268,12 @@
           action = toggle-column-tabbed-display;
         }
         {
-          bind = "Mod+BracketLeft";
+          bind = "Mod+Slash";
           desc = "Consume or expel the focused window left";
           action = consume-or-expel-window-left;
         }
         {
-          bind = "Mod+BracketRight";
+          bind = "Mod+At";
           desc = "Consume or expel the focused window right";
           action = consume-or-expel-window-right;
         }

@@ -7,6 +7,19 @@
   inherit (lib.lists) findFirstIndex;
   inherit (numbers) mod;
 
+  rebinds = {
+    "1" = "Ampersand";
+    "2" = "Bracketleft";
+    "3" = "BraceLeft";
+    "4" = "BraceRight";
+    "5" = "ParenLeft";
+    "6" = "Equal";
+    "7" = "Asterisk";
+    "8" = "ParenRight";
+    "9" = "Plus";
+    "0" = "BracketRight";
+  };
+
   mkBinds = binds:
     binds
     |> map (
@@ -29,48 +42,58 @@
     workspaces = take 10 names;
   in
     workspaces
-    |> map (name: let
-      nameIndex = findFirstIndex (w: w == name) null workspaces;
-      wsIndex = mod (nameIndex + 1) 10;
-      ws = toString wsIndex;
-    in [
-      {
-        bind = "Mod+${ws}";
-        desc = "Focus the `${name}` workspace";
-        action.focus-workspace = name;
-      }
-      {
-        bind = "Mod+Shift+${ws}";
-        desc = "Move the focused window to the `${name}` workspace";
-        action.move-window-to-workspace = name;
-      }
-      {
-        bind = "Mod+Shift+Ctrl+Alt+${ws}";
-        desc = "Move the focused column to the `${name}` workspace";
-        action.move-column-to-workspace = name;
-      }
-    ])
+    |> map (
+      name: let
+        nameIndex = findFirstIndex (w: w == name) null workspaces;
+        wsIndex = mod (nameIndex + 1) 10;
+        ws_ru = toString wsIndex;
+        ws_en = rebinds.${ws_ru};
+      in
+        [ws_ru ws_en]
+        |> map (ws: [
+          {
+            bind = "Mod+${ws}";
+            desc = "Focus the `${name}` workspace";
+            action.focus-workspace = name;
+          }
+          {
+            bind = "Mod+Shift+${ws}";
+            desc = "Move the focused window to the `${name}` workspace";
+            action.move-window-to-workspace = name;
+          }
+          {
+            bind = "Mod+Shift+Ctrl+Alt+${ws}";
+            desc = "Move the focused column to the `${name}` workspace";
+            action.move-column-to-workspace = name;
+          }
+        ])
+        |> builtins.concatLists
+    )
     |> builtins.concatLists;
 
   mkColumnsBinds = n:
     n
     |> builtins.genList (
       x: let
-        ws = toString (mod (x + 1) 10);
         m = x + 1;
+        ws_ru = toString (mod m 10);
+        ws_en = rebinds.${ws_ru};
         mStr = toString m;
-      in [
-        {
-          bind = "Mod+Alt+${ws}";
-          desc = "Focus a column at index ${mStr}";
-          action.focus-column = m;
-        }
-        {
-          bind = "Mod+Alt+Shift+${ws}";
-          desc = "Move column to the index ${mStr}";
-          action.move-column-to-index = m;
-        }
-      ]
+      in
+        [ws_ru ws_en]
+        |> map (ws: [
+          {
+            bind = "Mod+Alt+${ws}";
+            desc = "Focus a column at index ${mStr}";
+            action.focus-column = m;
+          }
+          {
+            bind = "Mod+Alt+Shift+${ws}";
+            desc = "Move column to the index ${mStr}";
+            action.move-column-to-index = m;
+          }
+        ])
+        |> builtins.concatLists
     )
     |> builtins.concatLists;
 in {

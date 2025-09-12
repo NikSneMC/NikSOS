@@ -5,9 +5,9 @@
 
 window.left-bar#waybar {
   background-color: alpha(@base, 0.8);
-  border-top: solid alpha(@surface1, 0.7) 2px;
-  border-right: solid alpha(@surface1, 0.7) 2px;
-  border-bottom: solid alpha(@surface1, 0.7) 2px;
+  border-top: solid @surface1 4px;
+  border-right: solid @surface1 4px;
+  border-bottom: solid @surface1 4px;
   border-radius: 0 15px 15px 0;
 }
 

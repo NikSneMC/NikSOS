@@ -169,11 +169,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1753110829,
-        "narHash": "sha256-WrzIqt28RhoFYhCMu5oY5jAdGh0Gv5uryW/1jTX99aY=",
+        "lastModified": 1757007590,
+        "narHash": "sha256-JXjjLhMqvY1u2cUO62gDYO0yWNDJ01mkk15yBUSbhhQ=",
         "owner": "astro",
         "repo": "deadnix",
-        "rev": "67e5094c79b81b3084ababac4c81f22c26e11df5",
+        "rev": "6e929079cf636548beb3fa9bffd1df63234fcc6b",
         "type": "github"
       },
       "original": {
@@ -717,11 +717,11 @@
     },
     "mnw": {
       "locked": {
-        "lastModified": 1748710831,
-        "narHash": "sha256-eZu2yH3Y2eA9DD3naKWy/sTxYS5rPK2hO7vj8tvUCSU=",
+        "lastModified": 1756659871,
+        "narHash": "sha256-v6Rh4aQ6RKjM2N02kK9Usn0Ix7+OY66vNpeklc1MnGE=",
         "owner": "Gerg-L",
         "repo": "mnw",
-        "rev": "cff958a4e050f8d917a6ff3a5624bc4681c6187d",
+        "rev": "ed6cc3e48557ba18266e598a5ebb6602499ada16",
         "type": "github"
       },
       "original": {
@@ -791,11 +791,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1754612576,
-        "narHash": "sha256-v8ypjfkUzvG1CIpnMgg1bhhpFWpzFg0A5D5QXLwxNDE=",
+        "lastModified": 1757745543,
+        "narHash": "sha256-ErmitDM2h5F+mRqXOfcbgwNFHDWO7J8SmoiSLo5IdcM=",
         "owner": "NikSneMC",
         "repo": "NikSVim",
-        "rev": "2a88cd4a637235ad6b61bf0159b741ce5b968b22",
+        "rev": "7d854c9c6f2ac93cd2852adc5f19176b13eecc33",
         "type": "github"
       },
       "original": {
@@ -1055,15 +1055,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1754552918,
-        "narHash": "sha256-vbT+nGdMLNAeYZ1S5WBBLJTVWosGne2VRt46rqPfB2A=",
-        "owner": "NotAShelf",
+        "lastModified": 1757349397,
+        "narHash": "sha256-bB0OFPPqb0HWYZHOGBUL4Dw+qH1judOnLWovpqFqTC8=",
+        "owner": "NikSneMC",
         "repo": "nvf",
-        "rev": "d61de135ce174f4e04b4e509de02e1afe040a834",
+        "rev": "fe77c1a3b2e26f717dad0ad9d1f3a9e49dd84339",
         "type": "github"
       },
       "original": {
-        "owner": "NotAShelf",
+        "owner": "NikSneMC",
+        "ref": "feat/angular-support",
         "repo": "nvf",
         "type": "github"
       }
@@ -1362,11 +1363,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755134331,
-        "narHash": "sha256-wbNyZYQl4UZZJn3BQrsa6J/3Uy6vTWplGM/7USJ09NQ=",
+        "lastModified": 1757207683,
+        "narHash": "sha256-oGaL8Qb/VRw3ulD/lEBiIHIEceBjkm9BLVADJl0KjCk=",
         "owner": "NikSneMC",
         "repo": "zen-browser-flake",
-        "rev": "75e0c85d27f85fb937aac7b9280f15c5c7bf715a",
+        "rev": "3e9aa32f0db7357a42ff21f20c34ad4782e92e8b",
         "type": "github"
       },
       "original": {

@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  home.packages = [pkgs.gh];
+  home.packages = with pkgs; [
+    gh
+    lazygit
+  ];
 
   # enable scrolling in git diff
   home.sessionVariables.DELTA_PAGER = "less -R";

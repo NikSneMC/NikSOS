@@ -25,17 +25,12 @@
       "*~"
       "*.swp"
       "*result*"
-      ".direnv"
-      "node_modules"
-      "venv"
-      ".idea"
       "kls_database.db"
       "**/.project"
       "**/.settings"
       "**/.classpath"
       "**/.factorypath"
       "**/bin"
-      "target"
     ];
 
     extraConfig.credential.helper = "store";

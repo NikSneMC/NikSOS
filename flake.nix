@@ -42,7 +42,7 @@
     # important
     master.url = "github:NixOS/nixpkgs/master";
     unstable.url = "github:NixOS/nixpkgs/nixos-unstable";
-    stable.url = "github:NixOS/nixpkgs/nixos-24.11";
+    stable.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     nixpkgs.follows = "unstable";
     nikspkgs.url = "github:NikSneMC/NikSpkgs/niksos";
@@ -139,17 +139,17 @@
       };
     };
 
-    hyprland = {
-      url = "github:hyprwm/Hyprland";
-      inputs = {
-        systems.follows = "systems";
-        pre-commit-hooks.follows = "git-hooks";
-      };
-    };
-    hyprland-plugins = {
-      url = "github:hyprwm/hyprland-plugins";
-      inputs.hyprland.follows = "hyprland";
-    };
+    # hyprland = {
+    #   url = "github:hyprwm/Hyprland";
+    #   inputs = {
+    #     systems.follows = "systems";
+    #     pre-commit-hooks.follows = "git-hooks";
+    #   };
+    # };
+    # hyprland-plugins = {
+    #   url = "github:hyprwm/hyprland-plugins";
+    #   inputs.hyprland.follows = "hyprland";
+    # };
 
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";

@@ -6,6 +6,7 @@
     ./fetchers.nix
     ./git.nix
     ./skim.nix
+    ./ssh.nix
     ./xdg.nix
     ./zoxide.nix
   ];

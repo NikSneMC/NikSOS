@@ -33,7 +33,6 @@
     btop.enable = true;
     cava.enable = true;
     eza.enable = true;
-    ssh.enable = true;
     yazi.enable = true;
   };
 }

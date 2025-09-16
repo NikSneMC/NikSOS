@@ -750,6 +750,8 @@ in {
 
   home.packages = with pkgs; [
     equibop
-    vesktop
+    (master.discord.override {
+      withEquicord = true;
+    })
   ];
 }

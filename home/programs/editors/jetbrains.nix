@@ -5,12 +5,12 @@
 }: let
   ides = [
     "idea-ultimate"
-    # pycharm-professional
-    # webstorm
+    # "pycharm-professional"
+    # "webstorm"
     # "rust-rover"
-    # goland
-    # phpstorm
-    # clion
+    # "goland"
+    # "phpstorm"
+    # "clion"
     "datagrip"
   ];
 

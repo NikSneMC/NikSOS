@@ -465,11 +465,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757745543,
-        "narHash": "sha256-ErmitDM2h5F+mRqXOfcbgwNFHDWO7J8SmoiSLo5IdcM=",
+        "lastModified": 1758231658,
+        "narHash": "sha256-fwMQgPD/zwss3XR+JOcMDkUU9P+BTNIs6zp4DmcFadc=",
         "owner": "NikSneMC",
         "repo": "NikSVim",
-        "rev": "7d854c9c6f2ac93cd2852adc5f19176b13eecc33",
+        "rev": "05d6208972674f370dda9c6b7c090d19e79f29a9",
         "type": "github"
       },
       "original": {

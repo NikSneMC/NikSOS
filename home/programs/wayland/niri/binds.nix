@@ -189,17 +189,17 @@
         {
           bind = "Mod+Shift+S";
           desc = "Take screenshot";
-          action = fish "take_screenshot_niri";
+          action = fish "take_screenshot";
         }
         {
           bind = "Mod+Shift+Ctrl+S";
           desc = "Take screenshot (window)";
-          action = fish "take_screenshot_window_niri";
+          action = fish "take_screenshot_window";
         }
         {
           bind = "Mod+Shift+Alt+S";
           desc = "Take screenshot (screen)";
-          action = fish "take_screenshot_screen_niri";
+          action = fish "take_screenshot_screen";
         }
       ]
       ++ (

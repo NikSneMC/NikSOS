@@ -24,7 +24,7 @@ mkNixosModules: {
   nix.settings.cores = 36;
 
   services = {
-    displayManager.defaultSession = "hyprland";
+    displayManager.defaultSession = "niri";
     fstrim.enable = true;
   };
 

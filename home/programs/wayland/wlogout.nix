@@ -11,7 +11,7 @@
       }
       {
         label = "hibernate";
-        action = "hyprlock & sleep 1 && hyprctl dispatch dpms off";
+        action = "hyprlock & sleep 1 && niri msg action power-off-monitors";
         text = "Lock & screen off";
         keybind = "d";
       }

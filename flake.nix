@@ -139,18 +139,6 @@
       };
     };
 
-    # hyprland = {
-    #   url = "github:hyprwm/Hyprland";
-    #   inputs = {
-    #     systems.follows = "systems";
-    #     pre-commit-hooks.follows = "git-hooks";
-    #   };
-    # };
-    # hyprland-plugins = {
-    #   url = "github:hyprwm/hyprland-plugins";
-    #   inputs.hyprland.follows = "hyprland";
-    # };
-
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
       inputs = {

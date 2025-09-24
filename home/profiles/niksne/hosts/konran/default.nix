@@ -3,14 +3,13 @@ mkHmModules: {
     "programs"
     "programs/editors/jetbrains.nix"
     "programs/games"
-    "programs/wayland/hyprland"
-    "programs/wayland/pyprland"
+    "programs/wayland/niri"
 
     "services"
 
     "terminal/emulators/wezterm.nix"
 
-    ./hyprland.nix
+    ./niri.nix
     ./programs.nix
   ];
 }

@@ -41,22 +41,6 @@
           end
         end
       '';
-    toggle_funky_hypr_stuff.body =
-      # fish
-      ''
-        set FUNKY_STUFF_ENABLED (hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
-        if [ "$FUNKY_STUFF_ENABLED" = 1 ]
-            hyprctl --batch "\
-                keyword animations:enabled 0;\
-                keyword decoration:shadow:enabled 0;\
-                keyword decoration:blur:enabled 0;\
-                keyword decoration:active_opacity 1;\
-                keyword decoration:inactive_opacity 1;\
-                keyword general:border_size 1"
-            exit
-        end
-        hyprctl reload
-      '';
     toggle_night_mode =
       # fish
       ''
@@ -68,11 +52,6 @@
         else
             touch $backup_file
             busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -2500
-        end
-
-        if pgrep $target_process > /dev/null
-          killall -s SIGINT hyprsunset
-        else
         end
       '';
     toggle_wifi.body =

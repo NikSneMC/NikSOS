@@ -139,6 +139,8 @@
       };
     };
 
+    helix.url = "github:helix-editor/helix";
+
     nix-minecraft = {
       url = "github:Infinidoge/nix-minecraft";
       inputs = {
@@ -161,17 +163,6 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-compat.follows = "flake-compat";
-      };
-    };
-
-    niksvim = {
-      url = "github:NikSneMC/NikSVim";
-      inputs = {
-        systems.follows = "systems";
-        nixpkgs.follows = "nixpkgs";
-        flake-compat.follows = "flake-compat";
-        flake-parts.follows = "flake-parts";
-        flake-utils.follows = "flake-utils";
       };
     };
 

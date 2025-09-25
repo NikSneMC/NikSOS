@@ -1,0 +1,25 @@
+{
+  imports = [
+    ./bash.nix
+    ./c.nix
+    ./ci.nix
+    ./docker.nix
+    ./elixir.nix
+    ./fish.nix
+    ./go.nix
+    ./helm.nix
+    ./just.nix
+    ./jvm.nix
+    ./latex.nix
+    ./nix.nix
+    ./protobuf.nix
+    ./python.nix
+    ./qml.nix
+    ./rust.nix
+    ./systemd.nix
+    ./toml.nix
+    ./web.nix
+    ./yaml.nix
+    ./zig.nix
+  ];
+}

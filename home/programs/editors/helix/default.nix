@@ -12,6 +12,8 @@
   programs.helix = {
     enable = true;
     package = inputs.helix.packages.${pkgs.system}.default;
+
+    defaultEditor = true;
     settings = {
       theme = "catppuccin_${config.theme.flavor}-transparent";
       editor = {

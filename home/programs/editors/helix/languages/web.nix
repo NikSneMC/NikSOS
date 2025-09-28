@@ -14,6 +14,7 @@
           language-servers = [
             "vscode-html-language-server"
             "tailwindcss-ls"
+            "emmet"
           ];
         }
         {
@@ -26,6 +27,7 @@
           language-servers = [
             "typescript-language-server"
             "tailwindcss-ls"
+            "emmet"
           ];
         }
         {
@@ -38,6 +40,7 @@
           language-servers = [
             "typescript-language-server"
             "tailwindcss-ls"
+            "emmet"
           ];
         }
         {
@@ -46,6 +49,7 @@
           language-servers = [
             "svelteserver"
             "tailwindcss-ls"
+            "emmet"
           ];
         }
         {
@@ -54,6 +58,7 @@
           language-servers = [
             "vuels"
             "tailwindcss-ls"
+            "emmet"
           ];
         }
         {
@@ -62,6 +67,7 @@
           language-servers = [
             "astro-ls"
             "tailwindcss-ls"
+            "emmet"
           ];
         }
       ];
@@ -85,12 +91,19 @@
             ];
           };
         };
+
+        emmet = {
+          command = "emmet-language-server";
+          args = ["--stdio"];
+        };
       };
     };
 
     extraPackages = with pkgs; [
       nodePackages.vscode-langservers-extracted
       tailwindcss-language-server
+      emmet-language-server
+      typescript-language-server
       svelte-language-server
       vue-language-server
       astro-language-server

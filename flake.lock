@@ -921,11 +921,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1757984929,
-        "narHash": "sha256-ypOmKARfQr3hNGM7YDHeH1D0hUmXY8/ivSBsZcBmYNQ=",
+        "lastModified": 1758762624,
+        "narHash": "sha256-Rh4NgX0SsccvuWV3YhQ0TbUB0Ewj5e7hrm0yDXzoF8o=",
         "owner": "NikSneMC",
         "repo": "zen-browser-flake",
-        "rev": "ef9f0b793445e687ab54c7b56171d1a0b327d2e6",
+        "rev": "e3eb01547690f950c5657d18ca4c35a0fcc44991",
         "type": "github"
       },
       "original": {

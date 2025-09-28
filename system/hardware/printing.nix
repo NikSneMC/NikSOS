@@ -6,6 +6,7 @@
       drivers = with pkgs; [
         hplipWithPlugin
         samsung-unified-linux-driver
+        epson-escpr
       ];
     };
     avahi = {

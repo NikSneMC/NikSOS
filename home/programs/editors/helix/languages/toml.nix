@@ -10,7 +10,7 @@
     };
 
     extraPackages = with pkgs; [
-      tombi
+      taplo
     ];
   };
 }

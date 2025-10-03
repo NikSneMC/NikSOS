@@ -43,11 +43,6 @@
           other-lines = "error";
         };
       };
-      keys = {
-        insert = {
-          "C-c" = "normal_mode";
-        };
-      };
     };
   };
 

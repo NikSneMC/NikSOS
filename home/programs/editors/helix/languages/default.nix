@@ -1,5 +1,20 @@
 {
-  imports = [
+  inputs,
+  lib',
+  pkgs,
+  ...
+}: let
+  commonLSPs = {
+    wakatime-ls = {
+      command = "wakatime-ls";
+    };
+  };
+
+  commonPackages = with pkgs; [
+    inputs.wakatime-ls.packages.${system}.wakatime-ls
+  ];
+
+  langfiles = [
     ./bash.nix
     ./c.nix
     ./ci.nix
@@ -22,4 +37,5 @@
     ./yaml.nix
     ./zig.nix
   ];
-}
+in
+  lib'.helix.mkHelixLangs pkgs langfiles commonLSPs commonPackages

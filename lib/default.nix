@@ -7,7 +7,7 @@
   ...
 }: {
   _module.args = rec {
-    lib' = import (./. + "/lib'") {inherit lib pkgs;};
+    lib' = import (./. + "/lib'") {inherit inputs lib pkgs;};
     niksos = import ./niksos {inherit homeImports inputs lib lib' pkgs self;};
   };
 }

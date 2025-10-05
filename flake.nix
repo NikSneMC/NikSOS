@@ -181,6 +181,8 @@
       flake = false;
     };
 
+    wakatime-ls.url = "github:mrnossiom/wakatime-ls";
+
     waybar.url = "github:Alexays/Waybar";
 
     zjstatus = {

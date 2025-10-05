@@ -1,5 +1,5 @@
 let
-  inherit (import (../../../lib + "/lib'/disks.nix") {}) mkSubvolumes;
+  inherit (import "${../../../lib}/lib'/disks.nix" {}) mkSubvolumes;
 in {
   disko.devices.disk.nvme0n1 = {
     type = "disk";

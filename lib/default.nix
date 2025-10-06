@@ -6,8 +6,10 @@
   self,
   ...
 }: {
-  _module.args = rec {
-    lib' = import "${./.}/lib'" {inherit inputs lib pkgs;};
-    niksos = import ./niksos {inherit homeImports inputs lib lib' pkgs self;};
+  _module.args = let
+    args = {inherit homeImports inputs lib pkgs self;};
+  in rec {
+    lib' = import "${./.}/lib'" args;
+    niksos = import ./niksos (args // {inherit lib';});
   };
 }

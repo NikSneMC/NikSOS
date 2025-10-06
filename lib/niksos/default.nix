@@ -1,14 +1,6 @@
-{
-  homeImports,
-  inputs,
-  lib,
-  lib',
-  pkgs,
-  self,
-  ...
-}: let
-  homes = import ./homes.nix {inherit inputs lib lib' pkgs self;};
-  hosts = import ./hosts.nix {inherit homeImports inputs lib lib' self;};
+args: let
+  homes = import ./homes.nix args;
+  hosts = import ./hosts.nix args;
 in {
   inherit homes hosts;
   inherit (homes) mkHomes;

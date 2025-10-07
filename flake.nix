@@ -185,10 +185,6 @@
 
     waybar.url = "github:Alexays/Waybar";
 
-    zjstatus = {
-      url = "github:dj95/zjstatus";
-    };
-
     zen-browser = {
       url = "github:NikSneMC/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";

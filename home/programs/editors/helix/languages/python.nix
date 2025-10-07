@@ -5,11 +5,16 @@
         {
           name = "python";
           auto-format = true;
+          language-servers = [
+            "basedpyright"
+            "ruff"
+          ];
         }
       ];
     };
 
     extraPackages = with pkgs; [
+      basedpyright
       ruff
     ];
   };

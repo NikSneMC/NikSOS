@@ -31,12 +31,6 @@
           action = fish "pkill -9 -P $(niri msg -j pick-window | jaq .pid)";
         }
         {
-          bind = "Mod+M";
-          desc = "Toggle the maximized state of the focused column";
-          action = maximize-column;
-        }
-
-        {
           bind = "Mod+Ctrl+Alt+Shift+E";
           desc = "Exit niri";
           action = quit;
@@ -45,6 +39,23 @@
           bind = "Mod+Shift+Q";
           desc = "Close the focused window";
           action = close-window;
+        }
+      ]
+      ++ [
+        {
+          bind = "Mod+M";
+          desc = "Toggle the maximized state of the focused column";
+          action = maximize-column;
+        }
+        {
+          bind = "Mod+U";
+          desc = "Switch between preset column widths backwards";
+          action = switch-preset-column-width-back;
+        }
+        {
+          bind = "Mod+H";
+          desc = "Switch between preset column widths";
+          action = switch-preset-column-width;
         }
       ]
       ++ [

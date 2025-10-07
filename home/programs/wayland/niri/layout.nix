@@ -1,4 +1,6 @@
-{config, ...}: {
+{config, ...}: let
+  proportion = proportion: {inherit proportion;};
+in {
   programs.niri.settings.layout = {
     border = {
       enable = true;
@@ -23,7 +25,15 @@
 
     background-color = "transparent";
 
-    preset-column-widths = [];
+    default-column-width = proportion 1.;
+    preset-column-widths =
+      [
+        (1. / 3)
+        (1. / 2)
+        (2. / 3)
+        1.
+      ]
+      |> map proportion;
     preset-window-heights = [];
 
     always-center-single-column = true;

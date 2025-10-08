@@ -4,7 +4,9 @@
   lib,
   pkgs,
   ...
-}: {
+}: let
+  inherit (config.theme) colors;
+in {
   programs.waybar = {
     enable = true;
     package = inputs.waybar.packages.${pkgs.system}.waybar;
@@ -147,7 +149,7 @@
             weeks-pos = "right";
             on-scroll = 1;
             on-click-right = "mode";
-            format = with config.theme.colors; {
+            format = with colors; {
               months = "<span color='#${rosewater}'><b>{}</b></span>";
               days = "<span color='#${text}'><b>{}</b></span>";
               weeks = "<span color='#${mauve}'><b>W{}</b></span>";
@@ -314,8 +316,8 @@
             activated = "󰛐";
             deactivated = "󰛑";
           };
-          tooltip-format-activated = "idle-inhibitor <span color='#${config.theme.colors.green}'>on</span>";
-          tooltip-format-deactivated = "idle-inhibitor <span color='#${config.theme.colors.maroon}'>off</span>";
+          tooltip-format-activated = "idle-inhibitor <span color='#${colors.green}'>on</span>";
+          tooltip-format-deactivated = "idle-inhibitor <span color='#${colors.maroon}'>off</span>";
           start-activated = true;
         };
         tray = {
@@ -352,8 +354,8 @@
             "󰤨"
           ];
           format-disconnected = "󰤫";
-          tooltip-format = "wifi <span color='#${config.theme.colors.maroon}'>off</span>";
-          tooltip-format-wifi = with config.theme.colors; ''
+          tooltip-format = "wifi <span color='#${colors.maroon}'>off</span>";
+          tooltip-format-wifi = with colors; ''
             SSID = {essid}({signalStrength}%), {frequency} MHz
             Interface = {ifname}
             IP = {ipaddr}
@@ -361,10 +363,10 @@
 
             <span color='#${green}'>{bandwidthUpBits}</span>\t<span color='#${maroon}'>{bandwidthDownBits}</span>\t<span color='#${mauve}'>󰹹{bandwidthTotalBits}</span>
           '';
-          tooltip-format-disconnected = "<span color='#${config.theme.colors.red}'>disconnected</span>";
+          tooltip-format-disconnected = "<span color='#${colors.red}'>disconnected</span>";
           format-ethernet = "󰈀";
           format-linked = "󰈀!";
-          tooltip-format-ethernet = with config.theme.colors; ''            Interface = {ifname}
+          tooltip-format-ethernet = with colors; ''            Interface = {ifname}
             IP = {ipaddr}
             GW = {gwaddr}
             Netmask = {netmask}

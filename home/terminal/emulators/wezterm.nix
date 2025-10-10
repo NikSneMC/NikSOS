@@ -42,22 +42,22 @@ in {
 
         config.keys = {
           {
-            key = ",",
+            key = "h",
             mods = "CTRL",
             action = wezterm.action.ActivateTabRelative(-1),
           },
           {
-            key = ".",
+            key = "l",
             mods = "CTRL",
             action = wezterm.action.ActivateTabRelative(1),
           },
           {
-            key = "<",
+            key = "H",
             mods = "CTRL|SHIFT",
             action = wezterm.action.MoveTabRelative(-1),
           },
           {
-            key = ">",
+            key = "L",
             mods = "CTRL|SHIFT",
             action = wezterm.action.MoveTabRelative(1),
           },

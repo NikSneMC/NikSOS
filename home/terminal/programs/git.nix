@@ -1,7 +1,6 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
     gh
-    lazygit
   ];
 
   # enable scrolling in git diff

@@ -13,7 +13,7 @@ in
       # kdl
       ''
         format_left   "{mode}#[bg=#${colors.base}] {tabs}"
-        format_center "{pipe_zjstatus_hints}"
+        format_center ""
         format_right  "#[bg=#${colors.base},fg=#${colors.blue}]#[bg=#${colors.blue},fg=#${colors.mantle},bold] #[bg=#${colors.surface0},fg=#${colors.text},bold] {session} #[bg=#${colors.surface1},fg=#${colors.text},bold]"
         format_space  ""
         format_hide_on_overlength "true"

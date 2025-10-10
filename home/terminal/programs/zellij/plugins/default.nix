@@ -2,7 +2,6 @@
 [
   ./zellij-forgot.nix
   ./zjstatus.nix
-  # ./zjstatus-hints.nix
   ./zsm.nix
 ]
 |> map (file: import file args)

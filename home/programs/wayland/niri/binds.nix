@@ -26,7 +26,7 @@
       ++ (mkColumnsBinds 10)
       ++ [
         {
-          bind = "Mod+K";
+          bind = "Mod+Ctrl+K";
           desc = "Enter the `kill mode`";
           action = fish "pkill -9 -P $(niri msg -j pick-window | jaq .pid)";
         }
@@ -53,7 +53,7 @@
           action = switch-preset-column-width-back;
         }
         {
-          bind = "Mod+H";
+          bind = "Mod+P";
           desc = "Switch between preset column widths";
           action = switch-preset-column-width;
         }
@@ -166,7 +166,7 @@
           action = rofi "filebrowser";
         }
         {
-          bind = "Mod+Shift+L";
+          bind = "Mod+Shift+G";
           desc = "Lock session";
           action = spawn "hyprlock";
         }
@@ -252,24 +252,44 @@
       )
       ++ [
         {
-          bind = "Mod+Up";
+          bind = "Mod+K";
           desc = "Focus the window above";
           action = focus-window-up;
         }
         {
-          bind = "Mod+Down";
+          bind = "Mod+J";
           desc = "Focus the window below";
           action = focus-window-down;
         }
         {
-          bind = "Mod+Shift+Up";
+          bind = "Mod+H";
+          desc = "Focus the column to the left";
+          action = focus-column-left;
+        }
+        {
+          bind = "Mod+L";
+          desc = "Focus the column to the right";
+          action = focus-column-right;
+        }
+        {
+          bind = "Mod+Shift+K";
           desc = "Move the focused window up in a column";
           action = move-window-up;
         }
         {
-          bind = "Mod+Shift+Down";
+          bind = "Mod+Shift+J";
           desc = "Move the focused window down in a column";
           action = move-window-down;
+        }
+        {
+          bind = "Mod+Shift+H";
+          desc = "Move the focused column to the left";
+          action = move-column-left;
+        }
+        {
+          bind = "Mod+Shift+L";
+          desc = "Move the focused column to the right";
+          action = move-column-right;
         }
       ]
       ++ [
@@ -287,28 +307,6 @@
           bind = "Mod+At";
           desc = "Consume or expel the focused window right";
           action = consume-or-expel-window-right;
-        }
-      ]
-      ++ [
-        {
-          bind = "Mod+Comma";
-          desc = "Focus the column to the left";
-          action = focus-column-left;
-        }
-        {
-          bind = "Mod+Period";
-          desc = "Focus the column to the right";
-          action = focus-column-right;
-        }
-        {
-          bind = "Mod+Shift+Comma";
-          desc = "Move the focused column to the left";
-          action = move-column-left;
-        }
-        {
-          bind = "Mod+Shift+Period";
-          desc = "Move the focused column to the right";
-          action = move-column-right;
         }
       ]
       ++ [
@@ -335,25 +333,25 @@
       ]
       ++ [
         {
-          bind = "Mod+Ctrl+Left";
+          bind = "Mod+Minus";
           desc = "Decrease the width of the focused window";
           action = set-window-width "-5%";
           repeat = true;
         }
         {
-          bind = "Mod+Ctrl+Right";
+          bind = "Mod+Plus";
           desc = "Increase the width of the focused window";
           action = set-window-width "+5%";
           repeat = true;
         }
         {
-          bind = "Mod+Ctrl+Down";
+          bind = "Mod+Shift+Minus";
           desc = "Decrease the height of the focused window";
           action = set-window-height "-5%";
           repeat = true;
         }
         {
-          bind = "Mod+Ctrl+Up";
+          bind = "Mod+Shift+Plus";
           desc = "Increase the height of the focused window";
           action = set-window-height "+5%";
           repeat = true;
@@ -435,88 +433,88 @@
       ]
       ++ [
         {
-          bind = "Mod+Alt+Up";
+          bind = "Mod+Alt+K";
           desc = "Focus the monitor above";
           action = focus-monitor-up;
         }
         {
-          bind = "Mod+Alt+Down";
+          bind = "Mod+Alt+J";
           desc = "Focus the monitor below";
           action = focus-monitor-down;
         }
         {
-          bind = "Mod+Alt+Left";
+          bind = "Mod+Alt+H";
           desc = "Focus the monitor to the left";
           action = focus-monitor-left;
         }
         {
-          bind = "Mod+Alt+Right";
+          bind = "Mod+Alt+L";
           desc = "Focus the monitor to the right";
           action = focus-monitor-right;
         }
       ]
       ++ [
         {
-          bind = "Mod+Alt+Shift+Up";
+          bind = "Mod+Alt+Shift+K";
           desc = "Move the focused window to the monitor above";
           action = move-window-to-monitor-up;
         }
         {
-          bind = "Mod+Alt+Shift+Down";
+          bind = "Mod+Alt+Shift+J";
           desc = "Move the focused window to the monitor below";
           action = move-window-to-monitor-down;
         }
         {
-          bind = "Mod+Alt+Shift+Left";
+          bind = "Mod+Alt+Shift+H";
           desc = "Move the focused window to the monitor to the left";
           action = move-window-to-monitor-left;
         }
         {
-          bind = "Mod+Alt+Shift+Right";
+          bind = "Mod+Alt+Shift+L";
           desc = "Move the focused window to the monitor to the right";
           action = move-window-to-monitor-right;
         }
       ]
       ++ [
         {
-          bind = "Mod+Alt+Ctrl+Up";
+          bind = "Mod+Alt+Ctrl+K";
           desc = "Move the focused column to the monitor above";
           action = move-column-to-monitor-up;
         }
         {
-          bind = "Mod+Alt+Ctrl+Down";
+          bind = "Mod+Alt+Ctrl+J";
           desc = "Move the focused column to the monitor below";
           action = move-column-to-monitor-down;
         }
         {
-          bind = "Mod+Alt+Ctrl+Left";
+          bind = "Mod+Alt+Ctrl+H";
           desc = "Move the focused column to the monitor to the left";
           action = move-column-to-monitor-left;
         }
         {
-          bind = "Mod+Alt+Ctrl+Right";
+          bind = "Mod+Alt+Ctrl+L";
           desc = "Move the focused column to the monitor to the right";
           action = move-column-to-monitor-right;
         }
       ]
       ++ [
         {
-          bind = "Mod+Alt+Ctrl+Shift+Up";
+          bind = "Mod+Alt+Ctrl+Shift+K";
           desc = "Move the focused workspace to the monitor above";
           action = move-workspace-to-monitor-up;
         }
         {
-          bind = "Mod+Alt+Ctrl+Shift+Down";
+          bind = "Mod+Alt+Ctrl+Shift+J";
           desc = "Move the focused workspace to the monitor below";
           action = move-workspace-to-monitor-down;
         }
         {
-          bind = "Mod+Alt+Ctrl+Shift+Left";
+          bind = "Mod+Alt+Ctrl+Shift+H";
           desc = "Move the focused workspace to the monitor to the left";
           action = move-workspace-to-monitor-left;
         }
         {
-          bind = "Mod+Alt+Ctrl+Shift+Right";
+          bind = "Mod+Alt+Ctrl+Shift+L";
           desc = "Move the focused workspace to the monitor to the right";
           action = move-workspace-to-monitor-right;
         }

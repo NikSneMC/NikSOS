@@ -2,22 +2,21 @@
 # kdl
 ''
   keybinds {
-    shared_except "locked" {
-      bind "Ctrl y" {
+    session {
+      bind "b" {
         LaunchOrFocusPlugin "zellij-forgot" {
           "LOAD_ZELLIJ_BINDINGS" "true"
           floating true
         }
+        SwitchToMode "Normal"
       }
-    }
 
-    session {
       bind "w" {
         LaunchOrFocusPlugin "zsm" {
           floating true
           move_to_focused_tab true
 
-          default_layout "development"
+          default_layout "custom"
 
           session_separator "_"
 
@@ -25,6 +24,7 @@
 
           base_paths "${config.home.homeDirectory}/Projects"
         }
+        SwitchToMode "Normal"
       }
     }
   }

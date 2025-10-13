@@ -15,7 +15,7 @@
     cmatrix
     pipes-rs
 
-    du-dust
+    dust
     uutils-coreutils
     duf
     fd
@@ -26,7 +26,7 @@
     wf-recorder
 
     packwiz
-    inputs.git-helper.packages.${system}.git-helper
+    inputs.git-helper.packages.${stdenv.hostPlatform.system}.git-helper
   ];
 
   programs = {

@@ -46,8 +46,7 @@
             then "${self}/hosts/${host}/hardware-configuration.nix"
             else {}
           )
-          ({config, ...}: {
-            nix.settings.max-jobs = config.nix.settings.cores * 4;
+          ({...}: {
             networking.hostName = host;
             home-manager = {
               users =

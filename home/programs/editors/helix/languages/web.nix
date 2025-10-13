@@ -100,7 +100,7 @@
     };
 
     extraPackages = with pkgs; [
-      nodePackages.vscode-langservers-extracted
+      vscode-langservers-extracted
       tailwindcss-language-server
       emmet-language-server
       typescript-language-server

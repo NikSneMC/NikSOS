@@ -1,8 +1,11 @@
 {
   nixpkgs.config = {
+    allowBroken = false;
+    allowUnsupportedSystem = true;
     allowUnfree = true;
-    permittedInsecurePackages = [
-      "electron-28.3.3"
-    ];
+    permittedInsecurePackages = [];
+    allowAliases = false;
+    enableParallelBuildingByDefault = false;
+    showDerivationWarnings = [];
   };
 }

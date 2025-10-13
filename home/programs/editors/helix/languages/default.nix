@@ -11,7 +11,7 @@
   };
 
   commonPackages = with pkgs; [
-    inputs.wakatime-ls.packages.${system}.wakatime-ls
+    inputs.wakatime-ls.packages.${stdenv.hostPlatform.system}.wakatime-ls
   ];
 
   langfiles = [

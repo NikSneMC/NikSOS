@@ -24,8 +24,6 @@ mkNixosModules: {
     accent = "blue";
   };
 
-  nix.settings.cores = 8;
-
   services = {
     displayManager.defaultSession = "niri";
     fstrim.enable = true;

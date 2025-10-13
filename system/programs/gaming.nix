@@ -46,6 +46,6 @@
 
   environment.systemPackages = with pkgs; [
     libGL
-    glfw-wayland-minecraft
+    glfw3-minecraft
   ];
 }

@@ -20,7 +20,7 @@
     package = pkgs.zulu21;
   };
 
-  home.packages = with inputs.catppuccin.packages.${pkgs.system};
+  home.packages = with inputs.catppuccin.packages.${pkgs.stdenv.hostPlatform.system};
     [
       whiskers
       catwalk

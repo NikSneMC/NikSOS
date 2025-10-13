@@ -1,15 +1,12 @@
 {
   config,
-  inputs,
   lib,
-  pkgs,
   ...
 }: let
   inherit (config.theme) colors;
 in {
   programs.waybar = {
     enable = true;
-    package = inputs.waybar.packages.${pkgs.system}.waybar;
     settings = [
       {
         name = "left-bar";

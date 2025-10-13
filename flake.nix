@@ -181,8 +181,6 @@
 
     wakatime-ls.url = "github:mrnossiom/wakatime-ls";
 
-    waybar.url = "github:Alexays/Waybar";
-
     zen-browser = {
       url = "github:NikSneMC/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";

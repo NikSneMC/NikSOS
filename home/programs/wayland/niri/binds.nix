@@ -13,7 +13,7 @@
     rofi = menu: fish "pkill -9 bin/rofi || rofi -show ${menu}";
     packages = builtins.mapAttrs (_: lib.getExe) {
       activate-niksos = inputs.activate-niksos.packages.${pkgs.stdenv.hostPlatform.system}.default;
-      inherit (pkgs) ani-cli ayugram-desktop brightnessctl;
+      inherit (pkgs) ani-cli brightnessctl;
     };
   in
     mkBinds (
@@ -183,7 +183,7 @@
         {
           bind = "Mod+Shift+T";
           desc = "Launch Telegram";
-          action = spawn "${packages.ayugram-desktop}";
+          action = spawn "AyuGram";
         }
         {
           bind = "Mod+Shift+W";

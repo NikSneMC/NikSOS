@@ -22,7 +22,7 @@
         ["fish" "-c" "wl-paste --type text --watch cliphist store"]
         ["fish" "-c" "wl-paste --type image --watch cliphist store"]
         ["equibop"]
-        ["${getExe pkgs.ayugram-desktop}"]
+        ["AyuGram"]
         ["thunderbird"]
       ]
       |> map (command: {inherit command;});

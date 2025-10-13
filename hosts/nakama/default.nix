@@ -8,6 +8,7 @@ mkNixosModules: {
     "hardware/razer.nix"
     "services/thermald.nix"
     # "services/ollama.nix"
+    "virtualisation/virt-manager.nix"
   ];
 
   boot.loader = {
@@ -37,4 +38,6 @@ mkNixosModules: {
 
     openrazer.users = ["niksne"];
   };
+
+  users.users.niksne.extraGroups = ["libvirtd"];
 }

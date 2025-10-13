@@ -13,14 +13,16 @@
   ];
 
   programs.niri.settings = {
-    spawn-at-startup =
+    spawn-at-startup = let
+      inherit (lib) getExe;
+    in
       [
-        ["${lib.getExe pkgs.wl-gammarelay-rs}" "run"]
+        ["${getExe pkgs.wl-gammarelay-rs}" "run"]
         ["waybar"]
         ["fish" "-c" "wl-paste --type text --watch cliphist store"]
         ["fish" "-c" "wl-paste --type image --watch cliphist store"]
         ["equibop"]
-        ["ayugram-desktop"]
+        ["${getExe pkgs.ayugram-desktop}"]
         ["thunderbird"]
       ]
       |> map (command: {inherit command;});
@@ -51,7 +53,7 @@
 
     xwayland-satellite = {
       enable = true;
-      path = lib.getExe inputs.niri-flake.packages.${pkgs.system}.xwayland-satellite-unstable;
+      path = lib.getExe inputs.niri-flake.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable;
     };
   };
 }

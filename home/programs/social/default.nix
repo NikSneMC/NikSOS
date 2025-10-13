@@ -1,15 +1,11 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./discord.nix
     ./thunderbird.nix
   ];
 
   home.packages = with pkgs; [
-    inputs.ayugram-desktop.packages.${system}.ayugram-desktop
+    ayugram-desktop
 
     chatterino2
   ];

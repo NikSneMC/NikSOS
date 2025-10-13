@@ -127,8 +127,6 @@
       };
     };
 
-    ayugram-desktop.url = "github:/ndfined-crp/ayugram-desktop/release?submodules=1";
-
     git-helper = {
       url = "github:NiKSneMC/git-helper";
       inputs = {

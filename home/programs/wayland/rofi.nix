@@ -190,7 +190,7 @@
 in {
   programs.rofi = {
     enable = true;
-    package = pkgs.rofi-wayland;
+    package = pkgs.rofi;
     location = "right";
     terminal = "wezterm";
     extraConfig =

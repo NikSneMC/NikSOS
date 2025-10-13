@@ -1,8 +1,6 @@
 {
   services = {
-    logind.extraConfig = ''
-      HandlePowerKey=suspend
-    '';
+    logind.settings.Login.HandlePowerKey = "suspend";
 
     power-profiles-daemon.enable = true;
 

@@ -23,6 +23,7 @@
     jaq
     ripgrep
     nix-prefetch-github
+    nix-output-monitor
     wf-recorder
 
     packwiz

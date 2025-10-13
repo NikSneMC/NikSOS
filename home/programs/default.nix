@@ -15,6 +15,8 @@
     ./thunar.nix
   ];
 
+  xdg.configFile."mimeapps.list".force = true;
+
   programs.java = {
     enable = true;
     package = pkgs.zulu21;

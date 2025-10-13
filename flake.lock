@@ -573,11 +573,11 @@
     "private": {
       "flake": false,
       "locked": {
-        "lastModified": 1755623842,
-        "narHash": "sha256-iDttmwkhg7oj+ZI7vGdZk71WU8ogL6HMzj47fzCwNbo=",
+        "lastModified": 1760333922,
+        "narHash": "sha256-hrA/yOXwh4jtWvhaCyAkEfQyzvaritZ+UoJg0Dc7Lu8=",
         "owner": "NikSneMC",
         "repo": "NikSOS-private",
-        "rev": "52c331763c8022e57094e04ad7ad1f309ac745a0",
+        "rev": "5eeecb0bcdbd7d2545f67cedef1e8c9039cf589a",
         "type": "github"
       },
       "original": {

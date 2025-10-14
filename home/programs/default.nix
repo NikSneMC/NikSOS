@@ -10,6 +10,7 @@
     ./office
     ./social
     ./wayland
+    ./dconf.nix
     ./gtk.nix
     ./qt.nix
     ./thunar.nix

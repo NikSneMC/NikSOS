@@ -35,7 +35,7 @@
       blockbench
 
       surrealist
-      postman
+      bruno
 
       mission-center
 

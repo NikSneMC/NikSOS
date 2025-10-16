@@ -2,6 +2,7 @@
   config,
   inputs,
   lib,
+  lib',
   pkgs,
   ...
 }: {
@@ -34,6 +35,7 @@
       "4".name = "social";
       "5".name = "gaming";
       "6".name = "recording/streaming";
+      "scratchpads".name = lib'.niri.scratchpadsWsName;
     };
 
     screenshot-path = "~/Pictures/Screenshots/screenshot-%d-%m-%Y_%H_%M_%S.png";

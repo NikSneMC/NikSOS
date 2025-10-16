@@ -20,6 +20,8 @@
     "0" = "BracketRight";
   };
 
+  scratchpadsWsName = "scratchpads";
+
   mkBinds = binds:
     binds
     |> map (
@@ -39,7 +41,10 @@
     |> builtins.listToAttrs;
 
   mkWorkspacesBinds = names: let
-    workspaces = take 10 names;
+    workspaces =
+      names
+      |> builtins.filter (name: name != scratchpadsWsName)
+      |> take 10;
   in
     workspaces
     |> map (
@@ -97,5 +102,5 @@
     )
     |> builtins.concatLists;
 in {
-  inherit mkBinds mkWorkspacesBinds mkColumnsBinds;
+  inherit scratchpadsWsName mkBinds mkWorkspacesBinds mkColumnsBinds;
 }

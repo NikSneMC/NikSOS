@@ -7,7 +7,7 @@ args: {
     enable = true;
 
     settings = {
-      default_layout = "custom";
+      default_layout = "zsm";
       mirror_session = true;
       show_startup_tips = false;
       show_release_notes = false;

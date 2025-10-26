@@ -14,6 +14,10 @@
   ];
 
   programs.niri.settings = {
+    environment = {
+      _JAVA_AWT_WM_NONREPARENTING = "1";
+    };
+
     spawn-at-startup = let
       inherit (lib) getExe;
     in

@@ -10,9 +10,6 @@ lib'.zellij.zellijPlugin {
   config =
     # kdl
     ''
-      floating true
-      move_to_focused_tab true
-
       default_layout "custom"
 
       session_separator "_"

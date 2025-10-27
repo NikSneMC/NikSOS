@@ -13,6 +13,8 @@
 
       bind "w" {
         LaunchOrFocusPlugin "zsm" {
+          floating true
+          move_to_focused_tab true
         }
         SwitchToMode "Normal"
       }

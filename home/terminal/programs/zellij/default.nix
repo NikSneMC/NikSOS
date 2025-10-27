@@ -7,6 +7,7 @@ args: {
     enable = true;
 
     enableFishIntegration = true;
+    exitShellOnExit = true;
 
     settings = {
       default_layout = "custom";

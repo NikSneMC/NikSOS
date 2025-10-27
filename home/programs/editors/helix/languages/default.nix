@@ -8,25 +8,28 @@
 }: let
   notForHosts = lib'.notForHosts osConfig;
 
+  headlessHosts = ["tobichi"];
+
   commonLSPs =
     {
       wakatime-ls = {
         command = "wakatime-ls";
       };
     }
-    // (notForHosts lib.optionalAttrs ["tobichi"] {
+    // (notForHosts headlessHosts lib.optionalAttrs {
       discord-rpc = {
         command = "discord-rpc-lsp";
       };
     });
 
-  commonPackages = with pkgs;
+  commonPackages = with pkgs; let
+    inherit (stdenv.hostPlatform) system;
+  in
     [
-      inputs.wakatime-ls.packages.${stdenv.hostPlatform.system}.wakatime-ls
+      inputs.wakatime-ls.packages.${system}.wakatime-ls
     ]
     ++ (
-      inputs.discord-rpc-lsp.packages.${stdenv.hostPlatform.system}.default
-      |> notForHosts lib.optional ["tobichi"]
+      notForHosts headlessHosts lib.optional inputs.discord-rpc-lsp.packages.${system}.default
     );
 
   langfiles = [

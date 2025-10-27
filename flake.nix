@@ -127,6 +127,14 @@
       };
     };
 
+    discord-rpc-lsp = {
+      url = "gitlab:invra/discord-rpc-lsp";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        flake-utils.follows = "flake-utils";
+      };
+    };
+
     git-helper = {
       url = "github:NiKSneMC/git-helper";
       inputs = {

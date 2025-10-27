@@ -90,6 +90,29 @@
         "type": "github"
       }
     },
+    "discord-rpc-lsp": {
+      "inputs": {
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1755259527,
+        "narHash": "sha256-c65MUoHqFl0ezFs/corRVuHzK1cnuZhOtdrj5wwYouo=",
+        "owner": "invra",
+        "repo": "discord-rpc-lsp",
+        "rev": "f4f6ab950c109a9db765664d7087956a2d6c8f9e",
+        "type": "gitlab"
+      },
+      "original": {
+        "owner": "invra",
+        "repo": "discord-rpc-lsp",
+        "type": "gitlab"
+      }
+    },
     "disko": {
       "inputs": {
         "nixpkgs": [
@@ -592,6 +615,7 @@
         "agenix": "agenix",
         "assets": "assets",
         "catppuccin": "catppuccin",
+        "discord-rpc-lsp": "discord-rpc-lsp",
         "disko": "disko",
         "fenix": "fenix",
         "flake-compat": "flake-compat",

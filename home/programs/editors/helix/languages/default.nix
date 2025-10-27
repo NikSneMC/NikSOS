@@ -1,18 +1,33 @@
 {
   inputs,
+  lib,
   lib',
+  osConfig,
   pkgs,
   ...
 }: let
-  commonLSPs = {
-    wakatime-ls = {
-      command = "wakatime-ls";
-    };
-  };
+  notForHosts = lib'.notForHosts osConfig;
 
-  commonPackages = with pkgs; [
-    inputs.wakatime-ls.packages.${stdenv.hostPlatform.system}.wakatime-ls
-  ];
+  commonLSPs =
+    {
+      wakatime-ls = {
+        command = "wakatime-ls";
+      };
+    }
+    // (notForHosts lib.optionalAttrs ["tobichi"] {
+      discord-rpc = {
+        command = "discord-rpc-lsp";
+      };
+    });
+
+  commonPackages = with pkgs;
+    [
+      inputs.wakatime-ls.packages.${stdenv.hostPlatform.system}.wakatime-ls
+    ]
+    ++ (
+      inputs.discord-rpc-lsp.packages.${stdenv.hostPlatform.system}.default
+      |> notForHosts lib.optional ["tobichi"]
+    );
 
   langfiles = [
     ./bash.nix

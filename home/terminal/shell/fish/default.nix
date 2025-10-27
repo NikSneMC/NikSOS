@@ -4,8 +4,6 @@
     ./plugins.nix
   ];
 
-  home.shell.enableFishIntegration = true;
-
   programs.fish = {
     enable = true;
     shellInit =

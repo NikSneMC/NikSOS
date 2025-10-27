@@ -4,8 +4,14 @@
     ./starship.nix
   ];
 
-  home.shellAliases = {
-    jq = "jaq";
-    fetch = "fastfetch";
+  home = {
+    shell = {
+      enableBashIntegration = true;
+      enableFishIntegration = true;
+    };
+    shellAliases = {
+      jq = "jaq";
+      fetch = "fastfetch";
+    };
   };
 }

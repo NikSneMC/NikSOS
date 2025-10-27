@@ -6,8 +6,10 @@ args: {
   programs.zellij = {
     enable = true;
 
+    enableFishIntegration = true;
+
     settings = {
-      default_layout = "zsm";
+      default_layout = "custom";
       mirror_session = true;
       show_startup_tips = false;
       show_release_notes = false;

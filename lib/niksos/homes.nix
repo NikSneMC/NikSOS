@@ -32,7 +32,7 @@
             (import "${inputs.private}" "hm" host)
             (import "${self}/home/profiles/${user}" mkHmModules)
             (import "${self}/home/profiles/${user}/hosts/${host}" mkHmModules)
-            {home = {inherit host user;};}
+            {home = {inherit user;};}
           ]
       )
       users

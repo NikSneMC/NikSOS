@@ -1,9 +1,13 @@
 {
   config,
   lib,
+  lib',
+  osConfig,
   ...
 }: let
   inherit (config.theme) colors;
+
+  forHost = host: lib'.forHosts osConfig lib.optionalAttrs [host];
 in {
   programs.waybar = {
     enable = true;
@@ -120,13 +124,9 @@ in {
               ""
             ];
           }
-          // (
-            if config.home.host == "nakama"
-            then {
-              hwmon-path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input";
-            }
-            else {}
-          );
+          // (forHost "nakama" {
+            hwmon-path = "/sys/devices/platform/coretemp.0/hwmon/hwmon6/temp1_input";
+          });
         "clock#time" = {
           interval = 1;
           format = "{:%H:%M}";

@@ -1,23 +1,20 @@
 {
   config,
   inputs,
-  lib,
   options,
+  osConfig,
   ...
 }: {
   options.home = {
-    host = lib.mkOption {
-      description = '''';
-      type = lib.types.str;
-    };
     user = options.home.username;
   };
 
   config = {
     home = {
+      inherit (osConfig.system) stateVersion;
+
       username = config.home.user;
       homeDirectory = "/home/${config.home.user}";
-      stateVersion = "24.11";
       file.".face".source = "${inputs.assets}/users/${config.home.user}.png";
     };
 

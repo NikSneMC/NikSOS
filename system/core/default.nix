@@ -1,8 +1,8 @@
 {lib, ...}: {
   imports = [
+    ./xkb
     ./boot.nix
     ./security.nix
-    ./xkb.nix
   ];
 
   i18n = {

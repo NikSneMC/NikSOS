@@ -9,14 +9,14 @@
 
   rebinds = {
     "1" = "Ampersand";
-    "2" = "Bracketleft";
-    "3" = "BraceLeft";
-    "4" = "BraceRight";
+    "2" = "Plus";
+    "3" = "Bracketleft";
+    "4" = "BraceLeft";
     "5" = "ParenLeft";
     "6" = "Equal";
-    "7" = "Asterisk";
+    "7" = "Numbersign";
     "8" = "ParenRight";
-    "9" = "Plus";
+    "9" = "BraceRight";
     "0" = "BracketRight";
   };
 

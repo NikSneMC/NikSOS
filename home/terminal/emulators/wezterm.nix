@@ -13,7 +13,6 @@
 in {
   programs.wezterm = {
     enable = true;
-    # package = inputs.wezterm.packages.${pkgs.system}.default;
 
     extraConfig =
       # lua
@@ -61,61 +60,7 @@ in {
             mods = "CTRL|SHIFT",
             action = wezterm.action.MoveTabRelative(1),
           },
-          {
-            key = "!",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTab(0),
-          },
-          {
-            key = "@",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTab(1),
-          },
-          {
-            key = "#",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTab(2),
-          },
-          {
-            key = "$",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTab(3),
-          },
-          {
-            key = "%",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTab(4),
-          },
-          {
-            key = "^",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTab(5),
-          },
-          {
-            key = "&",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTab(6),
-          },
-          {
-            key = "*",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTab(7),
-          },
-          {
-            key = "(",
-            mods = "CTRL|SHIFT",
-            action = wezterm.action.MoveTab(8),
-          },
         }
-
-        for i = 1, 9 do
-          table.insert(config.keys, {
-            key = tostring(i),
-            mods = 'CTRL',
-            action = wezterm.action.ActivateTab(i - 1),
-          })
-        end
-
 
         disabled_keys = {
           {

@@ -25,6 +25,7 @@
     nix-prefetch-github
     nix-output-monitor
     wf-recorder
+    tree
 
     packwiz
     inputs.git-helper.packages.${stdenv.hostPlatform.system}.git-helper

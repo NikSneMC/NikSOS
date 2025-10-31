@@ -5,18 +5,18 @@ xkb_symbols "basic" {
 
     key <TLDE> { [       dollar,  asciitilde,      dead_grave,       dead_tilde ] };
 
-    key <AE01> { [    ampersand,       grave,      dead_tilde                   ] };
+    key <AE01> { [    ampersand,     percent,      dead_tilde                   ] };
     key <AE02> { [         plus,           9                                    ] };
     key <AE03> { [  bracketleft,           7                                    ] };
     key <AE04> { [    braceleft,           5                                    ] };
     key <AE05> { [    parenleft,           3                                    ] };
     key <AE06> { [        equal,           1                                    ] };
-    key <AE07> { [   numbersign,           0, dead_circumflex,  dead_circumflex ] };
+    key <AE07> { [     asterisk,           0, dead_circumflex,  dead_circumflex ] };
     key <AE08> { [   parenright,           2                                    ] };
     key <AE09> { [   braceright,           4                                    ] };
     key <AE10> { [ bracketright,           6,      dead_grave                   ] };
-    key <AE11> { [     asterisk,           8                                    ] };
-    key <AE12> { [       exclam,     percent                                    ] };
+    key <AE11> { [       exclam,           8                                    ] };
+    key <AE12> { [   numbersign,       grave                                    ] };
 
     key <AD01> { [    semicolon,       colon,      dead_acute,   dead_diaeresis ] };
     key <AD02> { [        comma,        less,    dead_cedilla,       dead_caron ] };

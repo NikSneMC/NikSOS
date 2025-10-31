@@ -14,7 +14,7 @@
     "4" = "BraceLeft";
     "5" = "ParenLeft";
     "6" = "Equal";
-    "7" = "Numbersign";
+    "7" = "Asterisk";
     "8" = "ParenRight";
     "9" = "BraceRight";
     "0" = "BracketRight";

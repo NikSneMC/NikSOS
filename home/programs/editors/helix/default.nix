@@ -11,7 +11,19 @@
 
   programs.helix = {
     enable = true;
-    package = inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default;
+    package = pkgs.symlinkJoin {
+      name = "helix-wrapped";
+      paths = [inputs.helix.packages.${pkgs.stdenv.hostPlatform.system}.default];
+      preferLocalBuild = true;
+      nativeBuildInputs = [pkgs.makeWrapper];
+      postBuild = let
+        runtime =
+          pkgs.callPackage (import ./runtime.nix {inherit config inputs;}) {} |> toString;
+      in ''
+        wrapProgram $out/bin/hx \
+          --suffix HELIX_RUNTIME : ${runtime}
+      '';
+    };
 
     defaultEditor = true;
     settings = {

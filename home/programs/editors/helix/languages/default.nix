@@ -49,6 +49,7 @@
     ./python.nix
     ./qml.nix
     ./rust.nix
+    ./surql.nix
     ./systemd.nix
     ./toml.nix
     ./web.nix

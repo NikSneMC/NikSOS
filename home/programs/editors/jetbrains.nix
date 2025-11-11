@@ -7,7 +7,7 @@
     "idea-ultimate"
     # "pycharm-professional"
     # "webstorm"
-    # "rust-rover"
+    "rust-rover"
     # "goland"
     # "phpstorm"
     # "clion"

@@ -40,9 +40,11 @@
     )
     |> builtins.listToAttrs;
 
-  mkWorkspacesBinds = names: let
+  mkWorkspacesBinds = config: let
     workspaces =
-      names
+      config.programs.niri.settings.workspaces
+      |> builtins.attrValues
+      |> map (ws: ws.name)
       |> builtins.filter (name: name != scratchpadsWsName)
       |> take 10;
   in

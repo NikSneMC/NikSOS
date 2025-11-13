@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./delta.nix
     ./lazygit.nix
   ];
 
@@ -7,22 +8,17 @@
     gh
   ];
 
-  # enable scrolling in git diff
-  home.sessionVariables.DELTA_PAGER = "less -R";
-
   programs.git = {
     enable = true;
     package = pkgs.gitFull;
 
-    delta.enable = true;
-
-    extraConfig = {
+    settings = {
       diff.colorMoved = "default";
       merge.conflictstyle = "diff3";
       pull.rebase = false;
     };
 
-    extraConfig.safe.directory = ["*"];
+    settings.safe.directory = ["*"];
 
     ignores = [
       "*~"
@@ -36,9 +32,9 @@
       "**/bin"
     ];
 
-    extraConfig.credential.helper = "store";
+    settings.credential.helper = "store";
 
     signing.signByDefault = true;
-    extraConfig.gpg.format = "ssh";
+    settings.gpg.format = "ssh";
   };
 }

@@ -506,6 +506,21 @@
         "type": "github"
       }
     },
+    "nixos-hardware": {
+      "locked": {
+        "lastModified": 1762847253,
+        "narHash": "sha256-BWWnUUT01lPwCWUvS0p6Px5UOBFeXJ8jR+ZdLX8IbrU=",
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "rev": "899dc449bc6428b9ee6b3b8f771ca2b0ef945ab9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixos-hardware",
+        "type": "github"
+      }
+    },
     "nixos-wsl": {
       "inputs": {
         "flake-compat": [
@@ -631,6 +646,7 @@
         "niri-flake": "niri-flake",
         "nix-minecraft": "nix-minecraft",
         "nix-python": "nix-python",
+        "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": [
           "unstable"

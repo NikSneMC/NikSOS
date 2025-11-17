@@ -1,3 +1,7 @@
-{
-  hardware.nvidia.prime.sync.enable = true;
+{inputs, ...}: {
+  imports = [
+    "${inputs.nixos-hardware}/common/gpu/nvidia/prime.nix"
+  ];
+
+  hardware.nvidia.primeBatterySaverSpecialisation = true;
 }

@@ -48,7 +48,11 @@
         |> lib.mergeAttrsList;
     };
 
-    combineLists = list: list |> builtins.groupBy (obj: obj.name) |> builtins.attrValues |> map lib.mergeAttrsList;
+    combineLists = list:
+      list
+      |> builtins.groupBy (obj: obj.name)
+      |> builtins.attrValues
+      |> map lib.mergeAttrsList;
 
     commonLSPNames = builtins.attrNames commonLSPs;
 

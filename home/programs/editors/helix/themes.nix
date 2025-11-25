@@ -1,20 +1,18 @@
 {lib, ...}: let
   inherit (lib) nameValuePair;
-
-  mkTransparentTheme = name: {
-    inherits = name;
-
-    "ui.background" = {};
-  };
 in {
   programs.helix.themes =
-    [
+    map (flavor: "catppuccin_${flavor}") [
       "latte"
       "frappe"
       "macciato"
       "mocha"
     ]
-    |> map (flavor: "catppuccin_${flavor}")
-    |> map (theme: nameValuePair "${theme}-transparent" (mkTransparentTheme theme))
+    |> map (theme:
+      nameValuePair "${theme}-transparent" {
+        inherits = theme;
+
+        "ui.background" = {};
+      })
     |> builtins.listToAttrs;
 }

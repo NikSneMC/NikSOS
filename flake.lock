@@ -656,7 +656,6 @@
         "stable": "stable",
         "systems": "systems",
         "unstable": "unstable",
-        "vscode-file-nesting-config-json": "vscode-file-nesting-config-json",
         "wakatime-ls": "wakatime-ls",
         "zen-browser": "zen-browser"
       }
@@ -787,22 +786,6 @@
         "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
-    "vscode-file-nesting-config-json": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1757552217,
-        "narHash": "sha256-W8W/02u/HmncBw6BuqYpnyJTs7KPLjGS/kgpzFhYvaw=",
-        "owner": "NikSneMC",
-        "repo": "vscode-file-nesting-config-json",
-        "rev": "10693fb58b8ce1e039783f610c4ee3a01a73867c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NikSneMC",
-        "repo": "vscode-file-nesting-config-json",
         "type": "github"
       }
     },

@@ -184,11 +184,6 @@
       };
     };
 
-    vscode-file-nesting-config-json = {
-      url = "github:NikSneMC/vscode-file-nesting-config-json";
-      flake = false;
-    };
-
     wakatime-ls.url = "github:mrnossiom/wakatime-ls";
 
     zen-browser = {

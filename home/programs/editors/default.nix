@@ -1,6 +1,6 @@
 {
   imports = [
     ./helix
-    ./vscodium
+    ./zed
   ];
 }

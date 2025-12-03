@@ -27,7 +27,7 @@
       }
       {
         matches = [
-          {app-id = "VSCodium";}
+          {app-id = "dev.zed.*";}
           {app-id = "jetbrains-.*";}
         ];
         open-on-workspace = "development";

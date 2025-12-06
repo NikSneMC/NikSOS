@@ -637,11 +637,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765013057,
-        "narHash": "sha256-twkkh3sqQHGY71ApQXV5NTKP8lTWAXO+nY4wf5h8c74=",
+        "lastModified": 1765027555,
+        "narHash": "sha256-0n6q7YQ7QGi8ls4C/tEHRa7ZrBIzaxSJy3m/MkfCNEA=",
         "owner": "NikSneMC",
         "repo": "NikSOS-private",
-        "rev": "0e84532738ee89b9cf41bac7da34bf3a69999f0f",
+        "rev": "ecbe13fc3444799c811f938ca85361400afb2c18",
         "type": "github"
       },
       "original": {

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" xml:space="preserve">
+  <style>
+    .sc10{stop-color:#05625d}.sc11{stop-color:#193b4f}.sc20{stop-color:#37023d}.sc21{stop-color:#222848}
+  </style>
+  <linearGradient id="a" gradientUnits="userSpaceOnUse" x1="315.593" y1="56.386" x2="382.668" y2="207.038">
+    <stop offset="0" class="sc10"/>
+    <stop offset="1" class="sc11"/>
+  </linearGradient>
+  <path d="M356.53 256.7c0-1.68-125.8-218.04-125.8-218.04h55.35l33.55 57.03 33.55-57.03h28.51l13.42 23.48-43.61 85.54 33.55 58.7z" style="fill:url(#a)"/>
+  <linearGradient id="b" gradientUnits="userSpaceOnUse" x1="149.534" y1="214.376" x2="370.946" y2="334.146" gradientTransform="rotate(120.24 337.631 297.384)">
+    <stop offset="0" class="sc20"/>
+    <stop offset="1" class="sc21"/>
+  </linearGradient>
+  <path d="M305.69 341.77c1.46-.83 126.95-217.38 126.95-217.38l27.45 48.06-32.88 57.41 66.16.85 14.14 24.76-13.74 23.3-95.91 4.56-34.34 58.24z" style="fill:url(#b)"/>
+  <linearGradient id="c" gradientUnits="userSpaceOnUse" x1="297.415" y1="44.519" x2="380.142" y2="188.22" gradientTransform="rotate(119.929 245.805 255.57)">
+    <stop offset="0" class="sc10"/>
+    <stop offset="1" class="sc11"/>
+  </linearGradient>
+  <path d="M202.2 340.41c1.45.84 251.73-.23 251.73-.23l-27.62 47.97-66.16.62 32.69 57.52L378.61 471l-27.05-.09-52.38-80.47-67.61-.22z" style="fill:url(#c)"/>
+  <linearGradient id="d" gradientUnits="userSpaceOnUse" x1="81.563" y1="127.999" x2="302.975" y2="247.769" gradientTransform="rotate(-119.883 250.147 284.728)">
+    <stop offset="0" class="sc20"/>
+    <stop offset="1" class="sc21"/>
+  </linearGradient>
+  <path d="M153.93 254.72c0 1.68 125.23 218.37 125.23 218.37l-55.35-.14-33.4-57.11-33.69 56.94-28.51-.07-13.36-23.52 43.83-85.43-33.39-58.79z" style="fill:url(#d)"/>
+  <linearGradient id="e" gradientUnits="userSpaceOnUse" x1="296.663" y1="166.128" x2="379.39" y2="309.829" gradientTransform="rotate(-119.208 213.678 308.225)">
+    <stop offset="0" class="sc10"/>
+    <stop offset="1" class="sc11"/>
+  </linearGradient>
+  <path d="M208.09 166.3c-1.46.82-128.94 216.2-128.94 216.2l-27.01-48.31 33.41-57.11-66.15-1.45-13.91-24.9 13.95-23.17 95.94-3.67 34.87-57.93z" style="fill:url(#e)"/>
+  <linearGradient id="f" gradientUnits="userSpaceOnUse" x1="63.565" y1="79.002" x2="284.977" y2="198.773">
+    <stop offset="0" class="sc20"/>
+    <stop offset="1" class="sc21"/>
+  </linearGradient>
+  <path d="M306.07 167.25c-1.45-.84-251.73-.21-251.73-.21l27.7-47.92 66.16-.5-32.58-57.58 14.27-24.69 27.04.13 52.23 80.56 67.61.34z" style="fill:url(#f)"/>
+</svg>

@@ -5,7 +5,7 @@
 }: {
   home.packages = [
     (inputs.zen-browser.packages.${pkgs.stdenv.hostPlatform.system}.beta.override {
-      iconsDir = "${inputs.assets}/icons/zen-browser";
+      iconsDir = "${inputs.self}/assets/icons/zen-browser";
     })
   ];
 }

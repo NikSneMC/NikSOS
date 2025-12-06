@@ -1,6 +1,6 @@
 {
-  inputs,
   pkgs,
+  self,
   ...
 }: {
   home.packages = with pkgs; [
@@ -14,7 +14,7 @@
       "$schema" = "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json";
       logo = {
         type = "kitty";
-        source = "${inputs.assets}/niksos/niksos2048.png";
+        source = "${self}/assets/niksos/niksos2048.png";
         width = 35;
       };
       display = {

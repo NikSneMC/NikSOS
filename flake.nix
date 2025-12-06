@@ -49,11 +49,6 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
-    assets = {
-      url = "github:NikSneMC/NikSOS/assets";
-      flake = false;
-    };
-
     systems.url = "github:nix-systems/default-linux";
 
     flake-parts = {

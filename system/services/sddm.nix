@@ -1,7 +1,7 @@
 {
-  inputs,
   lib,
   pkgs,
+  self,
   ...
 }: {
   services.displayManager.sddm = {
@@ -13,7 +13,7 @@
   catppuccin.sddm = {
     font = "Jetbrains Mono Nerd Font";
     fontSize = "10";
-    background = "${inputs.assets}/wallpapers/night_forest.png";
+    background = "${self}/assets/wallpapers/night_forest.png";
     loginBackground = false;
   };
 }

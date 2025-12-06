@@ -1,4 +1,4 @@
-mkHmModules: {inputs, ...}: {
+mkHmModules: {self, ...}: {
   imports = mkHmModules [
     "terminal"
   ];
@@ -7,6 +7,6 @@ mkHmModules: {inputs, ...}: {
     flavor = "mocha";
     accent = "blue";
 
-    wallpaper = "${inputs.assets}/wallpapers/night_forest.png";
+    wallpaper = "${self}/assets/wallpapers/night_forest.png";
   };
 }

@@ -70,6 +70,27 @@
         "type": "github"
       }
     },
+    "burpsuite-pro": {
+      "inputs": {
+        "nixpkgs": [
+          "private",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1762554184,
+        "narHash": "sha256-7gixVVVfOCLkhOHrdwZ5x+9P5bi07VPCwYrF3mzPFmU=",
+        "owner": "xiv3r",
+        "repo": "Burpsuite-Professional",
+        "rev": "955f9b00fdf27d91e40909bd8f2727c6e0e5cec8",
+        "type": "github"
+      },
+      "original": {
+        "owner": "xiv3r",
+        "repo": "Burpsuite-Professional",
+        "type": "github"
+      }
+    },
     "catppuccin": {
       "inputs": {
         "nixpkgs": [
@@ -457,21 +478,24 @@
     "nix-minecraft": {
       "inputs": {
         "flake-compat": [
+          "private",
           "flake-compat"
         ],
         "flake-utils": [
+          "private",
           "flake-utils"
         ],
         "nixpkgs": [
+          "private",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1764556167,
-        "narHash": "sha256-/b+oEls56HDRzsSp60tsRfPFRjFebBPHq6k1I+hfPqw=",
+        "lastModified": 1764986396,
+        "narHash": "sha256-HYBvpziKGvKY/XfMCBRCTuUUqhPWjWiWaPthIsPzGDk=",
         "owner": "Infinidoge",
         "repo": "nix-minecraft",
-        "rev": "849d1b2b1adddfc7bddbd3be6bffd218a3f5a6fe",
+        "rev": "70b931d67256ad7ebfced45ed797c016943bbff2",
         "type": "github"
       },
       "original": {
@@ -483,12 +507,15 @@
     "nix-python": {
       "inputs": {
         "flake-compat": [
+          "private",
           "flake-compat"
         ],
         "flake-utils": [
+          "private",
           "flake-utils"
         ],
         "nixpkgs": [
+          "private",
           "nixpkgs"
         ]
       },
@@ -609,13 +636,29 @@
       }
     },
     "private": {
-      "flake": false,
+      "inputs": {
+        "burpsuite-pro": "burpsuite-pro",
+        "flake-compat": [
+          "flake-parts"
+        ],
+        "flake-utils": [
+          "flake-utils"
+        ],
+        "nix-minecraft": "nix-minecraft",
+        "nix-python": "nix-python",
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "systems": [
+          "systems"
+        ]
+      },
       "locked": {
-        "lastModified": 1764599453,
-        "narHash": "sha256-KG5lgvyhfHAcI3Ed3qR4pgprBt/NmiK6AhdjkaYt+PQ=",
+        "lastModified": 1765013057,
+        "narHash": "sha256-twkkh3sqQHGY71ApQXV5NTKP8lTWAXO+nY4wf5h8c74=",
         "owner": "NikSneMC",
         "repo": "NikSOS-private",
-        "rev": "79c6afc1bbf3eced444320ecf31caf3953f53233",
+        "rev": "0e84532738ee89b9cf41bac7da34bf3a69999f0f",
         "type": "github"
       },
       "original": {
@@ -644,8 +687,6 @@
         "naersk": "naersk",
         "nikspkgs": "nikspkgs",
         "niri-flake": "niri-flake",
-        "nix-minecraft": "nix-minecraft",
-        "nix-python": "nix-python",
         "nixos-hardware": "nixos-hardware",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": [

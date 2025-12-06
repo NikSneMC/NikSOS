@@ -49,11 +49,6 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
-    private = {
-      url = "github:NikSneMC/NikSOS-private";
-      flake = false;
-    };
-
     assets = {
       url = "github:NikSneMC/NikSOS/assets";
       flake = false;
@@ -72,6 +67,16 @@
     };
 
     flake-compat.url = "github:edolstra/flake-compat";
+
+    private = {
+      url = "github:NikSneMC/NikSOS-private";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        systems.follows = "systems";
+        flake-compat.follows = "flake-parts";
+        flake-utils.follows = "flake-utils";
+      };
+    };
 
     git-hooks = {
       url = "github:cachix/git-hooks.nix";
@@ -148,23 +153,6 @@
     };
 
     helix.url = "github:helix-editor/helix";
-
-    nix-minecraft = {
-      url = "github:Infinidoge/nix-minecraft";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-        flake-compat.follows = "flake-compat";
-      };
-    };
-    nix-python = {
-      url = "github:NiKSneMC/nix-python";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        flake-utils.follows = "flake-utils";
-        flake-compat.follows = "flake-compat";
-      };
-    };
 
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";

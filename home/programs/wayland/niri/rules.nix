@@ -72,6 +72,10 @@
           {title = "AmneziaVPN";}
           {app-id = "org.pulseaudio.pavucontrol";}
           {app-id = ".blueman-manager-wrapped";}
+          {
+            app-id = "com.ayugram.desktop";
+            title = "Mini App: .*";
+          }
         ];
         open-floating = true;
       }

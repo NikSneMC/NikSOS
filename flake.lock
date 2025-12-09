@@ -53,6 +53,23 @@
         "type": "github"
       }
     },
+    "assets": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1754526800,
+        "narHash": "sha256-YRtkbCyR1wOs0AiCAPEGRIUIIh7ui0s9hawbBzs+XwY=",
+        "owner": "NikSneMC",
+        "repo": "NikSOS",
+        "rev": "963a6892f6cbd73ae94c374d8604b9d44a9a3ffc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NikSneMC",
+        "ref": "assets",
+        "repo": "NikSOS",
+        "type": "github"
+      }
+    },
     "burpsuite-pro": {
       "inputs": {
         "nixpkgs": [
@@ -654,6 +671,7 @@
       "inputs": {
         "activate-niksos": "activate-niksos",
         "agenix": "agenix",
+        "assets": "assets",
         "catppuccin": "catppuccin",
         "discord-rpc-lsp": "discord-rpc-lsp",
         "disko": "disko",

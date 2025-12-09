@@ -1,10 +1,10 @@
 {
+  inputs,
   lib,
   pkgs,
-  self,
   ...
 }: let
-  niksos-logo = "${self}/assets/niksos/niksos100.png";
+  niksos-logo = "${inputs.assets}/niksos/niksos100.png";
 in {
   boot = {
     initrd = {

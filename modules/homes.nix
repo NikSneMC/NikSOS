@@ -1,8 +1,8 @@
 {
   config,
+  inputs,
   options,
   osConfig,
-  self,
   ...
 }: {
   options.home = {
@@ -15,7 +15,7 @@
 
       username = config.home.user;
       homeDirectory = "/home/${config.home.user}";
-      file.".face".source = "${self}/assets/users/${config.home.user}.png";
+      file.".face".source = "${inputs.assets}/users/${config.home.user}.png";
     };
 
     manual = {

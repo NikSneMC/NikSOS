@@ -6,6 +6,7 @@ _: let
         {
           package = pkgs.jetbrains.${ide}.override {
             vmopts = ''
+              -Dnosplash=true
               --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
               --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
 

@@ -25,6 +25,7 @@ in {
         enable = true;
         useOSProber = true;
         extraFiles."theme/logo.png" = lib.mkForce niksos-logo;
+        configurationLimit = 25;
       };
       timeout = 3;
     };

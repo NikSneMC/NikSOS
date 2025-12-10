@@ -375,7 +375,7 @@ in {
           on-click-right = "nm-connection-editor";
         };
         "niri/language" = {
-          format- = "ENG";
+          format-en = "ENG";
           format-ru = "RUS";
         };
       }

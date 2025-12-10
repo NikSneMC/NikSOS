@@ -1,0 +1,104 @@
+(defsrc
+  `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  caps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+(defalias
+  lay  (layer-toggle layouts)
+  rpk  (layer-switch rdvp)
+  qwe  (layer-switch qwerty)
+  sym  (layer-toggle symbols)
+  spc  (tap-hold-release 200 200 spc @sym)
+  cps  (tap-hold-release 200 200 caps @lay)
+  lsft (layer-while-held s-rdvp)
+  rsft (layer-while-held s-rdvp)
+  lmet (multi (layer-while-held m-rdvp) lmet)
+  rmet (multi (layer-while-held m-rdvp) rmet)
+)
+
+(defvar
+  tap-time 200
+  hold-time 200
+)
+
+(deftemplate home-row-mod (key mod)
+  (multi f24 (tap-hold $tap-time $hold-time $key $mod))
+)
+
+(defalias
+  a (t! home-row-mod a @lsft)
+  o (t! home-row-mod o lalt)
+  e (t! home-row-mod e @lmet)
+  u (t! home-row-mod u lctl)
+  h (t! home-row-mod h rctl)
+  t (t! home-row-mod t @rmet)
+  n (t! home-row-mod n lalt)
+  s (t! home-row-mod s @rsft)
+  sa (t! home-row-mod (multi lsft a) @lsft)
+  so (t! home-row-mod (multi lsft o) lalt)
+  se (t! home-row-mod (multi lsft e) @lmet)
+  su (t! home-row-mod (multi lsft u) lctl)
+  sh (t! home-row-mod (multi lsft h) rctl)
+  st (t! home-row-mod (multi lsft t) @rmet)
+  sn (t! home-row-mod (multi lsft n) lalt)
+  ss (t! home-row-mod (multi lsft s) @rsft)
+  ma (t! home-row-mod (multi lmet a) @lsft)
+  mo (t! home-row-mod (multi lmet o) lalt)
+  me (t! home-row-mod (multi lmet e) @lmet)
+  mu (t! home-row-mod (multi lmet u) lctl)
+  mh (t! home-row-mod (multi lmet h) rctl)
+  mt (t! home-row-mod (multi lmet t) @rmet)
+  mn (t! home-row-mod (multi lmet n) lalt)
+  ms (t! home-row-mod (multi lmet s) @rsft)
+)
+
+(deflayer rdvp
+  S-4   S-7   +    [    S-[  S-9  =    kp*  S-0  S-]   ]    S-1   S-3  bspc
+  tab   ;     ,    .    p    y    f    g    c    r     l    /     S-2  \
+  @cps  @a    @o   @e   @u   i    d    @h   @t   @n    @s   -     ret
+  @lsft '     q    j    k    x    b    m    w    v     z    @rsft
+  lctl  @lmet lalt           @spc           ralt @rmet cmp  rctl
+)
+
+(deflayer s-rdvp
+  S-`   S-5   9    7    5    3    1    0    2    4     6    8     `    bspc
+  tab   S-;   S-,  S-.  S-p  S-y  S-f  S-g  S-c  S-r   S-l  S-/   S-6  S-\
+  @cps  @sa   @so  @se  @su  S-i  S-d  @sh  @st  @sn   @ss  S--   ret
+  @lsft S-'   S-q  S-j  S-k  S-x  S-b  S-m  S-w  S-v   S-z  @rsft
+  lctl  @lmet lalt           @spc           ralt @rmet cmp  rctl
+)
+
+(deflayer m-rdvp
+  `     1     2    3    4    5    6    7    8    9     0    [     ]    bspc
+  tab   _     _    _    _    _    _    _    _    _     _    _     =    _
+  @cps  @ma   @mo  @me  @mu  _    _    @mh  @mt  @mn   @ms  _     ret
+  lsft  _     _    _    _    _    _    _    _    _     _    rsft
+  lctl  @lmet lalt           @spc           ralt @rmet cmp  rctl
+)
+
+(deflayer qwerty
+  `    1    2    3    4    5    6    7    8    9    0    -    =    bspc
+  tab  q    w    e    r    t    y    u    i    o    p    [    ]    \
+  @cps a    s    d    f    g    h    j    k    l    ;    '    ret
+  lsft z    x    c    v    b    n    m    ,    .    /    rsft
+  lctl lmet lalt           spc            ralt rmet cmp  rctl
+)
+
+(deflayer layouts
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _    _    _
+  caps _    _    _    @rpk _    _    @qwe _    _    _    _    _
+  _    _    _    _    _    _    _    _    _    _    _    _
+  _    _    _              _              _    _    _    _
+)
+
+(deflayer symbols
+  _    f1   f2   f3   f4   f5   f6   f7   f8   f9   f10  f11  f12  del
+  _    _    _    _    _    _    ins  home up   end  pgup _    prnt _
+  _    _    _    _    _    _    _    left down rght pgdn _    _
+  _    _    _    _    _    _    _    mute vold volu _    _
+  pp   _    prev           _              next _    _    _
+)

@@ -1,5 +1,6 @@
 {
   imports = [
+    ./kanata
     ./backlight.nix
     ./gnome-services.nix
     ./location.nix

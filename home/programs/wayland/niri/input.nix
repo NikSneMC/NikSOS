@@ -5,7 +5,7 @@
     keyboard = {
       xkb = {
         layout = "us, ru";
-        options = "grp:win_space_toggle, compose:menu";
+        options = "grp:win_space_toggle, compose:ralt";
       };
       numlock = true;
       track-layout = "window";

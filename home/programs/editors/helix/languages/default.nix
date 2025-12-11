@@ -8,7 +8,7 @@
 }: let
   notForHosts = lib'.notForHosts osConfig;
 
-  headlessHosts = ["tobichi"];
+  headlessHosts = ["tobichi" "renga"];
 
   commonLSPs =
     {

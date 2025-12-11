@@ -4,7 +4,6 @@ let
     ./nix
     ./programs/fish.nix
     ./programs/home-manager.nix
-    ./virtualisation/podman.nix
   ];
 
   desktop =

@@ -6,6 +6,7 @@ mkNixosModules: {
   imports = mkNixosModules [
     inputs.nixos-wsl.nixosModules.default
     "programs/development.nix"
+    "virtualisation/podman.nix"
   ];
 
   wsl = {

@@ -11,5 +11,6 @@ mkNixosModules: {
     defaultUser = "niksne";
   };
 
+  nixpkgs.hostPlatform = "aarch64-linux";
   system.stateVersion = lib.mkDefault "26.05";
 }

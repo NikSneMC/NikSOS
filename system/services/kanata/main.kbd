@@ -8,7 +8,7 @@
 
 (defalias
   lay  (layer-toggle layouts)
-  rpk  (layer-switch rdvp)
+  rdv  (layer-switch rdvp)
   qwe  (layer-switch qwerty)
   sym  (layer-toggle symbols)
   spc  (tap-hold-release 200 200 spc @sym)
@@ -90,7 +90,7 @@
 (deflayer layouts
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  caps _    _    _    @rpk _    _    @qwe _    _    _    _    _
+  caps _    _    _    @rdv _    _    @qwe _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              _              _    _    _    _
 )

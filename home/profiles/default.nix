@@ -5,6 +5,7 @@
     konran = ["niksne"];
     nakama = ["niksne"];
     tobichi = ["niksne"];
+    renga = ["niksne"];
   };
 
   homeImports = mkHomeImports users;

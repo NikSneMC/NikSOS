@@ -123,13 +123,13 @@
     })
     grammarsToBuild;
   extensibleGrammars =
-    lib.makeExtensible (self: builtins.listToAttrs builtGrammars);
+    lib.makeExtensible (_self: builtins.listToAttrs builtGrammars);
   overlaidGrammars =
     lib.pipe extensibleGrammars
     (builtins.map (overlay: grammar: grammar.extend overlay) grammarOverlays);
 in
   symlinkJoin {
     name = "helix-runtime";
-    paths = overlaidGrammars |> lib.filterAttrs (n: v: lib.isDerivation v) |> builtins.attrValues;
+    paths = overlaidGrammars |> lib.filterAttrs (_: v: lib.isDerivation v) |> builtins.attrValues;
     preferLocalBuild = true;
   }

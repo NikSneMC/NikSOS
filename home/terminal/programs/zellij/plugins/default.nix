@@ -1,4 +1,4 @@
-{lib, ...} @ args:
+{...} @ args:
 [
   ./zellij-forgot.nix
   ./zjstatus.nix

@@ -6,5 +6,6 @@
       konran = systemProfiles.desktop;
       nakama = systemProfiles.laptop;
       tobichi = systemProfiles.minimal;
+      renga = systemProfiles.minimal;
     };
 }

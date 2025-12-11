@@ -155,7 +155,7 @@
     helix.url = "github:helix-editor/helix";
 
     nixos-avf = {
-      url = "github:nix-community/nixos-avf";
+      url = "github:NikSneMC/nixos-avf";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

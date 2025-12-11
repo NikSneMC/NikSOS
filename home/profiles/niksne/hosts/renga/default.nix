@@ -1,5 +1,5 @@
 mkHmModules: {
   imports = mkHmModules [
-    # "programs/editors/helix"
+    "programs/editors/helix"
   ];
 }

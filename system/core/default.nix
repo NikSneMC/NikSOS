@@ -1,5 +1,6 @@
 {lib, ...}: {
   imports = [
+    ./xkb
     ./boot.nix
     ./security.nix
   ];

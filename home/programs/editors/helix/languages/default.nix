@@ -51,6 +51,7 @@
     ./rust.nix
     ./surql.nix
     ./systemd.nix
+    ./tofu.nix
     ./toml.nix
     ./web.nix
     ./yaml.nix

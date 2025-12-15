@@ -12,6 +12,7 @@
     shellAliases = {
       jq = "jaq";
       fetch = "fastfetch";
+      lazypodman = "lazydocker";
     };
   };
 }

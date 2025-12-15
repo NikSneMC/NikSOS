@@ -11,6 +11,7 @@
     ./cargo.nix
     ./eza.nix
     ./fetchers.nix
+    ./lazydocker.nix
     ./skim.nix
     ./ssh.nix
     ./xdg.nix
@@ -48,7 +49,6 @@
   programs = {
     btop.enable = true;
     cava.enable = true;
-    lazydocker.enable = true;
     yazi.enable = true;
   };
 }

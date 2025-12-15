@@ -8,6 +8,7 @@
     ./zellij
     ./atuin.nix
     ./bat.nix
+    ./cargo.nix
     ./eza.nix
     ./fetchers.nix
     ./skim.nix

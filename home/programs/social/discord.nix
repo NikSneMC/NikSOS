@@ -166,6 +166,7 @@
       toolbarDevMenu = true;
     }
     "ExportContacts"
+    "FakeNitro"
     "FavoriteEmojiFirst"
     {
       name = "FindReply";
@@ -227,6 +228,7 @@
       name = "GreetStickerPicker";
       greetMode = "Greet";
     }
+    "GuildPickerDumper"
     {
       name = "HideServers";
       showIndicator = true;

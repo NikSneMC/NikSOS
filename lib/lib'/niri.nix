@@ -20,8 +20,6 @@
     "0" = "BracketRight";
   };
 
-  scratchpadsWsName = "scratchpads";
-
   mkBinds = binds:
     binds
     |> map (
@@ -45,7 +43,6 @@
       config.programs.niri.settings.workspaces
       |> builtins.attrValues
       |> map (ws: ws.name)
-      |> builtins.filter (name: name != scratchpadsWsName)
       |> take 10;
   in
     workspaces
@@ -104,5 +101,5 @@
     )
     |> builtins.concatLists;
 in {
-  inherit scratchpadsWsName mkBinds mkWorkspacesBinds mkColumnsBinds;
+  inherit mkBinds mkWorkspacesBinds mkColumnsBinds;
 }

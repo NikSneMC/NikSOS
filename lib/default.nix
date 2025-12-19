@@ -1,15 +1,17 @@
 {
-  homeImports,
   inputs,
   lib,
   pkgs,
-  self,
   ...
 }: {
   _module.args = let
-    args = {inherit homeImports inputs lib pkgs self;};
+    flakeRoot = ../.;
+    keys = import "${flakeRoot}/keys.nix";
+
+    args = {inherit flakeRoot inputs keys lib pkgs;};
   in rec {
     lib' = import "${./.}/lib'" args;
-    niksos = import ./niksos (args // {inherit lib';});
+    helpers = import ./helpers (args // {inherit lib';});
+    inherit flakeRoot keys;
   };
 }

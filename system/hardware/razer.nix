@@ -1,3 +1,0 @@
-{
-  hardware.openrazer.enable = true;
-}

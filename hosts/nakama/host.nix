@@ -1,0 +1,59 @@
+{...}: {
+  # imports = [
+  #   # "hardware/intel.nix"
+  #   "hardware/nvidia-prime.nix"
+  #   "hardware/nvidia.nix"
+  #   "programs/niri.nix"
+  #   "programs/obs-studio.nix"
+  #   "hardware/razer.nix"
+  #   "services/thermald.nix"
+  #   # "services/ollama.nix"
+  #   "virtualisation/virt-manager.nix"
+  # ];
+
+  # boot.loader = {
+  #   grub = {
+  #     efiSupport = true;
+  #     device = "nodev";
+  #   };
+  #   efi.canTouchEfiVariables = true;
+  # };
+
+  # catppuccin = {
+  #   enable = true;
+  #   flavor = "mocha";
+  #   accent = "blue";
+  # };
+
+  # services = {
+  #   displayManager.defaultSession = "niri";
+  #   fstrim.enable = true;
+  # };
+
+  # hardware = {
+  #   nvidia.prime = {
+  #     nvidiaBusId = "PCI:1:0:0";
+  #     intelBusId = "PCI:0:2:0";
+  #   };
+
+  #   openrazer.users = ["niksne"];
+  # };
+
+  # users.users.niksne.extraGroups = ["libvirtd"];
+
+  modules = {
+    programs = {
+      enable = true;
+    };
+    # services = {
+    #   enable = true;
+    # };
+
+    secrets.agenix.enable = true;
+    # nix.builders.enable = true;
+  };
+
+  # don't touch this
+  nixpkgs.hostPlatform = "x86_64-linux";
+  system.stateVersion = "24.11";
+}

@@ -1,5 +1,29 @@
 let
-  inherit (import "${../../../lib}/lib'/disks.nix" {}) mkUserSubvolumes;
+  mkSubvolumes = subvolumes:
+    subvolumes
+    |> map (
+      subvolume:
+        if builtins.isString subvolume
+        then {
+          name = subvolume;
+          value = {
+            mountpoint = subvolume;
+          };
+        }
+        else {
+          name = subvolume.mountpoint;
+          value = subvolume;
+        }
+    )
+    |> builtins.listToAttrs;
+
+  mkUserSubvolumes = user: folders:
+    folders
+    |> map (folder: {
+      mountpoint = "/home/${user}/${folder}";
+      mountOptions = ["compress=zstd"];
+    })
+    |> mkSubvolumes;
 in {
   disko.devices.disk.sda = {
     type = "disk";

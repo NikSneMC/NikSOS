@@ -1,11 +1,23 @@
-{niksos, ...}: {
-  flake.nixosConfigurations = let
-    inherit (niksos.hosts) mkHosts systemProfiles;
-  in
-    mkHosts {
-      konran = systemProfiles.desktop;
-      nakama = systemProfiles.laptop;
-      tobichi = systemProfiles.minimal;
-      renga = systemProfiles.minimal;
+{helpers, ...}: {
+  flake.nixosConfigurations = helpers.mkHosts {
+    konran = {
+      tags = ["desktop"];
+      users = ["niksne"];
     };
+
+    nakama = {
+      tags = ["laptop"];
+      users = ["niksnes"];
+    };
+
+    tobichi = {
+      tags = ["wsl"];
+      users = ["niksne"];
+    };
+
+    renga = {
+      tags = ["avf"];
+      users = ["niksne"];
+    };
+  };
 }

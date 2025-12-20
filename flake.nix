@@ -6,10 +6,9 @@
       systems = ["x86_64-linux"];
 
       imports = [
-        ./home/profiles
+        ./homes
         ./hosts
         ./lib
-        ./modules
         ./git-hooks.nix
       ];
 
@@ -24,9 +23,12 @@
             DIRENV_LOG_FORMAT = "";
 
             packages = [
+              inputs.agenix.packages.${stdenv.hostPlatform.system}.default
               alejandra
               deadnix
               git
+              nh
+              just
             ];
 
             shellHook = ''

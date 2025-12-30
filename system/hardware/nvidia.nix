@@ -1,6 +1,6 @@
 {
   config,
-  # pkgs,
+  pkgs,
   ...
 }: {
   services.xserver.videoDrivers = ["nvidia"];
@@ -12,16 +12,14 @@
     };
     open = false;
     nvidiaSettings = true;
-    package = config.boot.kernelPackages.nvidiaPackages.beta;
-    #
-    # If you want specifix version:
-    # package = let
-    #   version = "560.35.03";
-    # in (config.boot.kernelPackages.nvidiaPackages.stable.overrideAttrs {
-    #   src = pkgs.fetchurl {
-    #     url = "https://download.nvidia.com/XFree86/Linux-x86_64/${version}/NVIDIA-Linux-x86_64-${version}.run";
-    #     sha256 = "${pkgs.lib.fakeSha256}";
-    #   };
-    # });
+    # I have 10xx series GPU so I have to use latest 580 driver
+    package = let
+      version = "580.119.02";
+    in (config.boot.kernelPackages.nvidiaPackages.stable.overrideAttrs {
+      src = pkgs.fetchurl {
+        url = "https://download.nvidia.com/XFree86/Linux-x86_64/${version}/NVIDIA-Linux-x86_64-${version}.run";
+        sha256 = "sha256-gCD139PuiK7no4mQ0MPSr+VHUemhcLqerdfqZwE47Nc=";
+      };
+    });
   };
 }

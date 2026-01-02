@@ -7,6 +7,7 @@
   imports = [
     ./languages
     ./themes.nix
+    ./keys.nix
   ];
 
   programs.helix = {

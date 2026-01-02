@@ -53,6 +53,7 @@
     ./systemd.nix
     ./tofu.nix
     ./toml.nix
+    ./typst.nix
     ./web.nix
     ./yaml.nix
     ./zig.nix

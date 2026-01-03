@@ -12,6 +12,9 @@
 
   commonLSPs =
     {
+      uwu-colors = {
+        command = "uwu_colors";
+      };
       wakatime-ls = {
         command = "wakatime-ls";
       };
@@ -26,6 +29,7 @@
     inherit (stdenv.hostPlatform) system;
   in
     [
+      uwu-colors
       inputs.wakatime-ls.packages.${system}.wakatime-ls
     ]
     ++ (

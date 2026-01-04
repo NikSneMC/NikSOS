@@ -40,7 +40,7 @@
   associations = builtins.mapAttrs (_: v: (map (e: "${e}.desktop") v)) ({
       "application/pdf" = ["org.pwmt.zathura-pdf-mupdf"];
       "text/html" = browser;
-      "text/plain" = ["vi"];
+      "text/plain" = ["hx"];
       "x-scheme-handler/chrome" = browser;
       "inode/directory" = ["thunar"];
     }

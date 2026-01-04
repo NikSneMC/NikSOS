@@ -1,7 +1,7 @@
 {
   imports = [
     ./kdeconnect.nix
-    ./polkit-agent.nix
+    # ./polkit-agent.nix
     ./udiskie.nix
   ];
 }

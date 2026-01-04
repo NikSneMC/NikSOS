@@ -1,6 +1,5 @@
 {
   config,
-  inputs,
   options,
   osConfig,
   ...
@@ -15,7 +14,6 @@
 
       username = config.home.user;
       homeDirectory = "/home/${config.home.user}";
-      file.".face".source = "${inputs.assets}/users/${config.home.user}.png";
     };
 
     manual = {

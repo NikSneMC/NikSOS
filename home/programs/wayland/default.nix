@@ -1,15 +1,10 @@
 {pkgs, ...}: {
   imports = [
-    ./hyprlock.nix
+    ./danksearch.nix
     ./rofi.nix
-    ./wlogout.nix
   ];
 
   home.packages = with pkgs; [
-    # screenshot
-    grim
-    slurp
-
     # utils
     cliphist
     wl-clipboard
@@ -17,7 +12,7 @@
     wtype
     wl-screenrec
     wlr-randr
-    nwg-displays
+    wl-mirror
   ];
 
   # make stuff work on wayland

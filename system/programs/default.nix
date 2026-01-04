@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./development.nix
+    ./dms.nix
     ./fonts.nix
     ./gaming.nix
     ./qt.nix

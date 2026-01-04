@@ -746,7 +746,7 @@ in {
       trayColorType = "custom";
       trayAutoFill = "auto";
       disableMinSize = true;
-      splashAnimationPath = "${config.home.homeDirectory}/.face";
+      splashAnimationPath = "/var/lib/AccountsService/icons/${config.home.user}";
     };
   };
 

@@ -56,7 +56,8 @@
           name = "vue";
           auto-format = true;
           language-servers = [
-            "vuels"
+            "vscode-html-language-server"
+            "typescript-language-server"
             "tailwindcss-ls"
             "emmet"
           ];
@@ -85,7 +86,7 @@
             plugins = [
               {
                 name = "@vue/typescript-plugin";
-                location = "${pkgs.vue-language-server}/lib/node_modules/@vue/language-server";
+                location = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
                 languages = ["vue"];
               }
             ];

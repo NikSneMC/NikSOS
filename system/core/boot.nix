@@ -12,7 +12,7 @@ in {
       supportedFilesystems = ["fat32" "ext4" "btrfs" "ntfs"];
     };
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    kernelPackages = lib.mkDefault pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto;
     consoleLogLevel = 3;
     kernelParams = [
       # "quiet"

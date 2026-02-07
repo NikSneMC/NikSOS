@@ -54,17 +54,12 @@
       flake = false;
     };
 
-    systems.url = "github:nix-systems/default-linux";
-
     flake-parts = {
       url = "github:hercules-ci/flake-parts";
       inputs.nixpkgs-lib.follows = "nixpkgs";
     };
 
-    flake-utils = {
-      url = "github:numtide/flake-utils";
-      inputs.systems.follows = "systems";
-    };
+    flake-utils.url = "github:numtide/flake-utils";
 
     flake-compat.url = "github:edolstra/flake-compat";
 
@@ -72,7 +67,6 @@
       url = "github:NikSneMC/NikSOS-private";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
         flake-compat.follows = "flake-parts";
         flake-utils.follows = "flake-utils";
       };
@@ -86,17 +80,9 @@
       };
     };
 
-    fenix = {
-      url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     naersk = {
       url = "github:nix-community/naersk";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        fenix.follows = "fenix";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     agenix = {
@@ -105,7 +91,7 @@
         nixpkgs.follows = "nixpkgs";
         darwin.follows = "";
         home-manager.follows = "hm";
-        systems.follows = "systems";
+        systems.follows = "flake-utils/systems";
       };
     };
 
@@ -129,7 +115,7 @@
       url = "github:NikSneMC/activate-niksos";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        fenix.follows = "fenix";
+        fenix.follows = "naersk/fenix";
         naersk.follows = "naersk";
       };
     };
@@ -157,12 +143,22 @@
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
-        fenix.follows = "fenix";
+        fenix.follows = "naersk/fenix";
         naersk.follows = "naersk";
       };
     };
 
     helix.url = "github:helix-editor/helix";
+
+    niri-flake.url = "github:sodiboo/niri-flake";
+
+    nix-cachyos-kernel = {
+      url = "github:xddxdd/nix-cachyos-kernel/release";
+      inputs = {
+        flake-compat.follows = "flake-compat";
+        flake-parts.follows = "flake-parts";
+      };
+    };
 
     nixos-avf = {
       url = "github:NikSneMC/nixos-avf";
@@ -177,17 +173,18 @@
       };
     };
 
-    niri-flake.url = "github:sodiboo/niri-flake";
-
     spicetify-nix = {
       url = "github:Gerg-L/spicetify-nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
-        systems.follows = "systems";
+        systems.follows = "flake-utils/systems";
       };
     };
 
-    wakatime-ls.url = "github:mrnossiom/wakatime-ls";
+    wakatime-ls = {
+      url = "github:mrnossiom/wakatime-ls";
+      inputs.gitignore.follows = "git-hooks/gitignore";
+    };
 
     zen-browser = {
       url = "github:NikSneMC/zen-browser-flake";

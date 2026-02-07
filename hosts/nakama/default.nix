@@ -1,4 +1,4 @@
-mkNixosModules: {
+mkNixosModules: {pkgs, ...}: {
   imports = mkNixosModules [
     # "hardware/intel.nix"
     "hardware/nvidia-prime.nix"
@@ -11,12 +11,16 @@ mkNixosModules: {
     "virtualisation/virt-manager.nix"
   ];
 
-  boot.loader = {
-    grub = {
-      efiSupport = true;
-      device = "nodev";
+  boot = {
+    kernelPackages = pkgs.cachyosKernels.linuxPackages-cachyos-latest-lto-x86_64-v3;
+
+    loader = {
+      grub = {
+        efiSupport = true;
+        device = "nodev";
+      };
+      efi.canTouchEfiVariables = true;
     };
-    efi.canTouchEfiVariables = true;
   };
 
   catppuccin = {

@@ -19,6 +19,7 @@
     (_: prev: {
       inherit (prev.lixPackageSets.stable) nixpkgs-review nix-eval-jobs nix-fast-build colmena;
     })
+    inputs.nix-cachyos-kernel.overlays.pinned
   ];
 
   environment.etc = let

@@ -32,6 +32,8 @@
       "6".name = "recording/streaming";
     };
 
+    animations.slowdown = 0.5;
+
     screenshot-path = "~/Pictures/Screenshots/screenshot-%d-%m-%Y_%H_%M_%S.png";
     prefer-no-csd = true;
 

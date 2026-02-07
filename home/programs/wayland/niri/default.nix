@@ -1,8 +1,6 @@
 {
   config,
-  inputs,
   lib,
-  pkgs,
   ...
 }: {
   imports = [
@@ -17,14 +15,8 @@
       _JAVA_AWT_WM_NONREPARENTING = "1";
     };
 
-    spawn-at-startup = let
-      inherit (lib) getExe;
-    in
+    spawn-at-startup =
       [
-        ["${getExe pkgs.wl-gammarelay-rs}" "run"]
-        ["waybar"]
-        ["fish" "-c" "wl-paste --type text --watch cliphist store"]
-        ["fish" "-c" "wl-paste --type image --watch cliphist store"]
         ["equibop"]
         ["AyuGram"]
         ["thunderbird"]
@@ -55,9 +47,24 @@
 
     gestures.hot-corners.enable = false;
 
-    xwayland-satellite = {
-      enable = true;
-      path = lib.getExe inputs.niri-flake.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable;
-    };
+    xwayland-satellite.enable = true;
+  };
+
+  xdg.configFile = {
+    niri-config-dms.target = lib.mkForce "niri/dms.kdl";
+    "niri/config.kdl".text =
+      # kdl
+      ''
+        include "dms.kdl";
+
+        recent-windows {
+          highlight {
+            active-color "#${config.theme.colors.accent}ff"
+            urgent-color "#${config.theme.colors.peach}ff"
+            padding 30
+            corner-radius 0
+          }
+        }
+      '';
   };
 }

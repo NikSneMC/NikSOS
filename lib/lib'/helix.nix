@@ -3,14 +3,20 @@
   lib,
   ...
 }: let
+  inherit (builtins) readFile fromTOML concatLists groupBy attrValues attrNames;
+  inherit (lib) zipAttrs mergeAttrsList recursiveUpdate;
+
   mkHelixLangs = pkgs: langfiles: commonLSPs: commonPackages: let
-    defaultLanguageConfig = "${inputs.helix}/languages.toml" |> builtins.readFile |> builtins.fromTOML;
+    defaultLanguageConfig =
+      "${inputs.helix}/languages.toml"
+      |> readFile
+      |> fromTOML;
 
     customLanguagesConfig =
       langfiles
       |> map (langfile: import langfile {inherit inputs pkgs;})
       |> map (contents: contents.programs.helix)
-      |> lib.zipAttrs;
+      |> zipAttrs;
 
     customLanguageConfig' = customLanguagesConfig.languages;
 
@@ -21,7 +27,7 @@
           {language ? [], ...}:
             language
         )
-        |> builtins.concatLists;
+        |> concatLists;
 
       language-server =
         customLanguageConfig'
@@ -29,7 +35,7 @@
           {language-server ? {}, ...}:
             language-server
         )
-        |> lib.mergeAttrsList;
+        |> mergeAttrsList;
 
       grammar =
         customLanguageConfig'
@@ -37,7 +43,7 @@
           {grammar ? [], ...}:
             grammar
         )
-        |> builtins.concatLists;
+        |> concatLists;
 
       use-grammars =
         customLanguageConfig'
@@ -45,18 +51,18 @@
           {use-grammars ? {}, ...}:
             use-grammars
         )
-        |> lib.mergeAttrsList;
+        |> mergeAttrsList;
     };
 
     combineLists = list:
       list
-      |> builtins.groupBy (obj: obj.name)
-      |> builtins.attrValues
-      |> map lib.mergeAttrsList;
+      |> groupBy (obj: obj.name)
+      |> attrValues
+      |> map mergeAttrsList;
 
-    commonLSPNames = builtins.attrNames commonLSPs;
+    commonLSPNames = attrNames commonLSPs;
 
-    customLanguagePackages = builtins.concatLists customLanguagesConfig.extraPackages;
+    customLanguagePackages = concatLists customLanguagesConfig.extraPackages;
   in {
     programs.helix = {
       languages = {
@@ -69,8 +75,8 @@
               lang // {language-servers = language-servers ++ commonLSPNames;}
           );
         language-server =
-          lib.recursiveUpdate defaultLanguageConfig.language-server customLanguageConfig.language-server
-          |> lib.recursiveUpdate commonLSPs;
+          recursiveUpdate defaultLanguageConfig.language-server customLanguageConfig.language-server
+          |> recursiveUpdate commonLSPs;
         grammar = defaultLanguageConfig.grammar ++ customLanguageConfig.grammar |> combineLists;
         use-grammars = lib.recursiveUpdate defaultLanguageConfig.use-grammars customLanguageConfig.use-grammars;
       };

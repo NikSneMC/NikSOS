@@ -11,9 +11,11 @@
 
     fish = spawn "fish" "-c";
     rofi = menu: fish "pkill -9 bin/rofi || rofi -show ${menu}";
+    dms = spawn "dms";
+    dms-ipc = dms "ipc";
     packages = builtins.mapAttrs (_: lib.getExe) {
       activate-niksos = inputs.activate-niksos.packages.${pkgs.stdenv.hostPlatform.system}.default;
-      inherit (pkgs) ani-cli brightnessctl;
+      inherit (pkgs) ani-cli;
     };
   in
     mkBinds (
@@ -72,21 +74,16 @@
       ]
       ++ [
         {
-          bind = "Mod+Ctrl+Alt+B";
-          desc = "Reload bar";
-          action = fish "reload_bar";
-        }
-        {
-          bind = "Mod+Ctrl+Alt+N";
-          desc = "Reload notifications";
-          action = fish "reload_notifications";
+          bind = "Mod+Ctrl+Alt+S";
+          desc = "Reload dms";
+          action = dms "restart";
         }
       ]
       ++ [
         {
           bind = "Mod+A";
           desc = "Launch app menu";
-          action = rofi "drun";
+          action = dms-ipc "spotlight" "toggle";
         }
         {
           bind = "Mod+B";
@@ -104,14 +101,19 @@
           action = spawn "thunar";
         }
         {
+          bind = "Mod+I";
+          desc = "Open DMS settings";
+          action = dms-ipc "settings" "focusOrToggle";
+        }
+        {
           bind = "Mod+N";
           desc = "Open notification center";
-          action = spawn "swaync-client" "-t";
+          action = dms-ipc "notifications" "toggle";
         }
         {
           bind = "Mod+R";
           desc = "Execute command";
-          action = rofi "run";
+          action = dms-ipc "spotlight" "toggleQuery" ">";
         }
         {
           bind = "Mod+T";
@@ -121,12 +123,12 @@
         {
           bind = "Mod+V";
           desc = "Open clipboard history";
-          action = fish "clipboard_log";
+          action = dms-ipc "clipboard" "toggle";
         }
         {
           bind = "Mod+X";
           desc = "Delete an item from the clipboard history";
-          action = fish "clipboard_delete_item";
+          action = fish "dms clipboard search --json -l 1 | jq '.entries[0].id' | xargs dms clipboard delete";
         }
         {
           bind = "Mod+Tab";
@@ -136,12 +138,12 @@
         {
           bind = "Mod+Escape";
           desc = "Open logout menu";
-          action = spawn "wlogout";
+          action = dms-ipc "powermenu" "toggle";
         }
         {
           bind = "Mod+Semicolon";
           desc = "Open emoju menu";
-          action = fish "clipboard_emoji";
+          action = dms-ipc "spotlight" "toggleQuery" ":";
         }
       ]
       ++ [
@@ -156,14 +158,9 @@
           action = fish "select_color";
         }
         {
-          bind = "Mod+Shift+F";
-          desc = "Open file browser menu";
-          action = rofi "filebrowser";
-        }
-        {
           bind = "Mod+Shift+G";
           desc = "Lock session";
-          action = spawn "hyprlock";
+          action = dms-ipc "lock" "lock";
         }
         {
           bind = "Mod+Shift+M";
@@ -173,7 +170,7 @@
         {
           bind = "Mod+Shift+N";
           desc = "Mute notifications";
-          action = spawn "swaync-client" "-d";
+          action = dms-ipc "notifications" "toggleDoNotDisturb";
         }
         {
           bind = "Mod+Shift+T";
@@ -188,24 +185,24 @@
         {
           bind = "Mod+Shift+X";
           desc = "Clear clipboard";
-          action = fish "clipboard_clear";
+          action = dms "clipboard" "clear";
         }
       ]
       ++ [
         {
           bind = "Mod+Shift+S";
-          desc = "Take screenshot";
-          action = fish "take_screenshot";
+          desc = "Take a screenshot";
+          action = dms-ipc "niri" "screenshot";
         }
         {
           bind = "Mod+Shift+Ctrl+S";
-          desc = "Take screenshot (window)";
-          action = fish "take_screenshot_window";
+          desc = "Take a screenshot (window)";
+          action = dms-ipc "niri" "screenshotWindow";
         }
         {
           bind = "Mod+Shift+Alt+S";
-          desc = "Take screenshot (screen)";
-          action = fish "take_screenshot_screen";
+          desc = "Take a screenshot (screen)";
+          action = dms-ipc "niri" "screenshotScreen";
         }
       ]
       ++ (
@@ -226,7 +223,7 @@
           {
             bind = "Mod+Ctrl+N";
             desc = "Toggle night mode";
-            action = fish "toggle_night_mode";
+            action = dms-ipc "night" "toggle";
           }
           {
             bind = "Mod+Ctrl+P";
@@ -518,14 +515,14 @@
         {
           bind = "XF86MonBrightnessUp";
           desc = "Increase brightness by 10%";
-          action = spawn packages.brightnessctl "--class=backlight" "set" "+10%";
+          action = dms-ipc "brightness" "increment" "10" "backlight:intel_backlight";
           allow-when-locked = true;
           repeat = true;
         }
         {
           bind = "XF86MonBrightnessDown";
           desc = "Decrease brightness by 10%";
-          action = spawn packages.brightnessctl "--class=backlight" "set" "10%-";
+          action = dms-ipc "brightness" "decrement" "10" "backlight:intel_backlight";
           allow-when-locked = true;
           repeat = true;
         }
@@ -534,28 +531,28 @@
         {
           bind = "XF86AudioRaiseVolume";
           desc = "Increase volume by 5%";
-          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+";
+          action = dms-ipc "audio" "increment" "5";
           allow-when-locked = true;
           repeat = true;
         }
         {
           bind = "XF86AudioLowerVolume";
           desc = "Decrease volume by 5%";
-          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-";
+          action = dms-ipc "audio" "decrement" "5";
           allow-when-locked = true;
           repeat = true;
         }
         {
           bind = "Ctrl+XF86AudioRaiseVolume";
           desc = "Increase volume by 1%";
-          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.01+";
+          action = dms-ipc "audio" "increment" "1";
           allow-when-locked = true;
           repeat = true;
         }
         {
           bind = "Ctrl+XF86AudioLowerVolume";
           desc = "Decrease volume by 1%";
-          action = spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.01-";
+          action = dms-ipc "audio" "decrement" "1";
           allow-when-locked = true;
           repeat = true;
         }
@@ -564,13 +561,13 @@
         {
           bind = "XF86AudioMute";
           desc = "Mute audio";
-          action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle";
+          action = dms-ipc "audio" "mute";
           allow-when-locked = true;
         }
         {
           bind = "XF86AudioMicMute";
           desc = "Mute microphone";
-          action = spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SOURCE@" "toggle";
+          action = dms-ipc "audio" "micmute";
           allow-when-locked = true;
         }
       ]
@@ -578,19 +575,19 @@
         {
           bind = "XF86AudioPlay";
           desc = "Toggle media play/pause";
-          action = spawn "playerctl" "play-pause";
+          action = dms-ipc "mpris" "playPause";
           allow-when-locked = true;
         }
         {
           bind = "XF86AudioPrev";
           desc = "Move to the previous track";
-          action = spawn "playerctl" "previous";
+          action = dms-ipc "mpris" "previous";
           allow-when-locked = true;
         }
         {
           bind = "XF86AudioNext";
           desc = "Move to the next track";
-          action = spawn "playerctl" "next";
+          action = dms-ipc "mpris" "next";
           allow-when-locked = true;
         }
       ]

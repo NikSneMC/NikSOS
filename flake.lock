@@ -56,11 +56,11 @@
     "assets": {
       "flake": false,
       "locked": {
-        "lastModified": 1754526800,
-        "narHash": "sha256-YRtkbCyR1wOs0AiCAPEGRIUIIh7ui0s9hawbBzs+XwY=",
+        "lastModified": 1765289098,
+        "narHash": "sha256-StxeCPkJp7tCCJwspTGPQCOqNuqK1QlNifJU8j51s98=",
         "owner": "NikSneMC",
         "repo": "NikSOS",
-        "rev": "963a6892f6cbd73ae94c374d8604b9d44a9a3ffc",
+        "rev": "739dc516cc7dd19a9b76c6da985db225425d0f5a",
         "type": "github"
       },
       "original": {
@@ -111,6 +111,27 @@
         "type": "github"
       }
     },
+    "danksearch": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1767322903,
+        "narHash": "sha256-RI0pZvwPhmhRLwV5HeuCq0xX3fppQgFbLvP16HZPLiY=",
+        "owner": "NikSneMC",
+        "repo": "danksearch",
+        "rev": "03dbfa08c6a57ac4e01364ccc97c29ebfc61ec21",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NikSneMC",
+        "ref": "fix/distro/nix/package-option",
+        "repo": "danksearch",
+        "type": "github"
+      }
+    },
     "discord-rpc-lsp": {
       "inputs": {
         "flake-utils": [
@@ -151,6 +172,27 @@
       "original": {
         "owner": "nix-community",
         "repo": "disko",
+        "type": "github"
+      }
+    },
+    "dms": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "quickshell": "quickshell"
+      },
+      "locked": {
+        "lastModified": 1767397419,
+        "narHash": "sha256-7ZmArg80TxfjFr4iS/vh3iJUae3PUXv//YvrBXU0sBA=",
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
+        "rev": "7d761c4c9af431b228283fd0455d61b0080564ac",
+        "type": "github"
+      },
+      "original": {
+        "owner": "AvengeMedia",
+        "repo": "DankMaterialShell",
         "type": "github"
       }
     },
@@ -674,11 +716,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1765438708,
-        "narHash": "sha256-XW4hZG97I7eSb6jEP858szgGR3ztOthVDH20bK7SP+s=",
+        "lastModified": 1767123984,
+        "narHash": "sha256-VDtstbqrK+nD2bcBLIU9xu0xD25krCc8QJUtlPz1lBQ=",
         "owner": "NikSneMC",
         "repo": "NikSOS-private",
-        "rev": "19232d5a19ba05786c1560a0fe92a61a7a919d86",
+        "rev": "be77c9df437de86124ed561622a5d509ce42fdf2",
         "type": "github"
       },
       "original": {
@@ -687,14 +729,38 @@
         "type": "github"
       }
     },
+    "quickshell": {
+      "inputs": {
+        "nixpkgs": [
+          "dms",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1766725085,
+        "narHash": "sha256-O2aMFdDUYJazFrlwL7aSIHbUSEm3ADVZjmf41uBJfHs=",
+        "ref": "refs/heads/master",
+        "rev": "41828c4180fb921df7992a5405f5ff05d2ac2fff",
+        "revCount": 715,
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
+      },
+      "original": {
+        "rev": "41828c4180fb921df7992a5405f5ff05d2ac2fff",
+        "type": "git",
+        "url": "https://git.outfoxxed.me/quickshell/quickshell"
+      }
+    },
     "root": {
       "inputs": {
         "activate-niksos": "activate-niksos",
         "agenix": "agenix",
         "assets": "assets",
         "catppuccin": "catppuccin",
+        "danksearch": "danksearch",
         "discord-rpc-lsp": "discord-rpc-lsp",
         "disko": "disko",
+        "dms": "dms",
         "fenix": "fenix",
         "flake-compat": "flake-compat",
         "flake-parts": "flake-parts",

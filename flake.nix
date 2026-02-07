@@ -134,12 +134,22 @@
       };
     };
 
+    danksearch = {
+      url = "github:NikSneMC/danksearch/fix/distro/nix/package-option";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     discord-rpc-lsp = {
       url = "gitlab:invra/discord-rpc-lsp";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         flake-utils.follows = "flake-utils";
       };
+    };
+
+    dms = {
+      url = "github:AvengeMedia/DankMaterialShell";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     git-helper = {

@@ -26,39 +26,11 @@
           rfkill block bluetooth
         end
       '';
-    toggle_bluetooth.body =
-      # fish
-      ''
-        set bluetooth_status (rfkill list bluetooth | grep -i -o "Soft blocked: yes")
-        set backup_file ~/.cache/airplane_backup
-
-        if [ -z "$bluetooth_status" ]
-          rfkill block bluetooth
-        else
-          rfkill unblock bluetooth
-          if test -e $backup_file
-            rm $backup_file
-          end
-        end
-      '';
-    toggle_night_mode =
-      # fish
-      ''
-        set backup_file ~/.cache/night_backup
-
-        if test -e $backup_file
-            rm $backup_file
-            busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n +2500
-        else
-            touch $backup_file
-            busctl --user -- call rs.wl-gammarelay / rs.wl.gammarelay UpdateTemperature n -2500
-        end
-      '';
     toggle_wifi.body =
       # fish
       ''
         set wifi_status (nmcli radio wifi)
-        set backup_file ~/.cache/airplane_backup
+        set backup_file ~/.cache/wifi_backup
 
         if [ "$wifi_status" = enabled ]
           nmcli radio wifi off

@@ -1,24 +1,5 @@
 {
   programs.niri.settings = {
-    outputs = {
-      "eDP-1" = {
-        focus-at-startup = true;
-        mode = {
-          width = 1920;
-          height = 1080;
-          refresh = 60.0;
-        };
-        position = {
-          x = 0;
-          y = 0;
-        };
-        scale = 1;
-      };
-      "HDMI-A-1" = {
-        scale = 1;
-      };
-    };
-
     workspaces = {
       "1".open-on-output = "HDMI-A-1";
       "2".open-on-output = "eDP-1";

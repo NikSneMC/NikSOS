@@ -1,11 +1,11 @@
 {
   imports = [
     ./kanata
+    ./accounts.nix
     ./backlight.nix
     ./gnome-services.nix
     ./location.nix
     ./pipewire.nix
-    ./sddm.nix
   ];
 
   services = {

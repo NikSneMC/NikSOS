@@ -9,7 +9,6 @@ mkHmModules: {
 
     "terminal/emulators/wezterm.nix"
 
-    ./hypridle.nix
     ./niri.nix
   ];
 }

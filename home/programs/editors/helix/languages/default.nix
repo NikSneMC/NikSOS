@@ -53,6 +53,7 @@
     ./python.nix
     ./qml.nix
     ./rust.nix
+    ./sql.nix
     ./surql.nix
     ./systemd.nix
     ./tofu.nix

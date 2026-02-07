@@ -39,6 +39,7 @@
           package = pkgs.jetbrains.${ide}.override {
             vmopts = ''
               -Dnosplash=true
+              -Dawt.toolkit.name=WLToolkit
               --add-opens=java.base/jdk.internal.org.objectweb.asm=ALL-UNNAMED
               --add-opens=java.base/jdk.internal.org.objectweb.asm.tree=ALL-UNNAMED
 

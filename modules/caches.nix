@@ -3,6 +3,7 @@
   lib,
   ...
 }: let
+  inherit (builtins) attrNames attrValues;
   inherit (lib) types mkOption mkIf;
 
   cfg = config.niksos.caches;
@@ -25,11 +26,11 @@ in {
     nix.settings = {
       substituters =
         cfg
-        |> builtins.attrNames
+        |> attrNames
         |> map (s: "https://${s}");
       trusted-public-keys =
         cfg
-        |> builtins.attrValues;
+        |> attrValues;
     };
   };
 }

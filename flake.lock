@@ -131,16 +131,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1767322903,
-        "narHash": "sha256-RI0pZvwPhmhRLwV5HeuCq0xX3fppQgFbLvP16HZPLiY=",
-        "owner": "NikSneMC",
+        "lastModified": 1770750191,
+        "narHash": "sha256-wPr0vXO3utOQCev8lIBjNtKbUeEkXE3pkZJoQSobyBM=",
+        "owner": "AvengeMedia",
         "repo": "danksearch",
-        "rev": "03dbfa08c6a57ac4e01364ccc97c29ebfc61ec21",
+        "rev": "84cfcb04313f423e587e2c48c5f9a87e31084870",
         "type": "github"
       },
       "original": {
-        "owner": "NikSneMC",
-        "ref": "fix/distro/nix/package-option",
+        "owner": "AvengeMedia",
         "repo": "danksearch",
         "type": "github"
       }

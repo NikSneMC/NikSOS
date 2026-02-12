@@ -121,7 +121,7 @@
     };
 
     danksearch = {
-      url = "github:NikSneMC/danksearch/fix/distro/nix/package-option";
+      url = "github:AvengeMedia/danksearch";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 

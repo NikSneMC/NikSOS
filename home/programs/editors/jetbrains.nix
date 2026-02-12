@@ -8,8 +8,8 @@
   ides = [
     "idea"
     # "pycharm"
-    # "webstorm"
-    "rust-rover"
+    "webstorm"
+    # "rust-rover"
     # "goland"
     # "phpstorm"
     # "clion"

@@ -5,16 +5,16 @@
         {
           name = "css";
           language-servers = [
-            "vscode-css-language-server"
             "tailwindcss-ls"
+            "vscode-css-language-server"
           ];
         }
         {
           name = "html";
           language-servers = [
-            "vscode-html-language-server"
             "tailwindcss-ls"
             "emmet"
+            "vscode-html-language-server"
           ];
         }
         {
@@ -25,9 +25,9 @@
           name = "jsx";
           auto-format = true;
           language-servers = [
-            "typescript-language-server"
             "tailwindcss-ls"
             "emmet"
+            "typescript-language-server"
           ];
         }
         {
@@ -38,42 +38,37 @@
           name = "tsx";
           auto-format = true;
           language-servers = [
-            "typescript-language-server"
             "tailwindcss-ls"
             "emmet"
+            "typescript-language-server"
           ];
         }
         {
           name = "svelte";
           auto-format = true;
           language-servers = [
+            "emmet"
+            "tailwindcss-ls"
             "svelteserver"
-            "tailwindcss-ls"
-            "emmet"
-          ];
-        }
-        {
-          name = "vue";
-          auto-format = true;
-          language-servers = [
-            "vscode-html-language-server"
-            "typescript-language-server"
-            "tailwindcss-ls"
-            "emmet"
           ];
         }
         {
           name = "astro";
           auto-format = true;
           language-servers = [
-            "astro-ls"
-            "tailwindcss-ls"
             "emmet"
+            "tailwindcss-ls"
+            "astro-ls"
           ];
         }
       ];
 
       language-server = {
+        emmet = {
+          command = "emmet-language-server";
+          args = ["--stdio"];
+        };
+
         typescript-language-server = {
           config = {
             typescript-language-server.source = {
@@ -83,19 +78,7 @@
               removeUnusedImports.ts = true;
               sortImports.ts = true;
             };
-            plugins = [
-              {
-                name = "@vue/typescript-plugin";
-                location = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
-                languages = ["vue"];
-              }
-            ];
           };
-        };
-
-        emmet = {
-          command = "emmet-language-server";
-          args = ["--stdio"];
         };
       };
     };
@@ -106,9 +89,7 @@
       emmet-language-server
       typescript-language-server
       svelte-language-server
-      vue-language-server
       astro-language-server
-      angular-language-server
     ];
   };
 }

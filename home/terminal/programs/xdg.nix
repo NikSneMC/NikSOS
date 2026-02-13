@@ -7,6 +7,7 @@
   imageViewer = ["org.gnome.Loupe"];
   videoPlayer = ["io.github.celluloid_player.Celluloid"];
   audioPlayer = ["io.bassi.Amberol"];
+  fileManager = ["thunar"];
 
   xdgAssociations = type: program: list:
     list
@@ -42,7 +43,8 @@
       "text/html" = browser;
       "text/plain" = ["hx"];
       "x-scheme-handler/chrome" = browser;
-      "inode/directory" = ["thunar"];
+      "inode/directory" = fileManager;
+      "x-scheme-handler/trash" = fileManager;
     }
     // image
     // video

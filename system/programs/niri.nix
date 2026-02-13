@@ -1,4 +1,5 @@
 {
+  config,
   inputs,
   pkgs,
   ...
@@ -14,5 +15,16 @@
     inputs.niri-flake.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable
   ];
 
-  xdg.portal.config.niri.default = ["gtk" "gnome"];
+  xdg.portal = {
+    config.niri.default = ["gtk" "gnome"];
+
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-gnome
+      xdg-desktop-portal-gtk
+    ];
+
+    configPackages = [
+      config.programs.niri.package
+    ];
+  };
 }

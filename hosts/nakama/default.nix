@@ -23,6 +23,8 @@ mkNixosModules: {pkgs, ...}: {
     };
   };
 
+  zramSwap.enable = true;
+
   catppuccin = {
     enable = true;
     flavor = "mocha";

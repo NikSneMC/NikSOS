@@ -6,10 +6,13 @@ in {
   programs.niri.settings.layout = {
     border = {
       enable = true;
+      width = 3;
       active.color = "#${colors.accent}";
       inactive.color = "#${colors.surface1}";
       urgent.color = "#${colors.peach}";
     };
+
+    gaps = 7;
 
     focus-ring.enable = false;
 

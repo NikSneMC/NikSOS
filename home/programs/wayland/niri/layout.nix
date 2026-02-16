@@ -6,7 +6,6 @@ in {
   programs.niri.settings.layout = {
     border = {
       enable = true;
-      width = 4;
       active.color = "#${colors.accent}";
       inactive.color = "#${colors.surface1}";
       urgent.color = "#${colors.peach}";
@@ -49,7 +48,5 @@ in {
       inactive.color = "#${colors.surface1}";
       urgent.color = "#${colors.peach}";
     };
-
-    gaps = 10;
   };
 }

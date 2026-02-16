@@ -752,7 +752,7 @@ in {
 
   home.packages = with pkgs; [
     equibop
-    (master.discord.override {
+    (discord.override {
       withEquicord = true;
     })
   ];

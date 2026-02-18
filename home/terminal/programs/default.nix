@@ -41,6 +41,7 @@
     nix-output-monitor
     wf-recorder
     tree
+    wget
 
     packwiz
     inputs.git-helper.packages.${stdenv.hostPlatform.system}.git-helper

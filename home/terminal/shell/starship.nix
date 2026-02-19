@@ -6,7 +6,7 @@
 
     settings = {
       character = {
-        success_symbol = "[❯](teal)";
+        success_symbol = "[❯](${config.theme.accent})";
         error_symbol = "[❯](red)";
         vimcmd_symbol = "[❮](green)";
       };

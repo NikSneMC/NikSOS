@@ -6,7 +6,7 @@
   inherit (builtins) listToAttrs;
   inherit (lib) nameValuePair;
 in {
-  imports = [inputs.dms-plugin-registry.modules.default];
+  imports = [inputs.dms-plugin-registry.homeModules.default];
 
   programs.dank-material-shell.plugins =
     [

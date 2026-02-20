@@ -83,16 +83,28 @@
       backgroundCheck = true;
       checkInterval = 20;
     }
+    "BetterSettings"
     "BetterUploadButton"
-    # "BetterUserArea" # TODO: uncomment when fixed
+    "BetterUserArea"
     "BiggerStreamPreview"
+    "BlockKrisp"
     {
       name = "BlurNSFW";
       blurAmount = 10;
     }
+    "BypassPinPrompt"
     {
       name = "CallTimer";
       format = "human";
+    }
+    {
+      name = "ChannelTabs";
+      onStartup = "remember";
+      renderAllTabs = true; # I want to use ALL my RAM! /s
+      createNewTabIfNotExists = true;
+      enableRapidNavigation = true;
+      enableNumberKeySwitching = false;
+      openNewTabsInCompactMode = true;
     }
     {
       name = "CharacterCounter";
@@ -100,6 +112,7 @@
       position = false;
     }
     "ChatInputButtonAPI"
+    "CleanerChannelGroups"
     "ClearURLs"
     "ClipsEnhancements"
     {
@@ -124,8 +137,9 @@
       copyUnicode = true;
     }
     "CopyFileContents"
-    "BetterCommands"
-
+    "CopyProfileColors"
+    "CopyStatusUrls"
+    "CopyStickerLinks"
     "CopyUserMention"
     "CopyUserURLs"
     {
@@ -133,6 +147,7 @@
       attemptToNavigateToHome = false;
       attemptToPreventCrashes = true;
     }
+    "CustomFolderIcons"
     {
       name = "CustomUserColors";
       colorInServers = true;
@@ -157,6 +172,12 @@
       name = "Downloadify";
       defaultDirectory = "${config.home.homeDirectory}/Downloads/Equibop";
     }
+    "DragFavoriteEmotes"
+    {
+      name = "Dragify";
+      inviteTemporaryMembership = true;
+      reuseExistingInvites = true;
+    }
     "DynamicImageModalAPI"
     "EmojiDumper"
     "EmoteCloner"
@@ -165,8 +186,12 @@
       name = "Experiments";
       toolbarDevMenu = true;
     }
-    "ExportContacts"
+    {
+      name = "ExportMessages";
+      exportContacts = true;
+    }
     "FakeNitro"
+    "FavouriteAnything"
     "FavoriteEmojiFirst"
     {
       name = "FindReply";
@@ -189,6 +214,7 @@
     }
     "ForceOwnerCrown"
     "FrequentQuickSwitcher"
+    "FriendCloud"
     "FriendCodes"
     "FriendInvites"
     "FriendTags"
@@ -197,10 +223,10 @@
     "FullSearchContext"
     "FullUserInChatbox"
     {
-      # TODO: uncomment when fixed
       name = "GameActivityToggle";
       oldIcon = false;
     }
+    "GifCollections"
     "GifPaste"
     "GitHubRepos"
     {
@@ -229,12 +255,14 @@
       greetMode = "Greet";
     }
     "GuildPickerDumper"
+    "GuildTagSettings"
     {
       name = "HideServers";
       showIndicator = true;
     }
     "HolyNotes"
     "HomeTyping"
+    "ILoveSpam"
     "IRememberYou"
     "ImageLink"
     {
@@ -257,8 +285,8 @@
       sortByAffinity = true;
     }
     "InRole"
-    "JumpToStart"
-    "KeepCurrentChannel"
+    "JumpTo"
+    "LastActive"
     {
       name = "LimitMiddleClickPaste";
       limitTo = "active";
@@ -378,6 +406,10 @@
       triggerWhenUnfocused = true;
       volume = 0.5;
     }
+    {
+      name = "MusicControls";
+      hoverControls = true;
+    }
     "MutualGroupDMs"
     "NSFWGateBypass"
     "NeverPausePreviews"
@@ -414,6 +446,11 @@
       name = "PictureInPicture";
       loop = true;
     }
+    {
+      name = "PinDMs";
+      pinOrder = "Custom";
+      canCollapseDmSection = true;
+    }
     "PinIcon"
     {
       name = "PlatformIndicators";
@@ -431,7 +468,16 @@
     "PreviewMessage"
     "PurgeMessages"
     "QuestFocused"
-    ""
+    {
+      name = "Questify";
+      disableQuests = true;
+      completeVideoQuestsInBackground = true;
+      completeGameQuestsInBackground = true;
+      completeAchievementQuestsInBackground = true;
+      questButtonDisplay = "never";
+      questRewardIncludeInGame = false;
+      questRewardIncludeCollectibles = false;
+    }
     "QuickMention"
     {
       name = "Quoter";
@@ -449,6 +495,10 @@
       servers = true;
     }
     "RepeatMessage"
+    {
+      name = "ReplaceGoogleSearch";
+      replacementEngine = "DuckDuckGo";
+    }
     "ReplyTimestamp"
     "RevealAllSpoilers"
     "ReverseImageSearch"
@@ -459,6 +509,7 @@
       notifyReviews = true;
       showWarning = true;
     }
+    "RichMagnetLinks"
     {
       name = "RoleColorEverywhere";
       chatMentions = true;
@@ -469,6 +520,7 @@
       reactorsList = true;
       voiceUsers = true;
     }
+    "SaveFavoriteGIFs"
     "ScreenRecorder"
     "SearchFix"
     {
@@ -563,18 +615,19 @@
       soundVolume = 0.5;
     }
     "SplitLargeMessages"
-    {
-      name = "SpotifyControls";
-      hoverControls = false;
-      previousButtonRestartsTrack = true;
-      useSpotifyUris = false;
-    }
+    "SpotifyActivityToggle"
+    # {
+    #   name = "SpotifyControls";
+    #   hoverControls = false;
+    #   previousButtonRestartsTrack = true;
+    #   useSpotifyUris = false;
+    # }
     {
       name = "SpotifyCrack";
       keepSpotifyActivityOnIdle = false;
       noSpotifyAutoPause = true;
     }
-    "SpotifyLyrics"
+    # "SpotifyLyrics"
     "SpotifyShareCommands"
     "StartupTimings"
     "StatusPresets"
@@ -594,6 +647,7 @@
       showMessageHeaderTime = true;
       showProfileTime = true;
     }
+    "ToneIndicators"
     {
       name = "Translate+";
       shavian = true;
@@ -620,6 +674,7 @@
       voiceBackground = true;
     }
     "Unindent"
+    "UniversalMention"
     {
       name = "UnlimitedAccounts";
       maxAccounts = 0;
@@ -645,10 +700,10 @@
       showInMessages = true;
       showInUserProfileModal = true;
     }
-    "ValidReply"
-    "ValidUser"
     "VCPanelSettings"
     "VCSupport"
+    "ValidReply"
+    "ValidUser"
     {
       name = "VideoSpeed";
       preservePitch = false;
@@ -676,6 +731,11 @@
       noiseSuppression = true;
     }
     {
+      name = "VoiceMessageTranscriber";
+      selectedModel = "Xenova/whisper-medium";
+      quantized = false;
+    }
+    {
       name = "VolumeBooster";
       multiplier = 5;
     }
@@ -694,7 +754,6 @@
       name = "WhosWatching";
       showPanel = true;
     }
-    "WriteUpperCase"
     "YoutubeAdblock"
     "YoutubeDescription"
     "petpet"

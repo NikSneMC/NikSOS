@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
     ./discord.nix
+    ./matrix.nix
     ./thunderbird.nix
   ];
 

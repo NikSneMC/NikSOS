@@ -37,6 +37,7 @@
           {app-id = "discord";}
           {app-id = "com.ayugram";}
           {app-id = "thunderbird";}
+          {app-id = "Element";}
         ];
         open-on-workspace = "social";
       }

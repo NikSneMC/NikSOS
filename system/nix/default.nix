@@ -67,7 +67,6 @@
         "pipe-operator"
         "cgroups"
         "auto-allocate-uids"
-        "no-url-literals"
       ];
 
       keep-derivations = true;

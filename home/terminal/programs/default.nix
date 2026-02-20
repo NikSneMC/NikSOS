@@ -15,6 +15,7 @@
     ./skim.nix
     ./ssh.nix
     ./xdg.nix
+    ./yazi.nix
     ./zoxide.nix
   ];
 
@@ -50,6 +51,5 @@
   programs = {
     btop.enable = true;
     cava.enable = true;
-    yazi.enable = true;
   };
 }

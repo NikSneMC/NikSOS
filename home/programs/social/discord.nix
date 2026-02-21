@@ -147,7 +147,6 @@
       attemptToNavigateToHome = false;
       attemptToPreventCrashes = true;
     }
-    "CustomFolderIcons"
     {
       name = "CustomUserColors";
       colorInServers = true;
@@ -452,6 +451,7 @@
       canCollapseDmSection = true;
     }
     "PinIcon"
+    "PlainFolderIcon"
     {
       name = "PlatformIndicators";
       ConsoleIcon = "equicord";

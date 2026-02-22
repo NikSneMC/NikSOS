@@ -20,6 +20,7 @@
         ["equibop"]
         ["AyuGram"]
         ["thunderbird"]
+        ["element-desktop"]
       ]
       |> map (command: {inherit command;});
 

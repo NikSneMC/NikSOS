@@ -32,7 +32,7 @@
     pipes-rs
 
     dust
-    uutils-coreutils
+    uutils-coreutils-noprefix
     duf
     fd
     file

@@ -16,7 +16,6 @@ in {
       "dankBatteryAlerts"
       "dankKDEConnect"
       "dankPomodoroTimer"
-      "developerUtilities"
       "emojiLauncher"
       "niriWindows"
       "webSearch"

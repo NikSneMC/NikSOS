@@ -408,6 +408,11 @@
     {
       name = "MusicControls";
       hoverControls = true;
+      showSpotifyControls = true;
+      showSpotifyLyrics = true;
+      showTidalControls = true;
+      showTidalLyrics = true;
+      showYoutubeMusicControls = true;
     }
     "MutualGroupDMs"
     "NSFWGateBypass"

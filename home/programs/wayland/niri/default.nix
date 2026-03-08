@@ -15,15 +15,6 @@
       _JAVA_AWT_WM_NONREPARENTING = "1";
     };
 
-    spawn-at-startup =
-      [
-        ["equibop"]
-        ["AyuGram"]
-        ["thunderbird"]
-        ["element-desktop"]
-      ]
-      |> map (command: {inherit command;});
-
     workspaces = {
       "1".name = "development";
       "2".name = "misc";

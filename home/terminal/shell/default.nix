@@ -10,8 +10,8 @@
       enableFishIntegration = true;
     };
     shellAliases = {
+      btw = "fastfetch";
       jq = "jaq";
-      fetch = "fastfetch";
       lazypodman = "lazydocker";
     };
   };

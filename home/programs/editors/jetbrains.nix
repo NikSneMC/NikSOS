@@ -55,7 +55,7 @@ in {
   home.file = let
     owner = "chtenb";
     repo = "helix.vim";
-    path = "Projects/github/${owner}/${repo}";
+    path = "Projects/github.com/${owner}/${repo}";
   in {
     ${path}.source = fetchFromGitHub {
       inherit owner repo;

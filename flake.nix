@@ -165,6 +165,11 @@
       };
     };
 
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     nixos-avf = {
       url = "github:NikSneMC/nixos-avf";
       inputs.nixpkgs.follows = "nixpkgs";

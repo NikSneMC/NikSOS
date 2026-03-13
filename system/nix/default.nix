@@ -6,9 +6,9 @@
   ...
 }: {
   imports = [
+    inputs.nix-index-database.nixosModules.default
     ./documentation.nix
     ./caches.nix
-    ./index.nix
     ./nh.nix
     ./nixpkgs.nix
   ];

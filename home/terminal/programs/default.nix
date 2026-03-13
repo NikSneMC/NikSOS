@@ -4,6 +4,7 @@
   ...
 }: {
   imports = [
+    inputs.nix-index-database.homeModules.default
     ./git
     ./zellij
     ./atuin.nix

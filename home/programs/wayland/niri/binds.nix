@@ -15,7 +15,6 @@
     dms-ipc = dms "ipc";
     packages = builtins.mapAttrs (_: lib.getExe) {
       activate-niksos = inputs.activate-niksos.packages.${pkgs.stdenv.hostPlatform.system}.default;
-      inherit (pkgs) ani-cli;
     };
   in
     mkBinds (
@@ -180,7 +179,7 @@
         {
           bind = "Mod+Shift+W";
           desc = "Launch ani-cli";
-          action = spawn "${packages.ani-cli}";
+          action = spawn "ani-cli";
         }
         {
           bind = "Mod+Shift+X";

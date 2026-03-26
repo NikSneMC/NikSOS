@@ -12,9 +12,12 @@ in {
     [
       "alarmClock"
       "calculator"
+      "catWidget"
       "commandRunner"
       "dankBatteryAlerts"
       "dankKDEConnect"
+      "dankLauncherKeys"
+      "dankNotepadModule"
       "dankPomodoroTimer"
       "emojiLauncher"
       "niriWindows"

@@ -18,9 +18,10 @@
 
   environment = {
     systemPackages = with pkgs; [
-      python313
+      python3
+      nodejs
     ];
 
-    variables.JAVA_HOME = "${pkgs.zulu21}/";
+    variables.JAVA_HOME = "${pkgs.zulu25}/";
   };
 }

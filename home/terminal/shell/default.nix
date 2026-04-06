@@ -8,6 +8,7 @@
     shell = {
       enableBashIntegration = true;
       enableFishIntegration = true;
+      enableZshIntegration = true;
     };
     shellAliases = {
       btw = "fastfetch";

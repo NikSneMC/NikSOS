@@ -48,6 +48,7 @@
     ./just.nix
     ./jvm.nix
     ./latex.nix
+    ./lisette.nix
     ./nix.nix
     ./protobuf.nix
     ./python.nix

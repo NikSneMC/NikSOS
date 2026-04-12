@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   programs.helix = {
     languages = {
       language-server.rust-analyzer = {
@@ -8,9 +8,5 @@
         };
       };
     };
-
-    extraPackages = with pkgs; [
-      rust-analyzer
-    ];
   };
 }

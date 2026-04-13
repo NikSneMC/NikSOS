@@ -3,6 +3,9 @@
     enable = true;
 
     enableDefaultConfig = false;
+
+    includes = ["hosts/*/*.conf"];
+
     matchBlocks."*" = {
       forwardAgent = false;
       addKeysToAgent = "no";

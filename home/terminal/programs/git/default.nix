@@ -34,7 +34,10 @@
 
     settings.credential.helper = "store";
 
-    signing.signByDefault = true;
+    signing = {
+      signByDefault = true;
+      format = "ssh";
+    };
     settings.gpg.format = "ssh";
   };
 }

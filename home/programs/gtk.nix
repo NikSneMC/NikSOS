@@ -21,6 +21,7 @@
     };
 
     gtk2.configLocation = "${config.xdg.configHome}/gtk-2.0/gtkrc";
+    gtk4 = {inherit (config.gtk) theme;};
 
     iconTheme = {
       name = lib.mkForce "Colloid-Teal-Dracula-Dark";

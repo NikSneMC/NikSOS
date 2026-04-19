@@ -21,7 +21,7 @@
 )
 
 (deftemplate home-row-mod (key mod)
-  (multi f24 (tap-hold $tap-time $hold-time $key $mod))
+  (tap-hold $tap-time $hold-time $key $mod)
 )
 
 (defalias

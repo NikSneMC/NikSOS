@@ -7,8 +7,8 @@
 in
   lib'.zellij.zellijPlugin {
     name = "zjstatus";
-    url = "https://github.com/dj95/zjstatus/releases/download/v0.21.1/zjstatus.wasm";
-    sha256 = "06mfcijmsmvb2gdzsql6w8axpaxizdc190b93s3nczy212i846fw";
+    url = "https://github.com/dj95/zjstatus/releases/download/v0.23.0/zjstatus.wasm";
+    sha256 = "sha256-4AaQEiNSQjnbYYAh5MxdF/gtxL+uVDKJW6QfA/E4Yf8=";
     config =
       # kdl
       ''

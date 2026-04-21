@@ -13,7 +13,10 @@
     ./nixpkgs.nix
   ];
 
-  environment.systemPackages = [pkgs.git];
+  environment.systemPackages = with pkgs; [
+    git
+    comma
+  ];
 
   nixpkgs.overlays = [
     (_: prev: {

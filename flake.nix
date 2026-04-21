@@ -45,6 +45,7 @@
     stable.url = "github:NixOS/nixpkgs/nixos-25.05";
 
     nixpkgs.follows = "unstable";
+
     nikspkgs.url = "github:NikSneMC/NikSpkgs/niksos";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";

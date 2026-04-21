@@ -185,7 +185,8 @@
     };
 
     spicetify-nix = {
-      url = "github:Gerg-L/spicetify-nix";
+      # FIXME: use upstream after it's next deps update (26.04.2026)
+      url = "github:NikSneMC/spicetify-nix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         systems.follows = "flake-utils/systems";

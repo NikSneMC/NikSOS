@@ -4,7 +4,6 @@
   config,
   ...
 }: {
-  # themable spotify
   imports = [
     inputs.spicetify-nix.homeManagerModules.default
   ];
@@ -16,6 +15,7 @@
 
     windowManagerPatch = true;
     wayland = true;
+    experimentalFeatures = true;
 
     theme = spicePkgs.themes.catppuccin;
 
@@ -26,7 +26,6 @@
       bookmark
       keyboardShortcut
       loopyLoop
-      popupLyrics
       shuffle
       trashbin
       powerBar
@@ -45,7 +44,9 @@
       volumePercentage
       copyLyrics
       playingSource
-      beautifulLyrics
+      queueTime
+      coverAmbience
+      extendedCopy
     ];
 
     enabledCustomApps = with spicePkgs.apps; [

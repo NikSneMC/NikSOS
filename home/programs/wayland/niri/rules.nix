@@ -32,7 +32,7 @@
       }
       {
         matches = [
-          {app-id = "equibop";}
+          {title = "Equibop";}
           {app-id = "vesktop";}
           {app-id = "discord";}
           {app-id = "com.ayugram";}

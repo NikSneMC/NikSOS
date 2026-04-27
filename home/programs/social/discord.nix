@@ -803,7 +803,7 @@ in {
       tray = true;
       minimizeToTray = true;
       arRPC = true;
-      trayColor = config.theme.colors.accent;
+      staticTitle = true;
       trayMainOverride = false;
       splashColor = "#${config.theme.colors.text}";
       splashBackground = "#${config.theme.colors.base}";

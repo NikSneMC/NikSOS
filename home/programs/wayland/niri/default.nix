@@ -49,7 +49,16 @@
     "niri/config.kdl".text =
       # kdl
       ''
-        include "dms.kdl";
+        include "dms.kdl"
+
+        window-rule {
+          match app-id="org.wezfurlong.wezterm"
+
+          opacity 0.9
+          background-effect {
+            blur true
+          }
+        }
 
         recent-windows {
           highlight {

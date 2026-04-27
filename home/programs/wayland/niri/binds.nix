@@ -182,6 +182,11 @@
           action = spawn "AyuGram";
         }
         {
+          bind = "Mod+Shift+V";
+          desc = "Launch vibecode app";
+          action = spawn "t3code";
+        }
+        {
           bind = "Mod+Shift+W";
           desc = "Launch ani-cli";
           action = spawn "ani-cli";

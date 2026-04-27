@@ -20,6 +20,7 @@
         matches = [
           {app-id = "dev.zed.*";}
           {app-id = "jetbrains-.*";}
+          {app-id = "t3code";}
         ];
         open-on-workspace = "development";
       }

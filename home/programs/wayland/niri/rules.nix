@@ -71,6 +71,12 @@
         ];
         open-floating = true;
       }
+      {
+        matches = [
+          {app-id = "jetbrains-.*";}
+        ];
+        open-maximized = true;
+      }
     ];
   };
 }

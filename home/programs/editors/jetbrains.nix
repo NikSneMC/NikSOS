@@ -8,9 +8,7 @@
   ides = [
     "datagrip"
     "idea"
-
-    # I **HATE** Angular tooling outside of VSCode and JetBrains IDEs
-    # TODO: Remove that shit ASAP
+    "rust-rover"
     "webstorm"
   ];
 

@@ -105,6 +105,11 @@
           action = dms-ipc "settings" "focusOrToggle";
         }
         {
+          bind = "Mod+M";
+          desc = "Launch music player";
+          action = spawn "spotify";
+        }
+        {
           bind = "Mod+N";
           desc = "Open notification center";
           action = dms-ipc "notifications" "toggle";

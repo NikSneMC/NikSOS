@@ -6,18 +6,14 @@
   lctl lmet lalt           spc            ralt rmet cmp  rctl
 )
 
-(defalias
-  lay (layer-toggle layouts)
-  mod (layer-switch mods)
-  nor (layer-switch normal)
-  sym (layer-toggle symbols)
-  spc (tap-hold-release 200 200 spc @sym)
-  cps (tap-hold-release 200 200 caps @lay)
-)
-
 (defvar
   tap-time 200
   hold-time 200
+)
+
+(defalias
+  sym (layer-toggle symbols)
+  spc (tap-hold-release $tap-time $hold-time spc @sym)
 )
 
 (deftemplate home-row-mod (key mod)
@@ -38,25 +34,9 @@
 (deflayer mods
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @cps @a   @s   @d   @f   _    _    @j   @k   @l   @;   _    _
+  _    @a   @s   @d   @f   _    _    @j   @k   @l   @;   _    _
   _    _    _    _    _    _    _    _    _    _    _    _
   _    _    _              @spc           _    _    _    _
-)
-
-(deflayer normal
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  @cps _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
-)
-
-(deflayer layouts
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _    _    _
-  caps _    _    _    @mod _    _    @nor _    _    _    _    _
-  _    _    _    _    _    _    _    _    _    _    _    _
-  _    _    _              _              _    _    _    _
 )
 
 (deflayer symbols
